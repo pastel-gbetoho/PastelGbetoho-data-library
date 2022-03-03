@@ -16,15 +16,15 @@
 # Cross-subjects areas models
 
 + : [CIM](https://github.com/cloudinformationmodel/cloudinformationmodel)
-+ : [Microsoft CDM](https://microsoft.github.io/CDM/)
++ : [Microsoft Common Data Model](https://microsoft.github.io/CDM/)
 + : [SCHEMA ORG](https://github.com/schemaorg/schemaorg)
 
  
 # Others standards
 
-+ SOGAF Operating Models | Salesforce Architects: [SOGAF](https://architect.salesforce.com/govern/operating-models/sogaf-operating-models)
-+ MDA Specifications | Object Management Group (omg.org): [OMG](https://www.omg.org/mda/specs.htm)
-+ RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files (ietf.org): [IETF](https://datatracker.ietf.org/doc/html/rfc4180)
++ : [SOGAF Operating Models](https://architect.salesforce.com/govern/operating-models/sogaf-operating-models)
++ : [OMG - Object Management Group](https://www.omg.org/mda/specs.htm)
++ : [IETF - RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://datatracker.ietf.org/doc/html/rfc4180)
 
 
 # TOGAF
