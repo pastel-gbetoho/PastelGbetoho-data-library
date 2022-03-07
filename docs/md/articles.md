@@ -63,4 +63,4 @@
 
 ## Database management systems
 
-+ Database-Level Roles - SQL Server | Microsoft Docs:[Database-Level Roles - SQL Servers](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15)
++ Microsoft Docs: [Database-Level Roles - SQL Servers](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15)
