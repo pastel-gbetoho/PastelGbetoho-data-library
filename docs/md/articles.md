@@ -1,6 +1,6 @@
 # Articles
 
-## Data Management & Data Quality
+## Data Management
 
 + Uber Data Culture: [Uber Data Culture](https://eng.uber.com/ubers-journey-toward-better-data-culture-from-first-principles/)  
 + Uber Data Quality Monitoring at Scale: [Uber Data Quality Monitoring at Scale](https://eng.uber.com/monitoring-data-quality-at-scale/)  
@@ -58,3 +58,9 @@
 
 + Systems Thinking Resources: [Donella Meadows - Systems Thinking Resources](http://donellameadows.org/systems-thinking-resources/)
 + Climate Bathtub Simulation: [Climate interactive - Climate Bathtub Simulation](https://www.climateinteractive.org/ourwork/climate-bathtub-simulation/)
+
+
+
+## Database management systems
+
++ Database-Level Roles - SQL Server | Microsoft Docs:[Database-Level Roles - SQL Servers](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15)
