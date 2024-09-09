@@ -15,6 +15,11 @@
 + : [ARTS](https://www.omg.org/retail-depository/arts-odm-73/)
  
 
+## Vendors
+
++ : [SALESFORCE Data Models Gallery](https://architect.salesforce.com/diagrams#data-model-gallery)
+ 
+
 ## Generic
 
 + : [CIM](https://github.com/cloudinformationmodel/cloudinformationmodel)
