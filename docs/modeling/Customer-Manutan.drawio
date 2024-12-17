@@ -1,5 +1,5 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3">
-  <diagram name="Page-1" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
+  <diagram name="Concept-Model" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
     <mxGraphModel dx="2253" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
@@ -59,6 +59,9 @@
         </mxCell>
         <mxCell id="rktopHRJ8DNvwgO-e6lh-3" value="ORGANIZATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
           <mxGeometry x="160" y="440" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-63" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-6" target="rktopHRJ8DNvwgO-e6lh-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rktopHRJ8DNvwgO-e6lh-6" value="ORGANIZATION SUBDIVISION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
           <mxGeometry x="160" y="535" width="120" height="50" as="geometry" />
