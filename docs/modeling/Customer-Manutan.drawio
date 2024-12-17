@@ -168,19 +168,19 @@
         <mxCell id="rktopHRJ8DNvwgO-e6lh-56" value="- Legal address&lt;br&gt;- Delivery addresses (multiple&lt;br&gt;possible with preferred address)&lt;br&gt;- Invoicing addresses" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" vertex="1" parent="1">
           <mxGeometry x="620" y="143.75" width="180" height="66.25" as="geometry" />
         </mxCell>
-        <mxCell id="rktopHRJ8DNvwgO-e6lh-59" value="- First Name&lt;br&gt;- Last Name&lt;br&gt;- …." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" vertex="1" parent="1">
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-59" value="- First Name&lt;br&gt;- Last Name&lt;br&gt;- …." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="-440" y="134.75" width="117" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="rktopHRJ8DNvwgO-e6lh-60" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endArrow=none;endFill=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-59" target="rktopHRJ8DNvwgO-e6lh-13">
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-60" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endArrow=none;endFill=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;fontSize=10;" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-59" target="rktopHRJ8DNvwgO-e6lh-13">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-310" y="160" as="sourcePoint" />
             <mxPoint x="-290" y="202" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rktopHRJ8DNvwgO-e6lh-61" value="- N° of employees&lt;br&gt;- Turnover&lt;br&gt;- …." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" vertex="1" parent="1">
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-61" value="- N° of employees&lt;br&gt;- Turnover&lt;br&gt;- …." style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="-440" y="300" width="117" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="rktopHRJ8DNvwgO-e6lh-62" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;endArrow=none;endFill=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-61" target="rktopHRJ8DNvwgO-e6lh-14">
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-62" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;endArrow=none;endFill=0;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;fontSize=10;" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-61" target="rktopHRJ8DNvwgO-e6lh-14">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-323" y="287" as="sourcePoint" />
             <mxPoint x="-280" y="310" as="targetPoint" />
