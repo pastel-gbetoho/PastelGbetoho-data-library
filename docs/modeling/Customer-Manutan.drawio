@@ -4,6 +4,9 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-108" value="CUSTOMER MDM DATA DICTIONARY" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fillStyle=cross-hatch;verticalAlign=top;align=left;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="-500" y="640" width="1210" height="530" as="geometry" />
+        </mxCell>
         <mxCell id="rktopHRJ8DNvwgO-e6lh-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;endArrow=none;endFill=0;fontStyle=0" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-1" target="rktopHRJ8DNvwgO-e6lh-12">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -323,6 +326,9 @@
               <mxPoint x="-240" y="1113" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="rktopHRJ8DNvwgO-e6lh-110" value="&lt;p style=&quot;language:fr;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;vertical-align:middle;&lt;br/&gt;mso-line-break-override:none;word-break:normal;punctuation-wrap:hanging&quot;&gt;Datafield enriched by external provider&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="480" y="650" width="220" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
