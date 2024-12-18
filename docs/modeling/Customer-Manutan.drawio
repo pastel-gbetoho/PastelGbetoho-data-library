@@ -156,6 +156,9 @@
         <mxCell id="tEuymnhXt6tSp9BScBj_-5" value="Opt" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="170" y="536" width="900" height="234" as="geometry" />
         </mxCell>
+        <mxCell id="tEuymnhXt6tSp9BScBj_-12" value="&lt;u&gt;Option1 (Current approach)&lt;/u&gt;&lt;div&gt;- BO016-A search first in the external provider database (and retrieve a SIRET number) and get several potential candidates.&lt;/div&gt;&lt;div&gt;-----&amp;gt; Less than 1% of cases where the org does not exist in the external database&lt;/div&gt;&lt;div&gt;- Lookup Manutan database to match an existing organization (based on SIRET).&lt;/div&gt;&lt;div&gt;-----&amp;gt; Display lookup result to the user including not matched organizations in Manutant database&lt;/div&gt;&lt;div&gt;-----&amp;gt; If orga is matched, retrieve exisiting information in Manutan database&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Display results to the user&lt;/div&gt;&lt;div&gt;-----&amp;gt; User may select orga with wrong address but later in the CX update addresses (legal, invoiced, delivered)&lt;/div&gt;&lt;div&gt;- User &amp;gt; Select the organisation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Notes: This scenario includes also other use cases such Pichon organizations&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="60" width="440" height="300" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
