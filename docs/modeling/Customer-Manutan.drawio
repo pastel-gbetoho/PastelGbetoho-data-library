@@ -5,28 +5,28 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-1" value=":User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="-58" y="40" width="100" height="530" as="geometry" />
+          <mxGeometry x="-58" y="40" width="100" height="760" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-2" value=":Webinterface" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="192" y="40" width="100" height="530" as="geometry" />
+          <mxGeometry x="192" y="40" width="100" height="760" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-6" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="wtOEh-zH5GG8DJ1yfQGq-2">
-          <mxGeometry x="45" y="60" width="10" height="380" as="geometry" />
+          <mxGeometry x="45" y="60" width="10" height="430" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-3" value="organizationDb:Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="640" y="40" width="180" height="530" as="geometry" />
+          <mxGeometry x="640" y="40" width="180" height="760" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-11" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="wtOEh-zH5GG8DJ1yfQGq-3">
           <mxGeometry x="85" y="128" width="10" height="50" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-4" value=":Orchestrator" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="424" y="40" width="100" height="530" as="geometry" />
+          <mxGeometry x="424" y="40" width="100" height="760" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-8" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="wtOEh-zH5GG8DJ1yfQGq-4">
           <mxGeometry x="45" y="70" width="10" height="400" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-5" value="externalProviderDb:Database" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="1">
-          <mxGeometry x="910" y="40" width="180" height="530" as="geometry" />
+          <mxGeometry x="910" y="40" width="180" height="760" as="geometry" />
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-18" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" vertex="1" parent="wtOEh-zH5GG8DJ1yfQGq-5">
           <mxGeometry x="85" y="264" width="10" height="70" as="geometry" />
@@ -64,16 +64,16 @@
             <mxPoint x="470" y="248" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="wtOEh-zH5GG8DJ1yfQGq-15" value="displayResults()" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0.3;exitY=0.7;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+        <mxCell id="wtOEh-zH5GG8DJ1yfQGq-15" value="displayResults()" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="240" y="439" as="sourcePoint" />
-            <mxPoint x="-8.333333333333258" y="439" as="targetPoint" />
+            <mxPoint x="241.5" y="470" as="sourcePoint" />
+            <mxPoint x="-8.333333333333258" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-16" value="Select organization" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
           <mxGeometry width="80" relative="1" as="geometry">
-            <mxPoint x="-8.333333333333258" y="490" as="sourcePoint" />
-            <mxPoint x="241.50000000000045" y="490" as="targetPoint" />
+            <mxPoint x="-8.333333333333258" y="521" as="sourcePoint" />
+            <mxPoint x="241.50000000000045" y="521" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="wtOEh-zH5GG8DJ1yfQGq-17" value="getOrganization (name, postcode)" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;" edge="1" parent="1">
@@ -99,6 +99,12 @@
             <mxPoint x="260" y="400" as="sourcePoint" />
             <mxPoint x="410" y="400" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="wtOEh-zH5GG8DJ1yfQGq-23" value="Organization exists in local database" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="270" y="170" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wtOEh-zH5GG8DJ1yfQGq-24" value="Else" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="270" y="320" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
