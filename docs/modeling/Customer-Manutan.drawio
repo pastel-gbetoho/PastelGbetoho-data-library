@@ -630,19 +630,19 @@
           <mxGeometry x="140" y="190" width="50" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-1" value="Internal repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=bottom;align=left;fontStyle=3" vertex="1" parent="1">
-          <mxGeometry x="258" y="740" width="156" height="250" as="geometry" />
+          <mxGeometry x="160" y="620" width="156" height="250" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ripA7r_QULKgXepXXPXO-5" target="ripA7r_QULKgXepXXPXO-13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-5" value="AX" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="296" y="915" width="100" height="50" as="geometry" />
+          <mxGeometry x="198" y="795" width="100" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#CC6600;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="ripA7r_QULKgXepXXPXO-9" target="ripA7r_QULKgXepXXPXO-11">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="441" y="700" />
-              <mxPoint x="541" y="700" />
+              <mxPoint x="343" y="580" />
+              <mxPoint x="443" y="580" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -650,25 +650,68 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-9" value="FO035" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=interface;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="396" y="630" width="90" height="40" as="geometry" />
+          <mxGeometry x="298" y="510" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ripA7r_QULKgXepXXPXO-11" target="ripA7r_QULKgXepXXPXO-18">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-11" value="BO016-A" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=interface;archiType=square;" vertex="1" parent="1">
-          <mxGeometry x="496" y="740" width="90" height="40" as="geometry" />
+          <mxGeometry x="398" y="620" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-13" value="Elastic search index" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=collab;archiType=square;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="296" y="760" width="100" height="90" as="geometry" />
+          <mxGeometry x="198" y="640" width="100" height="90" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-15" value="ETL" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="336" y="870" width="60" height="30" as="geometry" />
+          <mxGeometry x="238" y="750" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-18" value="External provider DBMS" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=collab;archiType=square;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="496" y="820" width="90" height="50" as="geometry" />
+          <mxGeometry x="398" y="700" width="90" height="50" as="geometry" />
         </mxCell>
         <mxCell id="ripA7r_QULKgXepXXPXO-19" value="External repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCC99;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=bottom;align=left;fontStyle=3" vertex="1" parent="1">
-          <mxGeometry x="466" y="800" width="150" height="110" as="geometry" />
+          <mxGeometry x="368" y="680" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#004C99;" edge="1" parent="1" source="xSStBAV-N_5Bg7rkOCKt-1" target="xSStBAV-N_5Bg7rkOCKt-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="1200" />
+              <mxPoint x="410" y="1200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-1" value="New Front" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=bottom;align=left;fontStyle=3" vertex="1" parent="1">
+          <mxGeometry x="50" y="1010" width="140" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-3" value="Organisation DB" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=collab;archiType=square;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1090" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-4" value="AX" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="349" y="1055" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-7" value="Propagation des créations et modifications New Front" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontColor=#004C99;" vertex="1" parent="1">
+          <mxGeometry x="163" y="1210" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-8" value="Elastic search index" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=collab;archiType=square;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="211" y="930" width="118" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-9" value="Organisation mnager" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;strokeColor=#FF0000;" edge="1" parent="1" source="xSStBAV-N_5Bg7rkOCKt-4" target="xSStBAV-N_5Bg7rkOCKt-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;strokeColor=#004C99;" edge="1" parent="1" source="xSStBAV-N_5Bg7rkOCKt-1" target="xSStBAV-N_5Bg7rkOCKt-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-13" value="Propagation des créations et modifications AX" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="420" y="990" width="150" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
