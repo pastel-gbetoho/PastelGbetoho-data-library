@@ -559,6 +559,9 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-15" value="Scénario de transition" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=top;align=center;fontStyle=3" vertex="1" parent="1">
+          <mxGeometry y="940" width="520" height="380" as="geometry" />
+        </mxCell>
         <mxCell id="OZSpzdQ5DqoLMP0cZGC9-22" value="Internal repository" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=bottom;align=left;fontStyle=3" vertex="1" parent="1">
           <mxGeometry x="-16" y="240" width="416" height="240" as="geometry" />
         </mxCell>
@@ -715,6 +718,32 @@
         </mxCell>
         <mxCell id="xSStBAV-N_5Bg7rkOCKt-14" value="Interrogation de l&#39;index à chaque création. Si une organisation est connue de AX mais pas encore du New Front il sera détecté" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontColor=#004C99;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="20" y="970" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-16" value="Scénario cible" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F2F2F2;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=top;align=center;fontStyle=3" vertex="1" parent="1">
+          <mxGeometry y="1540" width="520" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#004C99;" edge="1" parent="1" source="xSStBAV-N_5Bg7rkOCKt-18" target="xSStBAV-N_5Bg7rkOCKt-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="92" y="1770" />
+              <mxPoint x="382" y="1770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-18" value="New Front" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CCE5FF;strokeWidth=2;dashed=1;strokeColor=#0066CC;fillStyle=auto;gradientColor=none;gradientDirection=south;opacity=30;verticalAlign=bottom;align=left;fontStyle=3" vertex="1" parent="1">
+          <mxGeometry x="22" y="1580" width="140" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-19" value="Organisation DB" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#AFFFAF;shape=mxgraph.archimate3.application;appType=collab;archiType=square;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="32" y="1660" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-20" value="AX" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="321" y="1625" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-21" value="Propagation des créations et modifications New Front" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontColor=#004C99;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="168.5" y="1780" width="147" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xSStBAV-N_5Bg7rkOCKt-23" value="Organisation mnager" style="html=1;outlineConnect=0;whiteSpace=wrap;fillColor=#99ffff;shape=mxgraph.archimate3.application;appType=comp;archiType=square;" vertex="1" parent="1">
+          <mxGeometry x="32" y="1590" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
