@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3" pages="3">
   <diagram id="3SsXuXorR8MkxOcHxRdg" name="Orga-creation-notes">
-    <mxGraphModel dx="2253" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2212" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -157,7 +157,7 @@
           <mxGeometry x="170" y="536" width="900" height="234" as="geometry" />
         </mxCell>
         <mxCell id="tEuymnhXt6tSp9BScBj_-12" value="&lt;u&gt;Preferred Option (Current approach)&lt;/u&gt;&lt;div&gt;- BO016-A search first in the external provider database (and retrieve a SIRET number) and get several potential candidates.&lt;/div&gt;&lt;div&gt;-----&amp;gt; Less than 1% of cases where the org does not exist in the external database&lt;/div&gt;&lt;div&gt;- Lookup Manutan database to match an existing organization (based on SIRET).&lt;/div&gt;&lt;div&gt;-----&amp;gt; Display lookup result to the user including not matched organizations in Manutant database&lt;/div&gt;&lt;div&gt;-----&amp;gt; If orga is matched, retrieve exisiting information in Manutan database&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Display results to the user&lt;/div&gt;&lt;div&gt;-----&amp;gt; User may select orga with wrong address but later in the CX update addresses (legal, invoiced, delivered)&lt;/div&gt;&lt;div&gt;- User &amp;gt; Select the organisation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Notes: This scenario includes also other use cases such Pichon organizations&lt;/div&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="1130" y="60" width="440" height="300" as="geometry" />
+          <mxGeometry x="1130" y="40" width="460" height="250" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
