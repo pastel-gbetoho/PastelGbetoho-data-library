@@ -4,6 +4,12 @@
 
 + : [Salesforce - Insurance and Financial Services Data Model](https://help.salesforce.com/s/articleView?id=ind.v_data_models_vlocity_insurance_and_financial_services_data_model_667142.htm&type=5)
 
+
+## Finance
+
++ : [FIBO - Financial Industry Business Data Model](https://fib-dm.com/)
+
+
 ## Health
 
 + : [FHIM](https://fhims.org/)
