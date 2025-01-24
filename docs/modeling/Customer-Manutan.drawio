@@ -963,6 +963,12 @@
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-40" value="" style="shape=mxgraph.signs.tech.at_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
           <mxGeometry x="2500" y="410" width="20" height="17.5" as="geometry" />
         </mxCell>
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-43" target="VJ1IluJ-gQTXWhJxdASa-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-43" value="ORGANIZATION UNIT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="2250" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
