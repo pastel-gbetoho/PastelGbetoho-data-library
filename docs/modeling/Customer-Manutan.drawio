@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.0.0" version="26.0.6" pages="4">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.0.0" version="26.0.7" pages="4">
   <diagram id="3SsXuXorR8MkxOcHxRdg" name="Orga-creation-notes">
     <mxGraphModel dx="2212" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -776,99 +776,90 @@
     </mxGraphModel>
   </diagram>
   <diagram id="TbsO8wDSgbEmVkQzaM7U" name="Workshop">
-    <mxGraphModel dx="2252" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3079" dy="1958" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="KGn72UojuLdnX_vRC6gp-1" target="Rxw9TpJuqGOOrU77mITQ-50">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint y="370" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="-40" y="45" />
-              <mxPoint x="-40" y="370" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="KGn72UojuLdnX_vRC6gp-1" value="ORGANIZATION ENTITY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="30" y="-20" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="KGn72UojuLdnX_vRC6gp-1" value="ORGANIZATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="30" y="20" width="120" height="50" as="geometry" />
+        <mxCell id="KGn72UojuLdnX_vRC6gp-2" value="&#39;- Source Manutan Glossary Data Office&#xa;Legal entity registered on the official repository on the market or not, an organisation can also be a delivery account for the Facility management or Construction sector.&#xa;&#xa;- Source ARTS standard&#xa;A company, association, institution, or other enterprise of interest to a retail store or retail enterprise. &#xa;&#xa;Proposal&#xa;Legal entity registered on the official repository on the market (refer to a geographical region like Belgium) or not. An organization may be a company, association, institution, or other enterprise of interest to a retail store or retail enterprise. " style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="170" y="-20" width="1170" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="KGn72UojuLdnX_vRC6gp-2" value="&#39;- Source Manutan Glossary Data Office&#xa;Legal entity registered on the official repository on the market or not, an organisation can also be a delivery account for the Facility management or Construction sector.&#xa;&#xa;- Source ARTS standard&#xa;A company, association, institution, or other enterprise of interest to a retail store or retail enterprise. &#xa;&#xa;Proposal&#xa;Legal entity registered on the official repository on the market or not. An organization may be a company, association, institution, or other enterprise of interest to a retail store or retail enterprise. " style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" vertex="1" parent="1">
-          <mxGeometry x="170" y="20" width="850" height="220" as="geometry" />
-        </mxCell>
-        <mxCell id="XWLveK6KwTiUFSgzeb3u-1" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="XWLveK6KwTiUFSgzeb3u-1" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="30" y="420" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="XWLveK6KwTiUFSgzeb3u-2" value="&#39;- Source Manutan Glossary Data Office (Individual ?)&#xa;Data linked to the information of individuals (B2C) who places an order with Manutan or being a delivery site&#xa;&#xa;- Source ARTS standard&#xa;A sub-type of party that represents an individual of interest to the retail store or retail enterprise." style="text;whiteSpace=wrap;fontSize=17;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="XWLveK6KwTiUFSgzeb3u-2" value="&#39;- Source Manutan Glossary Data Office (Individual ?)&#xa;Data linked to the information of individuals (B2C) who places an order with Manutan or being a delivery site&#xa;&#xa;- Source ARTS standard&#xa;A sub-type of party that represents an individual of interest to the retail store or retail enterprise." style="text;whiteSpace=wrap;fontSize=17;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="170" y="420" width="850" height="180" as="geometry" />
         </mxCell>
-        <mxCell id="m5O9iqH8MdRh2pGl83cy-1" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="m5O9iqH8MdRh2pGl83cy-1" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="30" y="622.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="m5O9iqH8MdRh2pGl83cy-2" value="&#39;- Source Manutan Glossary Data Office&#xa;A Legal Entity or Individual person which has an interaction (quotation, order, contract...) with Manutan. &#xa;This entity can be shared by several SISCO companies. A Customer can also be a Prospect.&#xa;&#xa;- Source ARTS standard&#xa;A customer that has registered with the retailer and in addition to a unique identifier has provided name, address, phone, email and other personal contact information. KeyCustomer is the basis for establishing an account relationship between a customer and the retailer. It can be thoguht of as the registration (i.e. personal contact information) part of setting up an account relationship.&#xa;&#xa;Proposal &#xa;" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="m5O9iqH8MdRh2pGl83cy-2" value="&#39;- Source Manutan Glossary Data Office&#xa;A Legal Entity or Individual person which has an interaction (quotation, order, contract...) with Manutan. &#xa;This entity can be shared by several SISCO companies. A Customer can also be a Prospect.&#xa;&#xa;- Source ARTS standard&#xa;A customer that has registered with the retailer and in addition to a unique identifier has provided name, address, phone, email and other personal contact information. KeyCustomer is the basis for establishing an account relationship between a customer and the retailer. It can be thoguht of as the registration (i.e. personal contact information) part of setting up an account relationship.&#xa;&#xa;Proposal &#xa;" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="170" y="622.5" width="830" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-4" target="VJ1IluJ-gQTXWhJxdASa-12">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VJ1IluJ-gQTXWhJxdASa-4" target="VJ1IluJ-gQTXWhJxdASa-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-14" value="plays" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Rxw9TpJuqGOOrU77mITQ-13">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-14" value="plays" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Rxw9TpJuqGOOrU77mITQ-13" vertex="1" connectable="0">
           <mxGeometry x="-0.359" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-4" target="Rxw9TpJuqGOOrU77mITQ-2">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VJ1IluJ-gQTXWhJxdASa-4" target="Rxw9TpJuqGOOrU77mITQ-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-16" value="has" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Rxw9TpJuqGOOrU77mITQ-15">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-16" value="has" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Rxw9TpJuqGOOrU77mITQ-15" vertex="1" connectable="0">
           <mxGeometry x="0.0964" y="3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-4" value="PARTY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-4" value="PARTY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2150" y="40" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-6" target="VJ1IluJ-gQTXWhJxdASa-4">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" parent="1" source="VJ1IluJ-gQTXWhJxdASa-6" target="VJ1IluJ-gQTXWhJxdASa-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-6" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-6" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="2050" y="140" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-10" target="VJ1IluJ-gQTXWhJxdASa-4">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" parent="1" source="VJ1IluJ-gQTXWhJxdASa-10" target="VJ1IluJ-gQTXWhJxdASa-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-10" value="ORGANIZATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-10" value="ORGANIZATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="2250" y="140" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-12" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-12" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="1800" y="177.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-14" target="VJ1IluJ-gQTXWhJxdASa-12">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=block;endFill=1;" parent="1" source="VJ1IluJ-gQTXWhJxdASa-14" target="VJ1IluJ-gQTXWhJxdASa-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-14" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-14" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="1800" y="277.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-21" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-21" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2014" y="700" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-22" value="PARTY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-22" value="PARTY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2014" y="540" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-23" value="&#39;- Source ARTS standard&#xa;A person or organization that exchanges information, tender and/or goods and services with the retailer." style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-23" value="&#39;- Source ARTS standard&#xa;A person or organization that exchanges information, tender and/or goods and services with the retailer." style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2157" y="540" width="717" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="VJ1IluJ-gQTXWhJxdASa-24" value="&#39;- Source ARTS standard&#xa;PartyRole idenfies, names and describes different parts a Party may play when interacting with a retailer. &#xa;PartyRole is an imporant concept because is enables one person or organization to play multiple parts (e.g. a worker who is also a customer) without having to replicate name, address and other contract data.&#xa; Some examples of PartyRoles are: &#xa;CONSUMER  &#xa;VENDOR &#xa;SUPPLIER &#xa;TAX AUTHORITY" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-24" value="&#39;- Source ARTS standard&#xa;PartyRole idenfies, names and describes different parts a Party may play when interacting with a retailer. &#xa;PartyRole is an imporant concept because is enables one person or organization to play multiple parts (e.g. a worker who is also a customer) without having to replicate name, address and other contract data.&#xa; Some examples of PartyRoles are: &#xa;CONSUMER  &#xa;VENDOR &#xa;SUPPLIER &#xa;TAX AUTHORITY" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2157" y="700" width="717" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-2" value="PARTY CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-2" value="PARTY CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2590" y="177.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-4" target="Rxw9TpJuqGOOrU77mITQ-2">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-4" target="Rxw9TpJuqGOOrU77mITQ-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-4" value="TELEPHONE CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-4" value="TELEPHONE CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2590" y="267.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-6" target="Rxw9TpJuqGOOrU77mITQ-2">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-6" target="Rxw9TpJuqGOOrU77mITQ-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="2510" y="247.5" />
@@ -876,10 +867,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-6" value="ELECTRONIC CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-6" value="ELECTRONIC CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2450" y="267.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-9" target="Rxw9TpJuqGOOrU77mITQ-2">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-9" target="Rxw9TpJuqGOOrU77mITQ-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="2790" y="247.5" />
@@ -887,10 +878,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-9" value="SHIPPING CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-9" value="SHIPPING CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2730" y="267.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-17" target="VJ1IluJ-gQTXWhJxdASa-12">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-17" target="VJ1IluJ-gQTXWhJxdASa-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1710" y="250" />
@@ -898,10 +889,10 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-17" value="VENDOR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-17" value="VENDOR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="1654" y="277.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-19" target="VJ1IluJ-gQTXWhJxdASa-12">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-19" target="VJ1IluJ-gQTXWhJxdASa-12" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="2000" y="250" />
@@ -909,98 +900,104 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-19" value="SUPPLIER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-19" value="SUPPLIER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="1940" y="277.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-23" value="PARTY CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-23" value="PARTY CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2014" y="1020" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-24" value="Associative entity denoting how a Party (in a particular role) may be contacted for a particular purpose." style="text;whiteSpace=wrap;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=17;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-24" value="Associative entity denoting how a Party (in a particular role) may be contacted for a particular purpose." style="text;whiteSpace=wrap;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=17;" parent="1" vertex="1">
           <mxGeometry x="2157" y="1020" width="713" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-25" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.omg.org/retail-depository/arts-odm-73/arts_odm_v73_figure_0007.png;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-25" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.omg.org/retail-depository/arts-odm-73/arts_odm_v73_figure_0007.png;" parent="1" vertex="1">
           <mxGeometry x="70" y="1240" width="1200" height="694" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-29" target="Rxw9TpJuqGOOrU77mITQ-27">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-29" target="Rxw9TpJuqGOOrU77mITQ-27" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-26" value="PROSPECT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-26" value="PROSPECT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="70" y="1040" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-27" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-27" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="760" y="1040" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-26" target="Rxw9TpJuqGOOrU77mITQ-29">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-26" target="Rxw9TpJuqGOOrU77mITQ-29" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="190" y="1065" as="sourcePoint" />
             <mxPoint x="760" y="1065" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-29" value="????" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-29" value="????" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="300" y="1030" width="370" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-31" value="BILLING CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-31" value="BILLING CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2874" y="267.5" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-33" target="Rxw9TpJuqGOOrU77mITQ-9">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-33" target="Rxw9TpJuqGOOrU77mITQ-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-33" target="Rxw9TpJuqGOOrU77mITQ-31">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-33" target="Rxw9TpJuqGOOrU77mITQ-31" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-33" value="ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-33" value="ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2790" y="370" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-34" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.atlasante.fr/upload/gedit/1/picto_geoloc.png;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-34" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.atlasante.fr/upload/gedit/1/picto_geoloc.png;" parent="1" vertex="1">
           <mxGeometry x="2835" y="403.75" width="30" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-37" target="Rxw9TpJuqGOOrU77mITQ-4">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-37" target="Rxw9TpJuqGOOrU77mITQ-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-37" value="PHONE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-37" value="PHONE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2600" y="370" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-38" value="" style="shape=mxgraph.signs.tech.telephone_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-38" value="" style="shape=mxgraph.signs.tech.telephone_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" parent="1" vertex="1">
           <mxGeometry x="2655" y="405.75" width="10" height="28" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-39" target="Rxw9TpJuqGOOrU77mITQ-6">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-39" target="Rxw9TpJuqGOOrU77mITQ-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-39" value="EMAIL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-39" value="EMAIL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
           <mxGeometry x="2450" y="370" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-40" value="" style="shape=mxgraph.signs.tech.at_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-40" value="" style="shape=mxgraph.signs.tech.at_2;html=1;pointerEvents=1;fillColor=#000000;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" parent="1" vertex="1">
           <mxGeometry x="2500" y="410" width="20" height="17.5" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-43" target="VJ1IluJ-gQTXWhJxdASa-10">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Rxw9TpJuqGOOrU77mITQ-43" target="VJ1IluJ-gQTXWhJxdASa-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-43" value="ORGANIZATION UNIT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-43" value="ORGANIZATION UNIT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="2250" y="280" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-45" value="To be discussed &amp;gt; Service" style="ellipse;whiteSpace=wrap;html=1;fontSize=15;dashed=1;fontStyle=2;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-45" value="To be discussed &amp;gt; Service" style="ellipse;whiteSpace=wrap;html=1;fontSize=15;dashed=1;fontStyle=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="2180" y="340" width="190" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-46" value="ACCOUNT ???" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="-250" y="106.25" width="120" height="50" as="geometry" />
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-46" value="ACCOUNT ???" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="-220" y="100" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-47" value="SITE ??" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="-730" y="217.5" width="120" height="50" as="geometry" />
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-47" value="SITE ??" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="-240" y="10" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-48" value="&#39;- To be completed&#xa;Some examples : the commercial hierarchy may be composed by organization, a school, a collectivity, a district etc." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-48" value="&#39;- To be completed&#xa;Some examples : the commercial hierarchy may be composed by organization, a school, a collectivity, a district etc." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" parent="1" vertex="1">
           <mxGeometry x="170" y="250" width="850" height="72.5" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-49" value="ORGANIZATION COMMERCIAL HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-49" value="ORGANIZATION COMMERCIAL HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="10" y="250" width="140" height="72.5" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-50" value="ORGANIZATION ENTITY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-50" value="ORGANIZATION ENTITY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="10" y="340" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-51" value="&#39;- An entity of the organization commercial hierarchy which may not be registered with a local authority. An organization entity may not be an organization." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-51" value="&#39;- An entity of the organization commercial hierarchy which may not be registered with a local authority. An organization entity may not be an organization." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" parent="1" vertex="1">
           <mxGeometry x="170" y="340" width="850" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-53" value="&lt;p style=&quot;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black; background: white;&quot; lang=&quot;EN-US&quot;&gt;A business concern or a group of&#xa;individuals that are systematically bound by a common purpose, with or without&#xa;a legal status. Organizations may be legal entities in their own right.&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black;&quot; lang=&quot;EN-US&quot;&gt;&lt;br&gt;&#xa;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;Various types of organizations include and are&#xa;not limited to:&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- government (e.g. federal, state, regional,&#xa;local, and various agencies)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- commercial organizations (limited companies,&#xa;publicly quoted multinationals, subsidiaries, etc.)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- organizational units (e.g. branches,&#xa;departments, teams, etc.)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- informal groups (e.g. clubs, societies,&#xa;charities, interest groups, etc.)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- other similar entities&lt;/span&gt;&lt;br&gt;&#xa;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;Note: Various details, such as name, legal&#xa;status, nature of operations, are not included within organization because&#xa;organizations may have multiple names, operations and legal details. These&#xa;concepts are addressed via associations to related classes (OrganizationName,&#xa;OrganizationDetail).&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
-          <mxGeometry x="1060" y="20" width="460" height="480" as="geometry" />
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-53" value="&lt;p style=&quot;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto&quot; class=&quot;MsoNormal&quot;&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black; background: white;&quot; lang=&quot;EN-US&quot;&gt;A business concern or a group of&#xa;individuals that are systematically bound by a common purpose, with or without&#xa;a legal status. Organizations may be legal entities in their own right.&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: black;&quot; lang=&quot;EN-US&quot;&gt;&lt;br&gt;&#xa;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;Various types of organizations include and are&#xa;not limited to:&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- government (e.g. federal, state, regional,&#xa;local, and various agencies)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- commercial organizations (limited companies,&#xa;publicly quoted multinationals, subsidiaries, etc.)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- organizational units (e.g. branches,&#xa;departments, teams, etc.)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- informal groups (e.g. clubs, societies,&#xa;charities, interest groups, etc.)&lt;/span&gt;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;- other similar entities&lt;/span&gt;&lt;br&gt;&#xa;&lt;br&gt;&#xa;&lt;span style=&quot;background:white&quot;&gt;Note: Various details, such as name, legal&#xa;status, nature of operations, are not included within organization because&#xa;organizations may have multiple names, operations and legal details. These&#xa;concepts are addressed via associations to related classes (OrganizationName,&#xa;OrganizationDetail).&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
+          <mxGeometry x="-840" y="105" width="580" height="505" as="geometry" />
+        </mxCell>
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-1" value="ORGANIZATION&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="30" y="-270" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-2" value="- Proposal&#xa;A business concern or a group of individuals that are systematically bound by a common purpose, with or without a legal status. Organizations may be legal entities in their own right.&#xa;&#xa;Various types of organizations include and are not limited to:&#xa;- government (e.g. federal, state, regional, local, and various agencies)&#xa;- commercial organizations (limited companies, publicly quoted multinationals, subsidiaries, etc.)&#xa;- organizational units (e.g. branches, departments, teams, etc.)&#xa;- informal groups (e.g. clubs, societies,charities, interest groups, etc.)&#xa;- other similar entities" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="170" y="-270" width="1170" height="220" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
