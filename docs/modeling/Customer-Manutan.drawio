@@ -776,7 +776,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="TbsO8wDSgbEmVkQzaM7U" name="Workshop">
-    <mxGraphModel dx="2252" dy="1958" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2253" dy="1958" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1002,7 +1002,7 @@
         <mxCell id="EutR6rYZuYN3fVtVQIUd-1" value="ORGANIZATION&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
           <mxGeometry x="-40" y="-310" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="EutR6rYZuYN3fVtVQIUd-2" value="- Proposal&#xa;A business concern or a group of individuals that are systematically bound by a common purpose, with or without a legal status. Organizations may be legal entities in their own right.&#xa;&#xa;Various types of organizations include and are not limited to:&#xa;- government (e.g. federal, state, regional, local, and various agencies)&#xa;- commercial organizations (limited companies, publicly quoted multinationals, subsidiaries, etc.)&#xa;- organizational units (e.g. branches, departments, teams, etc.)&#xa;- informal groups (e.g. clubs, societies,charities, interest groups, etc.)&#xa;- other similar entities&#xa;&#xa;Synonym/Alias&#xa;Organization entity" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" vertex="1" parent="1">
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-2" value="- Proposal&#xa;A business concern or a group of individuals that are systematically bound by a common purpose, with or without a legal status. Organizations may be legal entities in their own right.&#xa;&#xa;Various types of organizations include and are not limited to:&#xa;- government (e.g. federal, state, regional, local, and various agencies)&#xa;- commercial organizations (limited companies, publicly quoted multinationals, subsidiaries, etc.)&#xa;- organizational units (e.g. branches, departments, teams, etc.)&#xa;- informal groups (e.g. clubs, societies,charities, interest groups, etc.)&#xa;- other similar entities&#xa;&#xa;Synonym/Alias&#xa;Organization entity (as previously defined in New Front)" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="170" y="-310" width="1170" height="260" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-4" value="NON LEGAL ORGANIZATION (Tbc)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=2" vertex="1" parent="1">
