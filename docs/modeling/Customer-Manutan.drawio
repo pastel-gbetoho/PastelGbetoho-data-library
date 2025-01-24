@@ -780,7 +780,7 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="KGn72UojuLdnX_vRC6gp-1" value="ORGANIZATION ENTITY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="KGn72UojuLdnX_vRC6gp-1" value="LEGAL ORGANIZATION (Tbc)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="30" y="-20" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="KGn72UojuLdnX_vRC6gp-2" value="&#39;- Source Manutan Glossary Data Office&#xa;Legal entity registered on the official repository on the market or not, an organisation can also be a delivery account for the Facility management or Construction sector.&#xa;&#xa;- Source ARTS standard&#xa;A company, association, institution, or other enterprise of interest to a retail store or retail enterprise. &#xa;&#xa;Proposal&#xa;Legal entity registered on the official repository on the market (refer to a geographical region like Belgium) or not. An organization may be a company, association, institution, or other enterprise of interest to a retail store or retail enterprise. " style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" parent="1" vertex="1">
@@ -973,10 +973,10 @@
           <mxGeometry x="2180" y="340" width="190" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-46" value="ACCOUNT ???" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="-240" y="70" width="120" height="50" as="geometry" />
+          <mxGeometry x="-290" y="170" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-47" value="SITE ??" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="-240" y="10" width="120" height="50" as="geometry" />
+          <mxGeometry x="-290" y="110" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-48" value="&#39;- To be completed&#xa;Some examples : the commercial hierarchy may be composed by organization, a school, a collectivity, a district etc." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" parent="1" vertex="1">
           <mxGeometry x="170" y="250" width="850" height="72.5" as="geometry" />
@@ -994,19 +994,19 @@
           <mxGeometry x="170" y="-360" width="850" height="60" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-1" value="ORGANIZATION&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="30" y="-270" width="120" height="50" as="geometry" />
+          <mxGeometry x="-40" y="-270" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-2" value="- Proposal&#xa;A business concern or a group of individuals that are systematically bound by a common purpose, with or without a legal status. Organizations may be legal entities in their own right.&#xa;&#xa;Various types of organizations include and are not limited to:&#xa;- government (e.g. federal, state, regional, local, and various agencies)&#xa;- commercial organizations (limited companies, publicly quoted multinationals, subsidiaries, etc.)&#xa;- organizational units (e.g. branches, departments, teams, etc.)&#xa;- informal groups (e.g. clubs, societies,charities, interest groups, etc.)&#xa;- other similar entities" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="170" y="-270" width="1170" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="EutR6rYZuYN3fVtVQIUd-4" value="TRANSACTIONAL ORGANIZATION (Tbc)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="-200" y="-120" width="120" height="50" as="geometry" />
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-4" value="NON LEGAL ORGANIZATION (Tbc)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="-200" y="-20" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.408;entryY=1.02;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="EutR6rYZuYN3fVtVQIUd-4" target="EutR6rYZuYN3fVtVQIUd-1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="-140" y="-160" />
-              <mxPoint x="79" y="-160" />
+              <mxPoint x="-140" y="-120" />
+              <mxPoint x="10" y="-120" />
             </Array>
           </mxGeometry>
         </mxCell>
