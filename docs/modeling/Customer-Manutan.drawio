@@ -163,13 +163,10 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Concept-Model" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
-    <mxGraphModel dx="2212" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2253" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="rktopHRJ8DNvwgO-e6lh-111" value="CUSTOMER DATA CONCEPT MODEL" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1A1A1A;fillStyle=cross-hatch;verticalAlign=top;align=left;fontStyle=1;fontSize=12;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="-535" y="10" width="1280" height="590" as="geometry" />
-        </mxCell>
         <mxCell id="rktopHRJ8DNvwgO-e6lh-108" value="MDM CUSTOMER&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;DATA DICTIONARY&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fillStyle=cross-hatch;verticalAlign=top;align=left;fontStyle=1;fontSize=12;" parent="1" vertex="1">
           <mxGeometry x="-500" y="640" width="1210" height="530" as="geometry" />
         </mxCell>
@@ -542,7 +539,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="w-zjFCQUK6SnbxOgg3gS-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;strokeColor=#FF0000;dashed=1;" edge="1" parent="1" source="rktopHRJ8DNvwgO-e6lh-113" target="rktopHRJ8DNvwgO-e6lh-66">
+        <mxCell id="w-zjFCQUK6SnbxOgg3gS-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;strokeColor=#FF0000;dashed=1;" parent="1" source="rktopHRJ8DNvwgO-e6lh-113" target="rktopHRJ8DNvwgO-e6lh-66" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="-50" y="660" as="sourcePoint" />
             <mxPoint x="-350" y="700" as="targetPoint" />
@@ -800,6 +797,50 @@
         </mxCell>
         <mxCell id="m5O9iqH8MdRh2pGl83cy-2" value="&#39;- Source Manutan Glossary Data Office&#xa;A Legal Entity or Individual person which has an interaction with Manutan. &#xa;This entity can be shared by several SISCO companies. A Customer can also be a Prospect.&#xa;&#xa;&#xa;- Source ARTS standard&#xa;A customer that has registered with the retailer and in addition to a unique identifier has provided name, address, phone, email and other personal contact information. KeyCustomer is the basis for establishing an account relationship between a customer and the retailer. It can be thoguht of as the registration (i.e. personal contact information) part of setting up an account relationship." style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="170" y="520" width="710" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-4" target="VJ1IluJ-gQTXWhJxdASa-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-20" value="plays" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="VJ1IluJ-gQTXWhJxdASa-19">
+          <mxGeometry x="0.2949" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-4" value="PARTY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1700" y="120" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-6" target="VJ1IluJ-gQTXWhJxdASa-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-6" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="220" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-10" target="VJ1IluJ-gQTXWhJxdASa-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-10" value="ORGANIZATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1800" y="220" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-12" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="2170" y="200" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=block;endFill=1;" edge="1" parent="1" source="VJ1IluJ-gQTXWhJxdASa-14" target="VJ1IluJ-gQTXWhJxdASa-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-14" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="2170" y="300" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-21" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="690" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-22" value="PARTY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="530" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-23" value="&#39;- Source ARTS standard&#xa;A person or organization that exchanges information, tender and/or goods and services with the retailer." style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1743" y="530" width="717" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="VJ1IluJ-gQTXWhJxdASa-24" value="&#39;- Source ARTS standard&#xa;PartyRole idenfies, names and describes different parts a Party may play when interacting with a retailer. &#xa;PartyRole is an imporant concept because is enables one person or organization to play multiple parts (e.g. a worker who is also a customer) without having to replicate name, address and other contract data.&#xa; Some examples of PartyRoles are: &#xa;CONSUMER  &#xa;VENDOR &#xa;SUPPLIER &#xa;TAX AUTHORITY" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1743" y="690" width="717" height="250" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
