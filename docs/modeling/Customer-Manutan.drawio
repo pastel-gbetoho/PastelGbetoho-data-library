@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0" version="25.0.3" pages="3">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.0.0" version="26.0.6" pages="4">
   <diagram id="3SsXuXorR8MkxOcHxRdg" name="Orga-creation-notes">
     <mxGraphModel dx="2212" dy="791" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -774,6 +774,32 @@
         </mxCell>
         <mxCell id="cFFg276F6OYBAgXTRx5S-5" value="&lt;p style=&quot;language:fr;margin-top:0pt;margin-bottom:0pt;margin-left:0in;&lt;br/&gt;text-align:left;direction:ltr;unicode-bidi:embed;vertical-align:middle;&lt;br/&gt;mso-line-break-override:none;word-break:normal;punctuation-wrap:hanging&quot;&gt;&lt;span&gt;Data element specific to AX&lt;/span&gt;&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=middle;fontSize=14;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="464" y="2596" width="158" height="74" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="TbsO8wDSgbEmVkQzaM7U" name="Workshop">
+    <mxGraphModel dx="1426" dy="789" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KGn72UojuLdnX_vRC6gp-1" value="ORGANIZATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="KGn72UojuLdnX_vRC6gp-2" value="&#39;- Source Manutan Glossary Data Office&#xa;Legal entity registered on the official repository on the market or not, an organisation can also be a delivery account for the Facility management or Construction sector.&#xa;&#xa;&#xa;- Source ARTS standard&#xa;A company, association, institution, or other enterprise of interest to a retail store or retail enterprise. " style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="720" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="XWLveK6KwTiUFSgzeb3u-1" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="30" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="XWLveK6KwTiUFSgzeb3u-2" value="&#39;- Source Manutan Glossary Data Office (Individual ?)&#xa;Data linked to the information of individuals (B2C) who places an order with Manutan or being a delivery site&#xa;&#xa;- Source ARTS standard&#xa;A sub-type of party that represents an individual of interest to the retail store or retail enterprise." style="text;whiteSpace=wrap;fontSize=17;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="170" y="280" width="710" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="m5O9iqH8MdRh2pGl83cy-1" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="30" y="520" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="m5O9iqH8MdRh2pGl83cy-2" value="&#39;- Source Manutan Glossary Data Office&#xa;A Legal Entity or Individual person which has an interaction with Manutan. &#xa;This entity can be shared by several SISCO companies. A Customer can also be a Prospect.&#xa;&#xa;&#xa;- Source ARTS standard&#xa;A customer that has registered with the retailer and in addition to a unique identifier has provided name, address, phone, email and other personal contact information. KeyCustomer is the basis for establishing an account relationship between a customer and the retailer. It can be thoguht of as the registration (i.e. personal contact information) part of setting up an account relationship." style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="170" y="520" width="710" height="240" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
