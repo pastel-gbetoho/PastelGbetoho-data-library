@@ -787,16 +787,16 @@
           <mxGeometry x="170" y="-20" width="1170" height="220" as="geometry" />
         </mxCell>
         <mxCell id="XWLveK6KwTiUFSgzeb3u-1" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="30" y="420" width="120" height="50" as="geometry" />
+          <mxGeometry x="30" y="630" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="XWLveK6KwTiUFSgzeb3u-2" value="&#39;- Source Manutan Glossary Data Office (Individual ?)&#xa;Data linked to the information of individuals (B2C) who places an order with Manutan or being a delivery site&#xa;&#xa;- Source ARTS standard&#xa;A sub-type of party that represents an individual of interest to the retail store or retail enterprise." style="text;whiteSpace=wrap;fontSize=17;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="170" y="420" width="850" height="180" as="geometry" />
+          <mxGeometry x="170" y="630" width="1170" height="120" as="geometry" />
         </mxCell>
         <mxCell id="m5O9iqH8MdRh2pGl83cy-1" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="30" y="622.5" width="120" height="50" as="geometry" />
+          <mxGeometry x="40" y="772.5" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="m5O9iqH8MdRh2pGl83cy-2" value="&#39;- Source Manutan Glossary Data Office&#xa;A Legal Entity or Individual person which has an interaction (quotation, order, contract...) with Manutan. &#xa;This entity can be shared by several SISCO companies. A Customer can also be a Prospect.&#xa;&#xa;- Source ARTS standard&#xa;A customer that has registered with the retailer and in addition to a unique identifier has provided name, address, phone, email and other personal contact information. KeyCustomer is the basis for establishing an account relationship between a customer and the retailer. It can be thoguht of as the registration (i.e. personal contact information) part of setting up an account relationship.&#xa;&#xa;Proposal &#xa;" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="170" y="622.5" width="830" height="320" as="geometry" />
+          <mxGeometry x="180" y="772.5" width="1190" height="217.5" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="VJ1IluJ-gQTXWhJxdASa-4" target="VJ1IluJ-gQTXWhJxdASa-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -973,31 +973,31 @@
           <mxGeometry x="2180" y="340" width="190" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-46" value="ACCOUNT ???" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="-290" y="170" width="120" height="50" as="geometry" />
+          <mxGeometry x="-530" y="-80" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-47" value="SITE ??" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="-290" y="110" width="120" height="50" as="geometry" />
+          <mxGeometry x="-530" y="-140" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-48" value="&#39;- To be completed&#xa;Some examples : the commercial hierarchy may be composed by organization, a school, a collectivity, a district etc." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" parent="1" vertex="1">
-          <mxGeometry x="170" y="250" width="850" height="72.5" as="geometry" />
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-48" value="&#39;- To be completed&#xa;Some examples : the commercial hierarchy is composed by legal and non legal organization.&#xa;&#xa;Synonym/Alias&#xa;Business hierarchy, Organization commercial hierarchy" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" parent="1" vertex="1">
+          <mxGeometry x="170" y="250" width="1170" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-49" value="ORGANIZATION COMMERCIAL HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-49" value="COMMERCIAL HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="10" y="250" width="140" height="72.5" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-50" target="EutR6rYZuYN3fVtVQIUd-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-50" value="ORGANIZATION ENTITY&lt;div&gt;(NEW FRONT)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
-          <mxGeometry x="10" y="-360" width="140" height="60" as="geometry" />
+          <mxGeometry x="10" y="-420" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-51" value="&#39;- An entity of the organization commercial hierarchy which may not be registered with a local authority. An organization entity may not be an organization." style="text;whiteSpace=wrap;fillColor=#f5f5f5;strokeColor=#666666;fontSize=17;fontColor=#333333;" parent="1" vertex="1">
-          <mxGeometry x="170" y="-360" width="850" height="60" as="geometry" />
+          <mxGeometry x="170" y="-420" width="850" height="60" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-1" value="ORGANIZATION&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="-40" y="-270" width="120" height="50" as="geometry" />
+          <mxGeometry x="-40" y="-310" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="EutR6rYZuYN3fVtVQIUd-2" value="- Proposal&#xa;A business concern or a group of individuals that are systematically bound by a common purpose, with or without a legal status. Organizations may be legal entities in their own right.&#xa;&#xa;Various types of organizations include and are not limited to:&#xa;- government (e.g. federal, state, regional, local, and various agencies)&#xa;- commercial organizations (limited companies, publicly quoted multinationals, subsidiaries, etc.)&#xa;- organizational units (e.g. branches, departments, teams, etc.)&#xa;- informal groups (e.g. clubs, societies,charities, interest groups, etc.)&#xa;- other similar entities" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="170" y="-270" width="1170" height="220" as="geometry" />
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-2" value="- Proposal&#xa;A business concern or a group of individuals that are systematically bound by a common purpose, with or without a legal status. Organizations may be legal entities in their own right.&#xa;&#xa;Various types of organizations include and are not limited to:&#xa;- government (e.g. federal, state, regional, local, and various agencies)&#xa;- commercial organizations (limited companies, publicly quoted multinationals, subsidiaries, etc.)&#xa;- organizational units (e.g. branches, departments, teams, etc.)&#xa;- informal groups (e.g. clubs, societies,charities, interest groups, etc.)&#xa;- other similar entities&#xa;&#xa;Synonym/Alias&#xa;Organization entity" style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="170" y="-310" width="1170" height="260" as="geometry" />
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-4" value="NON LEGAL ORGANIZATION (Tbc)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=2" vertex="1" parent="1">
           <mxGeometry x="-200" y="-20" width="120" height="50" as="geometry" />
@@ -1012,6 +1012,12 @@
         </mxCell>
         <mxCell id="EutR6rYZuYN3fVtVQIUd-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.417;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KGn72UojuLdnX_vRC6gp-1" target="EutR6rYZuYN3fVtVQIUd-1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-7" value="&#39;- To be completed&#xa;Some examples : the legal hierarchy is composed only by legal organization." style="text;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="170" y="390" width="1170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="EutR6rYZuYN3fVtVQIUd-8" value="LEGAL HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="5" y="380" width="140" height="72.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
