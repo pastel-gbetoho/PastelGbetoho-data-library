@@ -850,7 +850,7 @@
         <mxCell id="VJ1IluJ-gQTXWhJxdASa-24" value="&#39;- Source ARTS standard&#xa;PartyRole idenfies, names and describes different parts a Party may play when interacting with a retailer. &#xa;PartyRole is an imporant concept because is enables one person or organization to play multiple parts (e.g. a worker who is also a customer) without having to replicate name, address and other contract data.&#xa; Some examples of PartyRoles are: &#xa;CONSUMER  &#xa;VENDOR &#xa;SUPPLIER &#xa;TAX AUTHORITY" style="text;whiteSpace=wrap;fontSize=17;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="2157" y="700" width="717" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="Rxw9TpJuqGOOrU77mITQ-2" value="CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-2" value="PARTY CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="2590" y="177.5" width="120" height="50" as="geometry" />
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="Rxw9TpJuqGOOrU77mITQ-4" target="Rxw9TpJuqGOOrU77mITQ-2">
@@ -911,6 +911,12 @@
         </mxCell>
         <mxCell id="Rxw9TpJuqGOOrU77mITQ-19" value="SUPPLIER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="1940" y="277.5" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-23" value="PARTY CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="2014" y="1020" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Rxw9TpJuqGOOrU77mITQ-24" value="Associative entity denoting how a Party (in a particular role) may be contacted for a particular purpose." style="text;whiteSpace=wrap;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontSize=17;" vertex="1" parent="1">
+          <mxGeometry x="2157" y="1020" width="713" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
