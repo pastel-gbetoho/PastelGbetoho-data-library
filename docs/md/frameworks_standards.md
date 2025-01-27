@@ -29,6 +29,10 @@
 
 + : [SALESFORCE Data Models Gallery](https://architect.salesforce.com/diagrams#data-model-gallery)
  
+## IT4T
+
++ : [DMTF’s Common Information Model (CIM)](https://www.dmtf.org/standards/cim)
+
 
 ## Generic
 
