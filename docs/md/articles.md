@@ -64,3 +64,4 @@
 ## Database management systems
 
 + Microsoft Docs: [Database-Level Roles - SQL Servers](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15)
++ List of DBMS and ranking: [Knowledge Base of Relational and NoSQL Database Management Systems](https://db-engines.com/en/)
