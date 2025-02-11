@@ -1074,37 +1074,46 @@
           <mxGeometry x="350" y="-1160" width="410" height="180" as="geometry" />
         </mxCell>
         <mxCell id="xfKviAj4Ktug7MvMjckw-2" value="ORGANIZATION ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;arcSize=8;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="10" y="-830" width="210" height="130" as="geometry" />
+          <mxGeometry x="414" y="-750" width="210" height="130" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-1" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="19" y="-805" width="90" height="40" as="geometry" />
+          <mxGeometry x="423" y="-725" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-2" value="SUPPLIER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="120" y="-805" width="90" height="40" as="geometry" />
+          <mxGeometry x="524" y="-725" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-3" value="VENDOR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="19" y="-750" width="90" height="40" as="geometry" />
+          <mxGeometry x="423" y="-670" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-4" value="PERSON ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;arcSize=8;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="230" y="-830" width="210" height="130" as="geometry" />
+          <mxGeometry x="634" y="-750" width="210" height="130" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-5" value="CUSTOMER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="240" y="-805" width="90" height="40" as="geometry" />
+          <mxGeometry x="644" y="-725" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-6" value="BUYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="340" y="-805" width="90" height="40" as="geometry" />
+          <mxGeometry x="744" y="-725" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-7" value="INVOICE PAYER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="120" y="-750" width="90" height="40" as="geometry" />
+          <mxGeometry x="524" y="-670" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="RCpK9NeuJCEC7r5n4Rqo-8" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="240" y="-750" width="90" height="40" as="geometry" />
+          <mxGeometry x="644" y="-670" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="TKVYi_OlfzzfRNM0FWJw-1" value="PARTY ROLE IN RELATIONSHIP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="360" y="-1130" width="190" height="50" as="geometry" />
         </mxCell>
         <mxCell id="TKVYi_OlfzzfRNM0FWJw-2" value="PARTY ROLE IN AGREEMENT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="560" y="-1130" width="190" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TKVYi_OlfzzfRNM0FWJw-3" value="CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=7;verticalAlign=top;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="10" y="-950" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="TKVYi_OlfzzfRNM0FWJw-4" value="ADRESS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=7;verticalAlign=top;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="-950" width="330" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="TKVYi_OlfzzfRNM0FWJw-5" value="PREFERENCES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;arcSize=7;verticalAlign=top;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="-950" width="330" height="130" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
