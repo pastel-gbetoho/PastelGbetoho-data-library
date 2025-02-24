@@ -1194,25 +1194,28 @@
           <mxGeometry x="260" y="-930" width="210" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-54" value="EMPLOYEE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;verticalAlign=top;arcSize=8;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="-890" width="210" height="150" as="geometry" />
+          <mxGeometry x="260" y="-860" width="210" height="140" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-56" value="ACCOUNT MANAGER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="270" y="-860" width="190" height="30" as="geometry" />
+          <mxGeometry x="270" y="-840" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-57" value="SALES REP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="270" y="-820" width="190" height="30" as="geometry" />
+          <mxGeometry x="270" y="-800" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-58" value="CUSTOMER SUPPORT AGENT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="270" y="-780" width="190" height="30" as="geometry" />
+          <mxGeometry x="270" y="-760" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-59" value="CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;verticalAlign=top;arcSize=8;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="260" y="-730" width="210" height="124" as="geometry" />
+          <mxGeometry x="260" y="-710" width="210" height="100" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-60" value="PHYSICAL CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="270" y="-700" width="190" height="30" as="geometry" />
+          <mxGeometry x="270" y="-690" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-61" value="GENERIC CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="270" y="-660" width="190" height="30" as="geometry" />
+          <mxGeometry x="270" y="-650" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="2oNnX8oOHyufmp1LPs13-62" value="PROSPECT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="260" y="-895" width="210" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
