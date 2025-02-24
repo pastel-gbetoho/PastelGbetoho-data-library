@@ -40,6 +40,7 @@
 + : [CIM](https://github.com/cloudinformationmodel/cloudinformationmodel)
 + : [Microsoft Common Data Model](https://microsoft.github.io/CDM/)
 + : [SCHEMA ORG](https://github.com/schemaorg/schemaorg)
++ : [Microsoft Dynamics 356 GLOBAL ADDRESS BOOK](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/organization-administration/overview-global-address-book)
 
  
 ## Others standards
