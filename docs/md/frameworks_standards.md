@@ -24,6 +24,7 @@
 
 + : [ARTS](https://www.omg.org/retail-depository/arts-odm-73/)
 + : [Oracle Retail Data Model](https://docs.oracle.com/cd/E14439_01/bi.1022/e10084/logical.htm)
++ : [GS1 Standards](https://www.gs1.org/standards)
  
 
 ## Vendors
