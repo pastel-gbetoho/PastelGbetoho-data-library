@@ -1215,7 +1215,7 @@
           <mxGeometry x="260" y="-895" width="210" height="30" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-65" value="CONTACT &amp;amp; COMMUNICATIONS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;arcSize=4;verticalAlign=top;fontSize=12;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="970" y="-1160" width="230" height="370" as="geometry" />
+          <mxGeometry x="970" y="-1160" width="230" height="560" as="geometry" />
         </mxCell>
         <mxCell id="2oNnX8oOHyufmp1LPs13-66" value="CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;verticalAlign=top;arcSize=8;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
           <mxGeometry x="980" y="-1130" width="210" height="150" as="geometry" />
@@ -1240,6 +1240,9 @@
         </mxCell>
         <mxCell id="eDm6R_lBHYBzQ0tO3-au-2" value="DELIVERY SITE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="980" y="-850" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="eDm6R_lBHYBzQ0tO3-au-3" value="ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;verticalAlign=top;arcSize=8;fontSize=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="980" y="-810" width="210" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
