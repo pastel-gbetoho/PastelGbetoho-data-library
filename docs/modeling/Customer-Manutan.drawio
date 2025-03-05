@@ -1327,7 +1327,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-5" value="PERSON" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="70" y="600" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-6" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#333333;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-6" value="PARTY ROLE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#333333;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="90" width="230" height="560" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-7" value="ORGANIZATION DETAILS" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;arcSize=5;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1357,7 +1357,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-15" value="APPROVER" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="310" y="240" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-16" value="PARTY REGISTRATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#333333;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-16" value="PARTY REGISTRATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#333333;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="540" y="90" width="230" height="270" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-17" value="REGISTRATION" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1375,7 +1375,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-21" value="PARTY IDENTIFICATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="560" y="270" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-22" value="CUSTOMER ACCOUNT" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-22" value="CUSTOMER ACCOUNT" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="780" y="90" width="230" height="270" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-23" value="PAYMENT TERMS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1396,13 +1396,13 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-28" value="INVOICING CURRENCY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="800" y="310" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-29" value="CUSTOMER SEGMENTATION &amp;amp; CLASSIFICATION" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;verticalAlign=middle;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-29" value="CUSTOMER SEGMENTATION &amp;amp; CLASSIFICATION" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;verticalAlign=middle;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="540" y="370" width="230" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-30" value="LOYALITY PROGRAMS &amp;amp; ENGAGEMENT METRICS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=13;verticalAlign=middle;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-30" value="LOYALITY PROGRAMS &amp;amp; ENGAGEMENT METRICS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=13;verticalAlign=middle;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="780" y="370" width="230" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-31" value="USER" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-31" value="USER" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="540" y="420" width="470" height="110" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-32" value="ACCOUNT MANAGEMENT DETAILS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1417,7 +1417,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-35" value="USER CONSENT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="780" y="485" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-36" value="ORGANIZATION HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=3;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#333333;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-36" value="ORGANIZATION HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=3;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#333333;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="540" y="540" width="230" height="110" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-37" value="LEGAL HIERARCHY" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1468,7 +1468,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-52" value="PROSPECT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="310" y="355" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-53" value="CONTACT &amp;amp; COMMUNICATIONS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-53" value="CONTACT &amp;amp; COMMUNICATIONS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="1020" y="90" width="230" height="340" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-54" value="CONTACT METHOD" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;arcSize=4;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1489,7 +1489,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-59" value="SHIPPING CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="1040" y="222" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-60" value="DELIVERY" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-60" value="DELIVERY" style="rounded=1;whiteSpace=wrap;html=1;arcSize=5;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="780" y="540" width="230" height="110" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-61" value="DELIVERY SITE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1498,10 +1498,10 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-62" value="DELIVERY PREFERENCES" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="790" y="610" width="210" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-63" value="ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-63" value="ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="1260" y="90" width="230" height="560" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-64" value="AGREGATE DATA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-64" value="AGREGATE DATA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;arcSize=4;verticalAlign=top;fontSize=10;fontStyle=1;strokeWidth=0;shadow=1;" vertex="1" parent="1">
           <mxGeometry x="1020" y="440" width="230" height="210" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-65" value="CONTRACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
@@ -1531,7 +1531,7 @@
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-73" value="GLOBAL POSITION&amp;nbsp; ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="1280" y="380" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-74" value="NETWORK ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1ba1e2;strokeColor=#006EAF;verticalAlign=top;arcSize=8;fontSize=10;fontColor=#ffffff;strokeWidth=0;" vertex="1" parent="1">
+        <mxCell id="FcuAmZwFXFqYwwJxs6zZ-74" value="NETWORK ADDRESS" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
           <mxGeometry x="1270" y="440" width="210" height="105" as="geometry" />
         </mxCell>
         <mxCell id="FcuAmZwFXFqYwwJxs6zZ-75" value="EMAIL CONTACT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=middle;arcSize=8;fontSize=10;strokeWidth=0;" vertex="1" parent="1">
