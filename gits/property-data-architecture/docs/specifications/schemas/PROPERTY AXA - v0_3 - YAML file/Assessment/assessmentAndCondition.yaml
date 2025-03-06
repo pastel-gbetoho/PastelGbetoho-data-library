@@ -1,0 +1,10 @@
+assessmentResult:
+  assessmentResultIdentifier: Lorem
+  perils:
+    - EARTHQUAKE
+  financialValuation:
+    - typeCode: Building net market valuation
+      amount:
+        currencyCode: EUR
+        value: 4800
+      valuationDate: "2021-12-03"

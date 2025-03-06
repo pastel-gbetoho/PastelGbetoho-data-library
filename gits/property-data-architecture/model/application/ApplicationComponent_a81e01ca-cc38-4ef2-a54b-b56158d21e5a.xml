@@ -1,0 +1,5 @@
+<archimate:ApplicationComponent
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="RMS"
+    id="a81e01ca-cc38-4ef2-a54b-b56158d21e5a"
+    documentation="RMS for Geocoding (Risk Browser or Risk Link) and Cat modelling. &#xD;&#xA;RMS is also considered as Flood (FEMA) hazard data provider, however this is currently being reviewed and determined by program. "/>

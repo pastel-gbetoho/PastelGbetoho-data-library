@@ -1,0 +1,156 @@
+{
+    "placeIdentifier": "xyz123-placeA",
+    "Name": "AXA GO Java",
+    "structureCount": 2,
+    "surfaceAreaMeasurement": {},
+    "placeAddresses": [
+        {
+            "placeAddressIdentifier": "Lorem",
+            "unstructuredAddress": "61 Rue Mstislav Rostropovitch, 75017 Paris",
+            "streetAddress": {
+                "unstructuredAddress": "61 Rue Mstislav Rostropovitch",
+                "name": "Mstislav Rostropovitch",
+                "number": "61",
+                "typeCode": "RUE",
+                "preDirectionCode": "Lorem",
+                "postDirectionCode": "Lorem"
+            },
+            "postCode": "75017",
+            "municipality": {
+                "name": "PARIS",
+                "typeCode": "CITY"
+            },
+            "country": {
+                "alphaIsoCode": "FR",
+                "name": "France"
+            },
+            "countrySubdivisions": [
+                {
+                    "alphaIsoCode": "FR-IDF",
+                    "name": "Île-de-France",
+                    "typeCode": "Region"
+                }
+            ],
+            "geographicRegionName": "Lorem",
+            "globalPositionAddresses": [
+                {
+                    "coordinateSystemCode": "Lorem",
+                    "latitude": 48.8763,
+                    "longitude": 2.3183,
+                    "elevation": -29,
+                    "geocodingResolution": "Lorem"
+                }
+            ],
+            "postalAddress": {
+                "unitNumber": -17,
+                "floorNumber": -82,
+                "addressLines": "Lorem"
+            }
+        }
+    ],
+    "structures": [
+        {
+            "structureIdentifier": "java-75017-fr",
+            "name": "Java",
+            "typeCode": "building",
+            "materialTypeCode": [
+                "brick"
+            ],
+            "constructionYear": 1970,
+            "renovationYear": 1992,
+            "unitCount": 1,
+            "structureComponentsDetails": [
+                {
+                    "typeCode": "ROOF",
+                    "features": [
+                        {
+                            "feature": "Geomtry type",
+                            "featureValue": "Lorem"
+                        }
+                    ],
+                    "dimension": [
+                        {
+                            "typeCode": "AREA",
+                            "measure": {
+                                "unitCode": "m2",
+                                "value": 208
+                            }
+                        }
+                    ]
+                }
+            ],
+            "structureComponentsAggregate": {
+                "floorCount": 1,
+                "bathroomCount": 16,
+                "parkingCount": -24,
+                "roomCount": -75
+            },
+            "structureDimensions": [
+                {
+                    "typeCode": "AREA",
+                    "measure": {
+                        "unitCode": "m2",
+                        "value": 208
+                    }
+                }
+            ],
+            "assessmentResults": [
+                {
+                    "assessmentResultIdentifier": "Lorem",
+                    "perils": [
+                        "EARTHQUAKE"
+                    ],
+                    "financialValuation": [
+                        {
+                            "typeCode": "Building net market valuation",
+                            "amount": {
+                                "currencyCode": "EUR",
+                                "value": 4800
+                            },
+                            "valuationDate": "2021-12-03"
+                        }
+                    ]
+                }
+            ],
+            "partyRoleOnPhysicalObject": [
+                {
+                    "typeCode": "OWNER",
+                    "partyIdentifier": "P1234567890"
+                }
+            ],
+            "geometry": {
+                "typeCode": "STRUCTURE",
+                "coordinates": [
+                    {
+                        "coordinateSystemCode": "Lorem",
+                        "latitude": 48.8763,
+                        "longitude": 2.3183,
+                        "elevation": -79,
+                        "geocodingResolution": "Lorem"
+                    }
+                ]
+            }
+        }
+    ],
+    "assessmentResults": [
+        {
+            "assessmentResultIdentifier": "Lorem",
+            "perils": [
+                "EARTHQUAKE"
+            ],
+            "financialValuation": [
+                {
+                    "typeCode": "Building net market valuation",
+                    "amount": {
+                        "currencyCode": "EUR",
+                        "value": 4800
+                    },
+                    "valuationDate": "2021-12-03"
+                }
+            ]
+        }
+    ],
+    "composingPlaces": [
+        "Lorem"
+    ]
+}

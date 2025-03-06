@@ -1,0 +1,6 @@
+# Pandoc
+*.exe
+*.log
+
+# Office
+~$

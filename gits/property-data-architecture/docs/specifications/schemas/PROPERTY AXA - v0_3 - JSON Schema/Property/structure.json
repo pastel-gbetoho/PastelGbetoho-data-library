@@ -1,0 +1,406 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "structure",
+    "$comment": "This concept is the generalizing concept representing all physical structures. To create specific instances of a structure where a specialization is not already included in the model, use the typeName attribute inherited from InformationModelObject to represent the type of structure. This eliminates the need for specific specializations to be created for every type of structure. It is recommended to use specializations when additional attribution is necessary.",
+    "properties": {
+        "structure": {
+            "type": "object",
+            "isActivated": true,
+            "properties": {
+                "structureIdentifier": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "java-75017-fr"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Java"
+                    ]
+                },
+                "typeCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "building"
+                    ]
+                },
+                "materialTypeCode": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "string",
+                        "isActivated": true,
+                        "examples": [
+                            "brick"
+                        ]
+                    }
+                },
+                "constructionYear": {
+                    "type": "integer",
+                    "isActivated": true,
+                    "examples": [
+                        1970
+                    ]
+                },
+                "renovationYear": {
+                    "type": "integer",
+                    "isActivated": true,
+                    "examples": [
+                        1992
+                    ]
+                },
+                "unitCount": {
+                    "type": "integer",
+                    "isActivated": true,
+                    "examples": [
+                        1
+                    ]
+                },
+                "structureComponentsDetails": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "object",
+                        "isActivated": true,
+                        "properties": {
+                            "typeCode": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "ROOF"
+                                ]
+                            },
+                            "features": {
+                                "type": "array",
+                                "isActivated": true,
+                                "items": {
+                                    "type": "object",
+                                    "isActivated": true,
+                                    "properties": {
+                                        "feature": {
+                                            "type": "string",
+                                            "isActivated": true,
+                                            "examples": [
+                                                "Geomtry type"
+                                            ]
+                                        },
+                                        "featureValue": {
+                                            "type": "string",
+                                            "isActivated": true
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "dimension": {
+                                "type": "array",
+                                "isActivated": true,
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "typeCode": {
+                                            "type": "string",
+                                            "enum": [
+                                                "AREA",
+                                                "DEPTH",
+                                                "HEIGHT",
+                                                "LENGTH",
+                                                "VOLUME",
+                                                "WEIGTH",
+                                                "WIDTH"
+                                            ],
+                                            "isActivated": true,
+                                            "examples": [
+                                                "AREA",
+                                                "HEIGHT"
+                                            ]
+                                        },
+                                        "measure": {
+                                            "type": "object",
+                                            "isActivated": true,
+                                            "properties": {
+                                                "unitCode": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "m2"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "type": "number",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        208
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": false
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "isActivated": true,
+                                    "required": [
+                                        "typeCode"
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": false,
+                        "displayName": "structureComponent"
+                    }
+                },
+                "structureComponentsAggregate": {
+                    "type": "object",
+                    "isActivated": true,
+                    "properties": {
+                        "floorCount": {
+                            "type": "integer",
+                            "isActivated": true
+                        },
+                        "bathroomCount": {
+                            "type": "integer",
+                            "isActivated": true
+                        },
+                        "parkingCount": {
+                            "type": "integer",
+                            "isActivated": true
+                        },
+                        "roomCount": {
+                            "type": "integer",
+                            "isActivated": true
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "structureDimensions": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "typeCode": {
+                                "type": "string",
+                                "enum": [
+                                    "AREA",
+                                    "DEPTH",
+                                    "HEIGHT",
+                                    "LENGTH",
+                                    "VOLUME",
+                                    "WEIGTH",
+                                    "WIDTH"
+                                ],
+                                "isActivated": true,
+                                "examples": [
+                                    "AREA",
+                                    "HEIGHT"
+                                ]
+                            },
+                            "measure": {
+                                "type": "object",
+                                "isActivated": true,
+                                "properties": {
+                                    "unitCode": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "m2"
+                                        ]
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "isActivated": true,
+                                        "examples": [
+                                            208
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        },
+                        "additionalProperties": false,
+                        "isActivated": true,
+                        "required": [
+                            "typeCode"
+                        ]
+                    }
+                },
+                "assessmentResults": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "object",
+                        "isActivated": true,
+                        "displayName": "assessmentResult",
+                        "properties": {
+                            "assessmentResultIdentifier": {
+                                "type": "string",
+                                "isActivated": true
+                            },
+                            "perils": {
+                                "type": "array",
+                                "isActivated": true,
+                                "items": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "displayName": "peril",
+                                    "examples": [
+                                        "EARTHQUAKE"
+                                    ]
+                                }
+                            },
+                            "financialValuation": {
+                                "type": "array",
+                                "isActivated": true,
+                                "items": {
+                                    "type": "object",
+                                    "isActivated": true,
+                                    "properties": {
+                                        "typeCode": {
+                                            "type": "string",
+                                            "isActivated": true,
+                                            "examples": [
+                                                "Building net market valuation"
+                                            ]
+                                        },
+                                        "amount": {
+                                            "type": "object",
+                                            "title": "Amount",
+                                            "isActivated": true,
+                                            "properties": {
+                                                "currencyCode": {
+                                                    "type": "string",
+                                                    "title": "Currencycode",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "EUR"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "type": "number",
+                                                    "title": "Value",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        4800
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "required": [
+                                                "currencyCode",
+                                                "value"
+                                            ]
+                                        },
+                                        "valuationDate": {
+                                            "type": "string",
+                                            "isActivated": true,
+                                            "format": "date",
+                                            "examples": [
+                                                "2021-12-03"
+                                            ]
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "partyRoleOnPhysicalObject": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "object",
+                        "isActivated": true,
+                        "properties": {
+                            "typeCode": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "OWNER"
+                                ]
+                            },
+                            "partyIdentifier": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "P1234567890"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false,
+                        "displayName": "partyRole"
+                    }
+                },
+                "geometry": {
+                    "type": "object",
+                    "isActivated": true,
+                    "properties": {
+                        "typeCode": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "STRUCTURE"
+                            ],
+                            "enum": [
+                                "STRUCTURE",
+                                "PLACE"
+                            ]
+                        },
+                        "coordinates": {
+                            "type": "array",
+                            "isActivated": true,
+                            "items": {
+                                "type": "object",
+                                "isActivated": true,
+                                "displayName": "globalPositionAddress",
+                                "properties": {
+                                    "coordinateSystemCode": {
+                                        "type": "string",
+                                        "isActivated": true
+                                    },
+                                    "latitude": {
+                                        "type": "number",
+                                        "isActivated": true,
+                                        "examples": [
+                                            48.8763
+                                        ]
+                                    },
+                                    "longitude": {
+                                        "type": "number",
+                                        "isActivated": true,
+                                        "examples": [
+                                            2.3183
+                                        ]
+                                    },
+                                    "elevation": {
+                                        "type": "number",
+                                        "isActivated": true
+                                    },
+                                    "geocodingResolution": {
+                                        "type": "string",
+                                        "isActivated": true
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "latitude",
+                                    "longitude"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "isActivated": true,
+    "additionalProperties": false
+}

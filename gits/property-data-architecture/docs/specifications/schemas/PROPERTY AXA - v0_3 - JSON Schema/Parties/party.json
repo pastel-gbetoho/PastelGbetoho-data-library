@@ -1,0 +1,620 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "party",
+    "additionalProperties": false,
+    "properties": {
+        "party": {
+            "type": "object",
+            "isActivated": true,
+            "properties": {
+                "partyIdentifier": {
+                    "type": "string",
+                    "primaryKey": true,
+                    "isActivated": true,
+                    "examples": [
+                        "P1234567890"
+                    ]
+                },
+                "typeCode": {
+                    "type": "string",
+                    "enum": [
+                        "PERSON",
+                        "ORGANIZATION"
+                    ],
+                    "isActivated": true,
+                    "examples": [
+                        "PERSON"
+                    ]
+                },
+                "fullName": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "George Herbert Walker Bush"
+                    ]
+                },
+                "taxRegistration": {
+                    "type": "array",
+                    "isActivated": true,
+                    "prefixItems": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "taxIdentifier": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "RSS MRA 74D22 A001Q"
+                                    ]
+                                },
+                                "taxRegistrationKind": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "FISCAL_CODE"
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false,
+                            "isActivated": true,
+                            "required": [
+                                "taxIdentifier",
+                                "taxRegistrationKind"
+                            ]
+                        }
+                    ]
+                },
+                "contactMethod": {
+                    "type": "object",
+                    "isActivated": true,
+                    "properties": {
+                        "postalMailContact": {
+                            "type": "array",
+                            "isActivated": true,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "usageCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BUSINESS",
+                                            "PERSONAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PERSONAL"
+                                        ]
+                                    },
+                                    "contactMethodKind": {
+                                        "type": "string",
+                                        "enum": [
+                                            "CORRESPONDANCE",
+                                            "RESIDENTIAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "RESIDENTIAL"
+                                        ]
+                                    },
+                                    "placeAddress": {
+                                        "type": "object",
+                                        "properties": {
+                                            "postalAddress": {
+                                                "type": "object",
+                                                "isActivated": true,
+                                                "properties": {
+                                                    "unitNumber": {
+                                                        "type": "integer",
+                                                        "isActivated": true
+                                                    },
+                                                    "floorNumber": {
+                                                        "type": "integer",
+                                                        "isActivated": true
+                                                    },
+                                                    "addressLines": {
+                                                        "type": "string",
+                                                        "isActivated": true
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            "streetAddress": {
+                                                "type": "object",
+                                                "isActivated": true,
+                                                "properties": {
+                                                    "unstructuredAddress": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "61 Rue Mstislav Rostropovitch"
+                                                        ]
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "Mstislav Rostropovitch"
+                                                        ]
+                                                    },
+                                                    "number": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "61"
+                                                        ]
+                                                    },
+                                                    "typeCode": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "RUE"
+                                                        ]
+                                                    },
+                                                    "preDirectionCode": {
+                                                        "type": "string",
+                                                        "isActivated": true
+                                                    },
+                                                    "postDirectionCode": {
+                                                        "type": "string",
+                                                        "isActivated": true
+                                                    }
+                                                },
+                                                "additionalProperties": false
+                                            },
+                                            "postCode": {
+                                                "type": "string",
+                                                "isActivated": true,
+                                                "examples": [
+                                                    "75017"
+                                                ]
+                                            },
+                                            "municipality": {
+                                                "type": "object",
+                                                "isActivated": true,
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "PARIS"
+                                                        ]
+                                                    },
+                                                    "typeCode": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "BOROUGH",
+                                                            "CITY",
+                                                            "COUNTY",
+                                                            "PARISH",
+                                                            "PREFECTURE",
+                                                            "TOWN",
+                                                            "TOWNSHIP",
+                                                            "VILLA",
+                                                            "VILLAGE",
+                                                            "WARD",
+                                                            "ZONE"
+                                                        ],
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "CITY"
+                                                        ]
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                    "name"
+                                                ]
+                                            },
+                                            "country": {
+                                                "type": "object",
+                                                "isActivated": true,
+                                                "properties": {
+                                                    "alphaIsoCode": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "FR"
+                                                        ]
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "France"
+                                                        ]
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "required": [
+                                                    "alphaIsoCode",
+                                                    "name"
+                                                ]
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "isActivated": true,
+                                        "required": [
+                                            "streetAddress",
+                                            "postCode",
+                                            "municipality",
+                                            "country"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "required": [
+                                    "usageCode",
+                                    "contactMethodKind",
+                                    "placeAddress"
+                                ]
+                            }
+                        },
+                        "telephoneCallContact": {
+                            "type": "array",
+                            "isActivated": true,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "usageCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BUSINESS",
+                                            "PERSONAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PERSONAL"
+                                        ]
+                                    },
+                                    "contactMethodKind": {
+                                        "type": "string",
+                                        "enum": [
+                                            "FIXE",
+                                            "MOBILE",
+                                            "OTHER",
+                                            "FAX"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "MOBILE"
+                                        ]
+                                    },
+                                    "fullNumber": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "0033600000011"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "required": [
+                                    "usageCode",
+                                    "contactMethodKind",
+                                    "fullNumber"
+                                ]
+                            }
+                        },
+                        "emailContact": {
+                            "type": "array",
+                            "isActivated": true,
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "usageCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BUSINESS",
+                                            "PERSONAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PERSONAL"
+                                        ]
+                                    },
+                                    "emailIdentifier": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "test@gmail.com"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "required": [
+                                    "usageCode",
+                                    "emailIdentifier"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "accountAgreement": {
+                    "type": "object",
+                    "properties": {
+                        "accountNumber": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "31926819"
+                            ]
+                        },
+                        "branchCode": {
+                            "type": "string",
+                            "isActivated": true
+                        },
+                        "ibanAccountIdentifier": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "GB29 NWBK 6016 1331 9268 19"
+                            ]
+                        },
+                        "authorizedCard": {
+                            "type": "object",
+                            "properties": {
+                                "cardNumber": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "4111 1111 1111 1111"
+                                    ]
+                                },
+                                "partyFullName": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "George Bush"
+                                    ]
+                                }
+                            },
+                            "additionalProperties": false,
+                            "isActivated": true
+                        }
+                    },
+                    "additionalProperties": false,
+                    "isActivated": true
+                }
+            },
+            "additionalProperties": true,
+            "unevaluatedProperties": false,
+            "anyOf": [
+                {
+                    "type": "object",
+                    "isActivated": true,
+                    "properties": {
+                        "person": {
+                            "type": "object",
+                            "isActivated": true,
+                            "properties": {
+                                "prefixTitleCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Prof"
+                                    ]
+                                },
+                                "givenName": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "George"
+                                    ]
+                                },
+                                "middleName": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Herbert Walker"
+                                    ]
+                                },
+                                "surname": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Bush"
+                                    ]
+                                },
+                                "marriedSurname": {
+                                    "type": "string",
+                                    "isActivated": true
+                                },
+                                "birthDate": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "1977-04-22"
+                                    ]
+                                },
+                                "birthTime": {
+                                    "type": "string",
+                                    "isActivated": true
+                                },
+                                "genderCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Male"
+                                    ]
+                                },
+                                "primaryOccupation": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Doctor"
+                                    ]
+                                },
+                                "secondaryOccupation": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Teacher"
+                                    ]
+                                },
+                                "maritalStatusCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Single"
+                                    ]
+                                },
+                                "socioEconomicRisk": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "0.5"
+                                    ]
+                                },
+                                "personRegistration": {
+                                    "type": "array",
+                                    "isActivated": true,
+                                    "prefixItems": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "registrationIdentifier": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "210692106990"
+                                                    ]
+                                                },
+                                                "registrationKind": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "DRIVER_LICENCE"
+                                                    ]
+                                                },
+                                                "effectivePeriodStartDate": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "1995-06-20"
+                                                    ]
+                                                },
+                                                "effectivePeriodEndDate": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "isActivated": true
+                                                },
+                                                "driverLicenseVehicleClassCode": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "B"
+                                                    ]
+                                                },
+                                                "drivingPointsCount": {
+                                                    "type": "number",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        12
+                                                    ]
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "isActivated": true,
+                                            "required": [
+                                                "registrationIdentifier",
+                                                "registrationKind"
+                                            ]
+                                        }
+                                    ],
+                                    "items": false
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "givenName",
+                                "surname"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                {
+                    "type": "object",
+                    "isActivated": true,
+                    "properties": {
+                        "organization": {
+                            "type": "object",
+                            "isActivated": true,
+                            "additionalProperties": false,
+                            "properties": {
+                                "organizationKind": {
+                                    "type": "string",
+                                    "enum": [
+                                        "COMPANY",
+                                        "GOVERNMENTBODY",
+                                        "GROUP",
+                                        "ORGANIZATIONUNIT",
+                                        "OTHER"
+                                    ],
+                                    "isActivated": true
+                                },
+                                "organizationUnitKind": {
+                                    "type": "string",
+                                    "enum": [
+                                        "BRANCH",
+                                        "DEPARTMENTALUNIT",
+                                        "REGIONALUNIT",
+                                        "TEAM"
+                                    ],
+                                    "isActivated": true
+                                },
+                                "agreedProviderIndicator": {
+                                    "type": "string",
+                                    "isActivated": true
+                                },
+                                "operations": {
+                                    "type": "object",
+                                    "isActivated": true,
+                                    "properties": {
+                                        "operationCode": {
+                                            "type": "string",
+                                            "isActivated": true,
+                                            "examples": [
+                                                "4411"
+                                            ]
+                                        },
+                                        "natureOfBusiness": {
+                                            "type": "string",
+                                            "isActivated": true,
+                                            "examples": [
+                                                "Automobile Dealers"
+                                            ],
+                                            "$comment": "Example base on [2022 NAICS Definition](https://www.census.gov/naics/?input=44&chart=2022)"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "required": [
+                                "organizationKind"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true
+                }
+            ],
+            "required": [
+                "partyIdentifier",
+                "typeCode",
+                "fullName"
+            ]
+        }
+    },
+    "isActivated": true
+}

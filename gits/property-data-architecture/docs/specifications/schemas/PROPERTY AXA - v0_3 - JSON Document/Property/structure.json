@@ -1,0 +1,84 @@
+{
+    "structure": {
+        "structureIdentifier": "java-75017-fr",
+        "name": "Java",
+        "typeCode": "building",
+        "materialTypeCode": [
+            "brick"
+        ],
+        "constructionYear": 1970,
+        "renovationYear": 1992,
+        "unitCount": 1,
+        "structureComponentsDetails": [
+            {
+                "typeCode": "ROOF",
+                "features": [
+                    {
+                        "feature": "Geomtry type",
+                        "featureValue": "Lorem"
+                    }
+                ],
+                "dimension": [
+                    {
+                        "typeCode": "AREA",
+                        "measure": {
+                            "unitCode": "m2",
+                            "value": 208
+                        }
+                    }
+                ]
+            }
+        ],
+        "structureComponentsAggregate": {
+            "floorCount": 44,
+            "bathroomCount": 29,
+            "parkingCount": 0,
+            "roomCount": -20
+        },
+        "structureDimensions": [
+            {
+                "typeCode": "AREA",
+                "measure": {
+                    "unitCode": "m2",
+                    "value": 208
+                }
+            }
+        ],
+        "assessmentResults": [
+            {
+                "assessmentResultIdentifier": "Lorem",
+                "perils": [
+                    "EARTHQUAKE"
+                ],
+                "financialValuation": [
+                    {
+                        "typeCode": "Building net market valuation",
+                        "amount": {
+                            "currencyCode": "EUR",
+                            "value": 4800
+                        },
+                        "valuationDate": "2021-12-03"
+                    }
+                ]
+            }
+        ],
+        "partyRoleOnPhysicalObject": [
+            {
+                "typeCode": "OWNER",
+                "partyIdentifier": "P1234567890"
+            }
+        ],
+        "geometry": {
+            "typeCode": "STRUCTURE",
+            "coordinates": [
+                {
+                    "coordinateSystemCode": "Lorem",
+                    "latitude": 48.8763,
+                    "longitude": 2.3183,
+                    "elevation": 48,
+                    "geocodingResolution": "Lorem"
+                }
+            ]
+        }
+    }
+}

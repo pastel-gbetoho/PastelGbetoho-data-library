@@ -1,0 +1,559 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Business Concept Diagram - Property-data-domain</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		Property-information-model	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p>
+<a href="Package_X0EhFAGAU6Ego3sN.html" class="PageParentTitle">Conceptual View : Package</a>	</p>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Business Concept Diagram - Property-data-domain		</span>
+<a onclick="javascript: showVpLink('Property-information-model.vpp://diagram/wU2fZAGAU6Egoxv1', 'Property-data-domain\nProperty-information-model.vpp://diagram/wU2fZAGAU6Egoxv1', 'Property-data-domain', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|307.0|532.0|154.0|67.0|Rectangle_PJJhrgGAU6BYSCQ6.html|Rectangle_PJJhrgGAU6BYSCQ6.html|PJJhrgGAU6BYSCQ5" id="optionPJJhrgGAU6BYSCQ5">RISK TYPE : Rectangle</option>
+<option value="shape|190.0|21.0|239.0|118.0|ImageShape_SgTtigGAU6EgoxDF.html|ImageShape_SgTtigGAU6EgoxDF.html|SgTtigGAU6EgoxDE" id="optionSgTtigGAU6EgoxDE">Unnamed Image : Image</option>
+<option value="shape|1219.0|635.0|290.0|152.0|ImageShape_qbp1igGAU6Egowno.html|ImageShape_qbp1igGAU6Egowno.html|qbp1igGAU6Egownn" id="optionqbp1igGAU6Egownn">Unnamed Image : Image</option>
+<option value="shape|752.0|141.0|144.0|42.0|Rectangle_MFmO5AGAU6Ego1kA.html|Rectangle_MFmO5AGAU6Ego1kA.html|MFmO5AGAU6Ego1j_" id="optionMFmO5AGAU6Ego1j_">OPERATIONS : Rectangle</option>
+<option value="shape|720.0|32.0|127.0|47.0|Rectangle_tKaO5AGAU6Ego1ie.html|Rectangle_tKaO5AGAU6Ego1ie.html|NKaO5AGAU6Ego1id" id="optionNKaO5AGAU6Ego1id">ORGANIZATION : Rectangle</option>
+<option value="shape|1301.0|302.0|142.0|41.0|Rectangle_zB525AGAU6Ego0oT.html|Rectangle_zB525AGAU6Ego0oT.html|zB525AGAU6Ego0oS" id="optionzB525AGAU6Ego0oS">OCCUPANCY : Rectangle</option>
+<option value="shape|374.0|699.0|176.0|54.0|Rectangle_HMbm5AGAU6Egozkt.html|Rectangle_HMbm5AGAU6Egozkt.html|HMbm5AGAU6Egozks" id="optionHMbm5AGAU6Egozks">ASSESSMENT RESULT : Rectangle</option>
+<option value="shape|710.0|635.0|263.0|164.0|ImageShape_8THG5AGAU6Egoy3U.html|ImageShape_8THG5AGAU6Egoy3U.html|8THG5AGAU6Egoy3T" id="option8THG5AGAU6Egoy3T">Unnamed Image : Image</option>
+<option value="shape|1007.0|264.0|104.0|117.0|ImageShape_4B9G5AGAU6EgoynW.html|ImageShape_4B9G5AGAU6EgoynW.html|4B9G5AGAU6EgoynV" id="option4B9G5AGAU6EgoynV">Unnamed Image : Image</option>
+<option value="shape|129.0|266.0|169.0|52.0|Rectangle_IqIQ5AGAU6Egox0X.html|Rectangle_IqIQ5AGAU6Egox0X.html|IqIQ5AGAU6Egox0W" id="optionIqIQ5AGAU6Egox0W">PLACE ADDRESS : Rectangle</option>
+<option value="shape|247.0|154.0|152.0|52.0|Rectangle_IGAQ5AGAU6Egox0M.html|Rectangle_IGAQ5AGAU6Egox0M.html|IGAQ5AGAU6Egox0L" id="optionIGAQ5AGAU6Egox0L">PLACE : Rectangle</option>
+<option value="shape|1227.0|563.0|124.0|64.0|Rectangle_MgJg5AGAU6EgoxzB.html|Rectangle_MgJg5AGAU6EgoxzB.html|MgJg5AGAU6EgoxzA" id="optionMgJg5AGAU6EgoxzA">DIMENSION : Rectangle</option>
+<option value="shape|794.0|563.0|161.0|64.0|Rectangle_BGL_ZAGAU6EgoxxU.html|Rectangle_BGL_ZAGAU6EgoxxU.html|BGL_ZAGAU6EgoxxT" id="optionBGL_ZAGAU6EgoxxT">STRUCTURE COMPONENT : Rectangle</option>
+<option value="shape|963.0|381.0|142.0|59.0|Rectangle_a_1_ZAGAU6Egoxw9.html|Rectangle_a_1_ZAGAU6Egoxw9.html|a.1_ZAGAU6Egoxw8" id="optiona.1_ZAGAU6Egoxw8">STRUCTURE : Rectangle</option>
+<option value="shape|706.0|238.0|791.0|583.0|ShapeEditorShape_b3Ac5AGAU6Egox5U.html|ShapeEditorShape_b3Ac5AGAU6Egox5U.html|b3Ac5AGAU6Egox5T" id="optionb3Ac5AGAU6Egox5T">Unnamed Freehand Shape : Freehand Shape</option>
+<option value="shape|687.0|14.0|376.0|215.0|ShapeEditorShape_3ueO5AGAU6Ego1n_.html|ShapeEditorShape_3ueO5AGAU6Ego1n_.html|XueO5AGAU6Ego1n8" id="optionXueO5AGAU6Ego1n8">Unnamed Freehand Shape : Freehand Shape</option>
+<option value="shape|188.0|653.0|214.0|209.0|ImageShape_7ULNigGAU6Egowuo.html|ImageShape_7ULNigGAU6Egowuo.html|bULNigGAU6Egowun" id="optionbULNigGAU6Egowun">Unnamed Image : Image</option>
+<option value="shape|66.0|295.0|241.0|201.0|ImageShape_I7_25AGAU6Ego0iT.html|ImageShape_I7_25AGAU6Ego0iT.html|I7.25AGAU6Ego0iS" id="optionI7.25AGAU6Ego0iS">Unnamed Image : Image</option>
+<option value="shape|4.0|4.0|532.0|499.0|ShapeEditorShape_vs5s5AGAU6Egox12.html|ShapeEditorShape_vs5s5AGAU6Egox12.html|Ps5s5AGAU6Egox11" id="optionPs5s5AGAU6Egox11">Unnamed Freehand Shape : Freehand Shape</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/Propertydatadomain.png" usemap="#diagram_map" class="Image" width="1513" height="866"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="963.0, 427.0, 888.3271, 521.0, 883.0, 521.0, 883.0, 527.7059, 878.0, 534.0, 883.0, 538.0909, 883.0, 563.0, 897.0, 563.0, 897.0, 532.9294, 970.82245, 440.0, 963.0, 440.0, 963.0, 427.0" coords2="963.0, 427.0, 888.3271, 521.0, 883.0, 521.0, 883.0, 527.7059, 878.0, 534.0, 883.0, 538.0909, 883.0, 563.0, 897.0, 563.0, 897.0, 532.9294, 970.82245, 440.0, 963.0, 440.0, 963.0, 427.0" shape="poly" alt="has:Generic Connector" id="areadiagram_map_K0yA5AGAU6EgoxyY_default" href="GenericConnector_Y0yA5AGAU6EgoxyX.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1112.0, 399.0, 1110.4615, 403.0, 1105.0, 403.0, 1105.0, 417.0, 1117.9434, 417.0, 1212.2203, 460.07483, 1236.0, 506.2353, 1236.0, 563.0, 1250.0, 563.0, 1250.0, 510.15384, 1253.0, 509.0, 1250.0, 503.17648, 1250.0, 493.0, 1244.7576, 493.0, 1226.1348, 456.84973, 1228.0, 452.0, 1222.2931, 449.39255, 1219.0, 443.0, 1213.1915, 445.23404, 1213.1915, 445.23404, 1129.0, 406.76724, 1129.0, 403.0, 1120.7548, 403.0, 1112.0, 399.0" coords2="1112.0, 399.0, 1110.4615, 403.0, 1105.0, 403.0, 1105.0, 417.0, 1117.9434, 417.0, 1212.2203, 460.07483, 1236.0, 506.2353, 1236.0, 563.0, 1250.0, 563.0, 1250.0, 510.15384, 1253.0, 509.0, 1250.0, 503.17648, 1250.0, 493.0, 1244.7576, 493.0, 1226.1348, 456.84973, 1228.0, 452.0, 1222.2931, 449.39255, 1219.0, 443.0, 1213.1915, 445.23404, 1213.1915, 445.23404, 1129.0, 406.76724, 1129.0, 403.0, 1120.7548, 403.0, 1112.0, 399.0" shape="poly" alt="actualDimension:Generic Connector" id="areadiagram_map_O.Tg5AGAU6EgoxzT_default" href="GenericConnector_Q_Tg5AGAU6EgoxzS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1112.0, 585.0, 1112.0, 588.0, 1109.0, 588.0, 1109.0, 600.0, 955.0, 600.0, 955.0, 614.0, 1112.0, 614.0, 1112.0, 617.0, 1126.0, 617.0, 1126.0, 614.0, 1129.0, 614.0, 1129.0, 602.0, 1227.0, 602.0, 1227.0, 588.0, 1126.0, 588.0, 1126.0, 585.0" coords2="1112.0, 585.0, 1112.0, 588.0, 1109.0, 588.0, 1109.0, 600.0, 955.0, 600.0, 955.0, 614.0, 1112.0, 614.0, 1112.0, 617.0, 1126.0, 617.0, 1126.0, 614.0, 1129.0, 614.0, 1129.0, 602.0, 1227.0, 602.0, 1227.0, 588.0, 1126.0, 588.0, 1126.0, 585.0" shape="poly" alt="actualDimension:Generic Connector" id="areadiagram_map_Plng5AGAU6Egoxzr_default" href="GenericConnector_ulng5AGAU6Egoxzq.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="399.0, 175.45, 399.0, 190.84337, 399.0, 190.84337, 963.0, 387.90363, 963.0, 387.90363, 963.0, 381.0, 970.9286, 381.0, 972.0, 376.0, 399.0, 175.45, 963.0, 387.90363, 963.0, 387.90363, 963.0, 387.90363, 963.0, 387.90363" coords2="399.0, 175.45, 399.0, 190.84337, 399.0, 190.84337, 963.0, 387.90363, 963.0, 387.90363, 963.0, 381.0, 970.9286, 381.0, 972.0, 376.0, 399.0, 175.45, 963.0, 387.90363, 963.0, 387.90363, 963.0, 387.90363, 963.0, 387.90363" shape="poly" alt="locatedOnPlace:Generic Connector" id="areadiagram_map_0Bmw5AGAU6Egox0__default" href="GenericConnector_T_mw5AGAU6Egox0_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="222.0, 168.0, 218.29033, 173.0, 213.0, 173.0, 213.0, 180.13043, 185.64516, 217.0, 180.0, 217.0, 180.0, 224.60869, 176.0, 230.0, 180.0, 232.90909, 180.0, 266.0, 194.0, 266.0, 194.0, 228.56522, 224.83871, 187.0, 247.0, 187.0, 247.0, 173.0, 228.875, 173.0, 222.0, 168.0" coords2="222.0, 168.0, 218.29033, 173.0, 213.0, 173.0, 213.0, 180.13043, 185.64516, 217.0, 180.0, 217.0, 180.0, 224.60869, 176.0, 230.0, 180.0, 232.90909, 180.0, 266.0, 194.0, 266.0, 194.0, 228.56522, 224.83871, 187.0, 247.0, 187.0, 247.0, 173.0, 228.875, 173.0, 222.0, 168.0" shape="poly" alt="identifyingAddress:Generic Connector" id="areadiagram_map_G22w5AGAU6Egox1J_default" href="GenericConnector_422w5AGAU6Egox1I.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="963.0, 411.01868, 551.375, 688.0, 543.0, 688.0, 543.0, 693.6355, 543.0, 693.6355, 538.0, 697.0, 539.4545, 699.0, 550.0, 699.0, 550.0, 709.0, 557.0, 709.0, 557.0, 700.59814, 963.0, 427.40186, 963.0, 411.01868" coords2="963.0, 411.01868, 551.375, 688.0, 543.0, 688.0, 543.0, 693.6355, 543.0, 693.6355, 538.0, 697.0, 539.4545, 699.0, 550.0, 699.0, 550.0, 709.0, 557.0, 709.0, 557.0, 700.59814, 963.0, 427.40186, 963.0, 411.01868" shape="poly" alt="assessed:Generic Connector" id="areadiagram_map_x6gW5AGAU6Egozqp_default" href="GenericConnector_c6gW5AGAU6Egozqo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1220.0, 304.0, 1213.3158, 308.0, 1207.0, 308.0, 1207.0, 311.77954, 1093.0, 380.0, 1093.7273, 381.0, 1105.0, 381.0, 1105.0, 388.6063, 1216.3026, 322.0, 1301.0, 322.0, 1301.0, 308.0, 1222.909, 308.0, 1220.0, 304.0" coords2="1220.0, 304.0, 1213.3158, 308.0, 1207.0, 308.0, 1207.0, 311.77954, 1093.0, 380.0, 1093.7273, 381.0, 1105.0, 381.0, 1105.0, 388.6063, 1216.3026, 322.0, 1301.0, 322.0, 1301.0, 308.0, 1222.909, 308.0, 1220.0, 304.0" shape="poly" alt="includedOccupancyDetailed:Generic Connector" id="areadiagram_map_YbX25AGAU6Ego1RK_default" href="GenericConnector_DrX25AGAU6Ego1RJ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="797.0, 79.0, 797.0, 141.0, 811.0, 141.0, 811.0, 79.0" coords2="797.0, 79.0, 797.0, 141.0, 811.0, 141.0, 811.0, 79.0" shape="poly" alt="detail:Generic Connector" id="areadiagram_map_4fRO5AGAU6Ego1sH_default" href="GenericConnector_jvRO5AGAU6Ego1sG.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="838.0, 183.0, 838.0, 274.0, 835.0, 274.0, 835.0, 288.0, 838.0, 288.0, 838.0, 291.0, 852.0, 291.0, 852.0, 288.0, 990.0, 288.0, 990.0, 381.0, 1004.0, 381.0, 1004.0, 288.0, 1007.0, 288.0, 1007.0, 274.0, 1004.0, 274.0, 1004.0, 271.0, 990.0, 271.0, 990.0, 274.0, 852.0, 274.0, 852.0, 183.0" coords2="838.0, 183.0, 838.0, 274.0, 835.0, 274.0, 835.0, 288.0, 838.0, 288.0, 838.0, 291.0, 852.0, 291.0, 852.0, 288.0, 990.0, 288.0, 990.0, 381.0, 1004.0, 381.0, 1004.0, 288.0, 1007.0, 288.0, 1007.0, 274.0, 1004.0, 274.0, 1004.0, 271.0, 990.0, 271.0, 990.0, 274.0, 852.0, 274.0, 852.0, 183.0" shape="poly" alt="has:Generic Connector" id="areadiagram_map_mhdO5AGAU6Ego1va_default" href="GenericConnector_ohdO5AGAU6Ego1vZ.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="332.0, 206.0, 332.0, 464.0, 329.0, 464.0, 329.0, 478.0, 332.0, 478.0, 332.0, 481.0, 346.0, 481.0, 346.0, 478.0, 377.0, 478.0, 377.0, 532.0, 391.0, 532.0, 391.0, 478.0, 394.0, 478.0, 394.0, 464.0, 391.0, 464.0, 391.0, 461.0, 377.0, 461.0, 377.0, 464.0, 346.0, 464.0, 346.0, 206.0" coords2="332.0, 206.0, 332.0, 464.0, 329.0, 464.0, 329.0, 478.0, 332.0, 478.0, 332.0, 481.0, 346.0, 481.0, 346.0, 478.0, 377.0, 478.0, 377.0, 532.0, 391.0, 532.0, 391.0, 478.0, 394.0, 478.0, 394.0, 464.0, 391.0, 464.0, 391.0, 461.0, 377.0, 461.0, 377.0, 464.0, 346.0, 464.0, 346.0, 206.0" shape="poly" alt=":Generic Connector" id="areadiagram_map_6YoxrgGAU6BYSCgl_default" href="GenericConnector_EYoxrgGAU6BYSCgk.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="963.0, 401.89807, 461.0, 538.01733, 461.0, 538.01733, 461.0, 553.09827, 461.0, 553.09827, 963.0, 416.71677, 963.0, 416.71677, 963.0, 401.89807" coords2="963.0, 401.89807, 461.0, 538.01733, 461.0, 538.01733, 461.0, 553.09827, 461.0, 553.09827, 963.0, 416.71677, 963.0, 416.71677, 963.0, 401.89807" shape="poly" alt=":Generic Connector" id="areadiagram_map_q7SxrgGAU6BYSDMX_default" href="GenericConnector_fbSxrgGAU6BYSDMW.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      P&amp;#233;ril in ACORD information model : This concept represents a peril (e.g. 
+      hazard such as &amp;quot;fire&amp;quot; or &amp;quot;theft&amp;quot;). The recursive link allows one peril 
+      to have a relationship with another peril (e.g. the peril of &amp;quot;theft&amp;quot; 
+      could have a relationship with the peril of &amp;quot;theft with violence&amp;quot; and 
+      also &amp;quot;theft without violence&amp;quot;).
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="307, 532, 461, 599" coords2="307, 532, 461, 599" shape="rect" alt="RISK TYPE:Rectangle" id="areadiagram_map_PJJhrgGAU6BYSCQ5_default" href="Rectangle_PJJhrgGAU6BYSCQ6.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Place
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="190, 21, 429, 139" coords2="190, 21, 429, 139" shape="rect" alt=":Image" id="areadiagram_map_SgTtigGAU6EgoxDE_default" href="ImageShape_SgTtigGAU6EgoxDF.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Dimension
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1219, 635, 1509, 787" coords2="1219, 635, 1509, 787" shape="rect" alt=":Image" id="areadiagram_map_qbp1igGAU6Egownn_default" href="ImageShape_qbp1igGAU6Egowno.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      This concept provides information that is used to describe the 
+      operations performed by this organization.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="752, 141, 896, 183" coords2="752, 141, 896, 183" shape="rect" alt="OPERATIONS:Rectangle" id="areadiagram_map_MFmO5AGAU6Ego1j__default" href="Rectangle_MFmO5AGAU6Ego1kA.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      A business concern or a group of individuals that are systematically 
+      bound by a common purpose, with or without a legal status. Organizations 
+      may be legal entities in their own right.
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;br&amp;gt;
+      Various types of organizations include and are not limited to:&amp;lt;br&amp;gt;- 
+      government (e.g. federal, state, regional, local, and various agencies)&amp;lt;br&amp;gt;- 
+      commercial organizations (limited companies, publicly quoted 
+      multinationals, subsidiaries, etc.)&amp;lt;br&amp;gt;- organizational units (e.g. 
+      branches, departments, teams, etc.)&amp;lt;br&amp;gt;- informal groups (e.g. clubs, 
+      societies, charities, interest groups, etc.)&amp;lt;br&amp;gt;- other similar entities
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="720, 32, 847, 79" coords2="720, 32, 847, 79" shape="rect" alt="ORGANIZATION:Rectangle" id="areadiagram_map_NKaO5AGAU6Ego1id_default" href="Rectangle_tKaO5AGAU6Ego1ie.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      This concept represents the occupancy or unoccupancy of a building or 
+      some portion of a building.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1301, 302, 1443, 343" coords2="1301, 302, 1443, 343" shape="rect" alt="OCCUPANCY:Rectangle" id="areadiagram_map_zB525AGAU6Ego0oS_default" href="Rectangle_zB525AGAU6Ego0oT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="374, 699, 550, 753" coords2="374, 699, 550, 753" shape="rect" alt="ASSESSMENT RESULT:Rectangle" id="areadiagram_map_HMbm5AGAU6Egozks_default" href="Rectangle_HMbm5AGAU6Egozkt.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Structure component
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="710, 635, 973, 799" coords2="710, 635, 973, 799" shape="rect" alt=":Image" id="areadiagram_map_8THG5AGAU6Egoy3T_default" href="ImageShape_8THG5AGAU6Egoy3U.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Structure
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1007, 264, 1111, 381" coords2="1007, 264, 1111, 381" shape="rect" alt=":Image" id="areadiagram_map_4B9G5AGAU6EgoynV_default" href="ImageShape_4B9G5AGAU6EgoynW.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      This concept represents a type of identification or name used to locate 
+      a Place.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="129, 266, 298, 318" coords2="129, 266, 298, 318" shape="rect" alt="PLACE ADDRESS:Rectangle" id="areadiagram_map_IqIQ5AGAU6Egox0W_default" href="Rectangle_IqIQ5AGAU6Egox0X.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      A bounded area defined by nature, by one or a series of country 
+      elements, by an external authority (such as a government), used to 
+      identify a location in space; for example, country, city, continent, 
+      postal area or risk area.&amp;lt;br&amp;gt;e.g. land parcel 5, section 12, lot 3&amp;lt;br&amp;gt;e.g. 
+      coastal waters&amp;lt;br&amp;gt;e.g. Hawthorne, NY Postal area, ZIP code 10532&amp;lt;br&amp;gt;e.g. 
+      Hurricane risk area&amp;lt;br&amp;gt;e.g. Manhattan, New York
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="247, 154, 399, 206" coords2="247, 154, 399, 206" shape="rect" alt="PLACE:Rectangle" id="areadiagram_map_IGAQ5AGAU6Egox0L_default" href="Rectangle_IGAQ5AGAU6Egox0M.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      This represents the physical dimension (e.g. proportion, size) of a 
+      physical object (e.g. the height of an antenna tower is 100 feet, the 
+      volume of a storage tank is 500 gallons, etc.).
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1227, 563, 1351, 627" coords2="1227, 563, 1351, 627" shape="rect" alt="DIMENSION:Rectangle" id="areadiagram_map_MgJg5AGAU6EgoxzA_default" href="Rectangle_MgJg5AGAU6EgoxzB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      This concept gives more details on the construction of a structure.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="794, 563, 955, 627" coords2="794, 563, 955, 627" shape="rect" alt="STRUCTURE COMPONENT:Rectangle" id="areadiagram_map_BGL_ZAGAU6EgoxxT_default" href="Rectangle_BGL_ZAGAU6EgoxxU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      This concept is the generalizing concept representing all physical 
+      structures.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;To create specific instances of a structure where a 
+      specialization is not already included in the model, use the typeName 
+      attribute inherited from InformationModelObject to represent the type of 
+      structure.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;This eliminates the need for specific specializations 
+      to be created for every type of structure. It is recommended to use 
+      specializations when additional attribution is necessary.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="963, 381, 1105, 440" coords2="963, 381, 1105, 440" shape="rect" alt="STRUCTURE:Rectangle" id="areadiagram_map_a.1_ZAGAU6Egoxw8_default" href="Rectangle_a_1_ZAGAU6Egoxw9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="706, 238, 1497, 821" coords2="706, 238, 1497, 821" shape="rect" alt=":Freehand Shape" id="areadiagram_map_b3Ac5AGAU6Egox5T_default" href="ShapeEditorShape_b3Ac5AGAU6Egox5U.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="687, 14, 1063, 229" coords2="687, 14, 1063, 229" shape="rect" alt=":Freehand Shape" id="areadiagram_map_XueO5AGAU6Ego1n8_default" href="ShapeEditorShape_3ueO5AGAU6Ego1n_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Assessment result
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="188, 653, 402, 862" coords2="188, 653, 402, 862" shape="rect" alt=":Image" id="areadiagram_map_bULNigGAU6Egowun_default" href="ImageShape_7ULNigGAU6Egowuo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Place address
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="66, 295, 307, 496" coords2="66, 295, 307, 496" shape="rect" alt=":Image" id="areadiagram_map_I7.25AGAU6Ego0iS_default" href="ImageShape_I7_25AGAU6Ego0iT.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="4, 4, 536, 503" coords2="4, 4, 536, 503" shape="rect" alt=":Freehand Shape" id="areadiagram_map_Ps5s5AGAU6Egox11_default" href="ShapeEditorShape_vs5s5AGAU6Egox12.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ImageShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ImageShape.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ImageShape_SgTtigGAU6EgoxDF.html" class="ItemLink">N/A : Image</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Place
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ImageShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ImageShape.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ImageShape_qbp1igGAU6Egowno.html" class="ItemLink">N/A : Image</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Dimension
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ImageShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ImageShape.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ImageShape_8THG5AGAU6Egoy3U.html" class="ItemLink">N/A : Image</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Structure component
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ImageShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ImageShape.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ImageShape_4B9G5AGAU6EgoynW.html" class="ItemLink">N/A : Image</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Structure
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/FreehandShapes.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/FreehandShapes.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ShapeEditorShape_b3Ac5AGAU6Egox5U.html" class="ItemLink">N/A : Freehand Shape</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/FreehandShapes.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/FreehandShapes.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ShapeEditorShape_3ueO5AGAU6Ego1n_.html" class="ItemLink">N/A : Freehand Shape</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ImageShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ImageShape.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ImageShape_7ULNigGAU6Egowuo.html" class="ItemLink">N/A : Image</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Assessment result
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/ImageShape.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/ImageShape.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ImageShape_I7_25AGAU6Ego0iT.html" class="ItemLink">N/A : Image</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="margin-right:0;color:#000000;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-right:0pt;margin-top:0pt;margin-bottom:.0001pt;margin-left:0pt;">
+      Place address
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/FreehandShapes.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/FreehandShapes.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="ShapeEditorShape_vs5s5AGAU6Egox12.html" class="ItemLink">N/A : Freehand Shape</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		Property-information-model	</div>
+</body>
+</html>

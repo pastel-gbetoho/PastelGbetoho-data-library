@@ -1,0 +1,546 @@
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+type: object
+title: place
+properties:
+  placeIdentifier:
+    type: string
+    isActivated: true
+    primaryKey: true
+    sample: xyz123-placeA
+  Name:
+    type: string
+    isActivated: true
+    sample: AXA GO Java
+  structureCount:
+    type: integer
+    isActivated: true
+    sample: 2
+  surfaceAreaMeasurement:
+    type: object
+    isActivated: true
+    additionalProperties: false
+  placeAddresses:
+    type: array
+    isActivated: true
+    additionalItems: true
+    items:
+      type: object
+      isActivated: true
+      displayName: placeAddress
+      properties:
+        placeAddressIdentifier:
+          type: string
+          isActivated: true
+        unstructuredAddress:
+          type: string
+          isActivated: true
+          sample: 61 Rue Mstislav Rostropovitch, 75017 Paris
+        streetAddress:
+          type: object
+          isActivated: true
+          properties:
+            unstructuredAddress:
+              type: string
+              isActivated: true
+              sample: 61 Rue Mstislav Rostropovitch
+            name:
+              type: string
+              isActivated: true
+              sample: Mstislav Rostropovitch
+            number:
+              type: string
+              isActivated: true
+              sample: "61"
+            typeCode:
+              type: string
+              isActivated: true
+              sample: RUE
+            preDirectionCode:
+              type: string
+              isActivated: true
+            postDirectionCode:
+              type: string
+              isActivated: true
+          additionalProperties: false
+        postCode:
+          type: string
+          isActivated: true
+          sample: "75017"
+        municipality:
+          type: object
+          isActivated: true
+          properties:
+            name:
+              type: string
+              isActivated: true
+              sample: PARIS
+            typeCode:
+              type: string
+              enum:
+                - BOROUGH
+                - CITY
+                - COUNTY
+                - PARISH
+                - PREFECTURE
+                - TOWN
+                - TOWNSHIP
+                - VILLA
+                - VILLAGE
+                - WARD
+                - ZONE
+              isActivated: true
+              sample: CITY
+          additionalProperties: false
+          required:
+            - name
+        country:
+          type: object
+          isActivated: true
+          properties:
+            alphaIsoCode:
+              type: string
+              isActivated: true
+              sample: FR
+            name:
+              type: string
+              isActivated: true
+              sample: France
+          additionalProperties: false
+          required:
+            - alphaIsoCode
+            - name
+        countrySubdivisions:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            isActivated: true
+            displayName: countrySubdivision copy
+            properties:
+              alphaIsoCode:
+                type: string
+                isActivated: true
+                sample: FR-IDF
+              name:
+                type: string
+                isActivated: true
+                sample: Île-de-France
+              typeCode:
+                type: string
+                isActivated: true
+                sample: Region
+            additionalProperties: false
+            required:
+              - name
+              - typeCode
+        geographicRegionName:
+          type: string
+          isActivated: true
+        globalPositionAddresses:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            isActivated: true
+            displayName: globalPositionAddress
+            properties:
+              coordinateSystemCode:
+                type: string
+                isActivated: true
+              latitude:
+                type: number
+                isActivated: true
+                sample: 48.8763
+              longitude:
+                type: number
+                isActivated: true
+                sample: 2.3183
+              elevation:
+                type: number
+                isActivated: true
+              geocodingResolution:
+                type: string
+                isActivated: true
+            additionalProperties: false
+            required:
+              - latitude
+              - longitude
+        postalAddress:
+          type: object
+          isActivated: true
+          properties:
+            unitNumber:
+              type: integer
+              isActivated: true
+            floorNumber:
+              type: integer
+              isActivated: true
+            addressLines:
+              type: string
+              isActivated: true
+          additionalProperties: false
+      additionalProperties: false
+      required:
+        - streetAddress
+        - postCode
+        - municipality
+        - country
+  structures:
+    type: array
+    isActivated: true
+    additionalItems: true
+    items:
+      type: object
+      isActivated: true
+      displayName: structure
+      properties:
+        structureIdentifier:
+          type: string
+          isActivated: true
+          sample: java-75017-fr
+        name:
+          type: string
+          isActivated: true
+          sample: Java
+        typeCode:
+          type: string
+          isActivated: true
+          sample: building
+        materialTypeCode:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: string
+            isActivated: true
+            sample: brick
+        constructionYear:
+          type: integer
+          isActivated: true
+          sample: 1970
+        renovationYear:
+          type: integer
+          isActivated: true
+          sample: 1992
+        unitCount:
+          type: integer
+          isActivated: true
+          sample: 1
+        structureComponentsDetails:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            isActivated: true
+            properties:
+              typeCode:
+                type: string
+                isActivated: true
+                sample: ROOF
+              features:
+                type: array
+                isActivated: true
+                additionalItems: true
+                items:
+                  type: object
+                  isActivated: true
+                  properties:
+                    feature:
+                      type: string
+                      isActivated: true
+                      sample: Geomtry type
+                    featureValue:
+                      type: string
+                      isActivated: true
+                  additionalProperties: false
+              dimension:
+                type: array
+                isActivated: true
+                additionalItems: true
+                items:
+                  type: object
+                  properties:
+                    typeCode:
+                      type: string
+                      enum:
+                        - AREA
+                        - DEPTH
+                        - HEIGHT
+                        - LENGTH
+                        - VOLUME
+                        - WEIGTH
+                        - WIDTH
+                      isActivated: true
+                      sample: AREA
+                    measure:
+                      type: object
+                      isActivated: true
+                      properties:
+                        unitCode:
+                          type: string
+                          isActivated: true
+                          sample: m2
+                        value:
+                          type: number
+                          isActivated: true
+                          sample: 208
+                      additionalProperties: false
+                  additionalProperties: false
+                  isActivated: true
+                  required:
+                    - typeCode
+            additionalProperties: false
+            displayName: structureComponent
+        structureComponentsAggregate:
+          type: object
+          isActivated: true
+          properties:
+            floorCount:
+              type: integer
+              isActivated: true
+            bathroomCount:
+              type: integer
+              isActivated: true
+            parkingCount:
+              type: integer
+              isActivated: true
+            roomCount:
+              type: integer
+              isActivated: true
+          additionalProperties: false
+        structureDimensions:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            properties:
+              typeCode:
+                type: string
+                enum:
+                  - AREA
+                  - DEPTH
+                  - HEIGHT
+                  - LENGTH
+                  - VOLUME
+                  - WEIGTH
+                  - WIDTH
+                isActivated: true
+                sample: AREA
+              measure:
+                type: object
+                isActivated: true
+                properties:
+                  unitCode:
+                    type: string
+                    isActivated: true
+                    sample: m2
+                  value:
+                    type: number
+                    isActivated: true
+                    sample: 208
+                additionalProperties: false
+            additionalProperties: false
+            isActivated: true
+            required:
+              - typeCode
+        assessmentResults:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            isActivated: true
+            displayName: assessmentResult
+            properties:
+              assessmentResultIdentifier:
+                type: string
+                isActivated: true
+              perils:
+                type: array
+                isActivated: true
+                additionalItems: true
+                items:
+                  type: string
+                  isActivated: true
+                  displayName: peril
+                  sample: EARTHQUAKE
+              financialValuation:
+                type: array
+                isActivated: true
+                additionalItems: true
+                items:
+                  type: object
+                  isActivated: true
+                  properties:
+                    typeCode:
+                      type: string
+                      isActivated: true
+                      sample: Building net market valuation
+                    amount:
+                      type: object
+                      title: Amount
+                      isActivated: true
+                      properties:
+                        currencyCode:
+                          type: string
+                          title: Currencycode
+                          isActivated: true
+                          sample: EUR
+                        value:
+                          type: number
+                          title: Value
+                          isActivated: true
+                          sample: 4800
+                      additionalProperties: false
+                      required:
+                        - currencyCode
+                        - value
+                    valuationDate:
+                      type: string
+                      isActivated: true
+                      format: date
+                      sample: "2021-12-03"
+                  additionalProperties: false
+            additionalProperties: false
+        partyRoleOnPhysicalObject:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            isActivated: true
+            properties:
+              typeCode:
+                type: string
+                isActivated: true
+                sample: OWNER
+              partyIdentifier:
+                type: string
+                isActivated: true
+                sample: P1234567890
+            additionalProperties: false
+            displayName: partyRole
+        geometry:
+          type: object
+          isActivated: true
+          properties:
+            typeCode:
+              type: string
+              isActivated: true
+              enum:
+                - STRUCTURE
+                - PLACE
+              sample: STRUCTURE
+            coordinates:
+              type: array
+              isActivated: true
+              additionalItems: true
+              items:
+                type: object
+                isActivated: true
+                displayName: globalPositionAddress
+                properties:
+                  coordinateSystemCode:
+                    type: string
+                    isActivated: true
+                  latitude:
+                    type: number
+                    isActivated: true
+                    sample: 48.8763
+                  longitude:
+                    type: number
+                    isActivated: true
+                    sample: 2.3183
+                  elevation:
+                    type: number
+                    isActivated: true
+                  geocodingResolution:
+                    type: string
+                    isActivated: true
+                additionalProperties: false
+                required:
+                  - latitude
+                  - longitude
+          additionalProperties: false
+      additionalProperties: false
+  assessmentResults:
+    type: array
+    isActivated: true
+    additionalItems: true
+    items:
+      type: object
+      isActivated: true
+      displayName: assessmentResult
+      properties:
+        assessmentResultIdentifier:
+          type: string
+          isActivated: true
+        perils:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: string
+            isActivated: true
+            displayName: peril
+            sample: EARTHQUAKE
+        financialValuation:
+          type: array
+          isActivated: true
+          additionalItems: true
+          items:
+            type: object
+            isActivated: true
+            properties:
+              typeCode:
+                type: string
+                isActivated: true
+                sample: Building net market valuation
+              amount:
+                type: object
+                title: Amount
+                isActivated: true
+                properties:
+                  currencyCode:
+                    type: string
+                    title: Currencycode
+                    isActivated: true
+                    sample: EUR
+                  value:
+                    type: number
+                    title: Value
+                    isActivated: true
+                    sample: 4800
+                additionalProperties: false
+                required:
+                  - currencyCode
+                  - value
+              valuationDate:
+                type: string
+                isActivated: true
+                format: date
+                sample: "2021-12-03"
+            additionalProperties: false
+      additionalProperties: false
+  composingPlaces:
+    type: array
+    isActivated: true
+    additionalItems: true
+    items:
+      type: string
+      isActivated: true
+      displayName: placeIdentifier
+isActivated: true
+additionalProperties: false
+comments: >-
+  A bounded area defined by nature, by one or a series of country elements, by
+  an external authority (such as a government), used to identify a location in
+  space; for example, country, city, continent, postal area or risk area. e.g.
+  land parcel 5, section 12, lot 3 e.g. coastal waters e.g. Hawthorne, NY Postal
+  area, ZIP code 10532 e.g. Hurricane risk area e.g. Manhattan, New York
+required:
+  - placeIdentifier

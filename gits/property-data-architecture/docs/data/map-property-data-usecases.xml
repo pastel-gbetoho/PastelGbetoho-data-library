@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataUsesCaseReference id="Property Data Acceleration Team-2023-12-01" date="2023-12-01"
+   title="Property Data in Risk Consulting, Pricing, and Risk Management"
+   stakeholders="AXA Group Risk Management, AXA XL, Digital Commercial Platform, AXA IM"
+   description="Real estate scope coverage: only approx 3000 properties">
+
+   <UseCase id="GRM Clymene">
+	  <DataPorts>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Construction Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Floor Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Floor Number"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Roof Geometry Type Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Unstructured Address"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Post Code Assigned Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Alpha ISO Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Subdivision Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Geographic Region Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Latitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Longitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Geocoding Resolution"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Organization_Full Name"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Operation_Nature Of Business"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Peril (Risk Type)_Name"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Risk Count"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Financial Valuation"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Building Vulnerability"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Content Vulnerability"/>
+	  </DataPorts>
+   </UseCase>
+
+   <UseCase id="Data Management DQA">
+	  <DataPorts>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Identifier"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Structure Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Construction Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Renovation Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Floor Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Floor Number"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Roof Geometry Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Roof Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Roof Area"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Floor Area"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Building Height"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Building Volume"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Surface Area Measurement"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Unstructured Address"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Latitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Longitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Geocoding Resolution"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Operation_Nature Of Business"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Financial Valuation"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Building Vulnerability"/>
+	  </DataPorts>
+   </UseCase>
+
+   <UseCase id="DCP Location Footprinter">
+	  <DataPorts>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Structure Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Construction Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Unit Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Structure Status Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Geometry"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Floor Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Roof Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Bathrooms Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Wall Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Building Height"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Building Surface"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Occupancy_Actual Usage Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Identifier"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Surface Area Measurement"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Count Of Structures"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Geometry"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Unstructured Address"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Street Address Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Street Address Number"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Street Address Type Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Street Address Pre Direction Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Street Address Post Direction Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Post Code Assigned Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Municipality Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Alpha ISO Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Subdivision Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Latitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Longitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Elevation"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Postal Address Unit Number"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Postal Address Floor Number"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Postal Address Address Lines"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Organization_Full Name"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Organization_Organization Type"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Person_Full Name"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Person_First Name"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Person_Last Name"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Operation_Operation Code"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Operation_Nature Of Business"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Financial Valuation"/>
+	  </DataPorts>
+   </UseCase>
+
+   <UseCase id="AXA XL EMP">
+	  <DataPorts>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Structure Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Material Type Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Construction Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Renovation Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Unit Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Floor Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Floor Area"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Occupancy_Actual Usage Code"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Occupancy_Occupied Floors"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Count Of Structures"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Street Address Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Post Code Assigned Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Municipality Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Alpha ISO Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Subdivision Abbreviation"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Subdivision Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Geographic Region Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Latitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Longitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Geocoding Resolution"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Operation_Nature Of Business"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Financial Valuation"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Content Vulnerability"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Fire Sprinkler Check"/>
+	  </DataPorts>
+   </UseCase>
+   
+   <UseCase id="AXA IM Real Estate">
+	  <DataPorts>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Construction Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Renovation Year"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Name"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure_Forecast Construction Date"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Parking Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Structure Component_Rooms Count"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Dimension_Floor Area"/>
+		<DataPort id="PROPERTY DATA_STRUCTURE DATA_Occupancy_Tenancy Type Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place_Surface Area Measurement"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Unstructured Address"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Post Code Assigned Code"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Municipality Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Country Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Geographic Region Name"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Latitude"/>
+		<DataPort id="PROPERTY DATA_PLACE DATA_Place Address_Global Position Address Longitude"/>
+		<DataPort id="PROPERTY DATA_PARTY DATA_Organization_Full Name"/>
+		<DataPort id="PROPERTY DATA_ASSESSMENT &amp; CONDITION DATA_Assessment Result_Financial Valuation"/>
+	  </DataPorts>
+   </UseCase>
+
+</DataUsesCaseReference>

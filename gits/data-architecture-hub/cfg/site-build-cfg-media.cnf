@@ -1,0 +1,14 @@
+# Reopistory name > Source media folder path > Target media folder name
+data-guide-privacy-preserving media/anonymization docs/media/anonymization
+#data-mgt-activity-map
+#data-study-dhp media/dhp docs/media/dhp
+#quality
+data-ref-metadata       media/metadata       docs/media/metadata
+#architecture-books
+data-ref-bi-analytics   media/bia            docs/media/bia
+data-ref-mdm            media/cmdm           docs/media/cmdm
+#data-mgt-books
+#data-mgt
+data-ref-integration    media/integration    docs/media/integration
+data-ref-modeling       media/modeling       docs/media/modeling
+data-ref-document-content  media/content        docs/media/content

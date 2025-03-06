@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - METADATA MANAGEMENT </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#INTRODUCTION">INTRODUCTION</a>
+          <ul>
+          <li><a href="#metadata-value">Metadata value</a></li>
+          <li><a href="#impacts-resulting-from-the-lack-of-metadata-management">Impacts resulting from the lack of metadata management</a></li>
+          </ul></li>
+          <li><a href="#survey-of-axa-entities-practice-survey-of-axa-entities-practice">SURVEY OF AXA ENTITIES PRACTICE {#SURVEY-OF-AXA-ENTITIES PRACTICE}</a></li>
+          <li><a href="#KEY-LEARNINGS-FROM-PREVIOUS-EXPERIENCES">KEY LEARNINGS FROM PREVIOUS EXPERIENCES</a>
+          <ul>
+          <li><a href="#challenges-and-obstacles">Challenges and obstacles</a></li>
+          <li><a href="#lessons-learnt">Lessons learnt</a></li>
+          </ul></li>
+          <li><a href="#PRACTICE-AT-AXA">PRACTICE AT AXA</a>
+          <ul>
+          <li><a href="#metadata-assets">Metadata assets</a></li>
+          <li><a href="#metadata-management-business-functions">Metadata management business functions</a></li>
+          <li><a href="#Metadata-management-IT-functions">Metadata management IT functions</a></li>
+          <li><a href="#metadata-association">Metadata association</a></li>
+          <li><a href="#architecture-patterns">Architecture patterns</a></li>
+          <li><a href="#unified-repository-vs-best-of-breed-approach">Unified repository vs Best of breed approach</a></li>
+          </ul></li>
+          <li><a href="#metadata-management-tooling">METADATA MANAGEMENT TOOLING</a>
+          <ul>
+          <li><a href="#functional-requirements">Functional requirements</a></li>
+          <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+          </ul></li>
+          <li><a href="#references">REFERENCES</a></li>
+          <li><a href="#SIGNIFICANT-REVISIONS">SIGNIFICANT REVISIONS</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<hr />
+<p><strong><em><span style="color:blue">11 April 2023: Metadata Management Paper has been released by The Open Group as a TOGAF® Series Guide:</span></em></strong> <a href="https://pubs.opengroup.org/togaf-standard/metadata-management/">The Open Group Metadata Management</a>.</p>
+<h1 id="INTRODUCTION">INTRODUCTION</h1>
+<hr />
+<p>The concept of metadata is not new, albeit in the modern history it’s widely used in the information technology industry to define data about data. Long before the digital age, metadata such as author, title, number of tablets… were already used in the ancient time to catalog collection of clay tablets. As such, metadata provides additional information to better know and use the data.</p>
+<p>At AXA, metadata management is recognized in AXA Business Capability Reference Model (BCRM) as an information management business capability and defined as follow: managing data that describes other data. It is often used in relation to Digital media, but older forms of metadata are catalogues, dictionaries, and taxonomies. Considering data as an asset, it means that we should increase our knowledge of this asset.</p>
+<p>The importance of metadata management at AXA has been already emphasized through several assets such as the Group Target Architecture, the Data Maturity Assessment framework, the Data Management Activity Map… Therefore, the intent of this paper is to set in perspective the benefits of investing in metadata:</p>
+<ul>
+<li>Why metadata now and what positive impacts can we expect?</li>
+<li>Where are we at AXA and what challenges do we need to overcome?</li>
+<li>What should we target and how to achieve this target?</li>
+</ul>
+<p>The primary audience of this paper is:</p>
+<ul>
+<li>Chief Data Officers<br />
+</li>
+<li>Data Managers</li>
+<li>Business Data Owners</li>
+<li>Data Stewards</li>
+<li>Data Architects</li>
+</ul>
+<div class="panel panel-default">
+<div class="panel-heading">
+<span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span> <strong>Support AXA Strategy</strong>
+</div>
+<div class="panel-body">
+<p>AXA customer first target along with our “Tech-led” ambition set data as key asset of our global transformation. CDOs are appointed to define locally data strategy to achieve our global ambition and raise our collective data maturity.</p>
+<p>As part of this momentum it’s key for AXA to focus on foundational data management activities to build a solid ground for developing our future capabilities. As such metadata management as a practice of knowing better our data is directly linked to the data documentation activities.</p>
+<p>Indeed metadata is key for the other activities such as data quality, data risk management, data architecture and even data governance.</p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<span class="glyphicon glyphicon-random" aria-hidden="true"></span> <strong>Change paradigm</strong>
+</div>
+<div class="panel-body">
+<p>Sadly, metadata is often poorly understood and usually viewed as an IT topic. In addition, the raise of NoSQL databases (relaxed data schemas) and the recent big data trend with the promise to unlock value from any kind of data, has led to focus solely on building the capabilities to collect, store and analyze the data. Very little effort was put on metadata which is often depicted as irrelevant or available automatically using machine learning tools. However:</p>
+<ul>
+<li>The data cannot be effectively consumed without a proper data catalog (data glossary and data dictionary)</li>
+<li>The data cannot be trusted without a proper data lineage</li>
+<li>The data quality cannot be evaluated without involving the business data owners to define the data requirements and related data quality business rules</li>
+<li>The data risk cannot be managed without documenting data processing activities and data classifications (e.g. privacy, business value)</li>
+<li>…</li>
+</ul>
+Most of the time metadata are available in sparse documentations (Office Excel files, data modeling tools,…) and not always easily accessible and up to date. So now is the time to make sure that we have solid foundations in place to organize properly metadata to support AXA data driven strategy (manage data as an asset).
+</div>
+</div>
+<h2 id="metadata-value">Metadata value</h2>
+<div class="media">
+<div class="media-left">
+<a href="#"><img class="media-object" src="media/metadata/metadata-business-value.png" alt="..."></a>
+</div>
+<div class="media-body">
+<ul>
+<li>Know your data
+<ul>
+<li>Reduce uncertainty and possible misinterpretation of the data</li>
+<li>Know the quality of the data available and associated business rules (data quality business rules, transformation business rules…)</li>
+<li>Data origin and usage of the data</li>
+<li>Improve auditing of business intelligence reports</li>
+</ul></li>
+<li>Manage the data risk
+<ul>
+<li>Leverage data classification (security wise, privacy wise, business/value wise) to support data risk management. Ex. Support data protection impact assessment, base data access model on defined metadata (ex. roles, responsibility of the user, purpose of data processing…)</li>
+</ul></li>
+<li>Improve time to market
+<ul>
+<li>For any new business initiative reduce data scoping effort with the support of good data documentation (glossary, dictionary, classification)</li>
+<li>Identify relevant data elements for uses cases</li>
+</ul></li>
+<li>Foster re-use
+<ul>
+<li>Improve the collaboration and communication between the different stakeholders (both business &amp; IT) by sharing a common glossary</li>
+<li>Identify redundant and obsolete data</li>
+<li>Support business to leverage external data</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Metadata is key from a business perspective to have a good knowledge and understanding of the data already available within the organization either at entity level or business unit level. Metadata enhances the data with additional information to make it more effective.</p>
+<p>Below is an example of Excel sheet containing customer data:</p>
+<p><img src="media/metadata/metadata-value-business1.png" alt="..."></p>
+<p>Here are some examples of metadata that help the business team to effectively process these data:</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">CUSTOMER FILE METADATA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Data classification.</strong> The data elements Surname, Birth Name, Given Name, Gender, Date of birth, Street Address, Postcode, Municipality, Country are personal data. Distribution to vendors/suppliers and publication on the Internet (e.g. newsgroups, forums, websites etc.) is not permitted unless explicitly allowed by the Business or Data Owner</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Data processing activity.</strong> For car insurance policy renewal, Street Address, Postcode, Municipality, Country of the customer are used by the back office to send post letters.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Data Lineage.</strong> The source of the following data elements is the policy management system: Surname, Birth Name, Given Name, Gender, Date of birth.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Data Quality.</strong> The customer Foucaud Louis has moved to a new address. The address currently provided in the sheet is outdated for post mail contact.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="impacts-resulting-from-the-lack-of-metadata-management">Impacts resulting from the lack of metadata management</h2>
+<ul>
+<li><p><strong>Compliance</strong> - A customer request on his “right to be forgotten” cannot be properly managed without collecting metadata such as</p>
+<ul>
+<li>Processing activities involving customer data</li>
+<li>Customer data recipients</li>
+<li>Customer data transfer</li>
+<li>…</li>
+</ul></li>
+<li><p><strong>Operational efficiency</strong> - An operational process such as sending communications to the customer (ex. mails, emails, phone calls…) cannot be optimized and effectively managed without collecting metadata such as the accuracy of the customer address, email, phone numbers.</p></li>
+<li><p><strong>Data security</strong> - Business services (ex. quotation request, policy subscription, first notice of loss…) provided through APIs cannot implement proper security measures without knowing metadata such as data confidentiality, critical data assets are not identified so cannot be protected.</p></li>
+<li><p><strong>Data quality</strong> - Designing a data capture and assessment plan to measure customer data quality cannot be properly implemented without collecting metadata about the information lifecycle such as:</p>
+<ul>
+<li>Applications/databases where the data is used</li>
+<li>Processing activities that affected the data</li>
+<li>Data transformation business rules</li>
+<li>…</li>
+</ul></li>
+<li><p><strong>Data governance</strong> - The data management office (DMO) under the leadership of the CDO cannot effectively maintain data governance board(s) and ensure effectiveness of the data strategy without collecting metadata such as:</p>
+<ul>
+<li>Data owners and data stewards network</li>
+<li>Business glossary: name and define business concepts</li>
+<li>Critical data elements (data classification): flag key data elements to operate business capabilities</li>
+<li>Business data quality rules: identify relevant business rules to monitor</li>
+<li>Data standards: identify data policies to enforce</li>
+<li>…</li>
+</ul></li>
+<li><p><strong>Data management</strong> - Only 2 activities (“Watch technology and regulatory changes” and “Identify and onboard business transformers”) out of 29 data management activities can be performed without collecting and managing metadata.</p></li>
+</ul>
+<h1 id="survey-of-axa-entities-practice-survey-of-axa-entities-practice">SURVEY OF AXA ENTITIES PRACTICE {#SURVEY-OF-AXA-ENTITIES PRACTICE}</h1>
+<div class="well">
+Extract from 2018 Data Maturity Assessment | <strong>As Is maturity</strong>
+</div>
+<ul>
+<li>The chart below provides an overview of the as-is maturity across 6 dimensions related to metadata management based on the feedback from 15 AXA entities.</li>
+<li>Overall it shows that most entities are at the earlier stage of their metadata management journey.</li>
+</ul>
+<div class="media">
+<div class="media-left">
+<p><img class="media-object" src="media/metadata/metadata-maturity-asis.png" alt="..."></p>
+</div>
+<div class="media-body">
+<br><br><br>
+<div class="well well-lg" style="width:452px;">
+Data dictionaries and data lineage appear to be the top two pain points for data documentation. (see 4.4.2 and 4.4.3).
+</div>
+<div class="well well-lg" style="width:452px;">
+Out of the 15 entities survey, <strong>more than 90% do not have or are at the initial phase of setting the capabilities to operate a metadata management platform in BAU (Business As Usual)</strong>. (See 6.5.3)
+</div>
+</div>
+</div>
+<p><img src="media/metadata/metadata-maturity-legend.png" alt="..."></p>
+<p><small> 1- <em>Whenever an entity has rated his maturity between two levels, it has been counted in the next level. Example: If an entity rates his maturity on the dimension 4.4.1 “What is the level of maturity of your business data documentation (business glossary and business processes)?” as 1.5 meaning between “No/Does not exist” and “Initial”, It will be counted in the level “Initial”</em> </small></p>
+<div class="well">
+Extract from 2018 Data Maturity Assessment | <strong>2020 Aspiration</strong>
+</div>
+<div class="media">
+<div class="media-left">
+<p><img class="media-object" src="media/metadata/metadata-maturity-2020.png" alt="..."></p>
+</div>
+<div class="media-body">
+<p><img class="media-object" src="media/metadata/metadata-maturity-2020-gap.png" alt="..."></p>
+</div>
+</div>
+<h4>
+<em>The ambition set for 2020 is challenging</em> <small><em>looking at the gap from the current state to the target. It means that AXA entities should start working actively on their metadata management capabilities now if they want to meet 2020 aspiration.</em></small>
+</h4>
+<h1 id="KEY-LEARNINGS-FROM-PREVIOUS-EXPERIENCES">KEY LEARNINGS FROM PREVIOUS EXPERIENCES</h1>
+<hr />
+<h2 id="challenges-and-obstacles">Challenges and obstacles</h2>
+<ul>
+<li><strong>IT complexity</strong>
+<ul>
+<li>Legacy applications poorly documented: reference data are lacking and data change of meaning during the lifecycle of the application.</li>
+<li>Merge &amp; Acquisitions increasing IT landscape and therefore the scope of metadata to be documented.</li>
+<li>Replication factor: this concept defines how many times a data element (ex. customer first name) is replicated in the information system. The higher is the replication factor, the more challenging the metadata documentation effort is.</li>
+</ul></li>
+<li><strong>Data complexity</strong>
+<ul>
+<li>Variety and velocity of data collected (ex. social media feeds or logs collected near real-time, text &amp; image collected for machine learning purpose…) require new techniques to collect the relevant metadata.</li>
+<li>Dynamic schemas make it challenging to maintain the metadata documentation up to date.</li>
+</ul></li>
+<li><strong>IT marketing trends</strong>
+<ul>
+<li>Microservices/micro applications often challenge data lineage exercise and increase replication factor.</li>
+<li>“Agile” delivery wrongly interpreted as no requirement for documentation</li>
+</ul></li>
+<li><strong>Manual work</strong>
+<ul>
+<li>How to capture the information with business &amp; IT SMEs?</li>
+<li>What is the right granularity and priority criteria?</li>
+<li>Metadata validation is not automatic and needs a human review</li>
+</ul></li>
+<li><strong>Lack of data Standards</strong>
+<ul>
+<li>Naming conventions</li>
+<li>Data types and units conventions</li>
+</ul></li>
+</ul>
+<h2 id="lessons-learnt">Lessons learnt</h2>
+<ul>
+<li><p><strong>Data documentation is about knowledge management and people</strong>: more than tools, data documentation requires people (manual work), processes (prioritization, governance, data ownership), culture (data citizens).</p></li>
+<li><p><strong>Start small, prove the value first</strong> Identify the scope and keep focus (the question is not about doing or NOT doing but where to start?). The scoping can be achieved by prioritizing data objects and data elements relevant for a given business opportunity or context: see illustration below. Please refer to the <a href="http://flyto.corp.intraxa/EK9iDh" target="_blank">AXA Data Quality Handbook</a> for further information.</p></li>
+</ul>
+<p><img src="media/metadata/metadata-define-processing-act.png" /></p>
+<ul>
+<li><strong>Consider promoting a business glossary</strong> to capture the language that is used by the business teams and make sure that there is a common understanding of the key business concepts either at a project, program or entity level. You can leverage ACORD business glossary &amp; information model (for the insurance industry) if you do not have any model available. Each project may have their own glossary but the mapping between project glossary and the common glossary should be built and maintained. The key success criteria for the business glossary is the level of adoption and reuse.</li>
+</ul>
+<blockquote>
+<p>“The problem arises because different systems employ different definitions of key terms. Thus, the term “customer” can mean a potential buyer to the marketing department, the person who signed the purchase order to sales, and the legal entity that it bills to accounting." <a href="https://hbr.org/2018/07/what-to-do-when-each-department-uses-different-words-to-describe-the-same-thing" target="_blank">Thomas C. Redman</a></p>
+</blockquote>
+<ul>
+<li><p><strong>Identify metadata owners and source of truth</strong> to narrow down the documentation effort based on the relevant source of information and to ensure metadata ownership (like for data).</p></li>
+<li><p><strong>Document actively metadata as soon as the data is known</strong> to prevent retro documentation.</p></li>
+<li><p><strong>Linking metadata together</strong> is key to bring value. For instance, documenting a data element (ex. customer email) quality without the context of usage (link with data processing activities) make it hard to access the business impacts resulting from the lack of quality.</p></li>
+</ul>
+<p>The lessons learnt from previous experiences have helped to identify <a href="media/metadata/metadata-common-patterns.png" target="_blank">common pattern followed to document metadata</a>. This pattern can be summarized as follow:</p>
+<ul>
+<li><strong>Trigger</strong>: the business event that will drive the need to document metadata (regulation or compliance requirements, operational efficiency, security issue…).</li>
+<li><strong>Focus</strong>: the scope of metadata that will be documented in relation to the trigger.</li>
+<li><strong>Opportunity</strong>: the additional metadata that can be documented to deliver more value.</li>
+<li><strong>Network</strong>: Recruitment of data owners and data stewards to operate and maintain the data documentation.</li>
+<li><strong>Sharing</strong>: Give access to the largest possible audience within the entity.</li>
+</ul>
+<p>Below are feedbacks from entities regarding the approach they have followed to document metadata:</p>
+<ul>
+<li><a href="media/metadata/metadata-axa-partners-approach.png" target="_blank">AXA Partners</a></li>
+<li><a href="media/metadata/metadata-axa-belgium-approach.png" target="_blank">AXA Belgium</a></li>
+</ul>
+<p>A key lesson learnt from the entities experiences about the approach to follow when implementing a metadata management capability is to <strong>design the metadata management platform to scale from the first trigger.</strong></p>
+<h1 id="PRACTICE-AT-AXA">PRACTICE AT AXA</h1>
+<hr />
+<p>Metadata are very often divided in three categories that can be summarized as follow based on the DMBOKv2:</p>
+<ul>
+<li><strong>Business metadata</strong> focuses largely on the content and condition of the data and includes details related to data governance.</li>
+<li><strong>Technical metadata</strong> provides information about the technical details of data, the systems that store data, and the processes that move it within and between systems.</li>
+<li><strong>Operational metadata</strong> describes details of the processing and accessing of data.</li>
+</ul>
+<h2 id="metadata-assets">Metadata assets</h2>
+<p>AXA Data Management Community has defined the key assets that need to be documented to effectively perform data management activities, namely the data management information model. This is a first step to narrow down the metadata management effort and should be used as a starting point to identify key metadata to be documented:</p>
+<p><img src="media/metadata/metadata-information-model.png" style="width:80.0%" /></p>
+<p><a href="metadata-paper-asset-defs.html" target="_blank">See assets definitions here</a></p>
+<h2 id="metadata-management-business-functions">Metadata management business functions</h2>
+<p>It is important to engage into a step by step progressive approach to build the metadata documentation rather than attempt to document at the same time all the assets identify in the data management information model.</p>
+<p>Start first with defining foundations such as:</p>
+<ul>
+<li>Data standards &amp; policies</li>
+<li>Business Data owners and data stewards network according to the business priorities</li>
+<li>Reference language and naming conventions for metadata</li>
+</ul>
+<p>Below are the key business functions that need to be implemented to support metadata management capability:</p>
+<p><img src="media/metadata/metadata-business-functions.png" /></p>
+<p>Below is a proposal of the roles and responsibilities in relation to these business functions:</p>
+<p><img src="media/metadata/metadata-raci.png" /></p>
+<h2 id="Metadata-management-IT-functions">Metadata management IT functions</h2>
+<p>Prior to select a metadata management tool, one should consider first to identify the key components of a metadata management application in relation to the assets that the entities should document.</p>
+<p>These components can be summarized as follow:</p>
+<p><img src="media/metadata/metadata-application-functions.png" /></p>
+<p>Market solutions are very often designed to manage a subset of these functions and can be divided in three main categories:</p>
+<ul>
+<li><strong>Data catalog</strong> solutions focusing on metadata discovery, metadata searching and reporting.</li>
+<li><strong>Data governance</strong> solutions focusing on metadata stewardship, ownership and validation.</li>
+<li><strong>Data quality</strong> solutions focusing on business data quality rules execution and monitoring.</li>
+</ul>
+<h2 id="metadata-association">Metadata association</h2>
+<p>One of the key challenges about data documentation is to document the data lifecycle from its origin as well as the movements and transformations it has been through in the information systems. Data movement is the exchange of data between two systems or applications. Data transformations are the results of business rules applied to the data for a specific usage or processing activity. Therefore, metadata association is one way of achieving this challenge by linking:</p>
+<ul>
+<li>the content and condition of the data</li>
+<li>the systems that store the data, the processes that move it within and between systems</li>
+<li>and the result of the processing activities.</li>
+</ul>
+<p>Metadata association provides a first level of understanding of the data lifecycle to further support data lineage documentation:</p>
+<p><img src="media/metadata/metadata-lineage.png" /></p>
+<h2 id="architecture-patterns">Architecture patterns</h2>
+<hr />
+<p>In the previous sections we have described:</p>
+<ul>
+<li><strong>WHY</strong> AXA entities should act now on metadata management: AXA strategy, business objectives, entities maturity.</li>
+<li><strong>WHAT</strong> it means in term of priority, functional requirements (see Metadata management capabilities) and technical requirements (see Metadata management IT functions).</li>
+</ul>
+<p>We will now explore common design concerns to provide some insights on <strong>HOW</strong> to translate these requirements into technical solutions aligned with the business drivers and objectives.</p>
+<h2 id="unified-repository-vs-best-of-breed-approach">Unified repository vs Best of breed approach</h2>
+<p>The metadata repository can be defined as a system that allows the collection, processing, management and distribution of the metadata assets. Such system should support the IT functions previously described.</p>
+<p>A centralized repository means that all the business and technical metadata assets identified in the <a href="#WHAT-SHOULD-THE-ENTITIES-TARGET">data management information model</a> are managed within a single repository: business glossary, data standards, data usage documentation (processing activity, data transfers, data recipients, DPIA, business issues), the business rules, data dictionaries…</p>
+<p>As opposed to this central approach, a dedicated system can be defined per logical group of assets. Example: a repository for business glossary, a repository for data dictionaries, a repository for data quality rules documentation and implementation…</p>
+<div class="media">
+<div class="media-left">
+<p><img class="media-object" src="media/metadata/metadata-local-repo.png" alt="..."/></p>
+</div>
+<div class="media-body">
+<p><img class="media-object" src="media/metadata/metadata-central_repo.png" alt="..."/></p>
+</div>
+</div>
+<table>
+<tr>
+<td>
+</td>
+<td>
+<strong>PROS</strong>
+</td>
+<td>
+<strong>CONS</strong>
+</td>
+</tr>
+<tr>
+<td>
+Unified repository
+</td>
+<td>
+<ul>
+<li>Ease knowledge sharing and reuse by bringing the different stakeholders (business data owner, data steward, data privacy officer, data manager…) into the same repository.</li>
+<li>Accelerate metadata linking as all the assets are already collected into a single repository</li>
+<li>Centralized metadata stewardship to support metadata governance</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Require a strong governance model enforced by the data management office</li>
+<li>Onboarding of the different stakeholders (business data owner, data steward, data privacy officer, data manager…) can be challenging as the repository is not dedicated to their role</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Best of breed
+</td>
+<td>
+<ul>
+<li>Advanced features dedicated to each metadata documentation functions</li>
+<li>Specific user interface customized for each role</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Silos between metadata assets</li>
+<li>A dedicate effort should be put into metadata integration to link the metadata assets together and ensure consistency at the entity level.</li>
+<li>Collaboration between the different stakeholders can be limited</li>
+</ul>
+</td>
+</tr>
+</table>
+<p>The adoption of unified repository vs best of breed approach depends on the maturity of the entity:</p>
+<ul>
+<li>Start first documenting the metadata assets in Excel to become familiar with the concepts and foster a documentation culture within the team. This first step should also aim to prove the value of documenting metadata.</li>
+<li>Next move to a centralized repository to enforce metadata governance (stewardship, ownership, validation workflow…), scale metadata documentation, ease metadata access and administration management.</li>
+<li>The more mature the different stakeholders become, the more advanced requirements might emerge such as automated data discovery (ex record linkage) and catalog, data flow visualization, automated reverse engineering of data schemas… At this stage, the entity might consider dedicated repository to support these new requirements.</li>
+</ul>
+<h1 id="metadata-management-tooling">METADATA MANAGEMENT TOOLING</h1>
+<hr />
+<h3 id="functional-requirements">Functional requirements</h3>
+<p>This section will provide some recommendations on <strong>WITH WHAT</strong> tool meaning provide a framework for tool selection that can be adapt to each entity context.</p>
+<table>
+<tr>
+<td>
+Application Function
+</td>
+<td>
+<strong>Requirement</strong>
+</td>
+</tr>
+<tr>
+<td>
+Acquisition
+</td>
+<td>
+<p>The metadata repository should allow at minimum the documentation of the following metadata assets:</p>
+<ul>
+<li>Data glossary
+<ul>
+<li>Business Data Object</li>
+<li>Business Data Element</li>
+<li>Business Term</li>
+</ul></li>
+<li>Data dictionary
+<ul>
+<li>Environment</li>
+<li>Application (and related Technology)</li>
+<li>Data Flow</li>
+<li>Dataset (Database)</li>
+<li>Table</li>
+<li>Column</li>
+</ul></li>
+<li>Data usage
+<ul>
+<li>Data Processing Activity</li>
+<li>Data Recipient</li>
+<li>Data Transfer</li>
+<li>Data Protection Impact Assessment</li>
+<li>Data Provider</li>
+<li>Data Access and Privileges</li>
+<li>Add URL links to external documentation reference</li>
+</ul></li>
+<li>Governance assets
+<ul>
+<li>logical group of metadata, not limited to, but such as subject area (ex. policy, claim, product…), business area (ex. home, motor, travel, health…), geograpical area (ex. Italy, France, Spain, Paris…)</li>
+<li>data domain as the combination of two or more group of metadata</li>
+<li>Data steward, Data owner, Data manager, Data privacy officer, Data custodian, Application owner</li>
+</ul></li>
+<li>Rule &amp; Policy
+<ul>
+<li>Data Policy</li>
+<li>Business Data Quality Rule</li>
+<li>Deletion/retention date</li>
+</ul></li>
+<li>Data classficiation
+<ul>
+<li>Data Confidentiality classification</li>
+<li>Data Privacy classification</li>
+<li>Business value classification</li>
+<li>Define custom metadata classification dimension</li>
+</ul></li>
+<li>Data quality rules execution
+<ul>
+<li>Technical Data Quality Rule</li>
+<li>Rule execution</li>
+</ul></li>
+<li>Issue
+<ul>
+<li>Business Data Issue including related business problem and business impact</li>
+<li>Data Quality Issue reported following data quality rules execution</li>
+</ul></li>
+<li>Activity
+<ul>
+<li>Data Access event by people or applications</li>
+<li>Data Volume at a point-in-time</li>
+</ul></li>
+<li>Metadata association
+<ul>
+<li>Link between business and technical metadata</li>
+</ul></li>
+<li>Metadata inference: documentation of metadata through automated process such as machine learning. Example (below but not limited to):
+<ul>
+<li>Automatically processe available data to discover metadata relationships</li>
+<li>Identify metadata from patterns (email, phone number, credit cards, …)</li>
+<li>Identify relations between data (same values, repartition, …)</li>
+<li>Identify data drifts (outliers, …) and duplicates</li>
+<li>Identify metadata from dictionaries (company name, city, firstname, lastname, synonyms …)</li>
+</ul></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Governance
+</td>
+<td>
+<ul>
+<li>Validation workflow</li>
+<li>Task assignment</li>
+<li>Impact analysis</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Reporting
+</td>
+<td>
+<ul>
+<li>Perform online queries on metadata in batch mode</li>
+<li>Save queries in bookmarks</li>
+<li>Report metadata updates</li>
+<li>Visualize metadata lineage on the full information value chain</li>
+<li>Measure metadata quality, share it within the organization</li>
+<li>Out of the box reporting (graphical or textual) with support the export of reports in printable format (e.g., Word, PDF)</li>
+<li>Audit on metadata usage</li>
+<li>Adhoc reporting with “wild card” selection criteria</li>
+<li>Capability to plug leading business intelligence tool on metadata repository</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Access management
+</td>
+<td>
+<ul>
+<li>Metadata searching
+<ul>
+<li>Multi-criteria Search on metadata</li>
+<li>Full-text search on metadata (Google like)</li>
+<li>Search on metadata with auto-completion</li>
+</ul></li>
+<li>Event notification (creation, edition, deletion, validation) including email notification</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Reference data management
+</td>
+<td>
+<ul>
+<li>Manage normalized list of values (category list, code list, …)</li>
+<li>Administrate reference data (list of values)</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Administration
+</td>
+<td>
+<ul>
+<li>Metadata model design</li>
+<li>Roles &amp; permissions management
+<ul>
+<li>Manage Create, Delete, Update metadata right access</li>
+<li>Create user, group, and give authorizations on metadata depending on roles (including batch or user role)</li>
+</ul></li>
+<li>Event logging</li>
+<li>Database versioning</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Metadata exchange
+</td>
+<td>
+<ul>
+<li>Read metadata</li>
+<li>Query metadata</li>
+<li>Insert metadata</li>
+<li>Update metadata</li>
+<li>Subscibe to events</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="non-functional-requirements">Non-functional requirements</h3>
+<p>This section will provide some examples of non-functional requirements to consider also for the selection of the tool.</p>
+<table>
+<tr>
+<td>
+<strong>Application behavior</strong>
+</td>
+<td>
+<strong>Requirement</strong>
+</td>
+</tr>
+<tr>
+<td>
+Multitenancy
+</td>
+<td>
+Adapt roles and permissions and behaviors for a complex organization, e.g. to delegate administration rights for a specific scope of metadata. Support metadata portability and reversibility.
+</td>
+</tr>
+<tr>
+<td>
+Usability
+</td>
+<td>
+Optimal user experience for the intended population, for exemple integration of metadata services within user tools (widgets, plugins, etc.).
+</td>
+</tr>
+<tr>
+<td>
+Flexibility
+</td>
+<td>
+Add custom metadata atributes, extend and/or adapt the metadata data model.
+</td>
+</tr>
+<tr>
+<td>
+Adaptability
+</td>
+<td>
+The solution is able to adapt in case of metadata changes (e.g. database migration).
+</td>
+</tr>
+<td>
+Auditability
+</td>
+<td>
+Track modifications (creation, access, update, deletion) to provide third-party assurance about content integrity.
+</td>
+</tr>
+</tr>
+<td>
+Interoperability
+</td>
+<td>
+Ability to interoperate with other metadata management system, relying on standard metadata model. E.g.; OMG CWM, ODPI Egeria, etc.
+</td>
+</tr>
+</table>
+<h1 id="references">REFERENCES</h1>
+<hr />
+<p><strong>AXA references</strong></p>
+<p>[1] <a href="https://axa365.sharepoint.com/:b:/r/sites/Community-DataManagement/Assets/05%20-%20Data%20Management%20Activity%20Map/Data_Management_Activity_Map_With_Activities.pdf?csf=1&amp;web=1&amp;e=fKeEB7" target="_blank">Data Management Activity Map</a></p>
+<p>[2] <a href="http://flyto.corp.intraxa/EK9iDh" target="_blank">AXA Data Quality Handbook</a></p>
+<p>[3] <a href="https://axa365.sharepoint.com/sites/AXA_CTO-Office_Public/GTA/SitePages/Fundamental%20Principles.aspx" target="_blank">AXA Fundamental architecture principles</a></p>
+<p><strong>External references</strong></p>
+<p>[1] Martin Fowler, Kent Beck, John Brant, William Opdyke, and Don Roberts (1999) Refactoring: Improving the Design of Existing Code. Addison-Wesley</p>
+<p>[2] ISO/IEC 11179 Information technology - Metadata registries</p>
+<p>[3] <a href="https://www.omg.org/spec/CWM/About-CWM" target="_blank">Object Management Group (OMG) - Common Warehouse Metamodel (CWM)</a></p>
+<p>[4] Metadata: Shaping Knowledge from Antiquity to the Semantic Web - Richard Gartner</p>
+<p>[5] <a href="https://axa365.sharepoint.com/:b:/r/sites/Community-DataArchitecture/Reference%20documents/External%20Standards/DAMA-DMBOK/DAMA-DMBOK_2.pdf?csf=1&amp;web=1&amp;e=pXIxkf" target="_blank">DAMA Data Management Body of Knowledge (DMBOK) v2</a></p>
+<p>[6] <a href="https://www.w3.org/TR/vocab-dcat-2/" target="_blank">Object Management Group (OMG) - Data Catalog Vocabulary (DCAT)</a></p>
+<p>[7] <a href="https://github.com/odpi/egeria/tree/master/open-metadata-publication/website/open-metadata-specifications" target="_blank">ODPi EGERIA Open Metadata Specifications</a></p>
+<p>[8] <a href="https://www.dataversity.net/how-to-evaluate-a-data-governance-tool-with-20-indicators-plus-1/" target="_blank">Dataversity How to evaluate a data governance tool</a></p>
+<h1 id="SIGNIFICANT-REVISIONS">SIGNIFICANT REVISIONS</h1>
+<hr />
+<p>7 July 2017: Initial published version</p>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

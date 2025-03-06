@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA QUALITY CHECK LIST </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#Check_List"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size:large"></span> Data Quality Check List</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="Check_List"><span class="glyphicon glyphicon-list-alt" aria-hidden="true" style="font-size:large"></span> Data Quality Check List</h1>
+<div class="panel panel-warning">
+<div class="panel-heading">
+<span class="glyphicon glyphicon-info-sign" aria-hidden="true" style="font-size:large"></span> <strong>Notes</strong>
+</div>
+<div class="panel-body">
+<p>This check list is built to help you kick-off your data quality project or program if you don’t know where to start. Before going further we strongly recommand you to read the <a href="data-mgt-dq-handbook.html">Data Quality Handbook</a> which formalizes a unified framework for managing data quality endeavors spanning both people, rules &amp; processes, tools &amp; solutions patterns, assets &amp; experiences within AXA entities.</p>
+</div>
+</div>
+<details>
+<summary>
+<em>What is the baseline of my issue?</em>
+</summary>
+<p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 27%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check-List</th>
+<th style="text-align: left;">Handbook references</th>
+<th style="text-align: left;">My Data Atlas references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Which business processes are impacted?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Define">See Data quality Hanbook section <code>Define business requirements</code> for help and insights</a></td>
+<td style="text-align: left;">See how to define a <a href="https://pages.github.axa.com/AXA-GS-DMSS/my-data-atlas/#Data_processing_activity"><code>data processing activity</code></a> in my data atlas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Who are the people or organizations involved?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Which subject areas are impacted?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">See how to document a <a href="https://pages.github.axa.com/AXA-GS-DMSS/my-data-atlas/#Subject_Areas"><code>subject area</code></a> and <a href="https://pages.github.axa.com/AXA-GS-DMSS/my-data-atlas/#Business_Areas"><code>business area</code></a> in my data atlas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Which data objects and data elements are impacted?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">See how to document a <a href="https://pages.github.axa.com/AXA-GS-DMSS/my-data-atlas/#Data_Objects"><code>data object</code></a> or <a href="https://pages.github.axa.com/AXA-GS-DMSS/my-data-atlas/#Data_Elements"><code>data element</code></a> in my data atlas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Are they related to critical data elements?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Are they related to personal data or sensitive data?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Define">See Data quality Hanbook section <code>Define business requirements</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>
+<details>
+<summary>
+<em>Do I have the right level of sponsoring?</em>
+</summary>
+<p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 27%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check-List</th>
+<th style="text-align: left;">Handbook references</th>
+<th style="text-align: left;">My Data Atlas references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Are the business issues and project objectives clearly defined, understood, and supported by management, sponsors, stakeholders, and the project team?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Is the sponsor supportive of the project?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Have the appropriate resources been committed?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Has an initial communication plan been created?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>
+<details>
+<summary>
+<em>Am I able to conduct the data quality assessment?</em>
+</summary>
+<p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 27%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check-List</th>
+<th style="text-align: left;">Handbook references</th>
+<th style="text-align: left;">My Data Atlas references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Have resources needed for assessments been identified and committed?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Where do the data reside (i.e., applications, systems, databases involved)?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Are there other tools associated with the issue?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Have possible root causes been identified?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Root_Causes">See Data quality Hanbook section <code>Identify the causes of poor data quality</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Have any problems with permissions and access to data been identified?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Have training needs been identified?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Has the data capture and assessment plan been completed and documented (including the definition of the data population to be captured and the selection criteria)?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>
+<details>
+<summary>
+<em>Do I understand the business impact?</em>
+</summary>
+<p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 27%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check-List</th>
+<th style="text-align: left;">Handbook references</th>
+<th style="text-align: left;">My Data Atlas references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Are the business processes, people/organizations, and technology related to the business issues clearly identified?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Analyze">See Data quality Hanbook section <code>Analyze and document the information lifecycle</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Have the data quality and business issues been understood and linked in order to facilitate a detailed business impact assessment</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Assess_impact">See Data quality Hanbook section <code>Assess the business impact</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">For each quality assessment, have preliminary impact to the business and initial recommendations been included in the documentation?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Assess_impact">See Data quality Hanbook section <code>Assess the business impact</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Are the business owners committed to achieve the business impact assessment?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">For each impact assessment, have the costs of the data quality issues and benefits of improving it been estimated?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Assess_impact">See Data quality Hanbook section <code>Assess the business impact</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>
+<details>
+<summary>
+<em>Do I understand the root causes of poor data quality issues and can I mitigate them?</em>
+</summary>
+<p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 27%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check-List</th>
+<th style="text-align: left;">Handbook references</th>
+<th style="text-align: left;">My Data Atlas references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Have root causes been investigated and documented?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Root_Causes">See Data quality Hanbook section <code>Identify the causes of poor data quality</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Have specific recommendations for adressing those root causes been determined and documented?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Root_Causes">See Data quality Hanbook section <code>Identify the causes of poor data quality</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Am I able to implement data quality by design to prevent future data errors?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Improve">See Data quality Hanbook section <code>Develop improvement plans</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Am I able to implement data quality by contract (SLA) to prevent future data errors?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Improve">See Data quality Hanbook section <code>Develop improvement plans</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Has support for the improvement plans and recommended action been obtained?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Assess_impact">See Data quality Hanbook section <code>Assess the business impact</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Does the business owners have all the relevant information (including costs &amp; benefits matrix) to prioritize the recommendations?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Assess_impact">See Data quality Hanbook section <code>Assess the business impact</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Does the improvement pan include a RACI?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Improve">See Data quality Hanbook section <code>Develop improvement plans</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>
+<details>
+<summary>
+<em>Can I correct or prevent future data quality issues?</em>
+</summary>
+<p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 27%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Check-List</th>
+<th style="text-align: left;">Handbook references</th>
+<th style="text-align: left;">My Data Atlas references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Am I able to fix the current data errors?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Correct">See Data quality Hanbook section <code>Fix data quality issues</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Do I know tools and techniques available to fix the issues?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Correct">See Data quality Hanbook section <code>Fix data quality issues</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Do I need to fix historical data errors?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">What is the depth of historical data errors that should be fixed?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Have the solutions for addressing root causes and preventing future data errors been implemented?</td>
+<td style="text-align: left;"><a href="data-mgt-dq-handbook.html#Prevent">See Data quality Hanbook section <code>Prevent future data quality issues</code> for help and insights</a></td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Have changes to the current business processes from the new processes been documented?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Have participants in the new processes received training?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Do all participants have a consistent understanding of changes, expectations, roles/responsibilities ?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Have the data quality controls and associated reporting been automated ?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Have improvements been monitored and verified?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Have the successful improvements been standardized?</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">-</td>
+</tr>
+</tbody>
+</table>
+</p>
+</details>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

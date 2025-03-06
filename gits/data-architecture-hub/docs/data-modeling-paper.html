@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA MODELING </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#INTRODUCTION">INTRODUCTION</a></li>
+          <li><a href="#SURVEY-OF-AXA-ENTITIES-PRACTICE">SURVEY OF AXA ENTITIES PRACTICE</a></li>
+          <li><a href="#KEY-LEARNINGS">KEY LEARNINGS</a>
+          <ul>
+          <li><a href="#when-doing-data-modeling">When doing data modeling?</a></li>
+          <li><a href="#required-skills">Required skills</a></li>
+          <li><a href="#business-impacts-when-data-modeling-is-not-part-of-the-design-process">Business impacts when data modeling is not part of the design process</a></li>
+          </ul></li>
+          <li><a href="#enterprise-data-models">ENTERPRISE DATA MODELS</a>
+          <ul>
+          <li><a href="#data-standards-at-axa">Data standards at AXA</a></li>
+          <li><a href="#data-modeling-pitfalls">Data modeling pitfalls</a></li>
+          </ul></li>
+          <li><a href="#tooling">TOOLING</a></li>
+          <li><a href="#CONCLUSION">CONCLUSION</a></li>
+          <li><a href="#REFERENCES">REFERENCES</a></li>
+          <li><a href="#APPENDICES">APPENDICES</a></li>
+          <li><a href="#ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</a></li>
+          <li><a href="#SIGNIFICANT-REVISIONS">SIGNIFICANT REVISIONS</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="INTRODUCTION">INTRODUCTION</h1>
+<hr />
+<p><em>“To transform AXA’s value proposition <strong>‘from payer to partner’</strong>, we will deliver <strong>new services</strong> complementing the traditional insurance coverage and <strong>build new business models</strong> to increase the protection of our customers. Purpose, values and vision are shared by each and every employee throughout our organization, as <strong>we tailor our services and solutions</strong> to each of our 108 million customers around the world, one person at a time, in an ever-changing and fast-evolving world”. <a href="https://www.axa.com/en/about-us/our-purpose">AXA purpose, values and vision</a>.</em></p>
+<p>Our aspiration to automate behaviors and deliver new business services (e.g.; to send an email instead of sending physical mail by post) requires to translate real world business interactions into data elements (e.g.; “Matthew”, “Italy”, “176.31.84.249”) that are understood by both the business actors and the IT system. <strong>Data modeling is the process of analyzing business processes and real world domain knowledge to capture the data requirements and support application design.</strong> Data models will define the data structures (e.g.; “‘Matthew’ will be stored as a ‘Person’”, “‘Italy’ will be stored as a ‘Country’”), the relations between them (e.g.; “One ‘Person’ (instance) can live in multiple ‘Countries’”), and data lifecyle management rules.</p>
+<p><strong>By looking at data elements individually, there is a high chance ending up with a very complex and inefficient data model</strong>. To overcome this problem, over the years, computer science has demonstrated the benefits of sharing a common understanding of the business terminology and data requirements among the stakeholders involved in a project or application modernization. The ubiquitous language that emerges from the data modeling process depends on many factors such as cultural background and vocabulary, scope of the project, legacy applications, processing performance requirement, audience, etc. Yet, it is challenging to translate implicit business knowledge into explicit business data objects, at the right level of granularity (precision) to be computed by information systems. <strong>Data modeling closes the gaps by providing views, techniques and design patterns to successfully create and maintain the translations between the business objects of the real word and the data within the information system</strong>, cf. <a href="media/modeling/from-knowledge-to-data-objects.svg" target="_blank">illustration here</a>.</p>
+<p>Data modeling value lies in two folds:</p>
+<p align="center">
+<img src="media/modeling/data-modeling-value.svg" />
+</p>
+<p><strong>Data modeling practice and expertise should be maintained to support AXA ambitions.</strong> The AXA <a href="media/modeling/dmap.svg">data management activity map is consistent with this view</a>.</p>
+<p>The paper does not intent to explain how to build a data model, nor to provide guidance on the tooling. Its goal is to bring awareness about data modeling practice, clarify who should be involved and what we should target to maintain the appropriate level of expertise that can be activated when required.</p>
+<h1 id="SURVEY-OF-AXA-ENTITIES-PRACTICE">SURVEY OF AXA ENTITIES PRACTICE</h1>
+<hr />
+<p>Several AXA entities (<em>AXA Italy, AXA Germany, AXA Spain, AXA Belgium, AXA Hong Kong, AXA UK &amp; Ireland, AXA XL, AXA Switzerland, AXA Partners, AXA France, AXA Japan</em>) have been surveyed about their data modeling practice within the data architecture community. Below are the key insights learnt :</p>
+<ul>
+<li>All the entities surveyed have a data modeling practice experience be it in ad-hoc mode or managed centrally by a dedicated team.</li>
+<li>For most entities, logical or physical data models are designed on case by case at the project level, sometimes with the support of a data architect.</li>
+<li>The focus is mostly on data platforms (BI &amp; Analytics, Integration, MDM)</li>
+<li>Data modeling ownership varies per entity and is mainly divided between data architects and projects teams. In one instance, the data modeling endeavor is done by a data analyst in the CDO team for the BI &amp; Analytics platform.</li>
+</ul>
+<p>From these earlier results, we can observe that there are no common approach cross entities in term of scope and ownership of data modeling practice.</p>
+<p><img src="media/modeling/axa-survey.svg" /></p>
+<h1 id="KEY-LEARNINGS">KEY LEARNINGS</h1>
+<hr />
+<h2 id="when-doing-data-modeling">When doing data modeling?</h2>
+<blockquote>
+<p>“No meaningful program can be constructed without the use of some sort of data structure. Some design methods and programming languages even organize an entire software system around data structures”. Software Engineering Body of Knowledge (SEBOK).</p>
+</blockquote>
+<p>Data modeling is involved a the early stage of the data life cycle when important decisions are made about data structures (visible data and invisible data) and it is still possible to iterate in the design process.</p>
+<p align="center">
+<img src="media/modeling/data-lifecycle-activities.svg" alt="Data Management Body of Knowledge - Data Lifecycle"/>
+</p>
+<p>At the early stage of a project or significant change (<strong>Plan phase</strong>), the main focus is to identify business scope, business concepts, related business keys and associations, audience. A strong collaboration between the business actors and data architect is required for the alignment of stakeholders and the emergence of the ubiquitous language. The business data requirements must be considered at different levels: project level (e.g.; claim handling in a specific region), business capability level (e.g.; service fulfillment customer experience), enterprise level (e.g.; strategic partnerships).</p>
+<p>During the <strong>Design &amp; Enable phase</strong>, the data architect elaborates one or several logical data models. Data architects evaluate existing data models, identify possible extensions and limitations, validate with the business actors the most appropriate data model and implications (e.g.; data quality enforcement by design, possible data model extensions).</p>
+<p>During <strong>Create/Obtain</strong> phase, the data/software engineers translate the logical data model into a physical one (technical artefact) that the target database management system can understand. Now the data model is ready to receive data. <strong>Store/Maintain</strong>, <strong>Use</strong>, <strong>Enhance</strong>, <strong>Disposal of</strong> phases have less impact on the data model. However, it’s important to maintain the data documentation and to make the models available to a broader audience, cf. <a href="https://pages.github.axa.com/AXA-GO/data-management/data-ref-metadata.html">metadata management</a>.</p>
+<h2 id="required-skills">Required skills</h2>
+<p>Data modeling activities result in three types of deliverables: Conceptual, logical and physical data models.</p>
+<h4 id="at-the-conceptual-level-visible-data-communication-skill-is-essential">At the conceptual level (visible data), communication skill is essential</h4>
+<p align="center">
+<img src="media/modeling/perspective-consideration.svg" />
+</p>
+<p>Although the data architect may use modeling techniques such as generalization or normalization to effectively translate business objects into discrete units of data objects, an effective communication is key to understand business requirements (data scope and usages, data life cycle management, business need for data integration and data standardization). Creating awareness about data modeling practice and focusing on specific parts of the model will make workshops with business representatives more effective. Sector data models will help also for communication as they are in general stable external references peer reviewed and validated. The objective here is not necessary to align everyone on the same meaning for the same business concept, but to clarify the meaning in specific business domains.</p>
+<p><strong><em>Domain-Driven Design</em></strong> <em>techniques and patterns are relevant here to identify the problem space (domains and subdomains), and the solution bounded contexts and collaborations, cf. <a href="data-mgt-books.html#book-domain-driven-design">Eric Evans, Domain-Driven Design</a>.</em></p>
+<p><strong><em>Identification of core data elements</em></strong> <em>that support the business activities, cf. <a href="media/modeling/data-modeling-prioritization.png">data modeling prioritization</a></em>.</p>
+<p><strong><em>Leveraging industry data models</em></strong> <em>such as <a href="https://pages.github.axa.com/AXA-GO/data-architecture-hub/data-modeling-acord.html">ACORD (insurance)</a>, <a href="https://fhim.org/fhim-model">FIHM/FHIR (health)</a>, etc. can help to ask the right questions to the business and refine the data model</em>.</p>
+<p><strong><em>Generalization versus specialization:</em></strong> <em>generalization can be useful when strong flexibility is required. It should be coupled with up to documentation to ease readability and interpretability of the data model. The example provided shows the extreme scenario. Intermediate levels of generalization are possible, cf. <a href="media/modeling/generalization-specialization.svg" target="_blank">illustration here</a>.</em></p>
+<p><strong><em>No more than 3 concepts discussed at a time:</em></strong> <em>present to the participants only the business concepts that are relevant to make decisions and understand the implications. Examples: Person/Role/Policy, Structure/Place/Place Address, Loss event/Loss occurrence/Claim, etc. The reality is complex, cf. <a href="media/modeling/data-modeling-ontologies.png" target="_blank">multi-level ontologies</a>, it’s important to stay focus on the business context and problem to solve</em>.*</p>
+<p><strong><em>Simple representation:</em></strong> <em>The initial representation for discussion and aglinment must be simple to understand for the audience, cf. <a href="media/modeling/data-modeling-conceptual-model.png" target="_blank">Ronald G. Ross conceptual model</a>.</em></p>
+<h4 id="at-logical-and-physical-levels-invisible-data-a-good-understanding-of-common-data-modeling-schemes-is-required">At logical and physical levels (invisible data), a good understanding of common data modeling schemes is required</h4>
+<p align="center">
+<img src="media/modeling/implicit-to-explicit.svg" />
+</p>
+<p>Knowing data modeling paradigms such as entity-relationship, dimensional, object-oriented, time-based, data vault©, etc. is useful ; and their associate patterns and techniques (e.g.; <a href="https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/">Dimensional Modeling Techniques</a>) can help anticipate design choices and their implications.</p>
+<p><strong><em>Snapshot versus slowly changing dimension:</em></strong> <em>At the logical level, it’s important to group data elements together (or not), and to identify the best patterns to manage the data. For example a snapshot data structure best fit aggregated data where use cases are known upfront, with a specific refresh frequency. On the other side, slow changing dimension keeps track of the changes so that the current state can be reconstructed at any point in time, cf. <a href="media/modeling/history-tracking.svg" target="_blank">illustration here</a>.</em></p>
+<p><strong><em>Database Management System (DBMS) adaptation:</em></strong> <em>At the physical level, it also important to have a good overview and understanding of database management systems techniques, related functional and non-functional requirements covered, cf. <a href="media/modeling/databasestechniques.png" target="_blank">illustration here: </em>Source: Scalable Data Management - An In Depth Tutorial on NoSQL Data Stores - Felix Gessert, Wolfram Wingerath , Norbert Ritter<em></a>.</em></p>
+<h4 id="data-modeling-is-a-skill-essentially-harvested-from-practical-experiences-and-collaborations">Data modeling is a skill essentially harvested from practical experiences and collaborations</h4>
+<p>Data modeling is simple in theory but complex in practice. The temptation is high for a data modeler to elaborate and maintain a single holistic data model of the enterprise, or to design “generic” data models. Industry or market data models can be used for inspiration, but reference data models must be adapated to support the business requirements. A generic data model is either very large or very abastract, so it doesn’t support the design of a specific business application. Each entity should empower architects or data experts looking to develop their data modeling expertise with dedicated training programs, practical experience on concrete use cases and peer reviews. Priority should be given to data architect, data analyst, data engineer and software engineer. Yet other data experts such as data scientist, data custodian may find themselves in the position of making data modeling design choices. Thus, they should also benefit from the training programs on a voluntary basis.</p>
+<p>Avoid an isolate community of data modelers focusing solely on data structures. People practicing data modeling should be embedded in projects to fully grasp other stakeholders’ constraints and expectations. Build a local community of experts to exchange best practices and support local data initiatives. Leverage local and global networks to cross fertilize and keep the community up to date with new data requirements, technology trends and data modeling techniques or patterns. Data models belong not to the experts but to the organization; they must be easily accessible.</p>
+<h2 id="business-impacts-when-data-modeling-is-not-part-of-the-design-process">Business impacts when data modeling is not part of the design process</h2>
+<h4 id="packaged-solutions">Packaged solutions</h4>
+<p>An organization that has chosen a “buy before build” strategy for acquiring IT applications tends to see data modeling practice decreasing overtime. The lack of data modeling practice within this context will lead to:</p>
+<ul>
+<li>Inconsistent extensions or customizations which will make the data model more complex overtime. These inconsistencies are often hard to change after deployment because of downstream applications consuming the data.</li>
+<li>Missing documentation to track business rationale that have supported extensions or customizations choices (ex. Why do we have two entities describing the same business concept?).</li>
+<li>No capacity to support a business partnership.</li>
+</ul>
+<h4 id="in-house-solutions-digital-products-or-other-operational-applications">In-house solutions, digital products or other operational applications</h4>
+<p>Software development teams implement data structures based on business requirements and delivery constraints. Data models design effort is traded-off with delivery speed, and availability of the business domain experts. If the conditions for good quality data modeling are not met, the application may not be easy to use, or suffer from scalability, performance, interoperability or security issues. (cf. <a href="https://martinfowler.com/bliki/DesignStaminaHypothesis.html">DesignStaminaHypothesis</a>). With the rise of schema-less technologies, some engineers have assumed that flexible schema means less care to the data structures and more agility. “By-passing” data modeling as major later implications, for the application itself and for downstream applications. Flexible schema can be relevant in specific contexts, must be considered carefully and used appropriately, cf. <a href="https://martinfowler.com/articles/schemaless/">Schemaless Data Structures</a>.</p>
+<h4 id="bi-and-analytics-integration-master-data-management">BI and analytics, integration, master data management</h4>
+<p>The teams in charge of BI and analytics, integration or MDM applications have always been required to design data models, but also to understand the data models from others. There are usually in the position of consuming a variety of data models, sometimes also facing the data model’s evolutions.</p>
+<p>When the data model is not self-explanatory, the teams have to rely on the functional specification (when it exists), or to infer and interpret the data model by doing some data archeology (data profiling). It leads to costly, time consuming data integration effort. The complexity increases requiring complex business rules to attempt to reconciliate the data prior to derive any business value.</p>
+<h1 id="enterprise-data-models">ENTERPRISE DATA MODELS</h1>
+<p><img src="media/modeling/modeling-visible-invisible.png" /></p>
+<p><em>“<strong>Data is representation of the real world. If you want your data to be simple, make the world simple and get back to me</strong>”.</em> Karen Lopez, DAMA Advisor.</p>
+<p>With unified data, organizations get data that is both actionable and accurate. Unification of data cross processes can benefit an average of <a href="https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/the-social-economy">19% of employees workweek searching</a> for data. However, unification of data implies first the unification of data processes, which implies a unification of some business processes. The purpose of data modeling at AXA is to support the business domains in their mission, by leveraging robust reference data models.</p>
+<p><strong><em>Reasons for customization:</em></strong> <em>capture specific business requirements to support a business process</em>.</p>
+<p><strong><em>Reasons for standardization:</em></strong> <em>anticipating changes in the business model (scalability, flexibility), regulatory compliance related data management and reporting</em>.</p>
+<p>Note: data integration and data standardization are not supporting the same objectives, cf. <a href="media/modeling/business-operating-model.svg" target="_blank">illustration here</a>. Data standardization (sharing a data model) targets a consistent user experience for end users with data and the possibility to connect/reuse existing process or tools that leverage the data standard. Data integration (sharing data) requires to expose one or multiple data models triggered by collaboration needs to optimize cost (reuse data) and/or generate more additional value (e.g. develop additional services through business partnerships).</p>
+<h2 id="data-standards-at-axa">Data standards at AXA</h2>
+<p>A <a href="https://pages.github.axa.com/AXA-GO/data-ref-modeling/data-model-axa-reference.html">high level map of data objects</a> is proposed by AXA Group Data Architecture. This reference must be used ONLY AS AN INPUT to ease communication and collaboration cross entities and with other parties (partners, service providers, etc.).</p>
+<p>For insurance industry related processes, the approach undertaken by AXA since 2013 is to leverage <a href="./data-modeling-acord.html">ACORD Information Model</a> ACORD data model is very generic, it has to be customized for the context of the project scope and data requirements. <a href="https://www.omg.org/spec/PC/About-PC/">Object Management Group (OMG) P&amp;C Data Model</a> can be used also for inspiration for P&amp;C business line. For IT business activities, AXA relies on the domain expert ServiceNow, and The Open Group IT4IT, cf. <a href="./data-modeling-it4it.html">IT4IT Information Model</a>.</p>
+<p>The overall recommendation is whenever possible to leverage domain standards as an input (e.g.; for finance, compliance, etc.), and to adapt those standards to the context.</p>
+<h2 id="data-modeling-pitfalls">Data modeling pitfalls</h2>
+<h4 id="not-doing-data-modeling-at-the-early-stage">Not doing data modeling at the early stage</h4>
+<p>It can be tempting to postpone the modeling effort until later, but this is not a good practice as data models are hard to change.</p>
+<p><strong>How to avoid the pitfall?</strong> -&gt; start by data modeling and ensure a minimum is done before entering into the technical solution. CVhallenge stakeholders if they don’t want.</p>
+<h4 id="data-modeling-roundabout-or-data-model-everything">Data modeling roundabout or data model everything</h4>
+<p>Without business requirements, there is a high chance entering into the data modeling roundabout modeling all the scenario.</p>
+<p><strong>How to avoid the pitfall?</strong> -&gt; discuss with a buysiuness architect, reach out to a business expert to confirm.</p>
+<h1 id="tooling">TOOLING</h1>
+<p>Several tools exist on the market, from standalone tools specialized in specific area (e.g.; API design) to enterprise architecture and modeling repositories. For data modeling the tooling is import for collaboration and as an accelerator to derive automatically the physical data schema from logical design.</p>
+<h1 id="CONCLUSION">CONCLUSION</h1>
+<hr />
+<h4 id="data-modeling-to-facilitate-collaborations-and-to-improve-the-user-experience">Data modeling to facilitate collaborations and to improve the user experience</h4>
+<p>Earlier in this paper, we defined data modeling as a mean to reach a common understanding of the data concepts. Business involvement and data modeling techniques will ease the translation of implicit business knowledge into explicit data structures. Ease collaboration also means:</p>
+<ul>
+<li>Make existing data models accessible to ease understanding and adoption</li>
+<li>Leverage standards or industry data models when possible as solid baselines</li>
+<li>Promote data standardization with clear business objectives</li>
+</ul>
+<h4 id="data-modeling-for-data-quality-data-security-data-interoperability-performance">Data modeling for data quality, data security, data interoperability, performance</h4>
+<p>Data modeling is one component of the design and implementation of data products and application systems. The decisions taken during the data modeling design activities have implications that need to be shared. The data architect has to engage with the business stakeholders so they have a good understanding of the data model and can validate the implications. The results of these discussions need to be captured for traceability and governance purpose.</p>
+<p>Data modeling techniques are skills that can be acquire from training and develop through practical experiences. Data experts can develop their data modeling expertise with dedicated training programs.</p>
+<h4 id="collective-effort">Collective effort</h4>
+<p>Isolate community of data modelers focusing solely on data structures leads to useless data models that appears more as a constraint than an asset to support design decisions. Data modeling is a collective effort that must be maintained over time to keep the agility to adapt data structures to new business needs. It is also important to:</p>
+<ul>
+<li>Create awareness about data modeling practices beyond data experts’ communities</li>
+<li>Build a local community of experts to exchange best practices and support local data initiatives</li>
+</ul>
+<h1 id="REFERENCES">REFERENCES</h1>
+<hr />
+<p><a href="https://camillehdl.dev/reading-data-reality-w-kent/">Data and Reality, William Kent, 1978 - Summary</a></p>
+<p><a href="https://www.dataversity.net/should-you-consider-a-unified-data-model/">Should You Consider a Unified Data Model?, DATAVERSITY</a></p>
+<p><a href="https://pubs.opengroup.org/architecture/togaf9-doc/arch/chap25.html">Data Interoperability Requirements, TOGAF</a></p>
+<p><a href="https://pages.github.axa.com/AXA-GO/data-architecture-hub/data-mgt-books.html#data-modeling">Data modeling books library</a></p>
+<h1 id="APPENDICES">APPENDICES</h1>
+<hr />
+<p><a href="media/modeling/example/AXACH_L2 Product.png" target="_blank">Example of conceptual model from AXA CH</a></p>
+<p><a href="media/modeling/example/axa-uk-health-datamodeling-approach.png" target="_blank">AXA UK Health approach for data modeling</a></p>
+<p><a href="media/modeling/data-modeling-notations.png" target="_blank">Data modeling notations</a></p>
+<p><a href="https://protege.stanford.edu/" target="_blank">Conceptual data modeling tooling example “Protégé” (ontologies)</a></p>
+<h1 id="ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</h1>
+<hr />
+<p>We gratefully acknowledge the contribution of the following people for reviewing the paper and sharing their experiences:</p>
+<ul>
+<li>Michel HANS (AXA France)</li>
+<li>Paul GALLOP (AXA Health UK)</li>
+<li>Matthew BROWN (AXA Insurance UK)</li>
+<li>Andreas GRUBER (AXA Switzerland)</li>
+<li>Mélissa MARIËN (AXA Belgium)</li>
+</ul>
+<h1 id="SIGNIFICANT-REVISIONS">SIGNIFICANT REVISIONS</h1>
+<hr />
+<p>24 October 2022: Published<br />
+17 January 2023: AXA reference data model chapter</p>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

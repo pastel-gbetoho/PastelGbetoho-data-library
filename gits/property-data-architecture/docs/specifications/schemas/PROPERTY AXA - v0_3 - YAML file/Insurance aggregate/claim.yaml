@@ -1,0 +1,11 @@
+claimNumber: 250-005-6426
+policyNumber: "242630373"
+settlementDate: "2019-06-03"
+claimStatusCode: Settled
+defaultCurrencyCode: GBP
+totalPaidAmount: 1049.17
+totalOutstandingReserveAmount: 1091.83
+totalRecoveredAmount: 0
+totalOutstandingRecoveryAmount: 2141
+relatedClaim:
+  - "@100-000-8020"

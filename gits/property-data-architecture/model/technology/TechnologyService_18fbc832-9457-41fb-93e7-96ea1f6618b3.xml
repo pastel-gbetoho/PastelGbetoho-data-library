@@ -1,0 +1,5 @@
+<archimate:TechnologyService
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="GEOSPATIAL PLATFORM "
+    id="18fbc832-9457-41fb-93e7-96ea1f6618b3"
+    documentation="Hosting the footprinting engine and the application&#xD;&#xA;Batch processing of incoming customer location data&#xD;&#xA;Exposing the results as APIs for internal applications"/>

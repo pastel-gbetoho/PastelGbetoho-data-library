@@ -1,0 +1,2487 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "PROPERTY AXA",
+    "type": "object",
+    "properties": {
+        "party": {
+            "type": "object",
+            "properties": {
+                "partyIdentifier": {
+                    "type": "string",
+                    "primaryKey": true,
+                    "isActivated": true,
+                    "examples": [
+                        "P1234567890"
+                    ],
+                    "GUID": "e07cc3d1-7b29-11ea-a2ac-5fb69c2c0dd7"
+                },
+                "typeCode": {
+                    "type": "string",
+                    "enum": [
+                        "PERSON",
+                        "ORGANIZATION"
+                    ],
+                    "isActivated": true,
+                    "examples": [
+                        "PERSON"
+                    ],
+                    "GUID": "e07cc3d2-7b29-11ea-a2ac-5fb69c2c0dd7"
+                },
+                "fullName": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "George Herbert Walker Bush"
+                    ],
+                    "GUID": "e07cc3d3-7b29-11ea-a2ac-5fb69c2c0dd7"
+                },
+                "taxRegistration": {
+                    "type": "array",
+                    "isActivated": true,
+                    "GUID": "e07cc3d4-7b29-11ea-a2ac-5fb69c2c0dd7",
+                    "prefixItems": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "taxIdentifier": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "RSS MRA 74D22 A001Q"
+                                    ],
+                                    "GUID": "e07ceae1-7b29-11ea-a2ac-5fb69c2c0dd7"
+                                },
+                                "taxRegistrationKind": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "FISCAL_CODE"
+                                    ],
+                                    "GUID": "e07ceae2-7b29-11ea-a2ac-5fb69c2c0dd7"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "isActivated": true,
+                            "GUID": "e07ceae0-7b29-11ea-a2ac-5fb69c2c0dd7",
+                            "required": [
+                                "taxIdentifier",
+                                "taxRegistrationKind"
+                            ]
+                        }
+                    ]
+                },
+                "contactMethod": {
+                    "isActivated": true,
+                    "type": "object",
+                    "properties": {
+                        "postalMailContact": {
+                            "type": "array",
+                            "isActivated": true,
+                            "GUID": "1b894f59-6c07-433d-9924-b57eb68a1917",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "usageCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BUSINESS",
+                                            "PERSONAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PERSONAL"
+                                        ],
+                                        "GUID": "a58f6c75-6f63-4f85-b6dc-69b672c13059"
+                                    },
+                                    "contactMethodKind": {
+                                        "type": "string",
+                                        "enum": [
+                                            "CORRESPONDANCE",
+                                            "RESIDENTIAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "RESIDENTIAL"
+                                        ],
+                                        "GUID": "128dfb20-2c49-4fee-9488-d0a7fdedc4b9"
+                                    },
+                                    "placeAddress": {
+                                        "type": "object",
+                                        "properties": {
+                                            "postalAddress": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "unitNumber": {
+                                                        "isActivated": true,
+                                                        "type": "integer",
+                                                        "GUID": "dfd6b0bf-068d-4b24-9438-7e2e2ecf6c9c"
+                                                    },
+                                                    "floorNumber": {
+                                                        "isActivated": true,
+                                                        "type": "integer",
+                                                        "GUID": "636d7a25-e5c9-4293-b507-230c64df477a"
+                                                    },
+                                                    "addressLines": {
+                                                        "isActivated": true,
+                                                        "type": "string",
+                                                        "GUID": "41b32d5d-213c-459b-bec8-85d2b7b2b95a"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "isActivated": true,
+                                                "GUID": "29612015-f476-45a6-b839-0a5b18e5e7a8"
+                                            },
+                                            "streetAddress": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "unstructuredAddress": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "61 Rue Mstislav Rostropovitch"
+                                                        ],
+                                                        "GUID": "1e375f1f-1d65-4e16-9174-4da51081e4fa"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "Mstislav Rostropovitch"
+                                                        ],
+                                                        "GUID": "01c6bfe8-349f-4bac-ae3c-3628657a88f4"
+                                                    },
+                                                    "number": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "61"
+                                                        ],
+                                                        "GUID": "f48b2329-516e-4864-bd69-15a6b315b21b"
+                                                    },
+                                                    "typeCode": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "RUE"
+                                                        ],
+                                                        "GUID": "56c22a98-4e5c-404a-97bd-5f9d4ba6f34d"
+                                                    },
+                                                    "preDirectionCode": {
+                                                        "isActivated": true,
+                                                        "type": "string",
+                                                        "GUID": "ceff446a-119a-4b36-95db-5d518921659f"
+                                                    },
+                                                    "postDirectionCode": {
+                                                        "isActivated": true,
+                                                        "type": "string",
+                                                        "GUID": "1eeff1e8-e73e-4595-923e-93778dc9e4bc"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "isActivated": true,
+                                                "GUID": "35ddf040-e482-4884-899c-1a6ddd186937"
+                                            },
+                                            "postCode": {
+                                                "type": "string",
+                                                "isActivated": true,
+                                                "examples": [
+                                                    "75017"
+                                                ],
+                                                "GUID": "1730b65c-4066-4925-b272-168e39d9cd5b"
+                                            },
+                                            "municipality": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "PARIS"
+                                                        ],
+                                                        "GUID": "35590e8c-ba92-47bb-8994-fe022c000e2c"
+                                                    },
+                                                    "typeCode": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "BOROUGH",
+                                                            "CITY",
+                                                            "COUNTY",
+                                                            "PARISH",
+                                                            "PREFECTURE",
+                                                            "TOWN",
+                                                            "TOWNSHIP",
+                                                            "VILLA",
+                                                            "VILLAGE",
+                                                            "WARD",
+                                                            "ZONE"
+                                                        ],
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "CITY"
+                                                        ],
+                                                        "GUID": "82830712-466e-4267-8387-0e87fd782151"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "isActivated": true,
+                                                "GUID": "948743c8-bcba-48e8-8339-0a3fcb861d1b",
+                                                "required": [
+                                                    "name"
+                                                ]
+                                            },
+                                            "country": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "alphaIsoCode": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "FR"
+                                                        ],
+                                                        "GUID": "86016f87-c3ec-4c53-9e71-1a5e7525ead8"
+                                                    },
+                                                    "name": {
+                                                        "type": "string",
+                                                        "isActivated": true,
+                                                        "examples": [
+                                                            "France"
+                                                        ],
+                                                        "GUID": "dc8888d5-2634-4f19-b08b-47d1f7022f06"
+                                                    }
+                                                },
+                                                "additionalProperties": false,
+                                                "isActivated": true,
+                                                "GUID": "63bac9ba-61fd-41dd-bdc4-58d31b471552",
+                                                "required": [
+                                                    "alphaIsoCode",
+                                                    "name"
+                                                ]
+                                            }
+                                        },
+                                        "additionalProperties": false,
+                                        "isActivated": true,
+                                        "GUID": "c6ce12ed-ef96-4c2e-ba76-d76de792f78a",
+                                        "required": [
+                                            "streetAddress",
+                                            "postCode",
+                                            "municipality",
+                                            "country"
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "d024b340-5c7c-40cb-8efb-922bf9c0663f",
+                                "required": [
+                                    "usageCode",
+                                    "contactMethodKind",
+                                    "placeAddress"
+                                ]
+                            }
+                        },
+                        "telephoneCallContact": {
+                            "type": "array",
+                            "isActivated": true,
+                            "GUID": "7b90e14d-3dbd-4ad0-949a-3ba292485bea",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "usageCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BUSINESS",
+                                            "PERSONAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PERSONAL"
+                                        ],
+                                        "GUID": "d4c6c9ee-a6f4-42e9-ab19-054331919dc9"
+                                    },
+                                    "contactMethodKind": {
+                                        "type": "string",
+                                        "enum": [
+                                            "FIXE",
+                                            "MOBILE",
+                                            "OTHER",
+                                            "FAX"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "MOBILE"
+                                        ],
+                                        "GUID": "66d87b01-afc1-497d-98f9-a790606565fe"
+                                    },
+                                    "fullNumber": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "0033600000011"
+                                        ],
+                                        "GUID": "92ddf529-b87d-4a73-b5d0-97bc76d8e4f6"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "4f62a088-abdb-4630-8422-5ae124698e34",
+                                "required": [
+                                    "usageCode",
+                                    "contactMethodKind",
+                                    "fullNumber"
+                                ]
+                            }
+                        },
+                        "emailContact": {
+                            "type": "array",
+                            "isActivated": true,
+                            "GUID": "791a797f-6d0a-41b0-9698-a78873ba7db2",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "usageCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BUSINESS",
+                                            "PERSONAL",
+                                            "OTHER"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PERSONAL"
+                                        ],
+                                        "GUID": "2a9b6b01-5ce5-40a2-a2ae-c655a1c0962b"
+                                    },
+                                    "emailIdentifier": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "test@gmail.com"
+                                        ],
+                                        "GUID": "d3a0252e-93f2-4782-9e24-2332a38e7be8"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "40ae614d-7b3c-4934-98cb-6a5c1c08eaea",
+                                "required": [
+                                    "usageCode",
+                                    "emailIdentifier"
+                                ]
+                            }
+                        }
+                    },
+                    "additionalProperties": false,
+                    "GUID": "b5f97dac-00ec-4844-99bb-2740485afaeb"
+                },
+                "accountAgreement": {
+                    "type": "object",
+                    "properties": {
+                        "accountNumber": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "31926819"
+                            ],
+                            "GUID": "dcf682c0-b48e-11ea-88b6-9d6b493f75b0"
+                        },
+                        "branchCode": {
+                            "type": "string",
+                            "isActivated": true,
+                            "GUID": "e6819870-b48e-11ea-88b6-9d6b493f75b0"
+                        },
+                        "ibanAccountIdentifier": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "GB29 NWBK 6016 1331 9268 19"
+                            ],
+                            "GUID": "f1c9c770-b48e-11ea-88b6-9d6b493f75b0"
+                        },
+                        "authorizedCard": {
+                            "type": "object",
+                            "properties": {
+                                "cardNumber": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "4111 1111 1111 1111"
+                                    ],
+                                    "GUID": "37964760-b48f-11ea-88b6-9d6b493f75b0"
+                                },
+                                "partyFullName": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "George Bush"
+                                    ],
+                                    "GUID": "64921640-b48f-11ea-88b6-9d6b493f75b0"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "isActivated": true,
+                            "GUID": "1bfdead0-b48f-11ea-88b6-9d6b493f75b0"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "isActivated": true,
+                    "GUID": "d05bbc10-b48e-11ea-88b6-9d6b493f75b0"
+                }
+            },
+            "additionalProperties": true,
+            "isActivated": true,
+            "unevaluatedProperties": false,
+            "GUID": "e07cc3d0-7b29-11ea-a2ac-5fb69c2c0dd7",
+            "anyOf": [
+                {
+                    "isActivated": true,
+                    "type": "object",
+                    "properties": {
+                        "person": {
+                            "type": "object",
+                            "properties": {
+                                "prefixTitleCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Prof"
+                                    ],
+                                    "GUID": "07fddac9-a061-4415-80a3-3ac489939f28"
+                                },
+                                "givenName": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "George"
+                                    ],
+                                    "GUID": "17f9434d-7cf4-4466-ae8c-0c4112cf8672"
+                                },
+                                "middleName": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Herbert Walker"
+                                    ],
+                                    "GUID": "2fa4d1ef-2bc6-44c6-ac63-dce0aad6af78"
+                                },
+                                "surname": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Bush"
+                                    ],
+                                    "GUID": "06aee8a4-c733-436c-82e3-bd47f01e3ba2"
+                                },
+                                "marriedSurname": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "GUID": "3f87e7bc-ed2a-43a7-af3b-faeba21ebe94"
+                                },
+                                "birthDate": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "1977-04-22"
+                                    ],
+                                    "GUID": "b0ebde77-80cb-4415-ae81-0e4eea111fb7"
+                                },
+                                "birthTime": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "GUID": "2d0608e0-fec2-455f-bdd5-ce0f186651f1"
+                                },
+                                "genderCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Male"
+                                    ],
+                                    "GUID": "49dc0e52-e256-47af-a894-e343bd7e9d28"
+                                },
+                                "primaryOccupation": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Doctor"
+                                    ],
+                                    "GUID": "79806c45-bcd5-4e09-b014-2413d018e381"
+                                },
+                                "secondaryOccupation": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Teacher"
+                                    ],
+                                    "GUID": "a8c7f4a4-a735-49fd-ab66-b83799b269bc"
+                                },
+                                "maritalStatusCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "Single"
+                                    ],
+                                    "GUID": "453d3a24-faae-4183-9838-422976587bb1"
+                                },
+                                "socioEconomicRisk": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "0.5"
+                                    ],
+                                    "GUID": "413cff70-4c68-48bb-86d5-1e7eceb1efe1"
+                                },
+                                "personRegistration": {
+                                    "type": "array",
+                                    "isActivated": true,
+                                    "GUID": "5587ccb1-cc92-4e69-b75a-941a44009ba4",
+                                    "prefixItems": [
+                                        {
+                                            "type": "object",
+                                            "properties": {
+                                                "registrationIdentifier": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "210692106990"
+                                                    ],
+                                                    "GUID": "d89b3dfb-6e2e-4559-bb4e-a7ac63cec6d2"
+                                                },
+                                                "registrationKind": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "DRIVER_LICENCE"
+                                                    ],
+                                                    "GUID": "a932f15f-c00f-4144-b1be-ce30ed032bff"
+                                                },
+                                                "effectivePeriodStartDate": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "1995-06-20"
+                                                    ],
+                                                    "GUID": "c33aa71f-dd39-43ec-a9a4-a6d3c2745c55"
+                                                },
+                                                "effectivePeriodEndDate": {
+                                                    "type": "string",
+                                                    "format": "date",
+                                                    "isActivated": true,
+                                                    "GUID": "976d4a11-40f4-4272-ba98-a8c06e9e3d32"
+                                                },
+                                                "driverLicenseVehicleClassCode": {
+                                                    "type": "string",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "B"
+                                                    ],
+                                                    "GUID": "20496948-5935-423e-86d4-34dcdc561dfe"
+                                                },
+                                                "drivingPointsCount": {
+                                                    "type": "number",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        12
+                                                    ],
+                                                    "GUID": "2d8eda10-3942-4c78-9b2b-e2d905413d4b"
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "isActivated": true,
+                                            "GUID": "23f6c368-a498-4acc-bfea-fa7701fc6c0a",
+                                            "required": [
+                                                "registrationIdentifier",
+                                                "registrationKind"
+                                            ]
+                                        }
+                                    ],
+                                    "items": false
+                                }
+                            },
+                            "additionalProperties": false,
+                            "isActivated": true,
+                            "GUID": "d256faa5-bb59-4398-b5e5-d129f48c4002",
+                            "required": [
+                                "givenName",
+                                "surname"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true,
+                    "GUID": "98b7aa11-6340-4226-8f8f-db8bd026a857"
+                },
+                {
+                    "isActivated": true,
+                    "type": "object",
+                    "properties": {
+                        "organization": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "organizationKind": {
+                                    "type": "string",
+                                    "enum": [
+                                        "COMPANY",
+                                        "GOVERNMENTBODY",
+                                        "GROUP",
+                                        "ORGANIZATIONUNIT",
+                                        "OTHER"
+                                    ],
+                                    "isActivated": true,
+                                    "GUID": "a09d3be2-c49e-47b2-811c-9ad677f8d6cd"
+                                },
+                                "organizationUnitKind": {
+                                    "type": "string",
+                                    "enum": [
+                                        "BRANCH",
+                                        "DEPARTMENTALUNIT",
+                                        "REGIONALUNIT",
+                                        "TEAM"
+                                    ],
+                                    "isActivated": true,
+                                    "GUID": "414b4179-4cea-41a2-9181-8bcde96928a0"
+                                },
+                                "agreedProviderIndicator": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "GUID": "d67464d7-db14-439b-98c7-4521dd185c71"
+                                },
+                                "operations": {
+                                    "isActivated": true,
+                                    "type": "object",
+                                    "properties": {
+                                        "operationCode": {
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "examples": [
+                                                "4411"
+                                            ],
+                                            "GUID": "1ed6779b-2e13-4258-87a1-748feb49109b"
+                                        },
+                                        "natureOfBusiness": {
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "examples": [
+                                                "Automobile Dealers"
+                                            ],
+                                            "GUID": "9ba8a3bd-5250-44d7-a1ec-96f986ec12fc",
+                                            "$comment": "Example base on [2022 NAICS Definition](https://www.census.gov/naics/?input=44&chart=2022)"
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "GUID": "882f1a08-682c-4776-a3d1-e158b35bc1eb"
+                                }
+                            },
+                            "isActivated": true,
+                            "GUID": "89205a0b-da5d-4394-95fb-556dd40f5cd6",
+                            "required": [
+                                "organizationKind"
+                            ]
+                        }
+                    },
+                    "additionalProperties": true,
+                    "GUID": "d887566a-b3e7-420c-804f-de2413b67f41"
+                }
+            ],
+            "required": [
+                "partyIdentifier",
+                "typeCode",
+                "fullName"
+            ]
+        },
+        "person": {
+            "type": "object",
+            "properties": {
+                "prefixTitleCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Prof"
+                    ],
+                    "GUID": "88e262dc-c671-4f2a-a740-20d137cc1917"
+                },
+                "givenName": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "George"
+                    ],
+                    "GUID": "08aa6157-1a88-403a-b822-75e10703cb3e"
+                },
+                "middleName": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Herbert Walker"
+                    ],
+                    "GUID": "c1bcd568-f77f-4c01-bc5f-b999872db761"
+                },
+                "surname": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Bush"
+                    ],
+                    "GUID": "6415bbd1-86ca-4b24-af0a-e21955a090eb"
+                },
+                "marriedSurname": {
+                    "type": "string",
+                    "isActivated": true,
+                    "GUID": "e3499ded-6daa-469a-a896-a03bba4440cd"
+                },
+                "birthDate": {
+                    "type": "string",
+                    "format": "date",
+                    "isActivated": true,
+                    "examples": [
+                        "1977-04-22"
+                    ],
+                    "GUID": "082b02d3-0aed-4533-abcd-53b83c4cb0c4"
+                },
+                "birthTime": {
+                    "type": "string",
+                    "isActivated": true,
+                    "GUID": "0c65bdbb-7d6c-45ba-917a-00677bb373fb"
+                },
+                "genderCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Male"
+                    ],
+                    "GUID": "7ef4305c-a22e-44dc-a10b-be57a3bb3a67"
+                },
+                "primaryOccupation": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Doctor"
+                    ],
+                    "GUID": "7d98aa42-e979-4335-9ecd-5460839a332b"
+                },
+                "secondaryOccupation": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Teacher"
+                    ],
+                    "GUID": "b9999d87-c9a5-4605-9d94-6f7ee9799bd2"
+                },
+                "maritalStatusCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Single"
+                    ],
+                    "GUID": "68ff9bf2-d2d3-4f73-a6cc-15a7ad78f62f"
+                },
+                "socioEconomicRisk": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "0.5"
+                    ],
+                    "GUID": "fd5c58c0-c0bd-4a43-bfad-cfa2dd27ae4c"
+                },
+                "personRegistration": {
+                    "type": "array",
+                    "isActivated": true,
+                    "GUID": "0f8a9784-ffff-44d7-93b1-192be777015a",
+                    "prefixItems": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "registrationIdentifier": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "210692106990"
+                                    ],
+                                    "GUID": "fc9286d5-6a0e-4d17-8927-b807b626acd6"
+                                },
+                                "registrationKind": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "DRIVER_LICENCE"
+                                    ],
+                                    "GUID": "d27abde8-c142-4257-adc7-4e39c4b8700e"
+                                },
+                                "effectivePeriodStartDate": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "1995-06-20"
+                                    ],
+                                    "GUID": "fd903814-bb35-4375-b115-a1dc8dd4f640"
+                                },
+                                "effectivePeriodEndDate": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "isActivated": true,
+                                    "GUID": "073e1c80-9f5e-4e4a-a8aa-9bd9d2f39350"
+                                },
+                                "driverLicenseVehicleClassCode": {
+                                    "type": "string",
+                                    "isActivated": true,
+                                    "examples": [
+                                        "B"
+                                    ],
+                                    "GUID": "d2f2ce23-f75b-4a9f-bcea-f194f6e741af"
+                                },
+                                "drivingPointsCount": {
+                                    "type": "number",
+                                    "isActivated": true,
+                                    "examples": [
+                                        12
+                                    ],
+                                    "GUID": "d94d78d4-d2b4-415f-97ec-738abd2b2bb4"
+                                }
+                            },
+                            "additionalProperties": false,
+                            "isActivated": true,
+                            "GUID": "a6886378-621b-4056-a1fc-815588348b01",
+                            "required": [
+                                "registrationIdentifier",
+                                "registrationKind"
+                            ]
+                        }
+                    ],
+                    "items": false
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "d2ba8d8e-93bd-4283-b1c6-05a86d4490d7",
+            "required": [
+                "givenName",
+                "surname"
+            ]
+        },
+        "organization": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "organizationKind": {
+                    "type": "string",
+                    "enum": [
+                        "COMPANY",
+                        "GOVERNMENTBODY",
+                        "GROUP",
+                        "ORGANIZATIONUNIT",
+                        "OTHER"
+                    ],
+                    "isActivated": true,
+                    "GUID": "7265e96e-28bf-46f2-8f7a-2e7a0822c4be"
+                },
+                "organizationUnitKind": {
+                    "type": "string",
+                    "enum": [
+                        "BRANCH",
+                        "DEPARTMENTALUNIT",
+                        "REGIONALUNIT",
+                        "TEAM"
+                    ],
+                    "isActivated": true,
+                    "GUID": "69562435-9bdc-4a89-a172-618f61015973"
+                },
+                "agreedProviderIndicator": {
+                    "type": "string",
+                    "isActivated": true,
+                    "GUID": "84c4ab53-5224-4ca0-b382-d0bd47ebf403"
+                },
+                "operations": {
+                    "isActivated": true,
+                    "type": "object",
+                    "properties": {
+                        "operationCode": {
+                            "isActivated": true,
+                            "type": "string",
+                            "examples": [
+                                "4411"
+                            ],
+                            "GUID": "898d099c-02b9-4e4f-b63c-59cb292ee6b0"
+                        },
+                        "natureOfBusiness": {
+                            "isActivated": true,
+                            "type": "string",
+                            "examples": [
+                                "Automobile Dealers"
+                            ],
+                            "GUID": "a6aacc40-4c57-402a-b467-0f2707040edb",
+                            "$comment": "Example base on [2022 NAICS Definition](https://www.census.gov/naics/?input=44&chart=2022)"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "GUID": "9ee811d4-de45-4874-8e0c-508b17764db1"
+                }
+            },
+            "isActivated": true,
+            "GUID": "6b73d5df-f58f-41f0-a24a-f97c69c8b0ad",
+            "required": [
+                "organizationKind"
+            ]
+        },
+        "emailContact": {
+            "type": "array",
+            "isActivated": true,
+            "GUID": "fe8dd058-c9f2-4115-82fb-91a0c228f075",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "usageCode": {
+                        "type": "string",
+                        "enum": [
+                            "BUSINESS",
+                            "PERSONAL",
+                            "OTHER"
+                        ],
+                        "isActivated": true,
+                        "examples": [
+                            "PERSONAL"
+                        ],
+                        "GUID": "778fd030-8bd7-4e23-8fd7-e8e1ae65a8c5"
+                    },
+                    "emailIdentifier": {
+                        "type": "string",
+                        "isActivated": true,
+                        "examples": [
+                            "test@gmail.com"
+                        ],
+                        "GUID": "fdc20d2a-1195-4235-804f-32af7a044032"
+                    }
+                },
+                "additionalProperties": false,
+                "isActivated": true,
+                "GUID": "9105d4d3-fcd5-4fb5-8d73-28411a407bb4",
+                "required": [
+                    "usageCode",
+                    "emailIdentifier"
+                ]
+            }
+        },
+        "telephoneCallContact": {
+            "type": "array",
+            "isActivated": true,
+            "GUID": "7d1efe9e-7799-45a9-9b2e-69f01adc2734",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "usageCode": {
+                        "type": "string",
+                        "enum": [
+                            "BUSINESS",
+                            "PERSONAL",
+                            "OTHER"
+                        ],
+                        "isActivated": true,
+                        "examples": [
+                            "PERSONAL"
+                        ],
+                        "GUID": "10ba8be1-84a0-4121-af9b-aeda21820606"
+                    },
+                    "contactMethodKind": {
+                        "type": "string",
+                        "enum": [
+                            "FIXE",
+                            "MOBILE",
+                            "OTHER",
+                            "FAX"
+                        ],
+                        "isActivated": true,
+                        "examples": [
+                            "MOBILE"
+                        ],
+                        "GUID": "a2e5c11e-c6a9-4120-8f61-640badca141c"
+                    },
+                    "fullNumber": {
+                        "type": "string",
+                        "isActivated": true,
+                        "examples": [
+                            "0033600000011"
+                        ],
+                        "GUID": "6b11fd15-ee21-4036-b2b3-b8e5106e895d"
+                    }
+                },
+                "additionalProperties": false,
+                "isActivated": true,
+                "GUID": "465c1b4c-489d-4e75-bc7f-c5c7376dd735",
+                "required": [
+                    "usageCode",
+                    "contactMethodKind",
+                    "fullNumber"
+                ]
+            }
+        },
+        "postalMailContact": {
+            "type": "array",
+            "isActivated": true,
+            "GUID": "264facf3-026b-4622-87ea-caafa87a8bbc",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "usageCode": {
+                        "type": "string",
+                        "enum": [
+                            "BUSINESS",
+                            "PERSONAL",
+                            "OTHER"
+                        ],
+                        "isActivated": true,
+                        "examples": [
+                            "PERSONAL"
+                        ],
+                        "GUID": "841886d6-ea14-4c22-9920-b33d57470bd1"
+                    },
+                    "contactMethodKind": {
+                        "type": "string",
+                        "enum": [
+                            "CORRESPONDANCE",
+                            "RESIDENTIAL",
+                            "OTHER"
+                        ],
+                        "isActivated": true,
+                        "examples": [
+                            "RESIDENTIAL"
+                        ],
+                        "GUID": "be6a62e9-ede9-4939-9a95-a263ed038934"
+                    },
+                    "placeAddress": {
+                        "type": "object",
+                        "properties": {
+                            "postalAddress": {
+                                "type": "object",
+                                "properties": {
+                                    "unitNumber": {
+                                        "isActivated": true,
+                                        "type": "integer",
+                                        "GUID": "1517eb19-535e-4af2-b2f6-ab74709096f0"
+                                    },
+                                    "floorNumber": {
+                                        "isActivated": true,
+                                        "type": "integer",
+                                        "GUID": "721a3743-ec53-4ad1-a4cb-cf53876c9065"
+                                    },
+                                    "addressLines": {
+                                        "isActivated": true,
+                                        "type": "string",
+                                        "GUID": "d9b4bc57-ea8a-465f-992b-e95d534b041a"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "9c033a32-2251-436c-b637-569c3a46e3fd"
+                            },
+                            "streetAddress": {
+                                "type": "object",
+                                "properties": {
+                                    "unstructuredAddress": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "61 Rue Mstislav Rostropovitch"
+                                        ],
+                                        "GUID": "52cf550d-066d-45d0-8edf-893d03368b91"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "Mstislav Rostropovitch"
+                                        ],
+                                        "GUID": "67daa2da-720f-43f8-9e2a-e2337344dc78"
+                                    },
+                                    "number": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "61"
+                                        ],
+                                        "GUID": "3267180e-65b6-4bbf-91e7-872705dd6140"
+                                    },
+                                    "typeCode": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "RUE"
+                                        ],
+                                        "GUID": "74323893-5c56-4b8d-801a-4c1d3d79a6bb"
+                                    },
+                                    "preDirectionCode": {
+                                        "isActivated": true,
+                                        "type": "string",
+                                        "GUID": "5d829902-c30a-42ee-9839-cf30b38c86f4"
+                                    },
+                                    "postDirectionCode": {
+                                        "isActivated": true,
+                                        "type": "string",
+                                        "GUID": "e3211501-5e64-48f9-b81f-f0f233fcd198"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "b23ac69f-e4b0-4827-9f89-d478d7371e09"
+                            },
+                            "postCode": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "75017"
+                                ],
+                                "GUID": "74aad6f2-b82b-4429-b03d-299c839f6679"
+                            },
+                            "municipality": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "PARIS"
+                                        ],
+                                        "GUID": "2a55058c-4ea7-4565-86e3-6a454c274ac7"
+                                    },
+                                    "typeCode": {
+                                        "type": "string",
+                                        "enum": [
+                                            "BOROUGH",
+                                            "CITY",
+                                            "COUNTY",
+                                            "PARISH",
+                                            "PREFECTURE",
+                                            "TOWN",
+                                            "TOWNSHIP",
+                                            "VILLA",
+                                            "VILLAGE",
+                                            "WARD",
+                                            "ZONE"
+                                        ],
+                                        "isActivated": true,
+                                        "examples": [
+                                            "CITY"
+                                        ],
+                                        "GUID": "f275c533-712c-4538-b871-cb6ed3ff2b9f"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "f9d09b8d-cb39-4831-aee4-12973c199fed",
+                                "required": [
+                                    "name"
+                                ]
+                            },
+                            "country": {
+                                "type": "object",
+                                "properties": {
+                                    "alphaIsoCode": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "FR"
+                                        ],
+                                        "GUID": "2e5355a5-c917-426c-8151-3071a0f32b1b"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "France"
+                                        ],
+                                        "GUID": "cda4618d-bc37-402b-8983-0c7ec2c33ffb"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "9dd6e76b-9c58-4d0f-a242-5891b167d183",
+                                "required": [
+                                    "alphaIsoCode",
+                                    "name"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false,
+                        "isActivated": true,
+                        "GUID": "2d602865-1cc9-4788-b7e9-ad1ffc18ca82",
+                        "required": [
+                            "streetAddress",
+                            "postCode",
+                            "municipality",
+                            "country"
+                        ]
+                    }
+                },
+                "additionalProperties": false,
+                "isActivated": true,
+                "GUID": "4ecf817d-280a-4b58-a55d-b8d6c95cc7ea",
+                "required": [
+                    "usageCode",
+                    "contactMethodKind",
+                    "placeAddress"
+                ]
+            }
+        },
+        "globalPositionAddress": {
+            "type": "object",
+            "properties": {
+                "coordinateSystemCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "0b1c47fa-5692-41a9-ad54-f1ae3b1520fa"
+                },
+                "latitude": {
+                    "type": "number",
+                    "isActivated": true,
+                    "examples": [
+                        48.8763
+                    ],
+                    "GUID": "5ff390ad-4057-42dd-a79f-3d9e8449737d"
+                },
+                "longitude": {
+                    "type": "number",
+                    "isActivated": true,
+                    "examples": [
+                        2.3183
+                    ],
+                    "GUID": "c5bde410-6d23-42fb-a952-916b3cc11570"
+                },
+                "elevation": {
+                    "type": "number",
+                    "isActivated": true,
+                    "GUID": "43f8006b-5d96-4a69-9576-b612d6d8c879"
+                },
+                "geocodingResolution": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "132eb26e-706f-434d-a253-4e7060cf810a"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "1d22d364-bb03-497a-b97e-78a41d697187",
+            "required": [
+                "latitude",
+                "longitude"
+            ]
+        },
+        "postalAddress": {
+            "type": "object",
+            "properties": {
+                "unitNumber": {
+                    "isActivated": true,
+                    "type": "integer",
+                    "GUID": "d99bb492-a984-4a4a-b3ad-d595a57e7046"
+                },
+                "floorNumber": {
+                    "isActivated": true,
+                    "type": "integer",
+                    "GUID": "4ce6bb06-57b6-4c29-9bab-b9ae94aad4cc"
+                },
+                "addressLines": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "783a40f7-a819-4888-9a42-c92fbac21845"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "87400a6b-2137-4fd3-8193-a4bb19057c58"
+        },
+        "measure": {
+            "isActivated": true,
+            "type": "object",
+            "properties": {
+                "unitCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "m2"
+                    ],
+                    "GUID": "7b3a613f-11e9-4b6d-bbae-1c2f0919980c"
+                },
+                "value": {
+                    "isActivated": true,
+                    "type": "number",
+                    "examples": [
+                        208
+                    ],
+                    "GUID": "205e4ad5-273a-4f2b-92c1-b1b9f11ad9d5"
+                }
+            },
+            "additionalProperties": false,
+            "GUID": "6c84e6f5-f6a7-4475-8891-8962b7b3a128"
+        },
+        "dimension": {
+            "type": "array",
+            "isActivated": true,
+            "GUID": "14630108-7792-44d6-83fd-71c1bac778c8",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "typeCode": {
+                        "type": "string",
+                        "enum": [
+                            "AREA",
+                            "DEPTH",
+                            "HEIGHT",
+                            "LENGTH",
+                            "VOLUME",
+                            "WEIGTH",
+                            "WIDTH"
+                        ],
+                        "isActivated": true,
+                        "examples": [
+                            "AREA",
+                            "HEIGHT"
+                        ],
+                        "GUID": "f8fe752d-a0d6-4a12-903e-5f19cf80d354"
+                    },
+                    "measure": {
+                        "isActivated": true,
+                        "type": "object",
+                        "properties": {
+                            "unitCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "examples": [
+                                    "m2"
+                                ],
+                                "GUID": "f717bc05-56c8-4ecd-97d2-3c30d71c719b"
+                            },
+                            "value": {
+                                "isActivated": true,
+                                "type": "number",
+                                "examples": [
+                                    208
+                                ],
+                                "GUID": "f594f8be-75f9-44a1-bd96-80bc18c669fd"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "GUID": "456d33b4-12e2-4afa-a303-8dece59f720c"
+                    }
+                },
+                "additionalProperties": false,
+                "isActivated": true,
+                "GUID": "b3ab57bb-f7ae-461f-bdfd-1d44c57f770c",
+                "required": [
+                    "typeCode"
+                ]
+            }
+        },
+        "amount": {
+            "type": "object",
+            "title": "Amount",
+            "properties": {
+                "currencyCode": {
+                    "type": "string",
+                    "title": "Currencycode",
+                    "isActivated": true,
+                    "examples": [
+                        "EUR"
+                    ],
+                    "GUID": "94ca9f82-6cbe-4574-89f9-8932a30a4c56"
+                },
+                "value": {
+                    "type": "number",
+                    "title": "Value",
+                    "isActivated": true,
+                    "examples": [
+                        4800
+                    ],
+                    "GUID": "4e724d19-75cd-4bd6-a68d-6196dc75a5bc"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "5336ff67-d862-44d8-9163-5d6668e9cd83",
+            "required": [
+                "currencyCode",
+                "value"
+            ]
+        },
+        "technicalData": {
+            "type": "object",
+            "properties": {
+                "RECORD_SOURCE": {
+                    "title": "recordSource",
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "GW"
+                    ],
+                    "GUID": "b6a8d010-b488-11ea-88b6-9d6b493f75b0"
+                },
+                "AXA_ENTITY_CD": {
+                    "title": "axaEntityCode",
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "UK"
+                    ],
+                    "GUID": "abff5110-b222-11ea-88b6-9d6b493f75b0"
+                },
+                "EXTRACT_TS": {
+                    "title": "extractDate",
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "2020-07-14T03:05:40Z "
+                    ],
+                    "GUID": "721fcba0-b222-11ea-88b6-9d6b493f75b0"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "3fa4b690-bace-11ea-a1d4-11c417b4e6bd"
+        },
+        "country": {
+            "type": "object",
+            "properties": {
+                "alphaIsoCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "FR"
+                    ],
+                    "GUID": "38fb5980-77af-418d-9668-3bc46b764c13"
+                },
+                "name": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "France"
+                    ],
+                    "GUID": "a2e30cc7-845a-4096-bca1-d9da07b96583"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "b42d6e74-1da6-4878-9589-015c761db7f1",
+            "required": [
+                "alphaIsoCode",
+                "name"
+            ]
+        },
+        "countrySubdivision": {
+            "type": "object",
+            "properties": {
+                "alphaIsoCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "FR-IDF"
+                    ],
+                    "GUID": "f0d1fa18-6ea9-4f91-8678-cc3ab457529e"
+                },
+                "name": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Île-de-France"
+                    ],
+                    "GUID": "8c9b3085-1ded-4211-acf2-237c9576ef0d"
+                },
+                "typeCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "Region"
+                    ],
+                    "GUID": "259c99f9-695d-46cd-85b3-7e7df2cd1120"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "893419e7-907d-45df-8a45-74f700837ae9",
+            "required": [
+                "name",
+                "typeCode"
+            ]
+        },
+        "municipality": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "PARIS"
+                    ],
+                    "GUID": "16128942-058b-4619-b3c5-38cea944e56d"
+                },
+                "typeCode": {
+                    "type": "string",
+                    "enum": [
+                        "BOROUGH",
+                        "CITY",
+                        "COUNTY",
+                        "PARISH",
+                        "PREFECTURE",
+                        "TOWN",
+                        "TOWNSHIP",
+                        "VILLA",
+                        "VILLAGE",
+                        "WARD",
+                        "ZONE"
+                    ],
+                    "isActivated": true,
+                    "examples": [
+                        "CITY"
+                    ],
+                    "GUID": "6bf9afe8-2c5f-4b50-9ee9-e91a1fc035d8"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "a473e32d-f1be-465e-bc5d-c2f05b7185d2",
+            "required": [
+                "name"
+            ]
+        },
+        "postCode": {
+            "type": "string",
+            "isActivated": true,
+            "examples": [
+                "75017"
+            ],
+            "GUID": "9ec81d83-cb0a-4616-9110-9b237b4575e2"
+        },
+        "streetAddress": {
+            "type": "object",
+            "properties": {
+                "unstructuredAddress": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "61 Rue Mstislav Rostropovitch"
+                    ],
+                    "GUID": "cc9b1ee6-8d52-40ee-a86c-1c00164107d2"
+                },
+                "name": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "Mstislav Rostropovitch"
+                    ],
+                    "GUID": "70241d68-5a41-4f61-9d3c-f7f3c14165c1"
+                },
+                "number": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "61"
+                    ],
+                    "GUID": "4bca638c-e188-4501-a9e8-3246daa79a30"
+                },
+                "typeCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "RUE"
+                    ],
+                    "GUID": "28eba30d-de17-4ef4-a2d2-031f62ef6d1c"
+                },
+                "preDirectionCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "caa8f490-a170-496d-9642-7153013282ae"
+                },
+                "postDirectionCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "4ca38ec3-cc47-49e3-af45-939cd3540894"
+                }
+            },
+            "additionalProperties": false,
+            "isActivated": true,
+            "GUID": "b4988928-a7e4-4ee0-aa5f-44caf34cc69f"
+        },
+        "placeAddress": {
+            "isActivated": true,
+            "type": "object",
+            "properties": {
+                "placeAddressIdentifier": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "e5df417a-fd97-46d7-ba6f-a81d5de22465"
+                },
+                "unstructuredAddress": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "61 Rue Mstislav Rostropovitch, 75017 Paris"
+                    ],
+                    "GUID": "a9b0231f-e39a-4a30-bb32-541d030f5735"
+                },
+                "streetAddress": {
+                    "type": "object",
+                    "properties": {
+                        "unstructuredAddress": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "61 Rue Mstislav Rostropovitch"
+                            ],
+                            "GUID": "f20cbfaf-ecff-41fe-a7df-e91596b1cbe4"
+                        },
+                        "name": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "Mstislav Rostropovitch"
+                            ],
+                            "GUID": "531302f6-7ae5-4e4e-a447-624782cdb359"
+                        },
+                        "number": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "61"
+                            ],
+                            "GUID": "a279e669-99aa-4160-b445-da8425bf4036"
+                        },
+                        "typeCode": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "RUE"
+                            ],
+                            "GUID": "f73811c0-f90f-44e1-b783-e3d5da730cf5"
+                        },
+                        "preDirectionCode": {
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "a405974c-9a05-4b19-8aaa-9ad6e6231384"
+                        },
+                        "postDirectionCode": {
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "b0231045-3c97-407c-a627-5f5befc72c48"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "isActivated": true,
+                    "GUID": "ef1f5a6b-d9a1-4483-a09a-fe8c5a9728ac"
+                },
+                "postCode": {
+                    "type": "string",
+                    "isActivated": true,
+                    "examples": [
+                        "75017"
+                    ],
+                    "GUID": "4780712e-2c87-4cd3-a04b-471a1970f991"
+                },
+                "municipality": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "PARIS"
+                            ],
+                            "GUID": "769e9e4c-e483-4ceb-8adf-fe3968977048"
+                        },
+                        "typeCode": {
+                            "type": "string",
+                            "enum": [
+                                "BOROUGH",
+                                "CITY",
+                                "COUNTY",
+                                "PARISH",
+                                "PREFECTURE",
+                                "TOWN",
+                                "TOWNSHIP",
+                                "VILLA",
+                                "VILLAGE",
+                                "WARD",
+                                "ZONE"
+                            ],
+                            "isActivated": true,
+                            "examples": [
+                                "CITY"
+                            ],
+                            "GUID": "435ed379-5156-40e4-b3e2-06cd2b1ce22a"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "isActivated": true,
+                    "GUID": "d3198e15-4f66-4182-a695-a8408d395ad2",
+                    "required": [
+                        "name"
+                    ]
+                },
+                "country": {
+                    "type": "object",
+                    "properties": {
+                        "alphaIsoCode": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "FR"
+                            ],
+                            "GUID": "d47ee117-dbf8-4e50-bd19-812cb1925310"
+                        },
+                        "name": {
+                            "type": "string",
+                            "isActivated": true,
+                            "examples": [
+                                "France"
+                            ],
+                            "GUID": "a8aec43e-e2b2-4487-938b-4014d4b1310c"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "isActivated": true,
+                    "GUID": "fc44cb99-e96e-4705-a302-05e3cbed5a48",
+                    "required": [
+                        "alphaIsoCode",
+                        "name"
+                    ]
+                },
+                "countrySubdivisions": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "6b0db266-ae24-4df1-bd76-757558ceaafa",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "alphaIsoCode": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "FR-IDF"
+                                ],
+                                "GUID": "4c617c32-5cd4-4c6f-9696-957cffc45ade"
+                            },
+                            "name": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "Île-de-France"
+                                ],
+                                "GUID": "15eebdcb-a770-4760-acf6-89faaf5afffd"
+                            },
+                            "typeCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "examples": [
+                                    "Region"
+                                ],
+                                "GUID": "c040addc-ba7b-4802-9e41-53c77a078d4f"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "isActivated": true,
+                        "GUID": "44db8315-32b4-41aa-84ab-4e1c28d299bc",
+                        "required": [
+                            "name",
+                            "typeCode"
+                        ],
+                        "displayName": "countrySubdivision copy"
+                    }
+                },
+                "geographicRegionName": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "9aed978c-0c98-4e2b-ac0d-8192ae56b51f"
+                },
+                "globalPositionAddresses": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "f08e48b7-4082-4a7d-908a-eaffc1f7cdaf",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "coordinateSystemCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "GUID": "afb36fa2-e669-4c35-b233-f4e1a1a57044"
+                            },
+                            "latitude": {
+                                "type": "number",
+                                "isActivated": true,
+                                "examples": [
+                                    48.8763
+                                ],
+                                "GUID": "a628a81a-5fce-4c8e-b4b5-b213ac48ec09"
+                            },
+                            "longitude": {
+                                "type": "number",
+                                "isActivated": true,
+                                "examples": [
+                                    2.3183
+                                ],
+                                "GUID": "74a98b4b-f60a-4a50-b0a6-114e2f082e07"
+                            },
+                            "elevation": {
+                                "type": "number",
+                                "isActivated": true,
+                                "GUID": "8b810a50-1eb1-4779-8c5a-24356993b7d4"
+                            },
+                            "geocodingResolution": {
+                                "isActivated": true,
+                                "type": "string",
+                                "GUID": "49a0c3e2-0ed7-49a1-b74b-6d7b55424737"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "isActivated": true,
+                        "GUID": "2f1897a6-b1bb-4d84-9de6-06f3af061b7f",
+                        "required": [
+                            "latitude",
+                            "longitude"
+                        ],
+                        "displayName": "globalPositionAddress"
+                    }
+                },
+                "postalAddress": {
+                    "type": "object",
+                    "properties": {
+                        "unitNumber": {
+                            "isActivated": true,
+                            "type": "integer",
+                            "GUID": "3c9ff2f2-bffc-4e44-bb2f-3923e683967e"
+                        },
+                        "floorNumber": {
+                            "isActivated": true,
+                            "type": "integer",
+                            "GUID": "bcc2bc1f-37f4-46b0-9582-9c2e13499d1c"
+                        },
+                        "addressLines": {
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "515bd937-55b4-43d3-96e2-045389709201"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "isActivated": true,
+                    "GUID": "d664ae03-253f-45bb-9d5a-43371ebe0f39"
+                }
+            },
+            "additionalProperties": false,
+            "GUID": "9398d4a4-9ec9-4025-b65f-65e4d1722879",
+            "required": [
+                "streetAddress",
+                "postCode",
+                "municipality",
+                "country"
+            ]
+        },
+        "structure": {
+            "isActivated": true,
+            "type": "object",
+            "properties": {
+                "structureIdentifier": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "java-75017-fr"
+                    ],
+                    "GUID": "6ce10279-adc2-4c09-8b1f-183c47891ab9"
+                },
+                "name": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "Java"
+                    ],
+                    "GUID": "1e3ed142-bb78-4215-a14b-e9be26b6ce8c"
+                },
+                "typeCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "building"
+                    ],
+                    "GUID": "24d591c6-03c0-448f-b57c-4022cd1eae61"
+                },
+                "materialTypeCode": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "9054729e-f042-43c9-910e-0789b381c30b",
+                    "items": {
+                        "isActivated": true,
+                        "type": "string",
+                        "examples": [
+                            "brick"
+                        ],
+                        "GUID": "845a61a9-a54d-4d92-a395-21ad1133d40b"
+                    }
+                },
+                "constructionYear": {
+                    "isActivated": true,
+                    "type": "integer",
+                    "examples": [
+                        1970
+                    ],
+                    "GUID": "df492cfc-c23b-4235-9ac2-a259a8fcd51d"
+                },
+                "renovationYear": {
+                    "isActivated": true,
+                    "type": "integer",
+                    "examples": [
+                        1992
+                    ],
+                    "GUID": "ec675647-98b5-4ee9-81ef-ad53e9775348"
+                },
+                "unitCount": {
+                    "isActivated": true,
+                    "type": "integer",
+                    "examples": [
+                        1
+                    ],
+                    "GUID": "f9adabb0-9f4e-47a2-a886-4a5aafe7d0f2"
+                },
+                "structureComponentsDetails": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "4cf77246-5f06-4b18-89fb-fd6f8823fd8b",
+                    "items": {
+                        "isActivated": true,
+                        "type": "object",
+                        "properties": {
+                            "typeCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "examples": [
+                                    "ROOF"
+                                ],
+                                "GUID": "7c63fc47-d464-4e07-9cb5-a9dc20feabd7"
+                            },
+                            "features": {
+                                "isActivated": true,
+                                "type": "array",
+                                "GUID": "9cdcf0da-fc87-45ca-b3b9-ae88cc32b237",
+                                "items": {
+                                    "isActivated": true,
+                                    "type": "object",
+                                    "properties": {
+                                        "feature": {
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "examples": [
+                                                "Geomtry type"
+                                            ],
+                                            "GUID": "b5d5b342-12ef-4f6a-a746-8a6e8462b323"
+                                        },
+                                        "featureValue": {
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "GUID": "637547f9-e2cd-4596-8d6a-aa347b81db65"
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "GUID": "223dbb4a-6669-4cfe-898d-a78b82d9af0f"
+                                }
+                            },
+                            "dimension": {
+                                "type": "array",
+                                "isActivated": true,
+                                "GUID": "038b52c4-b6fb-4a1e-b369-8ded28dd5e5f",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "typeCode": {
+                                            "type": "string",
+                                            "enum": [
+                                                "AREA",
+                                                "DEPTH",
+                                                "HEIGHT",
+                                                "LENGTH",
+                                                "VOLUME",
+                                                "WEIGTH",
+                                                "WIDTH"
+                                            ],
+                                            "isActivated": true,
+                                            "examples": [
+                                                "AREA",
+                                                "HEIGHT"
+                                            ],
+                                            "GUID": "77db5f31-1a22-4894-bcac-58b21428a141"
+                                        },
+                                        "measure": {
+                                            "isActivated": true,
+                                            "type": "object",
+                                            "properties": {
+                                                "unitCode": {
+                                                    "isActivated": true,
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "m2"
+                                                    ],
+                                                    "GUID": "30b37981-b9ad-44d7-bd27-3bc559ed1d84"
+                                                },
+                                                "value": {
+                                                    "isActivated": true,
+                                                    "type": "number",
+                                                    "examples": [
+                                                        208
+                                                    ],
+                                                    "GUID": "4e5fa54b-35d1-4fd8-a8d5-a3317997ac63"
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "GUID": "62dcd38d-40f1-43ad-8537-8b12b25e0bfc"
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "isActivated": true,
+                                    "GUID": "9c57ef35-9c26-40f9-b395-796fbde859b2",
+                                    "required": [
+                                        "typeCode"
+                                    ]
+                                }
+                            }
+                        },
+                        "additionalProperties": false,
+                        "displayName": "structureComponent",
+                        "GUID": "3198669a-9092-4c0f-bd2e-ae8cc66339ec"
+                    }
+                },
+                "structureComponentsAggregate": {
+                    "isActivated": true,
+                    "type": "object",
+                    "properties": {
+                        "floorCount": {
+                            "isActivated": true,
+                            "type": "integer",
+                            "GUID": "54c8b1ba-ac78-41ad-968a-c04fe77aaa9f"
+                        },
+                        "bathroomCount": {
+                            "isActivated": true,
+                            "type": "integer",
+                            "GUID": "d4b52b5e-c4b2-499b-8dc6-75841c8b66e1"
+                        },
+                        "parkingCount": {
+                            "isActivated": true,
+                            "type": "integer",
+                            "GUID": "0edd255f-a3d1-4555-a2cf-df580085ec11"
+                        },
+                        "roomCount": {
+                            "isActivated": true,
+                            "type": "integer",
+                            "GUID": "711129e1-188f-4759-9363-719bc590f249"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "GUID": "d286badb-30d5-4e1d-bbc2-71fd142b2dda"
+                },
+                "structureDimensions": {
+                    "type": "array",
+                    "isActivated": true,
+                    "GUID": "79e56bfe-3f31-4740-a76a-af0f6f52951c",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "typeCode": {
+                                "type": "string",
+                                "enum": [
+                                    "AREA",
+                                    "DEPTH",
+                                    "HEIGHT",
+                                    "LENGTH",
+                                    "VOLUME",
+                                    "WEIGTH",
+                                    "WIDTH"
+                                ],
+                                "isActivated": true,
+                                "examples": [
+                                    "AREA",
+                                    "HEIGHT"
+                                ],
+                                "GUID": "3b3b5891-a7df-45ac-9402-0dd329bbdbbd"
+                            },
+                            "measure": {
+                                "isActivated": true,
+                                "type": "object",
+                                "properties": {
+                                    "unitCode": {
+                                        "isActivated": true,
+                                        "type": "string",
+                                        "examples": [
+                                            "m2"
+                                        ],
+                                        "GUID": "4b9be69c-25f8-4b34-aeb5-5f0399c6886d"
+                                    },
+                                    "value": {
+                                        "isActivated": true,
+                                        "type": "number",
+                                        "examples": [
+                                            208
+                                        ],
+                                        "GUID": "cb8fe472-9ece-429f-98a1-c06abc17f81e"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "GUID": "1215f999-3806-4cd8-a6ef-9cf610cf745d"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "isActivated": true,
+                        "GUID": "efa14b70-cd31-415c-b3b9-2ae5e0b81773",
+                        "required": [
+                            "typeCode"
+                        ]
+                    }
+                },
+                "assessmentResults": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "a095248d-8811-44b0-b08c-62e710938b7e",
+                    "items": {
+                        "isActivated": true,
+                        "type": "object",
+                        "properties": {
+                            "assessmentResultIdentifier": {
+                                "isActivated": true,
+                                "type": "string",
+                                "GUID": "73c0d026-9dca-4218-8506-6bb7f662906c"
+                            },
+                            "perils": {
+                                "isActivated": true,
+                                "type": "array",
+                                "GUID": "c19fd0b4-8be5-43e5-a6c0-40d6497124ca",
+                                "items": {
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "displayName": "peril",
+                                    "examples": [
+                                        "EARTHQUAKE"
+                                    ],
+                                    "GUID": "48ea9865-5153-45ba-8bd5-31d33f2ccb5d"
+                                }
+                            },
+                            "financialValuation": {
+                                "isActivated": true,
+                                "type": "array",
+                                "GUID": "41869169-8602-4a8e-b491-4a136fbf2955",
+                                "items": {
+                                    "isActivated": true,
+                                    "type": "object",
+                                    "properties": {
+                                        "typeCode": {
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "examples": [
+                                                "Building net market valuation"
+                                            ],
+                                            "GUID": "4e9816ff-1791-48d3-90a9-d93ea38154d8"
+                                        },
+                                        "amount": {
+                                            "type": "object",
+                                            "title": "Amount",
+                                            "properties": {
+                                                "currencyCode": {
+                                                    "type": "string",
+                                                    "title": "Currencycode",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        "EUR"
+                                                    ],
+                                                    "GUID": "4d04e0d1-e3ad-487d-a274-4d0f8f830c12"
+                                                },
+                                                "value": {
+                                                    "type": "number",
+                                                    "title": "Value",
+                                                    "isActivated": true,
+                                                    "examples": [
+                                                        4800
+                                                    ],
+                                                    "GUID": "8122d2e2-21ec-452a-b851-b2d328e8e380"
+                                                }
+                                            },
+                                            "additionalProperties": false,
+                                            "isActivated": true,
+                                            "GUID": "1808dbf8-c612-49af-b246-f802523ac4bb",
+                                            "required": [
+                                                "currencyCode",
+                                                "value"
+                                            ]
+                                        },
+                                        "valuationDate": {
+                                            "isActivated": true,
+                                            "type": "string",
+                                            "format": "date",
+                                            "examples": [
+                                                "2021-12-03"
+                                            ],
+                                            "GUID": "87af595a-c87a-4033-8e46-8ad7c43428a6"
+                                        }
+                                    },
+                                    "additionalProperties": false,
+                                    "GUID": "eb944013-1b85-490b-9869-bd5adb17bd2f"
+                                }
+                            }
+                        },
+                        "additionalProperties": false,
+                        "GUID": "273c45fe-799e-4d3c-a4af-8ed033632a73",
+                        "displayName": "assessmentResult"
+                    }
+                },
+                "partyRoleOnPhysicalObject": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "217721e7-72d8-4c8e-a0fa-377b7fb9cc71",
+                    "items": {
+                        "isActivated": true,
+                        "type": "object",
+                        "properties": {
+                            "typeCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "examples": [
+                                    "OWNER"
+                                ],
+                                "GUID": "0b7b2d60-bb44-42bb-b9fb-d6b34ae0ac82"
+                            },
+                            "partyIdentifier": {
+                                "isActivated": true,
+                                "type": "string",
+                                "examples": [
+                                    "P1234567890"
+                                ],
+                                "GUID": "b708e5d9-03b2-4887-9c27-d7a2371032da"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "displayName": "partyRole",
+                        "GUID": "ac6cea75-4d2e-4cb6-bd07-1bdad8c327ba"
+                    }
+                },
+                "geometry": {
+                    "isActivated": true,
+                    "type": "object",
+                    "properties": {
+                        "typeCode": {
+                            "isActivated": true,
+                            "type": "string",
+                            "examples": [
+                                "STRUCTURE"
+                            ],
+                            "enum": [
+                                "STRUCTURE",
+                                "PLACE"
+                            ],
+                            "GUID": "225b5677-a8b8-44cd-b5bf-59589efc1b50"
+                        },
+                        "coordinates": {
+                            "isActivated": true,
+                            "type": "array",
+                            "GUID": "6b79b83b-f4d8-4744-b63c-6ac89c83a132",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "coordinateSystemCode": {
+                                        "isActivated": true,
+                                        "type": "string",
+                                        "GUID": "c4ca7b78-aa59-48d0-a9e8-49adefb41cbc"
+                                    },
+                                    "latitude": {
+                                        "type": "number",
+                                        "isActivated": true,
+                                        "examples": [
+                                            48.8763
+                                        ],
+                                        "GUID": "ac9a323f-e5d7-4163-9989-2bb5c9418ce7"
+                                    },
+                                    "longitude": {
+                                        "type": "number",
+                                        "isActivated": true,
+                                        "examples": [
+                                            2.3183
+                                        ],
+                                        "GUID": "1397ffd9-99c7-4374-9b03-35f508fac07e"
+                                    },
+                                    "elevation": {
+                                        "type": "number",
+                                        "isActivated": true,
+                                        "GUID": "41f3543f-c9fa-4340-81ea-19407e71969f"
+                                    },
+                                    "geocodingResolution": {
+                                        "isActivated": true,
+                                        "type": "string",
+                                        "GUID": "837a4ea2-36ee-4818-b8d9-3cb98dc4950d"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "a8718e5e-024a-46f3-8f3e-d98a9916bb74",
+                                "required": [
+                                    "latitude",
+                                    "longitude"
+                                ],
+                                "displayName": "globalPositionAddress"
+                            }
+                        }
+                    },
+                    "additionalProperties": false,
+                    "GUID": "89e07dea-944c-4e48-8abd-e7994bdb3362"
+                }
+            },
+            "additionalProperties": false,
+            "GUID": "e019bde2-ed58-4a47-b8a7-10ac07bd76d3"
+        },
+        "assessmentResult": {
+            "isActivated": true,
+            "type": "object",
+            "properties": {
+                "assessmentResultIdentifier": {
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "d3ac86f7-43c7-4f09-bb22-4788a416ba8d"
+                },
+                "perils": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "d2dcc615-45b5-45c8-8060-1d57f4cc8321",
+                    "items": {
+                        "isActivated": true,
+                        "type": "string",
+                        "displayName": "peril",
+                        "examples": [
+                            "EARTHQUAKE"
+                        ],
+                        "GUID": "400e90fc-add1-4415-95e6-c1421a33d628"
+                    }
+                },
+                "financialValuation": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "62efd1d5-8ba5-4db2-b33f-f560a22eb85c",
+                    "items": {
+                        "isActivated": true,
+                        "type": "object",
+                        "properties": {
+                            "typeCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "examples": [
+                                    "Building net market valuation"
+                                ],
+                                "GUID": "ac2e57c0-b667-43ff-816d-7f0d4e9f4351"
+                            },
+                            "amount": {
+                                "type": "object",
+                                "title": "Amount",
+                                "properties": {
+                                    "currencyCode": {
+                                        "type": "string",
+                                        "title": "Currencycode",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "EUR"
+                                        ],
+                                        "GUID": "65cbbb9a-6bf6-4135-b7e7-f3246a75737c"
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "title": "Value",
+                                        "isActivated": true,
+                                        "examples": [
+                                            4800
+                                        ],
+                                        "GUID": "542b4785-036c-4dce-a890-3db4fb667832"
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "isActivated": true,
+                                "GUID": "816d5acf-c810-45ed-aee2-6be1a4ea47c9",
+                                "required": [
+                                    "currencyCode",
+                                    "value"
+                                ]
+                            },
+                            "valuationDate": {
+                                "isActivated": true,
+                                "type": "string",
+                                "format": "date",
+                                "examples": [
+                                    "2021-12-03"
+                                ],
+                                "GUID": "18875775-cf38-4f08-9603-38628dc97dcc"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "GUID": "205acc76-24d5-48e3-a57d-fb21335ecb2c"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "GUID": "890b2227-4d88-4ae4-970f-bb5b1c64ecf2"
+        },
+        "geometry": {
+            "isActivated": true,
+            "type": "object",
+            "properties": {
+                "typeCode": {
+                    "isActivated": true,
+                    "type": "string",
+                    "examples": [
+                        "STRUCTURE"
+                    ],
+                    "enum": [
+                        "STRUCTURE",
+                        "PLACE"
+                    ],
+                    "GUID": "a81ddcc5-b257-4b7c-8e03-19f5b1e02404"
+                },
+                "coordinates": {
+                    "isActivated": true,
+                    "type": "array",
+                    "GUID": "e787148c-1d9e-4019-b5bb-346fffa8d1d6",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "coordinateSystemCode": {
+                                "isActivated": true,
+                                "type": "string",
+                                "GUID": "071af3b2-74bf-44db-9200-799461a2213b"
+                            },
+                            "latitude": {
+                                "type": "number",
+                                "isActivated": true,
+                                "examples": [
+                                    48.8763
+                                ],
+                                "GUID": "b21e72fb-dfbc-44f7-847c-8ebb5b40604e"
+                            },
+                            "longitude": {
+                                "type": "number",
+                                "isActivated": true,
+                                "examples": [
+                                    2.3183
+                                ],
+                                "GUID": "aa189c33-14ce-4b69-b0a2-8c6de37bace4"
+                            },
+                            "elevation": {
+                                "type": "number",
+                                "isActivated": true,
+                                "GUID": "431d65ab-991c-41be-8755-8ca270474765"
+                            },
+                            "geocodingResolution": {
+                                "isActivated": true,
+                                "type": "string",
+                                "GUID": "bc28dc32-2172-49cc-9e5f-351fa77551a3"
+                            }
+                        },
+                        "additionalProperties": false,
+                        "isActivated": true,
+                        "GUID": "c97a2a89-d9fa-4250-aeb4-8f74c28f29be",
+                        "required": [
+                            "latitude",
+                            "longitude"
+                        ],
+                        "displayName": "globalPositionAddress"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "GUID": "fffedd7b-bc43-4198-9c00-de7a40e33fba"
+        }
+    }
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+    <meta name="dcterms.date" content="2021-06-06">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA ARCHITECTURE </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#data-architecture-need-assessment-and-first-recommendations">Data Architecture need assessment and first recommendations</a>
+          <ul>
+          <li><a href="#pre-requisite">Pre-requisite:</a></li>
+          <li><a href="#contributions">Contributions</a></li>
+          <li><a href="#data-focusing-areas">Data focusing areas:</a></li>
+          </ul></li>
+          <li><a href="#data-architecture-statement-of-work">Data architecture statement of work</a></li>
+          <li><a href="#inputs">Inputs</a></li>
+          <li><a href="#outputs">Outputs</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#deliverables-illustration">Deliverables illustration</a>
+          <ul>
+          <li><a href="#domains-and-data-products">Domains and data products</a></li>
+          <li><a href="#data-elements">Data elements</a></li>
+          <li><a href="#data-flows">Data flows</a></li>
+          <li><a href="#data-models-internal-external-and-interoperability">Data models (internal, external) and interoperability</a></li>
+          <li><a href="#data-governance">Data governance</a></li>
+          <li><a href="#data-security">Data security</a></li>
+          <li><a href="#data-it-infrastructure-services">Data IT infrastructure services</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h2 id="data-architecture-need-assessment-and-first-recommendations">Data Architecture need assessment and first recommendations</h2>
+<h3 id="pre-requisite">Pre-requisite:</h3>
+<ul>
+<li>Business context: why? what? for who? with who?</li>
+<li>Data story: what is expected from data?, what is the user experience with data?, what is the competitive advantage to achieve?</li>
+<li>Existing architecture: business, data, IT context, princples</li>
+<li>Key success factors</li>
+<li>Need for inference or prediction from data</li>
+<li>Already existing or identifed data sources, any challenge identified (technical, legal, etc.) to collect the data?</li>
+<li>What are the levers or blockers identified?</li>
+</ul>
+<p>Key outcomes: data structures and integration flows are well defined (quality, agility, sustainability …).</p>
+<h3 id="contributions">Contributions</h3>
+<p><strong>Strategic data consulting</strong> - We help formalize business goals, business requirements and data requirements to align with your objectives <strong>Funding value-driven initiatives</strong> – we finance selected business initiatives that demonstrate strong data-driven impact and ROI <strong>Functional design and oversight</strong> – we define functional specifications and hand over the build to an external partners while overseeing the implementation <strong>Co-building data solutions</strong> – we provide technical resources and data experts to develop data solutions in collaboration with your team</p>
+<h3 id="data-focusing-areas">Data focusing areas:</h3>
+<ul>
+<li>Data components or products with clear business value identified</li>
+<li>Data input ports and output ports</li>
+<li>Data volume (nb of clients, claims, cars, …)</li>
+<li>Data quality requirements and business impact of non quality?</li>
+<li>Data governance: Business Data Ownership? Governance KPIs and SLAs?</li>
+<li>Data security and compliance: Regulation? Personal data/SII, …</li>
+</ul>
+<hr />
+<h2 id="data-architecture-statement-of-work">Data architecture statement of work</h2>
+<h2 id="inputs">Inputs</h2>
+<ul>
+<li>Business architecture (actors, roles, business services)</li>
+<li>Business objectives</li>
+<li>Businss glossary</li>
+<li>Data security and governance requirements</li>
+</ul>
+<h2 id="outputs">Outputs</h2>
+<ul>
+<li>Data objects and data elements</li>
+<li>Grouping of data objects (logical design)</li>
+<li>XREF data objects with IT services</li>
+<li>IT solution data requirements (IT services, technology, location, …)</li>
+<li>Implementation guidelines</li>
+</ul>
+<h2 id="activities">Activities</h2>
+<ul>
+<li>With projet stakeholders, identify the context and why data will improve the business</li>
+<li>Check if any data strategy, data policy, business glossary that can be leveraged</li>
+<li>Define the list of data elements and validate concepts and relations with stakeholders</li>
+<li>Add classifications to data elements related to data confidentiality and data quality requirements</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 27%" />
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>1-Setting the scene</th>
+<th>2-Identify the extra business value to achieve</th>
+<th>3-What essential information will make the difference?</th>
+<th>4-What is the data needed?</th>
+<th>5-What levers do we need to execute and scale?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>What is your business context?</td>
+<td>What need to be done differently?<br/><br/>What is the expected business value?<br/><br/>What is the competitive advantage to achieve?<br/><br/>Why is the problem not yet solved?<br/><br/>Which activities have been started in the past to solve the problem?</td>
+<td>What is the desired outcome?<br/><br/>What insights and predictions do you need?</td>
+<td>What are the required underlying data and associated sources?<br/><br/>Is this data accessible and of sufficient quality?</td>
+<td>Do we have the right level of business ownership over data ?<br/><br/>How do we ease data accessibility and quality across business functions and entities?<br/><br/>What is the adoption strategy?<br/><br/>What is(are) the potential Business Impact(s)?</td>
+</tr>
+<tr class="even">
+<td><em>Improve technical and operational excellence</em><br/><br/><em>Comprehensive view of claims management processes</em></td>
+<td><em>Secure execution through automation of claims &amp; payment processes</em><br/><br/><em>Business performance KPIs : e.g., rate of claims automatically treated / time to reimburse customer</em></td>
+<td><em>Probability of fraudulent health claims</em><br/><br/><em>Triage recommendation</em><br/><br/><em>Claims costs predictions</em></td>
+<td><em>Patient medical history (e.g., diagnoses, treatments, codification)</em><br/><br/><em>Coverage clause</em><br/><br/><em>Claim document</em><br/><br/><em>First diagnostic of data accessibility and quality</em></td>
+<td><em>Established business ownership in a federated model</em><br/><br/><em>Prioritized and deployed data resources</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="deliverables-illustration">Deliverables illustration</h2>
+<h3 id="domains-and-data-products">Domains and data products</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 50%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Product</th>
+<th>Business Value Proposition</th>
+<th>Business Sponsor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Princing</td>
+<td>Location Footprinter</td>
+<td>The location footprinter will allow underwriters to…</td>
+<td>John Doe</td>
+</tr>
+<tr class="even">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Example for Property data: <a href="https://pages.github.axa.com/AXA-GO/property-data-architecture/conceptual_data_model.html">Propety data domaon and concepts</a>.</p>
+<p>Dimensional Modeling approach: <a href="https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/">Kimball Group</a>.</p>
+<h3 id="data-elements">Data elements</h3>
+<p>List of data elements with the domain, name, description, source (business, international standard, etc.), data confidentiality classification, data quality classification</p>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 11%" />
+<col style="width: 73%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Data Element</th>
+<th>Description</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agreement</td>
+<td>Account Agreement</td>
+<td>An agreement between a financial services provider and an account holder related to the management of a financial account.</td>
+<td>ACORD</td>
+</tr>
+<tr class="even">
+<td>Agreement</td>
+<td>PaymentMethod</td>
+<td>This represents a payment method of some type utilized for source, destination, money in, or money out purposes.</td>
+<td>ACORD</td>
+</tr>
+<tr class="odd">
+<td>Agreement</td>
+<td>Policy</td>
+<td>A legal agreement between an insurer and the insured, describing the contract terms, coverages, premiums, deductibles, limits, […]</td>
+<td>ACORD</td>
+</tr>
+<tr class="even">
+<td>Agreement</td>
+<td>…</td>
+<td>….</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Example for Property data: <a href="https://pages.github.axa.com/AXA-GO/property-data-architecture/property-data-mapping.html">Propety data elements</a>.</p>
+<h3 id="data-flows">Data flows</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Data Element</th>
+<th>Claim Handling</th>
+<th>XXX</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Agreement-Account Agreement</td>
+<td>C</td>
+<td>R</td>
+</tr>
+<tr class="even">
+<td>Agreement-PaymentMethod</td>
+<td>R</td>
+<td>.</td>
+</tr>
+<tr class="odd">
+<td>Agreement-Policy</td>
+<td>R</td>
+<td>.</td>
+</tr>
+<tr class="even">
+<td>Agreement-…</td>
+<td>R</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+<p>Example for Claim Analytics (Sherlock) collaboration contract: <a href="https://pages.github.axa.com/AXA-GO/sherlock-data-architecture/collaboration_contract.html">Claim Analytics collaboration contract</a>.</p>
+<h3 id="data-models-internal-external-and-interoperability">Data models (internal, external) and interoperability</h3>
+<p>Example for Claim Analytics (Sherlock) data model : <a href="https://pages.github.axa.com/AXA-GO/sherlock-data-architecture/model_html_report/index.html">Claim Analytics data model</a>.</p>
+<h3 id="data-governance">Data governance</h3>
+<p>Example: risk management for data.</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Low risk</td>
+<td>Data structures and data volumes are well identified. Data owners are identified and members of AXA data governance</td>
+</tr>
+<tr class="even">
+<td>Medium risk</td>
+<td>One the four dimensions is not satisfied: data structure, data volumes, data owners identification, accountability in data governance</td>
+</tr>
+<tr class="odd">
+<td>High risk</td>
+<td>Critical data elements are not identified for the project or several dimensions above are not satisfied</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-security">Data security</h3>
+<h3 id="data-it-infrastructure-services">Data IT infrastructure services</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Data Infrastructure</th>
+<th>Requirements</th>
+<th>SLA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Master Data Management Platform</td>
+<td>Matching, Stewardship, Web APIs</td>
+<td>24x7</td>
+</tr>
+<tr class="even">
+<td>BI and analytics</td>
+<td>Data curation, machine learning, deep learning</td>
+<td>.</td>
+</tr>
+<tr class="odd">
+<td>Data integration</td>
+<td>.</td>
+<td>.</td>
+</tr>
+<tr class="even">
+<td>Metadata management</td>
+<td>.</td>
+<td>.</td>
+</tr>
+</tbody>
+</table>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

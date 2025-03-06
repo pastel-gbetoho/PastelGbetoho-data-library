@@ -1,0 +1,60 @@
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+type: object
+title: assessmentAndCondition
+properties:
+  assessmentResult:
+    type: object
+    isActivated: true
+    properties:
+      assessmentResultIdentifier:
+        type: string
+        isActivated: true
+      perils:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: string
+          isActivated: true
+          displayName: peril
+          sample: EARTHQUAKE
+      financialValuation:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: object
+          isActivated: true
+          properties:
+            typeCode:
+              type: string
+              isActivated: true
+              sample: Building net market valuation
+            amount:
+              type: object
+              title: Amount
+              isActivated: true
+              properties:
+                currencyCode:
+                  type: string
+                  title: Currencycode
+                  isActivated: true
+                  sample: EUR
+                value:
+                  type: number
+                  title: Value
+                  isActivated: true
+                  sample: 4800
+              additionalProperties: false
+              required:
+                - currencyCode
+                - value
+            valuationDate:
+              type: string
+              isActivated: true
+              format: date
+              sample: "2021-12-03"
+          additionalProperties: false
+    additionalProperties: false
+isActivated: true
+additionalProperties: false

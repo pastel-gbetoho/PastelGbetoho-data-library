@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA TECHNOLOGIES </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#bi-analytics">BI &amp; Analytics</a>
+          <ul>
+          <li><a href="#data-warehousing-and-business-intelligence">Data Warehousing and Business Intelligence</a></li>
+          <li><a href="#analytics-ml-development">Analytics ML development</a></li>
+          <li><a href="#data-virtualization">Data Virtualization</a></li>
+          <li><a href="#specific-purpose-databases">Specific Purpose Databases</a></li>
+          </ul></li>
+          <li><a href="#privacy-preserving">Privacy Preserving</a>
+          <ul>
+          <li><a href="#independant-libraries-or-tools">Independant libraries or tools</a></li>
+          <li><a href="#ecosystems-data-sharing-clean-rooms">Ecosystems (data sharing clean rooms)</a></li>
+          </ul></li>
+          <li><a href="#master-data-management">Master Data Management</a>
+          <ul>
+          <li><a href="#multi-domain-master-data-management-mdm-tools">Multi-Domain Master Data Management (MDM) Tools</a></li>
+          <li><a href="#customer-data-platform-cdp">Customer Data Platform (CDP)</a></li>
+          <li><a href="#behavioral-data-creation">Behavioral data creation</a></li>
+          </ul></li>
+          <li><a href="#metadata-management">Metadata Management</a></li>
+          <li><a href="#data-modeling">Data Modeling</a></li>
+          <li><a href="#integration">Integration</a>
+          <ul>
+          <li><a href="#api-management">API Management</a></li>
+          <li><a href="#service-integration-enterprise-service-bus-esb">Service integration, Enterprise Service Bus (ESB)</a></li>
+          <li><a href="#event-broker-and-event-processing">Event broker and event processing</a></li>
+          <li><a href="#data-integration-extract-transform-load-etl">Data integration, Extract-Transform-Load (ETL)</a></li>
+          <li><a href="#data-integration-extract-loader-el-data-loader">Data integration, Extract-Loader (EL, Data loader)</a></li>
+          <li><a href="#data-integration-reverse-etl">Data integration, Reverse ETL</a></li>
+          <li><a href="#file-transfer">File transfer</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<p><em>AXA Group Data Management Team, DECEMBER, 2023</em></p>
+<hr />
+<p><strong><em><span style="color:red">Technologies are evolving very rapidly. The list provided here is just examples. In case of RFI/RFP, please check IT advisor firms such as <a href="https://www.gartner.com">Garner</a>, <a href="https://www.forrester.com">Forrester</a>, <a href="https://www.thoughtworks.com/radar">ThoughtWorks</a>, and also connect with <a href="https://axa365.sharepoint.com/sites/Community-DataArchitecture/SitePages/Smart-Data-Circle.aspx">AXA Smart Data Circle</a> and data architects in AXA to get return on experience.</em></strong></p>
+<h1 id="bi-analytics">BI &amp; Analytics</h1>
+<p>A very large range of BI and anlytics technologies exist on the market.</p>
+<p><img src="media/bia/data-and-ai-landscape-2021.jpg" style="width:50.0%" alt="https://mattturck.com/data2021/" />.</p>
+<p><a href="media/bia/data-and-ai-landscape-2021.jpg">mattturck.com/data2021</a>.</p>
+<p>Technologies examples for Machine Learning Platforms: Dataiku, Alteryx, Databricks, AWS Sagemaker, Azure ML, Datarobot ; cf. <a href="https://www.datarevenue.com/en-blog/ml-platforms-dataiku-vs-alteryx-vs-sagemaker">Dataiku vs Alterix vs Sagemaker vs …</a>, <a href="https://research.contrary.com/reports/databrick-vs-snowflake">Databricks vs Snowflake</a>.</p>
+<h3 id="data-warehousing-and-business-intelligence">Data Warehousing and Business Intelligence</h3>
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Databricks Data Lakehouse</td>
+<td><a href="https://www.databricks.com/product/data-lakehouse">https://www.databricks.com/product/data-lakehouse</a></td>
+</tr>
+<tr class="even">
+<td>Snowflake</td>
+<td><a href="https://www.snowflake.com">https://www.snowflake.com</a></td>
+</tr>
+<tr class="odd">
+<td>Teradata</td>
+<td><a href="https://www.teradata.com">https://www.teradata.com</a></td>
+</tr>
+<tr class="even">
+<td>Microsoft Azure Synapse</td>
+<td><a href="https://azure.microsoft.com/products/synapse-analytics">https://azure.microsoft.com/products/synapse-analytics</a></td>
+</tr>
+<tr class="odd">
+<td>Google Big Query</td>
+<td><a href="https://cloud.google.com/bigquery">https://cloud.google.com/bigquery</a></td>
+</tr>
+<tr class="even">
+<td>Amazon AWS RedShift</td>
+<td><a href="https://aws.amazon.com/redshift">https://aws.amazon.com/redshift</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="analytics-ml-development">Analytics ML development</h3>
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Databricks MLFlow</td>
+<td><a href="https://www.databricks.com/product/managed-mlflow">https://www.databricks.com/product/managed-mlflow</a></td>
+</tr>
+<tr class="even">
+<td>Amazon AWS SageMaker</td>
+<td><a href="https://aws.amazon.com/sagemaker">https://aws.amazon.com/sagemaker</a></td>
+</tr>
+<tr class="odd">
+<td>Google Vertex AI</td>
+<td><a href="https://cloud.google.com/vertex-ai">https://cloud.google.com/vertex-ai</a></td>
+</tr>
+<tr class="even">
+<td>Azure Machine Learning</td>
+<td><a href="https://azure.microsoft.com/en-us/products/machine-learning">https://azure.microsoft.com/en-us/products/machine-learning</a></td>
+</tr>
+<tr class="odd">
+<td>SAS Institute Machine Learning</td>
+<td><a href="https://support.sas.com/en/software/machine-learning.html">https://support.sas.com/en/software/machine-learning.html</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-virtualization">Data Virtualization</h3>
+<table>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Denodo</td>
+<td><a href="https://www.denodo.com/en">https://www.denodo.com/en</a></td>
+</tr>
+<tr class="even">
+<td>Tibco Data Virtualization (previously Composite Software)</td>
+<td><a href="https://www.tibco.com/products/data-virtualization">https://www.tibco.com/products/data-virtualization</a></td>
+</tr>
+<tr class="odd">
+<td>IBM Data Virtualization (Warson Query)</td>
+<td><a href="https://www.ibm.com/products/watson-query">https://www.ibm.com/products/watson-query</a></td>
+</tr>
+<tr class="even">
+<td>Starburst (based on Facebook Presto)</td>
+<td><a href="https://www.starburst.io">https://www.starburst.io</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="specific-purpose-databases">Specific Purpose Databases</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 21%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time Series Database</td>
+<td>InfluxDB</td>
+<td><a href="https://www.influxdata.com/">https://www.influxdata.com/</a></td>
+</tr>
+<tr class="even">
+<td>NoSQL Documents</td>
+<td>MongoDB</td>
+<td><a href="https://www.mongodb.com/">https://www.mongodb.com/</a></td>
+</tr>
+<tr class="odd">
+<td>NoSQL Documents</td>
+<td>Microsoft Azure CosmosDB</td>
+<td><a href="https://learn.microsoft.com/en-us/azure/cosmos-db">https://learn.microsoft.com/en-us/azure/cosmos-db</a></td>
+</tr>
+<tr class="even">
+<td>NoSQL Documents</td>
+<td>Amazon AWS DynamoDB</td>
+<td><a href="https://aws.amazon.com/pm/dynamodb">https://aws.amazon.com/pm/dynamodb</a></td>
+</tr>
+<tr class="odd">
+<td>NoSQL Documents</td>
+<td>Google Cloud Datastore</td>
+<td><a href="https://cloud.google.com/datastore">https://cloud.google.com/datastore</a></td>
+</tr>
+<tr class="even">
+<td>Search</td>
+<td>Solr (built on Apache Lucene)</td>
+<td><a href="https://solr.apache.org/">https://solr.apache.org/</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="privacy-preserving">Privacy Preserving</h1>
+<h3 id="independant-libraries-or-tools">Independant libraries or tools</h3>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 20%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Synthetic Data Generator SDK</td>
+<td>Faker</td>
+<td><a href="https://fakerjs.dev/api/">https://fakerjs.dev/api/</a>, <a href="https://faker.readthedocs.io/en/master/">https://faker.readthedocs.io/en/master/</a></td>
+</tr>
+<tr class="even">
+<td>Data Protection and De-identification SDK</td>
+<td>Presidio</td>
+<td><a href="https://microsoft.github.io/presidio/">https://microsoft.github.io/presidio/</a></td>
+</tr>
+<tr class="odd">
+<td>Synthetic Data Generation</td>
+<td>Mostly AI</td>
+<td><a href="https://mostly.ai/">https://mostly.ai/</a></td>
+</tr>
+<tr class="even">
+<td>Persistent Data Masking</td>
+<td>Informatica Persistent Data Masking</td>
+<td><a href="https://www.informatica.com/products/data-security/data-masking/persistent-data-masking.html">https://www.informatica.com/products/data-security/data-masking/persistent-data-masking.html</a></td>
+</tr>
+<tr class="odd">
+<td>Dynamic Data Masking</td>
+<td>Informatica Dynamic Data Masking</td>
+<td><a href="https://www.informatica.com/products/data-security/data-masking/dynamic-data-masking.html">https://www.informatica.com/products/data-security/data-masking/dynamic-data-masking.html</a></td>
+</tr>
+<tr class="even">
+<td>Data Masking Functions</td>
+<td>Talend Data Masking</td>
+<td><a href="https://help.talend.com/r/en-US/7.3/data-privacy/data-privacy-other">https://help.talend.com/r/en-US/7.3/data-privacy/data-privacy-other</a></td>
+</tr>
+<tr class="odd">
+<td>Privacy Enhancing Technologies</td>
+<td>Privitar Privacy Enhancing</td>
+<td><a href="https://help.talend.com/r/en-US/7.3/data-privacy/data-privacy-other">https://help.talend.com/r/en-US/7.3/data-privacy/data-privacy-other</a></td>
+</tr>
+<tr class="even">
+<td>Privacy Enhancing Technologies</td>
+<td>Sarus Privacy Enhancing</td>
+<td><a href="https://www.sarus.tech/product/technology">https://www.sarus.tech/product/technology</a></td>
+</tr>
+<tr class="odd">
+<td>Automated Labelling &amp; Threats Detection</td>
+<td>Microsoft Purview</td>
+<td>[https://www.microsoft.com/en-us/security/business/microsoft-purview)</td>
+</tr>
+<tr class="even">
+<td>Automated Labelling &amp; Threats Detection</td>
+<td>Amazon Macie</td>
+<td>[https://aws.amazon.com/macie/)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ecosystems-data-sharing-clean-rooms">Ecosystems (data sharing clean rooms)</h3>
+<p>“A data clean room provides aggregated and anonymized user information to protect user privacy, while providing advertisers with non-personally identifiable information (non-PII) to target a specific demographic and for audience measurement.” – TechTarget.com</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Habu Data clean room</td>
+<td><a href="https://habu.com">https://habu.com</a></td>
+</tr>
+<tr class="even">
+<td>Databricks Data clean room</td>
+<td><a href="https://www.databricks.com/blog/2022/06/28/introducing-data-cleanrooms-for-the-lakehouse.html">https://www.databricks.com/blog/2022/06/28/introducing-data-cleanrooms-for-the-lakehouse.html</a></td>
+</tr>
+<tr class="odd">
+<td>Snowflake Data clean room</td>
+<td><a href="https://quickstarts.snowflake.com/guide/build_a_data_clean_room_in_snowflake_advanced">https://quickstarts.snowflake.com/guide/build_a_data_clean_room_in_snowflake_advanced</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="master-data-management">Master Data Management</h1>
+<h3 id="multi-domain-master-data-management-mdm-tools">Multi-Domain Master Data Management (MDM) Tools</h3>
+<p>Master data management tools offer IT functions to enable data consolidation, data stewardship, data servicing, etc. Some technologies are oriented to support firstly the central repository. For others, the primary focus is on party data consolidation from multiple data sources and identity resolution.</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Informatica MDM</td>
+<td><a href="https://www.informatica.com/products/master-data-management.html">https://www.informatica.com/products/master-data-management.html</a></td>
+</tr>
+<tr class="even">
+<td>IBM InfoSphere MDM</td>
+<td><a href="https://www.ibm.com/fr-fr/products/ibm-infosphere-master-data-management">https://www.ibm.com/fr-fr/products/ibm-infosphere-master-data-management</a></td>
+</tr>
+<tr class="odd">
+<td>Tibco EBX</td>
+<td><a href="https://www.tibco.com/products/tibco-ebx-software">https://www.tibco.com/products/tibco-ebx-software</a></td>
+</tr>
+<tr class="even">
+<td>Semarchy</td>
+<td><a href="https://www.semarchy.com">https://www.semarchy.com</a></td>
+</tr>
+<tr class="odd">
+<td>Stibo Systems</td>
+<td><a href="https://www.stibosystems.com">https://www.stibosystems.com</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="customer-data-platform-cdp">Customer Data Platform (CDP)</h3>
+<p>Gartner: “A customer data platform (CDP) is a software application that supports marketing and customer experience use cases by unifying a company’s customer data from marketing and other channels. CDPs optimize the timing and targeting of messages, offers and customer engagement activities, and enable the analysis of individual-level customer behavior over time.”</p>
+<p>Customer Data Platforms provides “all-in-one” services that cover not only party/customer data management (identity resolution, privacy controls, etc.), but also marketing requirements for data collection, behavioral data creation, customer targeting and personalization.</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tealium CDP</td>
+<td><a href="https://tealium.com/solutions-single-customer-view">https://tealium.com/solutions-single-customer-view</a></td>
+</tr>
+<tr class="even">
+<td>Amperity</td>
+<td><a href="https://amperity.com">https://amperity.com</a></td>
+</tr>
+<tr class="odd">
+<td>Treasure Data</td>
+<td><a href="https://www.treasuredata.com">https://www.treasuredata.com</a></td>
+</tr>
+<tr class="even">
+<td>Adobe Real-Time CDP</td>
+<td><a href="https://business.adobe.com/products/real-time-customer-data-platform/rtcdp.html">https://business.adobe.com/products/real-time-customer-data-platform/rtcdp.html</a></td>
+</tr>
+<tr class="odd">
+<td>Salesforce CDP</td>
+<td><a href="https://www.salesforce.com/products/marketing-cloud/customer-data-platform">https://www.salesforce.com/products/marketing-cloud/customer-data-platform</a></td>
+</tr>
+<tr class="even">
+<td>Bloomreach</td>
+<td><a href="https://www.bloomreach.com/en/products/engagement">https://www.bloomreach.com/en/products/engagement</a></td>
+</tr>
+<tr class="odd">
+<td>Informatica CDP</td>
+<td><a href="https://www.informatica.com/products/customer-data-platform.html">https://www.informatica.com/products/customer-data-platform.html</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="behavioral-data-creation">Behavioral data creation</h3>
+<p>Examples: Snowplow.</p>
+<h1 id="metadata-management">Metadata Management</h1>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 22%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Capability</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Data Hub Project (Open Source)</td>
+<td>Open Metadata</td>
+<td><a href="https://datahubproject.io">https://datahubproject.io</a></td>
+</tr>
+<tr class="even">
+<td>Collibra</td>
+<td>Data Governance</td>
+<td><a href="https://www.collibra.com">https://www.collibra.com</a></td>
+</tr>
+<tr class="odd">
+<td>Atlan</td>
+<td>Data Catalog</td>
+<td><a href="https://atlan.com">https://atlan.com</a></td>
+</tr>
+<tr class="even">
+<td>Informatica Enterprise Data Catalog</td>
+<td>Data Catalog</td>
+<td><a href="https://www.informatica.com/products/data-catalog">https://www.informatica.com/products/data-catalog</a></td>
+</tr>
+<tr class="odd">
+<td>Talend Data Catalog</td>
+<td>Data Catalog</td>
+<td><a href="https://www.talend.com/products/data-catalog">https://www.talend.com/products/data-catalog</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="data-modeling">Data Modeling</h1>
+<p>Several tools exist on the market, from standalone tools specialized in specific area (e.g.; API design) to enterprise architecture and modeling repositories. Few examples: SAP Power Designer, Innovator for Information Architects, Hackolade, Visual Paradigm.</p>
+<h1 id="integration">Integration</h1>
+<h3 id="api-management">API Management</h3>
+<p>Expose APIs</p>
+<p>Technology examples: Google Apigee, Broadcom Layer7, Salesforce MuleSoft, Software AG mediator</p>
+<h3 id="service-integration-enterprise-service-bus-esb">Service integration, Enterprise Service Bus (ESB)</h3>
+<p>Expose services and manage service consumption (publish/subscribe)</p>
+<p>Technology examples: Software AG webMethods, Salesforce MuleSoft</p>
+<h3 id="event-broker-and-event-processing">Event broker and event processing</h3>
+<p>Store data events and process data events at big data scale</p>
+<p>Technology examples: Kafka, AWS Kinesis, Azure Event Hub + Azure Event Streaming</p>
+<h3 id="data-integration-extract-transform-load-etl">Data integration, Extract-Transform-Load (ETL)</h3>
+<p>Data consolidation (multi-sources), data synchronisation in batch mode, data migration.</p>
+<p>Technology examples: Informatica Data Integration, Talend Data Integration</p>
+<h3 id="data-integration-extract-loader-el-data-loader">Data integration, Extract-Loader (EL, Data loader)</h3>
+<p>Data loader pulls raw data from a variety of data sources, systems, and SaaS applications, then ingests that data into the data warehouse, potentially in real time or near-real time.</p>
+<p>Some tools on the market are specialized in this function so thet can be used by a large range of users including non-technical users.</p>
+<p>Technology examples: Stitch, StreamSets, Apache NiFi, Fivetran, Qlik Attunity Replicate</p>
+<h3 id="data-integration-reverse-etl">Data integration, Reverse ETL</h3>
+<p>Data broadcasting outside of a data lake or data warehouse to operational applications.</p>
+<p>Technology examples: Hightouch, Census</p>
+<h3 id="file-transfer">File transfer</h3>
+<p>Transfer data files from source to destination.</p>
+<p>Technology examples: Stonebranch UDM, Axway File Broker (XFB), Cleo, SEEBURGER, Goanywhere</p>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA ARTICLES </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#axa-entities-references">AXA Entities References</a></li>
+          <li><a href="#data-product-development-management">Data Product Development &amp; Management</a></li>
+          <li><a href="#integration-and-interoperability">Integration and Interoperability</a></li>
+          <li><a href="#data-security-and-privacy">Data Security and Privacy</a></li>
+          <li><a href="#data-ml-practices">Data &amp; ML Practices</a></li>
+          <li><a href="#business-intelligence">Business Intelligence</a></li>
+          <li><a href="#ml-ops">ML Ops</a></li>
+          <li><a href="#data-modeling">Data Modeling</a></li>
+          <li><a href="#trainings">Trainings</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h2 id="axa-entities-references">AXA Entities References</h2>
+<ul>
+<li><a href="https://confluence.axa.com/confluence/pages/viewpage.action?pageId=327692835">AXA XL Architecture Data Mesh</a><br />
+</li>
+<li><a href="https://axa365.sharepoint.com/sites/AXAHealthEnterpriseDataArchitecture/SitePages/Home.aspx?OR=Teams-HL&amp;CT=1696432072312">AXA UK Health Enterprise Data</a><br />
+</li>
+<li><a href="https://confluence.axa.com/confluence/display/SOL/API">AXA Switzerland API Architecture</a><br />
+</li>
+<li><a href="https://confluence.axa.com/confluence/display/DLH/Lakehouse+Platform">AXA Switzerland Lakehouse Platform</a><br />
+</li>
+<li><a href="https://confluence.axa.com/confluence/display/DataMeshCH/Data+Mesh+AXA+CH+Home">AXA Switzerland Data Mesh</a><br />
+</li>
+<li><a href="https://confluence.axa.com/confluence/display/DatalabIta/%5BDP%5D+Data+Lake+%7C+L2">AXA Italy Data Models</a></li>
+</ul>
+<h2 id="data-product-development-management">Data Product Development &amp; Management</h2>
+<ul>
+<li>Why Chief Data and AI Officers Are Set Up to Fail? <a href="https://hbr.org/2023/06/why-chief-data-and-ai-officers-are-set-up-to-fail">Harvard Business Review</a><br />
+</li>
+<li>What is the Fourth Industrial Revolution? <a href="https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-are-industry-4-0-the-fourth-industrial-revolution-and-4ir">McKinsey</a><br />
+</li>
+<li>Correlation is not causation, cf. <a href="https://www.tylervigen.com/spurious-correlations">Spurious Correlations</a><br />
+</li>
+<li>Generative AI Economic Potential: <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier">McKinsey</a><br />
+</li>
+<li>Center for Information Systems Research (CISR), Operating Model explained by <a href="https://cisr.mit.edu/publication/operating-model-video">Jeanne W. Ross</a>, cf. also <a href="https://pubs.opengroup.org/togaf-standard/togaf-leaders-guide/togaf-leaders-guide_4.html">TOGAF EA Capability</a><br />
+</li>
+<li>Business Models <a href="https://pubs.opengroup.org/togaf-standard/business-architecture/business-models.html">TOGAF</a><br />
+</li>
+<li>Data Product Connecting The Three Spheres Of Data Management To Unlock Value: <a href="https://www.dataversity.net/connecting-the-three-spheres-of-data-management-to-unlock-value/">DATAVERSITY</a><br />
+</li>
+<li>Data Product Big Deal: <a href="https://medium.com/@willemkoenders/whats-the-big-deal-about-data-products-26ac347b7d7a">What’s the big deal about Data Products?</a><br />
+</li>
+<li>Product Design: <a href="https://martinfowler.com/articles/lean-inception/">Martinfowler.com Lean Inception Product Design</a><br />
+</li>
+<li>Data &amp; AI Team Structure (inspired by <a href="data-mgt-books.html#book-team-topologies">Matthew Skelton - Team Topologies</a>): <a href="https://godatadriven.com/blog/data-ai-team-structure-case-studies/">GoDataDriven</a><br />
+</li>
+<li>Product Design Artifacts: <a href="https://microsoft.github.io/fabricnotes/">Microsoft ‘Cosmic Drawings’</a><br />
+</li>
+<li>Data Product Canvas: <a href="https://www.datamesh-architecture.com/data-product-canvas">Data Product</a><br />
+</li>
+<li>Data Mesh @<a href="https://medium.com/paypal-tech/the-next-generation-of-data-platforms-is-the-data-mesh-b7df4b825522">Paypal</a><br />
+</li>
+<li>Data Mesh @<a href="https://developers.amadeus.com/blog/amadeus-data-mesh-how-to-securely-migrate-10pb-of-data-and-hundreds-of-users-to-azure">Amadeus</a><br />
+</li>
+<li>Should I consider a unified data model? <a href="https://www.dataversity.net/should-you-consider-a-unified-data-model/">DATAVERSITY</a><br />
+</li>
+<li>Uber Data Culture: <a href="https://eng.uber.com/ubers-journey-toward-better-data-culture-from-first-principles/">Uber Data Culture</a><br />
+</li>
+<li>Uber Data Quality Monitoring at Scale: <a href="https://eng.uber.com/monitoring-data-quality-at-scale/">Uber Data Quality Monitoring at Scale</a><br />
+</li>
+<li>AirBnB Data Quality at Scale: <a href="https://medium.com/airbnb-engineering/data-quality-at-airbnb-e582465f3ef7">AirBnB Data Quality at Scale</a><br />
+</li>
+<li>Data Product <a href="https://www.youtube.com/watch?v=KvbhHDf9HnI">Octo perspective (French)</a><br />
+</li>
+<li>Data Best Practices - Modularity &amp; Granularity <a href="https://blog.devgenius.io/granularity-integrators-and-disintegrators-11b72dce7a46">Best practices, Medium</a><br />
+</li>
+<li>Data Best Practices - Orchestration &amp; Choregraphy <a href="https://blog.devgenius.io/differences-between-orchestrated-and-choreographed-architecture-975e7179236b">Best practices, Medium</a></li>
+</ul>
+<h2 id="integration-and-interoperability">Integration and Interoperability</h2>
+<ul>
+<li>Interoperability Requirements: <a href="https://pubs.opengroup.org/architecture/togaf9-doc/arch/chap25.html">TOGAF</a><br />
+</li>
+<li>Web RESTfull API: OpenAPI: <a href="https://www.openapis.org/">www.openapis.org</a><br />
+</li>
+<li>Event-Driven API: AsyncAPI: <a href="https://www.asyncapi.com/docs/getting-started">www.asyncapi.com</a><br />
+</li>
+<li>Microservice Architecture and Design Patterns: <a href="https://medium.com/@madhukaudantha/microservice-architecture-and-design-patterns-for-microservices-e0e5013fd58a">Microservice Architecture and Design Patterns</a><br />
+</li>
+<li>Netflix micro-services architecture: <a href="https://medium.com/swlh/a-design-analysis-of-cloud-based-microservices-architecture-at-netflix-98836b2da45f">Netflix Micro-Services</a><br />
+</li>
+<li>LinkedIn log distributed system (Kafka): <a href="https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying">LinkedIn Kafka</a><br />
+</li>
+<li>Data Mesh Architecture: <a href="https://martinfowler.com/articles/data-mesh-principles.html">Martin Fowler - Data Mesh</a><br />
+</li>
+<li>4 Principles of Data Mesh: <a href="https://www.thoughtworks.com/what-we-do/data-and-ai/data-mesh">ThoughtWorks - Data Mesh</a><br />
+</li>
+<li>Data Mesh Reference: <a href="https://www.datamesh-architecture.com/">Data Mesh Architecture</a><br />
+</li>
+<li>PayPal Data Mesh: <a href="https://medium.com/paypal-tech/the-next-generation-of-data-platforms-is-the-data-mesh-b7df4b825522">The next generation of Data Platforms is the Data Mesh</a><br />
+</li>
+<li>From Data Warehouses to Data Lakes to Data Mesh: <a href="https://towardsdatascience.com/from-data-warehouses-and-lakes-to-data-mesh-a-guide-to-enterprise-data-architecture-e2d93b2466b1">A Guide to Enterprise Data Architecture</a><br />
+</li>
+<li>Data Vault and Data Mesh: <a href="https://eugeneasahara.com/2022/01/02/data-vault-data-mesh/">Embedding a Data Vault in a Data Mesh</a></li>
+</ul>
+<h2 id="data-security-and-privacy">Data Security and Privacy</h2>
+<ul>
+<li>Payment Card Industry Data Security Standard Requirements: <a href="https://www.pcisecuritystandards.org/document_library">PCI DSS</a></li>
+<li>Health Information Privacy Requirements: <a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/audit/protocol/index.html">HIPAA</a></li>
+<li>Personal Data Protection Requirements: <a href="https://gdpr.eu/checklist/">GDPR-Europe</a></li>
+<li>Privacy Enhancing Technologies: <a href="https://cdeiuk.github.io/pets-adoption-guide/repository/">Use Cases Examples</a></li>
+<li>Data Protection Laws of The World: <a href="https://www.dlapiperdataprotection.com/index.html">Data Protection Laws</a></li>
+</ul>
+<h2 id="data-ml-practices">Data &amp; ML Practices</h2>
+<ul>
+<li>What is data management?: <a href="https://www.youtube.com/watch?v=5xw_OjVx5gQ">Youtube - Data Management</a><br />
+</li>
+<li>Executive Guide to AI: <a href="https://www.mckinsey.com/business-functions/mckinsey-analytics/our-insights/an-executives-guide-to-ai">Mc Kinsey - Executive Guide to AI</a><br />
+</li>
+<li>AXA Research ML regulation: <a href="https://axa-rev-research.github.io/static/AXA_WhitePaper_RegulatingML.pdf">AXA ML Research</a><br />
+</li>
+<li>Bounded Context (DDD): <a href="https://martinfowler.com/bliki/BoundedContext.html">Martin Fowler - Bounded Context</a><br />
+</li>
+<li>Schemaless Data Structures : <a href="https://martinfowler.com/articles/schemaless/">Martin Fowler - Schemaless Data Structures</a><br />
+</li>
+<li>Data mesh explained: <a href="https://martinfowler.com/articles/data-mesh-principles.html">Data Mesh Principles and Logical Architecture</a><br />
+</li>
+<li>Data Quality Monitoring at scale: <a href="https://eng.uber.com/monitoring-data-quality-at-scale/%5D">Uber Engineering - Data Quality Monitoring</a><br />
+</li>
+<li>Data Engineering Manifesto: <a href="https://connectingdots.xyz/blog/posts/2021/05/the-data-engineering-manifesto/">Data Engineering Manifesto</a><br />
+</li>
+<li>API Design (Fluent API, CQRS, IoC, etc.): <a href="https://martinfowler.com/tags/API%20design.html">Martin Fowler - API Design index</a><br />
+</li>
+<li>Introduction to Event-Driven Archiecture: <a href="https://medium.com/microservicegeeks/introduction-to-event-driven-architecture-e94ef442d824">Medium - Introduction to Event-Driven Archiecture</a><br />
+</li>
+<li>Event-Driven Architecture &amp; Transactions - Saga Pattern: <a href="https://microservices.io/patterns/data/saga.html">Microservices.io - Saga Pattern</a><br />
+</li>
+<li>Recommendation Engine: <a href="https://netflixtechblog.com/system-architectures-for-personalization-and-recommendation-e081aa94b5d8">Netflix Recommendation Engine</a><br />
+</li>
+<li>Large Language Models (LLM), Generative AI: <a href="https://medium.com/the-llmops-brief/introduction-to-large-language-models-9ac028d34732">Introduction to LLM</a><br />
+</li>
+<li>Generative AI <a href="https://www.confluent.io/blog/chatgpt-and-streaming-data-for-real-time-generative-ai/">illustrated</a><br />
+</li>
+<li>Chat GPT doing data modeling, <a href="https://blog.selman.org/2023/03/28/does-chatgpt-understand/">possibilities and attention points</a><br />
+</li>
+<li>Introduction to NoSQL: <a href="https://www.youtube.com/watch?v=qI_g07C_Q5I">Martin Fowler, 2012</a><br />
+</li>
+<li>Domain-Driven Design (DDD) Tackling the ambiguity of DDD <a href="https://medium.com/raa-labs/part-1-domain-driven-design-like-a-pro-f9e78d081f10">Medium</a><br />
+</li>
+<li>Domain-Driven Design (DDD) Context maps integration patterns: <a href="https://www.youtube.com/watch?v=VjtMt689ql8">KanDDDinsky 2019</a><br />
+</li>
+<li>Domain-Driven Design (DDD) Modules: <a href="https://www.youtube.com/watch?v=Q_0XW46IlHY&amp;t=1961s">Spring I/O 2022</a><br />
+</li>
+<li>Domain-Driven Design (DDD) Functional Programming can’t be friends: <a href="https://www.youtube.com/watch?v=3nkwMZWE6kY">DDD Europe 2023</a><br />
+</li>
+<li>Domain-Driven Design (DDD) Crew - Best Practices, Templates: <a href="https://github.com/ddd-crew/welcome-to-ddd?tab=readme-ov-file">Git Hub</a></li>
+</ul>
+<h2 id="business-intelligence">Business Intelligence</h2>
+<ul>
+<li>BI &amp; analytics MDX: <a href="%5Bhttps://eugeneasahara.com/2021/11/09/the-ghost-of-mdx/">The Ghost of MDX</a></li>
+</ul>
+<h2 id="ml-ops">ML Ops</h2>
+<ul>
+<li>AI System Lifecycle: <a href="https://www.oecd-ilibrary.org/sites/8b303b6f-en/index.html?itemId=/content/component/8b303b6f-en">OECD</a><br />
+</li>
+<li>ML Ops Google Cloud: <a href="https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning">Google Cloud ML Ops</a><br />
+</li>
+<li>ML Ops O’Reilly Practical Guide: <a href="https://learning.oreilly.com/library/view/practical-mlops/9781098103002/">O’Reilly ML Ops Guide</a><br />
+</li>
+<li>Continuous Delivery for Machine Learning: <a href="https://martinfowler.com/articles/cd4ml.html">Martin Fowler - CD4ML</a><br />
+</li>
+<li>ML Ops Principles: <a href="https://ml-ops.org/content/mlops-principles">ML Ops.org</a><br />
+</li>
+<li>ML Ops Maturity Model: <a href="https://docs.microsoft.com/en-us/azure/architecture/example-scenario/mlops/mlops-maturity-model">Microsoft ML Ops</a><br />
+</li>
+<li>ML Ops Tools, Practices and Case Studies: <a href="https://huyenchip.com/mlops/">Chip Huyen - ML Ops Tools, Practices and Case Studies</a><br />
+</li>
+<li>ML Ops Tooling Landscape: <a href="https://huyenchip.com/2020/12/30/mlops-v2.html">Chip Huyen - MLOps Tooling Landscape</a><br />
+</li>
+<li>Databricks CICD: <a href="https://docs.microsoft.com/en-us/azure/databricks/dev-tools/ci-cd/ci-cd-azure-devops">Databricks - CICD</a><br />
+</li>
+<li>CD4ML - Jenkins and DAGsHub: <a href="https://www.thoughtworks.com/insights/blog/cd4ml-jenkins-dagshub">ThoughtWorks Jenkins and DAGsHub</a><br />
+</li>
+<li>ML Model Monitoring: <a href="https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/">ML Model Monitoring</a><br />
+</li>
+<li>ML Ops Principles: <a href="https://eng.uber.com/continuous-integration-deployment-ml/">ML Ops.org</a></li>
+<li>More data isn’t always better (ML): <a href="https://towardsdatascience.com/ai-ml-practicalities-more-data-isnt-always-better-ae1dac9ad28f">Towards data science - more data isn’t always better</a><br />
+</li>
+<li>Notebooks and production: <a href="https://martinfowler.com/articles/productize-data-sci-notebooks.html">Martin Fowler - Don’t put data science notebooks into production</a><br />
+</li>
+<li>Continuous Database Intregration (Webinar): <a href="https://www.thoughtworks.com/books/recipes-for-continuous-database-integration">ThoughtWorks - Continuous Database Integration</a></li>
+</ul>
+<h2 id="data-modeling">Data Modeling</h2>
+<ul>
+<li>Data Modeling Notations: <a href="https://agiledata.org/essays/datamodeling101.html">AgileData</a></li>
+</ul>
+<h2 id="trainings">Trainings</h2>
+<ul>
+<li>Azure Spark essential training: <a href="https://www.linkedin.com/learning/azure-spark-databricks-essential-training">Azure Spark Databricks Essential</a><br />
+</li>
+<li>Data science introduction: <a href="https://www.linkedin.com/learning/introduction-to-data-science-2/beginning-your-data-science-exploration?u=81316978">Beginning Your Data Science Exploration</a></li>
+</ul>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA MESH </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#business-context">Business context</a></li>
+          <li><a href="#part-i-manage-data-as-a-product-at-axa">Part I: Manage data as a product at AXA</a></li>
+          <li><a href="#data-product-lifecycle">Data Product Lifecycle</a></li>
+          <li><a href="#part-ii-domain-ownership">Part II: Domain ownership</a></li>
+          <li><a href="#part-iii-data-ecosystem">Part III: Data ecosystem</a></li>
+          <li><a href="#part-iv-axa-group-data-mesh-is-leveraging-data-products-value-for-the-group">Part IV: AXA Group Data Mesh is leveraging data products value for the Group</a></li>
+          <li><a href="#moving-forward">Moving forward</a></li>
+          <li><a href="#appendix">Appendix</a>
+          <ul>
+          <li><a href="#data-product-canvas">Data Product Canvas</a></li>
+          <li><a href="#data-architecutre-score">Data Architecutre Score</a></li>
+          <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<p><strong>What artefacts are data products?</strong></p>
+<p>There is no unique definition of the data product, few examples from internet:</p>
+<ul>
+<li>“A data product, in general terms, is any tool or application that processes data and generates results”</li>
+<li>“A self-contained data “container” that directly solves a business problem or is monetized"</li>
+<li>“A report, dashboard or an application with its own user interface (UI), an API, or command-line SQL access”</li>
+<li>“An ML model or a metric that can be embedded into users’ workflows”</li>
+<li>“A data product is a reusable data asset, engineered to deliver a trusted dataset, for a specific purpose”</li>
+</ul>
+<p><strong>“An important feature of a Data Product is that it is trusted. Consumers will only start using it, and continue to do so, if they can rely on it.”</strong> Willem Koenders, leader in data strategy, <a href="https://medium.com/@willemkoenders/whats-the-big-deal-about-data-products-26ac347b7d7a">What’s the big deal about data products?</a>.</p>
+<p>Applying <strong>design thinking</strong> and <strong>data driven design</strong> mindset, techniques and tools, for e.g. <a href="https://en.wikipedia.org/wiki/SCAMPER">SCRAMPER</a>, <a href="https://en.wikipedia.org/wiki/Event_storming">Event Storming</a>, <a href="https://www.datamesh-architecture.com/data-product-canvas">Data Product Canvas</a>.</p>
+<p><strong>Data product characteristics</strong> inspired by <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4792175/">The FAIR Guiding Principles for scientific data management and stewardship</a>, <a href="https://learning.oreilly.com/library/view/data-mesh/9781492092384/ch03.html">Data Mesh Chapter 3. Principe of Data As a Product</a>, <a href="https://opendataproducts.org/">Open Data Product Specification</a>.</p>
+<h1 id="business-context">Business context</h1>
+<p>Over 2024-2026, AXA Entities have planned to accelerate adoption and scaling of data and artificial intelligence (AI), with a focus on scaling organic growth, as well as technical and operational excellence across all AXA businesses.</p>
+<p>Unlocking the future with data &amp; AI is expected to contribute to significant underlying earnings ambition by 2026. It combines Entity-level improvements and stronger ability to scale data and AI by leveraging the size of AXA.</p>
+<p>Reaching the AXA ambition requires streamlining and strengthening the data and AI use cases, increasing data sharing and data interoperability. In this context, Data Mesh paradigm, introduced by Zhamak Dehghani in 2019, is identified by AXA as a key enabler, articulated with AI governance, AI engineering excellence (including generative AI), and data &amp; AI culture.</p>
+<p>Data Mesh is about a managed decentralized analytical data architecture and operating system. This document is the AXA viewpoint that describes how Data Mesh will support the AXA journey towards a global data ecosystem. It set the scene and clarifies our motivation, it provides the first artefacts, definitions, and principles, as requested by AXA Entities in Q2 2024 during interviews.</p>
+<p>AXA positions Data Mesh as an enabler. Data Mesh will not generate direct business benefits(top line), but the AXA Data Mesh will ensure that the financial investments in business data and AI use cases will deliver their full value and will accelerate the scaling of future data and AI use cases. The momentum is also the opportunity for AXA Entities and AXA Group to undertake actions to transform and strengthen their existing data foundation and operating system. This document is part of “AXA Data Mesh Common Rules” framework. It targets business domain owners and data experts that will share a common language to discuss with various stakeholders and to pursuit their AXA Data Mesh implementation. It can be used also to communicate externally about the AXA Data Mesh. More detail will be provided in other documents that are part of the framework: AXA Group Data Mesh guiding principles and AXA Group Data Mesh architecture</p>
+<h1 id="part-i-manage-data-as-a-product-at-axa">Part I: Manage data as a product at AXA</h1>
+<p>Data Mesh paradigm is articulated around 4 principles (see below). In this document, we initiate the journey starting from “data as a product” principle. The concept of “data as a product” encourages applying product thinking to data; promotes that data generation should meet data users’ needs and provide a great user experience from discovery to consumption.</p>
+<p>AXA Entities’ Chief Data &amp; Analytics Officers are committed to steering not only defensive but also offensive actions to increase business impact from data &amp; AI. At the critical path of delivering business uses cases, the main benefits expected from a “data as a product approach” are:</p>
+<ol type="1">
+<li>Reduced time to access data (speed to market)</li>
+<li>Reduced data refresh latency (native accessibility)</li>
+<li>Faster time to repair data issues for operationalization of AI</li>
+<li>Better employee satisfaction and innovation with data (eNPS)</li>
+<li>Bounded risks related to data &amp; AI (clear focus)</li>
+<li>Technological sustainability (less coupling) “Data as a product” is primarily an approach and a mindset. For the sake of simplicity, at AXA we consider a set of data managed as a product to be called a “data product”. The corollary is that data not provided as a product should not be trusted</li>
+</ol>
+<p><strong>Data product</strong> is one or multiple read-only datasets (collection of data), and potentially models (e.g., machine learning), created (designed, elaborated, and published) to satisfy one or multiple pre-defined business needs. A data product must respect a specific architecture and apply product management and data usability best practices. A data product can be consumed by operational systems, analytical systems, other data products, or end-users, to inform and/or take some actions. Several characteristics of a data product will be used to identify its quality.</p>
+<p>A Data Product is considered fully mature when it covers all the properties on the three dimensions: Product Management and Ownership, Architecture, Usability. Some data product may not be fully mature on all dimensions, thus it will be important to track and follow the maturity of data products.</p>
+<h4 id="product-management-and-ownership">Product Management and Ownership</h4>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Data product is owned</strong></td>
+<td>Data product role is identified and owned.</td>
+</tr>
+<tr class="even">
+<td><strong>Value driven and consumer centric</strong></td>
+<td>Business value is identified; promotion, on-boarding, user experience and retention approaches are defined; collaboration models are defined.</td>
+</tr>
+<tr class="odd">
+<td><strong>Data product terms and conditions</strong></td>
+<td>Data product terms and conditions are defined, data product contracts with data product users are defined and managed when applicable (e.g. business critical usage).</td>
+</tr>
+<tr class="even">
+<td><strong>Finance and operations</strong></td>
+<td>Budget, resources allocation and consumption are under control, service levels are monitored, risk is monitored.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="architecture">Architecture</h4>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Independently deployable</strong></td>
+<td>Data transformation logic, policies and rules that govern data (metadata, code, policies and rules) are encapsulated and managed as a single unit, cf. architecture quantum<em>1</em></td>
+</tr>
+<tr class="even">
+<td><strong>Data updates follow a governed process</strong></td>
+<td>Data product is not transactional as it must guarantee a high degree of repeatability for data product users to support various usages. Data product data updates follow a predefined and governed process that must be aligned with user’s needs.</td>
+</tr>
+<tr class="odd">
+<td><strong>Enterprise asset</strong></td>
+<td>Data product is registered in the Enterprise application repository, recognized, and governed at enterprise level, including architecture and security governance, and IT service management</td>
+</tr>
+</tbody>
+</table>
+<p><em>1 Neal Ford, Rebecca Parsons &amp; Patrick Kua - Building Evolutionary Architectures - Architectural Quanta and Granularity</em></p>
+<h4 id="usability">Usability</h4>
+<p><em>Criteria from Zhamak Dehghani - Data Mesh – Delivering Data-Driven Value at Scale</em></p>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Discoverable</strong></td>
+<td>Metadata are well defined so users can easily search and find the data they need.</td>
+</tr>
+<tr class="even">
+<td><strong>Addressable</strong></td>
+<td>There is a permanent unique address location to locate the data product.</td>
+</tr>
+<tr class="odd">
+<td><strong>Understandable</strong></td>
+<td>Data schema is explicit, business rules are documented.</td>
+</tr>
+<tr class="even">
+<td><strong>Truthful (Trustworthy)</strong></td>
+<td>Data quality metrics are available, service levels are defined (availability, data freshness, versioning, etc.), there is a business support (request for information, for change).</td>
+</tr>
+<tr class="odd">
+<td><strong>Natively Accessible</strong></td>
+<td>Users can easily access data with their native tools (e.g., reporting tool, notebook).</td>
+</tr>
+<tr class="even">
+<td><strong>Interoperable</strong></td>
+<td>Data product follows the Enterprise data interoperability standard (e.g., naming conventions, data types, protocols)</td>
+</tr>
+<tr class="odd">
+<td><strong>Valuable (on its own)</strong></td>
+<td>Business value and possible business use cases are described.</td>
+</tr>
+<tr class="even">
+<td><strong>Secure</strong></td>
+<td>Data access profiles and controls are computational, data retention rules are effective.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Data Product Terms &amp; Conditions</strong> defines the terms and conditions that apply between the data product owner and data product user. It includes business elements (product owner, purpose, support contact, incident and change management, data usage conditions, service levels, etc.), technical elements (data schema, protocol, data timeliness, access type, etc.), financial elements (pricing model, price and billing items, licensing).</p>
+<p><strong>Data Product Contract</strong> is a formal commitment between the data product owner and a data product user or set of users.</p>
+<h4 id="implications">Implications</h4>
+<p>The paradigm shifts from a project driven approach to a product approach where the center of attention is the value of the data product for the users. The direct implication is that a data product certification process must be effective to assess and validate the conformity of data products, including periodic reviews as the situation may change over time. Additional implications:</p>
+<ul>
+<li>Business – data products must have an owner. <strong>Data Product Owner</strong> represents the business interests as the voice of the data product user. He or she is accountable for ensuring business needs are met and that the value, user satisfaction, finance and operations are tracked.</li>
+<li>Data management – data documentation, data quality, data privacy and protection are managed by the product team with the support of the central data office team.</li>
+<li>IT – technology services to support data product consumers and developers in managing the data products lifecycle. Beyond IT services, common resources need to be available to accelerate product development: data expertise, library of data models, standard templates to support data documentation. In some documents we will refer to the concept of “data product producer” and “data product consumer”. By default, we will consider the data product owner is the producer, and the data product user is the consumer</li>
+</ul>
+<h1 id="data-product-lifecycle">Data Product Lifecycle</h1>
+<p>We have identified six main phases in the data product lifecycle, from ideation to retirement.</p>
+<table>
+<tr>
+<th>
+Phase
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+Ideation
+</td>
+<td>
+The purpose of the ideation phase is to identify pockets of data driven value and to feed the data product backlog. This phase is initiated from business opportunities or pain points: what needs to be done differently? How does this bring a competitive advantage? What estimates, insights and predictions do you need for this uplift? What information enables these predictions and where does it come from? Creating a data product should emerge from delivering a differentiated user experience for identified value and consumers. Data products are built to be scalable and frequently utilized, providing a valuable solution. The scoping phase aims at qualifying data product requirements and assessing business case (feasibility, usability, viability), data sourcing strategy must be considered also at this stage. The data products identified in the ideation phase can be captured in a data product canvas, cf.  Appendix A – Data Product Canvas
+</td>
+</tr>
+<tr>
+<td>
+Design
+</td>
+<td>
+Data is designed to be provided as a product, according to a reference norms and standards. The primary focus is the design of the data interface (data schema, data access profiles, data quality) that must satisfy data consumer needs. A good practice is to mock up the data interface as soon as possible, and to test the user experience and acceptance criteria with key personas (including performance, documentation, tagging, integration, etc.). This phase is fundamental to confirm the product is designed to meet consumer needs and expected benefits. At this stage, we talk about an experimental data product
+</td>
+</tr>
+<tr>
+<td>
+Build
+</td>
+<td>
+The build phase delivers the code of the data product: data transformation rules, machine learning featurization and training rules, data quality rules, etc.
+</td>
+</tr>
+<tr>
+<td>
+Deployment
+</td>
+<td>
+The data product is tested to meet the requirements, including Data Product contracts requirements, quality controls, “data as a product” norms and standards, data security and data ops requirements. Once the data product is compliant and approved, it is marketed like a consumer goods product and published to the environment to make it accessible.
+</td>
+</tr>
+<tr>
+<td>
+Usage
+</td>
+<td>
+The data product is operated and monitored to ensure there is no deviation in service and data quality, and that it still meets the data consumers’ needs and value creation. The service level metrics are published and followed up on. Data product consumers care activities are performed (feedback, surveys) to ensure the adoption of the product, and a sustainable value generation.
+</td>
+</tr>
+<tr>
+<td>
+Retirement
+</td>
+<td>
+The data product doesn’t meet anymore the business needs, there is no user connection, and it must be retired.
+</td>
+</tr>
+</table>
+<h1 id="part-ii-domain-ownership">Part II: Domain ownership</h1>
+<p>Designing and operating high-quality data products, in a large organization, requires numerous interactions which can reduce the speed to market and often identify the central team as a bottleneck. Data Mesh approach positions data product ownership with people closest to the data generated from (or used by) operational activities, thereby minimizing the pressure on the central team.</p>
+<p>New concepts are introduced here.</p>
+<p><strong>Business domain</strong> refers to a sphere of activity (e.g. P&amp;C Retail Motor Underwriting, Finance, Risk Management) where people (business, data, and IT experts) have a common knowledge, language, view and understanding of their value chain, and their interactions with other domains.</p>
+<p><strong>Domain Owner</strong> is a senior stakeholder who has a deep understanding of the domain. The domain owner is accountable for providing business vision, business rules, and expertise related to the domain being modeled. He or she identifies business opportunities with data, ensures data consistency in the domain and data interoperability with other domains. At an organizational level, decentralization means data experts<em>1</em> are integrated in the business domains. This does not imply always recruiting a whole host of new staff, as many actors are already present and have the required skills, but business domains need to be funded to make it works. This is expected to be balanced by the generated value of the usage of the data internally to the domain and with other domains. Therefore, business value tracking is part of business domain activities.</p>
+<p><em>1 <a href="https://axa365.sharepoint.com/sites/Community-DataCulture/SitePages/Who-is-the-AXA-data-family-.aspx">Who-is-the-AXA-data-family</a></em></p>
+<p>Decomposition of the Enterprise per domains is more an art than science. In general, fine-grained domains will be found in activity areas that are directly linked to company’s core business(technical excellence, sophistication for competitive advantage); and coarse-grained domains for domains transversally supporting company’s activities. AXA Domain Model<em>2</em> can be used as a reference for inspiration. The vision of Data Mesh is to integrate analytical activities with operational activities, leveraging a shared domain model. The design of the domains (capabilities, target state, transition states, gaps with the organizational structures) is part of Enterprise architecture activities and not detailed in this viewpoint. <em>2 <a href="https://axa365.sharepoint.com/sites/Architecture/SitePages/AXA-Domain-Model.aspx">AXA-Domain-Model</a></em></p>
+<p>Business domain owners are not necessarily owners of all data in the domain. Some data will be collected, stored, and processed by the domain but it will come from other Entities and other business domains so the domain using this data is not owner of it. However, the business domains should not redistribute the data collected from other Entities and domains.</p>
+<h1 id="part-iii-data-ecosystem">Part III: Data ecosystem</h1>
+<p>Data products owned by domains without a proper organization and technological standards, cannot guarantee data interoperability, data performance (latency), data discoverability and data consistency. In this section we cover the data architecture and operating system capabilities that will <strong>enable an effective and efficient collaboration between domains</strong>.</p>
+<p>Preventing Data Mesh from turning into siloed business domains requires data governance. At AXA, data products are integrated into a multi-domain data infrastructure that provides required IT services consistently across domains. This foundation has several objectives:</p>
+<ol type="1">
+<li>Enable embedded business innovation and scaling of data sharing (network effect)</li>
+<li>Accelerate the development and operation of data products (streamlining, cognitive load reduction)</li>
+<li>Enforce interoperability and governance of data sharing across domains (security, privacy)</li>
+<li>Monitor engagements between data product owners and data product users</li>
+<li>Accelerate problem detection and resolution (data product users, governance bodies).</li>
+</ol>
+<p>Manage data in a homogeneous ecosystem is the ability to ease and control the sharing of data and data usages, at scale between multiple actors (data product owners, data product users, governance bodies). The ability to ease and control the sharing of data drives requirements at both organization and technology levels. At an organizational level, new requirements will have to be integrated in a federated governance:</p>
+<ul>
+<li>Business – Data policies, specific to the data ecosystem, will define rules related to data sharing, security, data privacy or interoperability and consistency. These policies will have to be detailed in a way that makes them computable by an IT system to support scaling.</li>
+<li>Data management – new concepts such as data product contract and business domain are well defined, governed, and embedded in the data ecosystem. Data models are defined and managed by domains, following enterprise-level guidance and oversight to ensure interoperability across domains. The meaning of a business term is relevant in the context of the domain, the same business term in different domains may have different meanings. The organization per domains implies decentralization of some data management activities.</li>
+<li>IT – new IT functions will support the policies and rules automation, and their management by a governance authority.</li>
+</ul>
+<p><strong>Data governance model is federated</strong> meaning some activities are operated centrally by the federated governance core team for all business domains, while the business domains teams locally operate others.</p>
+<p><strong>Federated governance core team</strong> is responsible for supplying business domains with global policies, norms, and standards to ensure domain’s data products interoperability, discoverability, and security.</p>
+<p>Data governance activities should be automated with code, computational, to decrease data management workload and to increase data and meta data quality. Business domains owners or their representatives are active stakeholders in the steering of central governance activities and outcomes in addition to the Chief Data &amp; Analytics Officer, Chief Technology Officer, Security &amp; Data Privacy Officers.</p>
+<p><strong>At a technical level</strong>, new requirements will drive the development or use of a data platform to support autonomy of actors in delivering and managing data products.</p>
+<p><strong>A data product is designed using the Data Product Factory</strong>. The Factory enables the functional and technical design and maintenance of data products. The outcome of the design is articulated around either interface standards such as API design standards or scripts based on the programming languages used by Entities.</p>
+<p><strong>A data product is exposed and shared in the Data Product Marketplace</strong>. The Marketplace enables the Data Products discovery, understanding, and consumption by consumers. It leverages the data product catalog to ease the metadata-based search and discovery, and the data product contract to ensure data products are built to meet users’ needs. It also enables users to carry out experimental works on data products in which they are interested, within dedicated sandboxes in a data laboratory.</p>
+<p><strong>Data Product Catalog</strong> is an organized list of data products, accompanied by descriptions (e.g., data schema, data confidentiality classification). It is used to present and reference the data products in a clear and structured manner, making it easier to search for and select specific data product.</p>
+<p><strong>Data Laboratory</strong> is part of the data product marketplace, it is an environment that provides a set of data services for data product users to test data products: see data (or just data samples) and run queries</p>
+<h1 id="part-iv-axa-group-data-mesh-is-leveraging-data-products-value-for-the-group">Part IV: AXA Group Data Mesh is leveraging data products value for the Group</h1>
+<p>At AXA Global scale, this viewpoint defines a new capability to “manage a Group Data Mesh” across AXA domains and AXA Entities. Three business patterns have been identified</p>
+<ol type="1">
+<li><strong>Local Analytics</strong>: This usage is mainly local leveraging local data, exceptions such as new risks where local data will be sparse.</li>
+<li><strong>Cross-country scaling</strong>: Data products pave the way to scale multi-country assets and solutions.</li>
+<li><strong>Global management</strong>: Data is used globally and locally for reporting and management.</li>
+</ol>
+<p><strong>Group Data Mesh</strong> is an additional architecture and operating model on the top of AXA Entities Data Meshes to orchestrate the exchange of data products across AXA Entities. It implies additional federated layers of data governance and infrastructure to enable cross-Entities exchanges and data products interoperability.</p>
+<ul>
+<li>Meta data interoperability to exchange data or code on data products, accessible cross-Entities,</li>
+<li>Functional interoperability to manage data exchanges rules and governance between Entities,</li>
+<li>Technical interoperability to exchange physically the data assets,</li>
+<li>Security interoperability to ensure the protection of data exchanges.</li>
+</ul>
+<p>In this Group Data Mesh vision, delivering and leveraging data products at scale is at the core of the transformation, and so an AXA Data Mesh metamodel is required to support the interoperability described above. A first high level AXA metamodel has been elaborated from Data Mesh best practices and AXA interviews, as a starting point for collaboration</p>
+<h1 id="moving-forward">Moving forward</h1>
+<p>Since 2023, there has been a great appetite at AXA to adopt a ‘data as a product’ approach, and several AXA Entities have already launched concrete actions in that direction (e.g., introducing the data product concept in metadata models, creating data products catalogs, conduction data product assessments, hackathon, etc.). However, regarding a larger Data Mesh ecosystem, interviews with AXA Entities in June 2024 identified that global readiness is low. For some digital-native Entities (e.g., AXA Digital Commercial Platform) it is quite natural to embrace Data Mesh and manage data as a product. For other Entities, which are less digital and have a more complex and large landscape, Data Mesh has a more significant impact on their existing socio-technical ecosystem and so is identified as a multi-year transformation journey. Embracing the Data Mesh paradigm implies shifting from a “functional only” prioritization grid to a more balanced multidimensional grid that includes architecture and usability aspects for the data products. A good practice to start the journey towards Data Mesh is to implement “Minimum Viable Data Mesh Products” with limited business use cases, clear business benefits identified and to progressively bring the data products to embrace all the aspects described above. Generating thin layers of integrated data products will enable meeting functional needs while generating value in usability and architecture, thus meeting business needs, learning and continuing the journey. Data Mesh, as described in this document, must be considered as a common north star. It is an enabler to support AXA’s “Unlock the Future” ambition by scaling data and AI use cases. In this journey, many stakeholders will be involved, both intra-Entity and inter-Entities (data sharing, strategic dialogues). This viewpoint introduces the key Data Mesh concepts and roles for AXA that are required for the scaling of data &amp; AI used cases. These elements will be further detailed in other documentsthat will describe the underlying architecture, and the common rules and guiding principles for data sharing and interoperability</p>
+<h1 id="appendix">Appendix</h1>
+<h2 id="data-product-canvas">Data Product Canvas</h2>
+<p><img src="media/mesh/data-product-canvas.png" /></p>
+<h2 id="data-architecutre-score">Data Architecutre Score</h2>
+<p>Data product requirements are translated into the AXA Group Architecture Score, <strong>Principle “12- Data sharing: Identify, document, share and reuse data inside and cross domains”</strong>, with two key architecture components: <strong>Data Product</strong> (per domains), <strong>Data Mesh</strong> (data management &amp; insights) that must be integrated in the IT landscape.</p>
+<p><img src="media/mesh/data-architecture-score.png" /></p>
+<table>
+<tr>
+<th>
+Level
+</th>
+<th>
+<b>Data Product (per domain)</b>
+</th>
+<th>
+<b>Data Mesh</b> (data management &amp; insights)
+</th>
+</tr>
+<tr>
+<td>
+On-target
+</td>
+<td>
+<ul>
+<li>
+Shared data are supported by a business owner.
+</li>
+<li>
+Shared data are accessible and satisfy data by design data product quality criteria.
+</li>
+<li>
+Shared data are deployed as data products integrated in the Data Mesh.
+</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+A solution is in place to manage Data product usage agreements and it is easily accessible by humans and machine.
+</li>
+<li>
+Data exchange protocols are defined and standardized per business domains.
+</li>
+<li>
+Data policies and rules enforcement through computable data control services.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Partially on target
+</td>
+<td>
+<ul>
+<li>
+Shared data are supported by a business owner.
+</li>
+<li>
+Shared data are accessible and satisfy partially data by design data product quality criteria.
+</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+Data exchange protocols are defined and standardized.
+</li>
+<li>
+A solution is in place to manage data sharing lineage.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Off target
+</td>
+<td>
+<ul>
+<li>
+Business stakeholders have not been engaged yet.
+</li>
+<li>
+Data is not shared to be reusable.
+</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>
+Data exchange schemas and protocols are defined in a peer-to-peer manner.
+</li>
+<li>
+Some domains redistribute data collected from other domains with no clear rules and added value (shadow market.
+</li>
+<li>
+There is no solution to manage Data product usage agreements between providers and consumer
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<details>
+<summary>
+<strong>Is Data Mesh simply an extension of the microservice architecture?</strong>
+</summary>
+<p>
+Partially. Martin Fowler and James Lewis have proposed the following definition in 2014 for microservice architecture: “In short, the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.”. Data Mesh inherits some characteristics of microservice architecture, such as “independently deployable”, “centralized management of these services”; but it must be adapted to the context. The granularity for Data Mesh is in general more coarse grain than microservices (Data Mesh is at domain and data product levels), also for example data performance requirements and technology impose some standardization of storage technologies, which is not the case of microservices.
+</p>
+</details>
+<details>
+<summary>
+<strong>What domains should I define or use?</strong>
+</summary>
+<p>
+Our recommendation by default is to leverage the existing domains (there is always at least one structure in the organization that can be considered as an input for the domain structure), or to take this opportunity to revisit the domain map. Many factors influence the design of a domain map, such as business ambition (value proposition and strategy), IT landscape, organizational structure, funding mechanisms, data areas. The more the domain maps align to a single map the more it facilitatesthe alignment between actors, processes, tools, and data.
+</p>
+</details>
+<details>
+<summary>
+<strong>What is the impact on current data platforms?</strong>
+</summary>
+<p>
+The main architectural change for the data platforms is to reposition data platforms as enablers, domain agnostic, that can support the autonomy for domains, and collaboration across domains, at scale.
+</p>
+</details>
+<details>
+<summary>
+<strong>Why is a report not considered a data product?</strong>
+</summary>
+<p>
+A report is one way (channel) to consume information, but a report is not reusable to support new use cases. As the ambition for AXA is about scalability, the focus is on data that can be reused more than a final product.
+</p>
+</details>
+<details>
+<summary>
+<strong>How will Data Mesh prepare AXA to share with external data ecosystems such as Data Spaces?</strong>
+</summary>
+<p>
+Data Space is an open, federated data ecosystem and marketplace ensuring data sovereignty for the creator of the data. While Data Space doesn’t push a concept of data product, most of Data Mesh principles are closely aligned to Data Space on managing an ecosystem. By implementing governance and platform supporting controlled data exchange in an AXA ecosystem, integration in a Data Space will be fairly facilitated.
+</p>
+</details>
+<details>
+<summary>
+<strong>We already deliver data marts; can we consider that we already have data products?</strong>
+</summary>
+<p>
+With the concept of “data product” (data as a product) comes additional requirements (cf. data product properties). A data mart can be a good candidate to become a data product, if the data refresh latency and data quality are compatible with the quality requirements from users and use cases.
+</p>
+</details>
+<details>
+<summary>
+<strong>Does data product relate to data virtualization?</strong>
+</summary>
+<p>
+Data Mesh is a socio-technical paradigm without any direct relationship to data virtualization which is a data technology. So far, we don’t foresee any direct relation between the Data Mesh and data virtualization. On one hand, data virtualization could support the rapid provisioning of a new business dataset to be provided as a product; on the other hand, it’s very difficult for a data virtualization technology to guarantee data immutability (repeatability) required for a data product.
+</p>
+</details>
+<details>
+<summary>
+<strong>How can I consume a data product?</strong>
+</summary>
+<p>
+Usually there are three consumption styles for data: by copy, by reference, by projection (query). Data product consumption must be defined by the product owner; it’s quite usual for a data product to provide multiple interfaces for consumers (File interface, SQL interface, Event interface, APIs…).
+</p>
+</details>
+<details>
+<summary>
+<strong>Not all data owners necessarily wish to expose all their data (policies, customers, risks, etc.). How will the confidentiality and restrictions aspects be managed and prevent this data from being dispersed in other Data Meshes?</strong>
+</summary>
+<p>
+Data as a product doesn’t mean necessary in self-service access to data. It is part of the product design process to define which data will/can be made available, to which audiences (profiles), and what is the authorization process.
+</p>
+</details>
+<details>
+<summary>
+<strong>Should each domain define a list of core data and insights to be provided by the domain?</strong>
+</summary>
+<p>
+The Data Mesh approach is decentralized by nature, considering domain owners are the best candidates to identify what data they need and what data they can share with others. At the scale of AXA, we count on the learning and empowerment of these actors. Sharing a library of data products (including design artefacts) is also a good way to cross-fertilize.
+</p>
+</details>
+<details>
+<summary>
+<strong>Is it possible to provide pre-defined data models and datasets for data products? </strong>
+</summary>
+<p>
+A data product must be fit for purpose and target the audience(s) in terms of accessibility and understanding. In an international insurance business context, leveraging ACORD glossary is a good starting point, then specific design must be done to adapt the data product to the audience(s).
+</p>
+</details>
+<details>
+<summary>
+<strong>Data privacy is becoming increasingly important. How to ensure that all customer data copied into the domains (node or Data Mesh) will be deleted (if the customer requests is “right to be forgotten” or if the data retention date has passed)? How to avoid data duplication?</strong>
+</summary>
+<p>
+</p>
+</details>
+<details>
+<summary>
+<strong>Data privacy is becoming increasingly important. How to ensure that all customer data copied into the domains (node or Data Mesh) will be deleted (if the customer requests is “right to be forgotten” or if the data retention date has passed)? How to avoid data duplication?</strong>
+</summary>
+<p>
+The data stored in the systems of record cannot be used directly for analytical processing; so at least one copy of the data is required. With the Data Mesh approach, with an appropriate data infrastructure, there should be only one copy for the core data. This data copy should be under the responsibility of the same domain owner as the source system owner, that must apply specific data privacy rules appropriate for both operational and analytical use cases.
+</p>
+</details>
+<details>
+<summary>
+<strong>Operational systems provide APIs, does it mean they can deliver data products?</strong>
+</summary>
+<p>
+The classes of usages for data products are mostly analytical, and transactional APIs from operational systems are not optimized to support analytical queries and requirements. Data users must be able also to query data from multiple systems, with good level of performance, thus it requires data physical proximity and high standardization of data accessesthat are difficult to secure from isolated operational systems.
+</p>
+</details>
+<details>
+<summary>
+<strong>How to convince a domain owner to make data available to others?</strong>
+</summary>
+<p>
+Every function in an organization consumes, processes, and shares some data (information), at least to report about its activity performance. Sharing some data generated by its activities should be included in the contribution and value proposition of every business to the organization.
+</p>
+</details>
+<details>
+<summary>
+<strong>Operational applications (selling, claims …) use mostly the data they already manage. What are the possibilities offered by analytical data products for core systems?</strong>
+</summary>
+<p>
+Analytical data products are opportunities to augment or automate some core systems processes with more services or increased automation, for example by leveraging additional data and predictions (e.g. customer interactions and behaviors to improve the quality of service for claim handling).
+</p>
+</details>
+<details>
+<summary>
+<strong>In operational applications some codifications (reference data) are very technical and not understandable by external users (e.g., “WX1”, “00014”). Also, for the same data element the reference data may be different from one domain to another. How to provide the appropriate reference data to the data product consumers?</strong>
+</summary>
+<p>
+One of the purposes of the data product is to translate the technical data model and value to a data representation that can be understood by the consumers. For some external or internal reference data (e.g. country or currency codes), a usual practice is to set up a transversal domain that will oversee defining/managing/governing the adoption and use of transversal data elements.
+</p>
+</details>
+<details>
+<summary>
+<strong>Does a data product native technology exist on the market?</strong>
+</summary>
+<p>
+Not really. Technology providers are adding services to support some requirements for Data Mesh, but they are also transparent (cf. AXA Data Mesh Technology Watch sessions) that Data Mesh is not just a technological aspect so they will not implement Data Mesh directly as technology service. Zhamak Dehghani has launched in 2022 an IT initiative to develop a set of services dedicated to Data Mesh, but the initiative is at an early stage.
+</p>
+</details>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

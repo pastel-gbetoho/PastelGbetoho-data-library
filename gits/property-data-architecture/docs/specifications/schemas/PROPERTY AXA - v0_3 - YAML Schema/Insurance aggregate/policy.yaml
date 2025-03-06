@@ -1,0 +1,78 @@
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+type: object
+title: policy
+additionalProperties: false
+properties:
+  policyNumber:
+    type: string
+    primaryKey: true
+    isActivated: true
+    sample: "242630373"
+  initialEffectiveDate:
+    type: string
+    format: date
+    isActivated: true
+    sample: "2019-05-20"
+  effectiveStartDate:
+    type: string
+    format: date
+    isActivated: true
+    sample: "2019-05-26"
+  expirationDate:
+    type: string
+    format: date
+    isActivated: true
+    sample: "2020-05-20"
+  policyStatusCode:
+    type: string
+    isActivated: true
+    sample: In Force
+  defaultCurrencyCode:
+    type: string
+    isActivated: true
+    sample: GBP
+  annualPremiumAmount:
+    type: number
+    isActivated: true
+    sample: 1390.8
+  insuredObjects:
+    type: array
+    isActivated: true
+    additionalItems: true
+    items:
+      type: object
+      isActivated: true
+      properties:
+        insuredObjectIdentifier:
+          type: string
+          isActivated: true
+          sample: java-75017-fr
+        insuredPercentage:
+          type: number
+          isActivated: true
+          sample: 0.7
+      additionalProperties: false
+      displayName: insuredObject
+isActivated: true
+required:
+  - policyNumber
+  - effectiveStartDate
+patternProperties:
+  partyRoleInAgreement:
+    type: array
+    additionalItems: true
+    isActivated: true
+    items:
+      type: object
+      isActivated: true
+      properties:
+        typeCode:
+          type: string
+          isActivated: true
+          sample: INSURED
+        partyIdentifier:
+          type: string
+          isActivated: true
+          sample: P1234567890
+      additionalProperties: false
+      displayName: partyRole

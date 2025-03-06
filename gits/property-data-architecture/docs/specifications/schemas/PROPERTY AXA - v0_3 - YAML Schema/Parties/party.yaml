@@ -1,0 +1,413 @@
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+type: object
+title: party
+additionalProperties: false
+properties:
+  party:
+    type: object
+    isActivated: true
+    properties:
+      partyIdentifier:
+        type: string
+        primaryKey: true
+        isActivated: true
+        sample: P1234567890
+      typeCode:
+        type: string
+        enum:
+          - PERSON
+          - ORGANIZATION
+        isActivated: true
+        sample: PERSON
+      fullName:
+        type: string
+        isActivated: true
+        sample: George Herbert Walker Bush
+      taxRegistration:
+        type: array
+        isActivated: true
+        items:
+          type: object
+          properties:
+            taxIdentifier:
+              type: string
+              isActivated: true
+              sample: RSS MRA 74D22 A001Q
+            taxRegistrationKind:
+              type: string
+              isActivated: true
+              sample: FISCAL_CODE
+          additionalProperties: false
+          isActivated: true
+          required:
+            - taxIdentifier
+            - taxRegistrationKind
+      contactMethod:
+        type: object
+        isActivated: true
+        properties:
+          postalMailContact:
+            type: array
+            isActivated: true
+            additionalItems: true
+            items:
+              type: object
+              properties:
+                usageCode:
+                  type: string
+                  enum:
+                    - BUSINESS
+                    - PERSONAL
+                    - OTHER
+                  isActivated: true
+                  sample: PERSONAL
+                contactMethodKind:
+                  type: string
+                  enum:
+                    - CORRESPONDANCE
+                    - RESIDENTIAL
+                    - OTHER
+                  isActivated: true
+                  sample: RESIDENTIAL
+                placeAddress:
+                  type: object
+                  properties:
+                    postalAddress:
+                      type: object
+                      isActivated: true
+                      properties:
+                        unitNumber:
+                          type: integer
+                          isActivated: true
+                        floorNumber:
+                          type: integer
+                          isActivated: true
+                        addressLines:
+                          type: string
+                          isActivated: true
+                      additionalProperties: false
+                    streetAddress:
+                      type: object
+                      isActivated: true
+                      properties:
+                        unstructuredAddress:
+                          type: string
+                          isActivated: true
+                          sample: 61 Rue Mstislav Rostropovitch
+                        name:
+                          type: string
+                          isActivated: true
+                          sample: Mstislav Rostropovitch
+                        number:
+                          type: string
+                          isActivated: true
+                          sample: "61"
+                        typeCode:
+                          type: string
+                          isActivated: true
+                          sample: RUE
+                        preDirectionCode:
+                          type: string
+                          isActivated: true
+                        postDirectionCode:
+                          type: string
+                          isActivated: true
+                      additionalProperties: false
+                    postCode:
+                      type: string
+                      isActivated: true
+                      sample: "75017"
+                    municipality:
+                      type: object
+                      isActivated: true
+                      properties:
+                        name:
+                          type: string
+                          isActivated: true
+                          sample: PARIS
+                        typeCode:
+                          type: string
+                          enum:
+                            - BOROUGH
+                            - CITY
+                            - COUNTY
+                            - PARISH
+                            - PREFECTURE
+                            - TOWN
+                            - TOWNSHIP
+                            - VILLA
+                            - VILLAGE
+                            - WARD
+                            - ZONE
+                          isActivated: true
+                          sample: CITY
+                      additionalProperties: false
+                      required:
+                        - name
+                    country:
+                      type: object
+                      isActivated: true
+                      properties:
+                        alphaIsoCode:
+                          type: string
+                          isActivated: true
+                          sample: FR
+                        name:
+                          type: string
+                          isActivated: true
+                          sample: France
+                      additionalProperties: false
+                      required:
+                        - alphaIsoCode
+                        - name
+                  additionalProperties: false
+                  isActivated: true
+                  required:
+                    - streetAddress
+                    - postCode
+                    - municipality
+                    - country
+              additionalProperties: false
+              isActivated: true
+              required:
+                - usageCode
+                - contactMethodKind
+                - placeAddress
+          telephoneCallContact:
+            type: array
+            isActivated: true
+            additionalItems: true
+            items:
+              type: object
+              properties:
+                usageCode:
+                  type: string
+                  enum:
+                    - BUSINESS
+                    - PERSONAL
+                    - OTHER
+                  isActivated: true
+                  sample: PERSONAL
+                contactMethodKind:
+                  type: string
+                  enum:
+                    - FIXE
+                    - MOBILE
+                    - OTHER
+                    - FAX
+                  isActivated: true
+                  sample: MOBILE
+                fullNumber:
+                  type: string
+                  isActivated: true
+                  sample: "0033600000011"
+              additionalProperties: false
+              isActivated: true
+              required:
+                - usageCode
+                - contactMethodKind
+                - fullNumber
+          emailContact:
+            type: array
+            isActivated: true
+            additionalItems: true
+            items:
+              type: object
+              properties:
+                usageCode:
+                  type: string
+                  enum:
+                    - BUSINESS
+                    - PERSONAL
+                    - OTHER
+                  isActivated: true
+                  sample: PERSONAL
+                emailIdentifier:
+                  type: string
+                  isActivated: true
+                  sample: test@gmail.com
+              additionalProperties: false
+              isActivated: true
+              required:
+                - usageCode
+                - emailIdentifier
+        additionalProperties: false
+      accountAgreement:
+        type: object
+        properties:
+          accountNumber:
+            type: string
+            isActivated: true
+            sample: "31926819"
+          branchCode:
+            type: string
+            isActivated: true
+          ibanAccountIdentifier:
+            type: string
+            isActivated: true
+            sample: GB29 NWBK 6016 1331 9268 19
+          authorizedCard:
+            type: object
+            properties:
+              cardNumber:
+                type: string
+                isActivated: true
+                sample: 4111 1111 1111 1111
+              partyFullName:
+                type: string
+                isActivated: true
+                sample: George Bush
+            additionalProperties: false
+            isActivated: true
+        additionalProperties: false
+        isActivated: true
+    additionalProperties: true
+    anyOf:
+      - type: object
+        isActivated: true
+        properties:
+          person:
+            type: object
+            isActivated: true
+            properties:
+              prefixTitleCode:
+                type: string
+                isActivated: true
+                sample: Prof
+              givenName:
+                type: string
+                isActivated: true
+                sample: George
+              middleName:
+                type: string
+                isActivated: true
+                sample: Herbert Walker
+              surname:
+                type: string
+                isActivated: true
+                sample: Bush
+              marriedSurname:
+                type: string
+                isActivated: true
+              birthDate:
+                type: string
+                format: date
+                isActivated: true
+                sample: "1977-04-22"
+              birthTime:
+                type: string
+                isActivated: true
+              genderCode:
+                type: string
+                isActivated: true
+                sample: Male
+              primaryOccupation:
+                type: string
+                isActivated: true
+                sample: Doctor
+              secondaryOccupation:
+                type: string
+                isActivated: true
+                sample: Teacher
+              maritalStatusCode:
+                type: string
+                isActivated: true
+                sample: Single
+              socioEconomicRisk:
+                type: string
+                isActivated: true
+                sample: "0.5"
+              personRegistration:
+                type: array
+                additionalItems: false
+                isActivated: true
+                items:
+                  type: object
+                  properties:
+                    registrationIdentifier:
+                      type: string
+                      isActivated: true
+                      sample: "210692106990"
+                    registrationKind:
+                      type: string
+                      isActivated: true
+                      sample: DRIVER_LICENCE
+                    effectivePeriodStartDate:
+                      type: string
+                      format: date
+                      isActivated: true
+                      sample: "1995-06-20"
+                    effectivePeriodEndDate:
+                      type: string
+                      format: date
+                      isActivated: true
+                    driverLicenseVehicleClassCode:
+                      type: string
+                      isActivated: true
+                      sample: B
+                    drivingPointsCount:
+                      type: number
+                      isActivated: true
+                      sample: 12
+                  additionalProperties: false
+                  isActivated: true
+                  required:
+                    - registrationIdentifier
+                    - registrationKind
+            additionalProperties: false
+            required:
+              - givenName
+              - surname
+        additionalProperties: true
+      - type: object
+        isActivated: true
+        properties:
+          organization:
+            type: object
+            isActivated: true
+            additionalProperties: false
+            properties:
+              organizationKind:
+                type: string
+                enum:
+                  - COMPANY
+                  - GOVERNMENTBODY
+                  - GROUP
+                  - ORGANIZATIONUNIT
+                  - OTHER
+                isActivated: true
+              organizationUnitKind:
+                type: string
+                enum:
+                  - BRANCH
+                  - DEPARTMENTALUNIT
+                  - REGIONALUNIT
+                  - TEAM
+                isActivated: true
+              agreedProviderIndicator:
+                type: string
+                isActivated: true
+              operations:
+                type: object
+                isActivated: true
+                properties:
+                  operationCode:
+                    type: string
+                    isActivated: true
+                    sample: "4411"
+                  natureOfBusiness:
+                    type: string
+                    isActivated: true
+                    comments: >-
+                      Example base on [2022 NAICS
+                      Definition](https://www.census.gov/naics/?input=44&chart=2022)
+                    sample: Automobile Dealers
+                additionalProperties: false
+            required:
+              - organizationKind
+        additionalProperties: true
+    required:
+      - partyIdentifier
+      - typeCode
+      - fullName
+isActivated: true

@@ -1,0 +1,13 @@
+policyNumber: "242630373"
+initialEffectiveDate: "2019-05-20"
+effectiveStartDate: "2019-05-26"
+expirationDate: "2020-05-20"
+policyStatusCode: In Force
+defaultCurrencyCode: GBP
+annualPremiumAmount: 1390.8
+partyRoleInAgreement:
+  - typeCode: INSURED
+    partyIdentifier: P1234567890
+insuredObjects:
+  - insuredObjectIdentifier: java-75017-fr
+    insuredPercentage: 0.7

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+    <meta name="dcterms.date" content="2021-06-02">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - API MATURITY MODEL </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#managing-your-apis-landscape">1. Managing your APIs Landscape</a></li>
+          <li><a href="#managing-your-apis">2. Managing your APIs</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h3 id="managing-your-apis-landscape">1. Managing your APIs Landscape</h3>
+<div class="row">
+<table width="100%">
+<thead>
+<tr>
+<th width="33%">
+Basic
+</th>
+<th width="33%">
+Intermediate
+</th>
+<th width="33%">
+Advanced
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="6">
+1.1. API STRATEGY
+</td>
+</tr>
+<tr>
+<td>
+No defined API specific strategy in place. APIs according to project needs.
+</td>
+<td>
+APIs are managed as part of the application product strategy.
+</td>
+<td>
+API strategy drives API development based on consumer need. APIs considered as Products that can bring competitive advantage.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.2. API GOVERNANCE
+</td>
+</tr>
+<tr>
+<td>
+There is no specific governance around APIs.
+</td>
+<td>
+API governance exists as a standalone IT practice.
+</td>
+<td>
+API governance is a joint IT and Business practice across the full API ifecycle.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.3. API STANDARDS
+</td>
+</tr>
+<tr>
+<td>
+Few standards documented and these are not enforced beyond individuals responsibilities.
+</td>
+<td>
+API standards are documented and enforced through an empowered governance body focused on API management.
+</td>
+<td>
+API standards are documented and are automatically enforced and checked at all stages of the API lifecycle e.g. workflow, API linter, etc.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.4. SECURITY POLICIES
+</td>
+</tr>
+<tr>
+<td>
+Security policies are applied according to the needs of the project and validated through project collaboration with local security teams. No compliance management in place.
+</td>
+<td>
+Baseline security policies are centrally managed and applied locally by the API development teams with security reviews &amp; approval. Specific API policies are created by the project according to a common framework. Manual compliance management in place.
+</td>
+<td>
+Baseline and project specific security policies are centrally managed and applied to relevant APIs through a centralised APIM platform. Automated compliance management in place.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.5. API CATALOGUE
+</td>
+</tr>
+<tr>
+<td>
+APIs are built within and managed through individual projects, no shared catalogue.
+</td>
+<td>
+APIs are planned, duplicates are avoided through the use of a shared catalogue.
+</td>
+<td>
+APIs are assets in their own rights and strategically planned. Centralized catalogue is in place and is actively managed to avoid overlap &amp; duplicates and encourage reuse.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.6. API BUSINESS OWNERSHIP
+</td>
+</tr>
+<tr>
+<td>
+APIs are considered by the business as a technical artefact for application communications.
+</td>
+<td>
+APIs are considered by business as a technical option to expose services or data to customers and partners.
+</td>
+<td>
+APIs are part of business value proposition to customers and partners, APIs have business owners &amp; roadmaps.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.7. API DELIVERY APPROACH
+</td>
+</tr>
+<tr>
+<td>
+API development is managed as part of a project delivery.
+</td>
+<td>
+API development is managed through an Agile delivery approach, delivery team has access to the business.
+</td>
+<td>
+API development is managed through an Agile Biz/Dev/Sec/Ops team, API dedicated roles are clearly defined, understood and assigned.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+1.8. API CONSUMER EXPERIENCE
+</td>
+</tr>
+<tr>
+<td>
+APIs are difficult to discover. Consumers need to contact the API owner and organise access through a process.
+</td>
+<td>
+Consumers are able to find and sign up to APIs through a developer portal with access to documentation and sandbox environment.
+</td>
+<td>
+Consumers have access to self service tools through a singular developer portal and onboarding process. Portal provides IAM, onboarding, sandbox, business &amp; technical documentation. And are part of a developer community.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="managing-your-apis">2. Managing your APIs</h3>
+<div class="row">
+<table>
+<thead>
+<tr>
+<th width="33%">
+Basic
+</th>
+<th width="33%">
+Intermediate
+</th>
+<th width="33%">
+Advanced
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="6">
+2.1. API SPECIFICATION APPROACH
+</td>
+</tr>
+<tr>
+<td>
+APIs are designed from the code, not always properly documented.
+</td>
+<td>
+APIs are first designed through project documentation deliverables. API is plugged to underlying IT but does provides consistent mechanisms.
+</td>
+<td>
+APIs are designed first, base on the business value proposition. Specification is available to all actors early in the development process. API layering approach is taken to decouple consumer API from systems of record or underlying system APIs.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.2. ALIGNMENT TO GUIDELINES
+</td>
+</tr>
+<tr>
+<td>
+Ad-hoc API for a single set of requirements without any claim to abstraction. API granularity is not considered.
+</td>
+<td>
+API design is specific to its context (a product, application or business domain) and is done with the appropriate granularity.
+</td>
+<td>
+API is based on AXA standards &amp; guidelines. Granularity and abstraction level are based on the existing business domain model.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.3. API STYLE
+</td>
+</tr>
+<tr>
+<td>
+APIs are created using any protocol to address specific integration needs.
+</td>
+<td>
+APIs are designed to use web protocols and be RESTful.
+</td>
+<td>
+APIs are designed to fully leverage the power of the RESTful concepts and utilise resources and HTTP verbs to construct services.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.4. API DOCUMENTATION
+</td>
+</tr>
+<tr>
+<td>
+Documentation could be partial or unavailable. Not written to OAS standard.
+</td>
+<td>
+Documentation is technically complete. Written to OAS standard.
+</td>
+<td>
+Documentation is complete and versioned, from both a technical and a business perspective, inc. providing value propositions and use cases and is available through an API portal.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.5. API VERSIONING
+</td>
+</tr>
+<tr>
+<td>
+API lifecycle is managed opportunistically. There is usually one version per instance.
+</td>
+<td>
+API lifecycle is managed through versioning with SLAs. Backward compatibility is handled.
+</td>
+<td>
+API and consumer lifecycle are governed. Strict API versions are planned, advanced backward compatibility is handled, roadmap is defined, deprecation is managed.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.6. API DELIVERY (BUILD, DEPLOY, TEST &amp; RELEASE)
+</td>
+</tr>
+<tr>
+<td>
+Centralized version control, automated build scripts, no management of build artifacts.
+</td>
+<td>
+Automation of builds/tests on CI server. Standard processes for all environments. End-to-end test scenarios are defined and manually executed.
+</td>
+<td>
+Continuous integration and delivery supporting Zero downtime deployments and continue testing of PROD (when possible).
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.7. API RUN (BAU) INC. MONITORING
+</td>
+</tr>
+<tr>
+<td>
+Simple logging and manual discovery of incidents for technical and security monitoring. Security monitoring of the underlying technology platform is relied upon where relevant.
+</td>
+<td>
+Monitoring &amp; alerting of service usage, performance, logging and manual discovery of incidents. API specific logs gathered by SOC/SIEM for security event detection and incident management. IPC in place and R&amp;R defined. Functional Monitoring.
+</td>
+<td>
+Real-time dashboard and Event Correlation for predictive alerts. Integration of threat intelligence to provide proactive alerting. Business Activity Monitoring (BAM) inc. Business process view. Automatic security monitoring through centralised security monitoring tools, fully integrated with the monitoring of the underlying technology platform.
+</td>
+</tr>
+<tr>
+<td colspan="6">
+2.8. API CONTRACT MANAGEMENT
+</td>
+</tr>
+<tr>
+<td>
+API contracts cover access and use without SLAs.
+</td>
+<td>
+API contracts cover the basic T&amp;Cs of access &amp; usage. Are based off monitoring real world usage &amp; performance data. Consumers are automatically alerted when usage limits are reached and of SLA breaches.
+</td>
+<td>
+API Contracts handle full T&amp;Cs including versioning, retirement etc. Are published and managed through the API Gateway. Relationship with consumers are clearly defined, monitored &amp; controlled.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

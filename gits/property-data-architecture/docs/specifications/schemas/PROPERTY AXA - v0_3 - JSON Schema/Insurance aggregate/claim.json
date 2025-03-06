@@ -1,0 +1,98 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.axa.com/sherlock/sherlock-data-architecture/blob/master/sherlock-collaboration-contract/data-integration/schema/claim-json-schema.json",
+    "type": "object",
+    "title": "claim",
+    "additionalProperties": false,
+    "properties": {
+        "claimNumber": {
+            "type": "string",
+            "title": "Claimnumber",
+            "primaryKey": true,
+            "isActivated": true,
+            "examples": [
+                "250-005-6426"
+            ]
+        },
+        "policyNumber": {
+            "type": "string",
+            "title": "Policynumber",
+            "isActivated": true,
+            "examples": [
+                "242630373"
+            ]
+        },
+        "settlementDate": {
+            "type": "string",
+            "format": "date",
+            "isActivated": true,
+            "examples": [
+                "2019-06-03"
+            ]
+        },
+        "claimStatusCode": {
+            "type": "string",
+            "title": "Claimstatuscode",
+            "isActivated": true,
+            "examples": [
+                "Settled"
+            ]
+        },
+        "defaultCurrencyCode": {
+            "type": "string",
+            "isActivated": true,
+            "examples": [
+                "GBP"
+            ]
+        },
+        "totalPaidAmount": {
+            "type": "number",
+            "isActivated": true,
+            "examples": [
+                1049.17
+            ]
+        },
+        "totalOutstandingReserveAmount": {
+            "type": "number",
+            "isActivated": true,
+            "examples": [
+                1091.83
+            ]
+        },
+        "totalRecoveredAmount": {
+            "type": "number",
+            "isActivated": true,
+            "examples": [
+                0
+            ]
+        },
+        "totalOutstandingRecoveryAmount": {
+            "type": "number",
+            "isActivated": true,
+            "examples": [
+                2141
+            ]
+        },
+        "relatedClaim": {
+            "type": "array",
+            "title": "Relatedclaim",
+            "isActivated": true,
+            "prefixItems": [
+                {
+                    "type": "string",
+                    "title": "Claimnumber",
+                    "isActivated": true,
+                    "displayName": "claimNumber",
+                    "examples": [
+                        "@100-000-8020"
+                    ]
+                }
+            ]
+        }
+    },
+    "isActivated": true,
+    "required": [
+        "claimNumber",
+        "policyNumber"
+    ]
+}

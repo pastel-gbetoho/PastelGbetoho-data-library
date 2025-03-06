@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - METADATA ASSETS </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#metadata-assets">Metadata assets</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="metadata-assets">Metadata assets</h1>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Asset Category</strong></th>
+<th style="text-align: left;"><strong>Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Domain</td>
+<td style="text-align: left;">A “Domain” is a combination of one subject area, one business area and optionally one geographical area that constitutes a consistent grouping of data and/or metadata for data governance purposes. Fine-grained domains usually focus on governance of data (e.g. the domain in charge of the data quality of a claim) or highly specific metadata (e.g. one data element or data quality rule that makes sense in a restricted context). Domains defined at macro level usually focus on governance of shared metadata (e.g. one data element or data quality rule that is widely used around the enterprise).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Data Privacy Classification</td>
+<td style="text-align: left;">Business Data Element shall be classified as: Personal Data - any data relating to an individual who is or can be identified either from the data or from the data in conjunction with other information ; Sensitive Personal Data (also known as “Special categories of personal data”) - data revealing racial or ethnic religion, political opinions, religious or philosophical beliefs, trade-union membership, and the processing of genetic data or biometric data in order to uniquely identify a person, or data concerning health or sexual orientation.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Business Criticality Classification</td>
+<td style="text-align: left;">Business Data Element shall be classified as "Business Critical Data Element" due to its significant usage, contribution and reliance in achieving entity's business goals (including compliance requirements). Moreover, inconsistencies/deficiencies in data quality shall significantly impact entity’s business goals around financials and/or compliance and/or operations. Some examples of Business Critical Data include Customer ID, Type of Customer, Customer Name, Gender, Data Of Birth, Customer E-mail ID etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Business Data Object</td>
+<td style="text-align: left;">A “(Business) Data Object” is a key idea, person or thing that provides context for the data collected through the enterprise. Data objects aid understanding and are useful for defining objects against which multiple data elements are collected. For example, “contact” may be defined as a data object, which aids in the application of data elements, including contact date, contact delivery mode and contact customer present status. The use of data objects reduces the repetition of large sections of text across multiple data elements.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Business Data Element</td>
+<td style="text-align: left;">A “(Business) Data Element” is a fundamental, conceptual unit of data. Often, the terms “variable” and “field” are used synonymously to mean a data element (e.g. Individual Contract Status, Claim Event Date and Employee First Name). A data element is comprised of three components: (1) a data object, (2) a property and (3) a value domain. (1) The data object is the idea, person or thing that is of interest and is being described (e.g. the Customer). (2) The property is the characteristic of the data object that is of interest (e.g. the Preferred Language of the Customer). (3) The value domain establishes the permissible values that can be used to represent the data element. A value domain has a data type (e.g. Boolean, decimal and integer) and, optionally, a minimum length, a maximum length and a decimal precision. A value domain can be enumerated (specified through a list of values of a least two individual permissible values) or non-enumerated. For example, the Customer Preferred Language is represented by a list of language codes from the International Organization for Standardization (ISO 639-1:2002). Data elements can be thought of as belonging to one of the following groups: (a) Input: if a data element is of the input type, this indicates that the data is used or stored essentially as it is collected, without major modification. Most data elements are of this type. (b) Derived: one or more data elements which are modified in some way. For example, multiple data elements might be aggregated together for output or logical purposes. See the table ‘Derived Data Elements’ for more information.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Business Term</td>
+<td style="text-align: left;">Business term are words or phrases used to describe a thing to express a concept in language or branch of business.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Business Data Issue</td>
+<td style="text-align: left;">A “Business Data Issue” describes a business problem occurring as the result of a data issue and the impact of this problem either qualitative or quantitative. It also describes the nature of the business impact such as financial, regulatory, legal, reputational, operational…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Business Data Quality Rule</td>
+<td style="text-align: left;">A “(Business) Data Quality Rule” is a Boolean (true/false or passed/failed) expression to which every data record must evaluate true/passed. It is typically the responsibility of (Business) Data (Domain) Owners, as part of their data governance responsibilities, to define data quality rules for domains they own. They should seek input from other data actors (Data Stewards, Internal Controllers, Data Protection Officers and Data Managers) as they define the data quality rules. It should be possible to run data quality rules against data in place, against data being loaded and against data being edited. The definition, design, and implementation of data quality rules are at the heart of a solid data quality management program. It is the data quality rules that will detect, correct, and prevent poor-quality data and elevate data across the enterprise to data that can be trusted as an asset and used for transacting business and for reporting and analytics.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Data Processing Activity</td>
+<td style="text-align: left;">A “Data Processing Activity” is the collection and manipulation of data elements to produce meaningful information. It represents any operation or set of operations which is performed on data or on sets of data, whether by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction. In the context of the EU General Data Protection (GDPR), the record of data processing activities is the subset of data processing activities which collect and manipulate personal data.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Data Transfer</td>
+<td style="text-align: left;">A “Data Transfer” object describes the legal conditions binding the transmission of data in the context of a processing activity to a third party playing the role of data recipient.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Business</td>
+<td style="text-align: left;">Data Recipient</td>
+<td style="text-align: left;">A “Data Recipient” is a natural or legal person, public authority, agency or another body, external or internal to the organizational entity, to which the data from a data processing activity is disclosed, whether a third party or not. When the data processing activity involves personal data and/or if the personal data is accessed by a recipient located in a third country (international data transfer), additional information may be required.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Application</td>
+<td style="text-align: left;">An “Application” is a classification of computer programs designed to perform specific tasks, such as word processing, database management, or graphics (TOGAF Glossary, 2000).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Data Flow</td>
+<td style="text-align: left;">A “Data Flow” object describes the data flows between applications.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Database</td>
+<td style="text-align: left;">A database is an organized collection of data, generally stored and accessed electronically from a computer system. The database management system (DBMS) is the software that interacts with end users, applications, and the database itself to capture and analyze the data. <a href="https://en.wikipedia.org/wiki/Database">Source wikipedia</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Dataset</td>
+<td style="text-align: left;">A data set is a collection of related, discrete items of related data that may be accessed individually or in combination or managed as a whole entity. <a href="https://whatis.techtarget.com/definition/data-set">Source techtarget</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Datafield</td>
+<td style="text-align: left;">A data field is a place where you can store data. Commonly used to refer to a column in a database or a field in a data entry form or web form. <a href="https://en.wikipedia.org/wiki/Data_field">Source wikipedia</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Monitored Population</td>
+<td style="text-align: left;">A “Monitored Population” is the collection of all members of a master data object that are eligible to be quality-controlled. For reporting purposes, each data quality rule must be associated to a single master data object (e.g. Customers, Employees, Vendors, Suppliers, Products, Locations, contact mechanisms, Profiles, Accounting items, Contracts and Policies) defining the granularity level at which results of data quality assessments are displayed. A monitored population provides the list of all members, identified using their business references, of this master data object (e.g. the list of all Customer Numbers).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Technical</td>
+<td style="text-align: left;">Data Confidentiality Classification</td>
+<td style="text-align: left;">Labelling Information Assets as Public, Internal, Confidential, Secret. Please refer to <a href="http://one.axa.com/lotus/myquickr/axa-group-security/library">Information Security data classification guidelines</a>.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Operational</td>
+<td style="text-align: left;">Master Data Object Member</td>
+<td style="text-align: left;">A “Master Data Object Member” is an instance of a “Monitored Population” extracted from source system to be quality-controlled (ex. A client identifier extracted from the CRM for the purpose of applying data quality controls to the related client record).</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Operational</td>
+<td style="text-align: left;">Technical Data Quality Rule</td>
+<td style="text-align: left;">A “Technical Data Quality Rule” is the physical executable component (in most cases an SQL SELECT statement) of the data quality rule description. It is the responsibility of IT to design and develop data quality rules that can then be implemented, executed, and monitored within batch or near real-time applications across the enterprise. Output of a data quality rule is the list of all business references (e.g. contract references/numbers, employee references/numbers, vendor references/numbers…) that do not comply with the rule (e.g. the list of all contract references for which the contract start date is not a valid date).</td>
+</tr>
+</tbody>
+</table>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

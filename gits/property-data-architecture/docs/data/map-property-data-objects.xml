@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataObjectsReference>
+
+   <Category id="PROPERTY DATA" icon="home">
+	  <DataSubjectArea id="STRUCTURE DATA" icon="window-restore">
+		<DataObject id="Structure" source="ACORD">
+			<DataElements>
+				<DataElement id="Identifier" source="ACORD">Identifying the property covered by a given contract. It must be unique</DataElement>
+				<DataElement id="Structure Type Code" source="ACORD">Type of the stucture. E.g. "Builing", "Flat", "Industrial Complex", etc.</DataElement>
+				<DataElement id="Material Type Code" source="ACORD">Type of building materials of the site. E.g. "Glass", "Brick"</DataElement>
+				<DataElement id="Construction Year">Year of construction</DataElement>
+				<DataElement id="Renovation Year">Year of renovation</DataElement>
+				<DataElement id="Unit Count" source="ACORD">Building's number of units</DataElement>
+				<DataElement id="Structure Status Code" source="ACORD">Status of the building</DataElement>
+				<DataElement id="Name">Name of the building</DataElement>
+				<DataElement id="Forecast Construction Date">Forecast data for practical completion</DataElement>
+				<DataElement id="Geometry"/>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Structure Component" source="ACORD">
+			<DataElements>
+				<DataElement id="Floor Count" source="ACORD">Number of floors.</DataElement>
+				<DataElement id="Floor Number" source="ACORD">Floor level number (e.g. 3 = second floor above the floor ground)</DataElement>
+				<DataElement id="Roof Geometry Type Code" source="ACORD">Type of roof of the site (e.g. flat roof)</DataElement>
+				<DataElement id="Roof Material Type Code" source="ACORD">Type of roof material of the floor (e.g. glass, wood, tile, stale)</DataElement>
+				<DataElement id="Bathrooms Count">Number of bathrooms</DataElement>
+				<DataElement id="Wall Material Type Code">Type and/or finish of the exterior walls (e.g. Vinyl Siding, Brick Veneer)</DataElement>
+				<DataElement id="Parking Count">Number of parking units.</DataElement>
+				<DataElement id="Rooms Count">Number of rooms</DataElement>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Dimension" source="ACORD">
+			<DataElements>
+				<DataElement id="Roof Area">Roof area information</DataElement>
+				<DataElement id="Floor Area">Floor area information</DataElement>
+				<DataElement id="Building Height">Height of the building</DataElement>
+				<DataElement id="Building Volume">Volume of the building</DataElement>
+				<DataElement id="Building Surface">Surface of the building</DataElement>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Occupancy" source="ACORD">
+			<DataElements>
+				<DataElement id="Occupancy Type Code" source="ACORD">E.g. Course of construction, Occupied, Vacant, etc.</DataElement>
+				<DataElement id="Tenancy Type Code" source="ACORD">E.g. Rented, Tenant, Let or leased, Vacation rental, etc.</DataElement>
+				<DataElement id="Actual Usage Code" source="ACORD">E.g. Agriculture (Farm), Commercial, Industrial, Residential, etc.</DataElement>
+				<DataElement id="Occupied Floors">Single floor or range of floors occupied</DataElement>
+			</DataElements>
+		</DataObject>
+	  </DataSubjectArea>
+	  <DataSubjectArea id="PLACE DATA" icon="map-marker">
+		<DataObject id="Place" source="ACORD">
+			<DataElements>
+				<DataElement id="Identifier">Place ID</DataElement>
+				<DataElement id="Name" source="ACORD">General name given to the property in space (place)</DataElement>
+				<DataElement id="Surface Area Measurement">Land area</DataElement>
+				<DataElement id="Count Of Structures">Count of structures on the parcel</DataElement>
+				<DataElement id="Geometry"/>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Place Address" source="ACORD">
+			<DataElements>
+				<DataElement id="Unstructured Address" source="ACORD">Used to record the address</DataElement>
+				<DataElement id="Street Address Name">Street name</DataElement>
+				<DataElement id="Street Address Number">Street number</DataElement>
+				<DataElement id="Street Address Type Code">Address street type</DataElement>
+				<DataElement id="Street Address Pre Direction Code">Address street prefix</DataElement>
+				<DataElement id="Street Address Post Direction Code">Address street suffix</DataElement>
+				<DataElement id="Post Code Assigned Code">Post code of the site</DataElement>
+				<DataElement id="Municipality Name" source="ACORD">City of the location</DataElement>
+				<DataElement id="Municipality Type Code"/>
+				<DataElement id="Country Alpha ISO Code">Country to which the site belongs</DataElement>
+				<DataElement id="Country Name"/>
+				<DataElement id="Country Subdivision Alpha ISO Code">First level decomposition of a country into subdivisions</DataElement>
+				<DataElement id="Country Subdivision Abbreviation">Required for US and some other countries. The 2-digit state abbreviation is entered here</DataElement>
+				<DataElement id="Country Subdivision Name"/>
+				<DataElement id="Country Subdivision Type Code"/>
+				<DataElement id="Geographic Region Name">Region is most commonly found as a term used in terrestrial and astrophysics sciences, notably amoung the different sub-disciplines of geography, studies by regional geographers. E.g. CRESTA zones</DataElement>
+				<DataElement id="Global Position Address Coordinate System Code"/>
+				<DataElement id="Global Position Address Latitude"/>
+				<DataElement id="Global Position Address Longitude"/>
+				<DataElement id="Global Position Address Elevation"/>
+				<DataElement id="Global Position Address Geocoding Resolution">Resolution at which the site has been geocoded</DataElement>
+				<DataElement id="Postal Address Unit Number">Address unit</DataElement>
+				<DataElement id="Postal Address Floor Number">Additional street address detail. E.g. Apt2, Unit B, 6th floor)</DataElement>
+				<DataElement id="Postal Address Address Lines"/>
+			</DataElements>
+		</DataObject>
+	  </DataSubjectArea>
+	  <DataSubjectArea id="PARTY DATA" icon="user-circle">
+		<DataObject id="Organization" source="ACORD">
+			<DataElements>
+				<DataElement id="Full Name"/>
+				<DataElement id="Organization Type"/>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Person" source="ACORD">
+			<DataElements>
+				<DataElement id="Full Name"/>
+				<DataElement id="First Name"/>
+				<DataElement id="Last Name"/>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Operation" source="ACORD">
+			<DataElements>
+				<DataElement id="Operation Code">Operations performed by the organization</DataElement>
+				<DataElement id="Nature Of Business">Activity the building is used for. E.g. Manufacturing, Retail Trade</DataElement>
+			</DataElements>
+		</DataObject>
+	  </DataSubjectArea>
+	  <DataSubjectArea id="ASSESSMENT &amp; CONDITION DATA" icon="check-square">
+		<DataObject id="Peril (Risk Type)" source="ACORD">
+			<DataElements>
+				<DataElement id="Name">Name of the peril covered</DataElement>
+			</DataElements>
+		</DataObject>
+		<DataObject id="Assessment Result" source="ACORD">
+			<DataElements>
+				<DataElement id="Risk Count"/>
+				<DataElement id="Financial Valuation" source="ACORD">Total value of the property</DataElement>
+				<DataElement id="Building Vulnerability">E.g. Fire resist, sesmic resist, etc.</DataElement>
+				<DataElement id="Content Vulnerability"/>
+				<DataElement id="Fire Sprinkler Check">Presence of fire sprinkler: yes, no, unknown</DataElement>
+			</DataElements>
+		</DataObject>
+	  </DataSubjectArea>
+   </Category>
+
+</DataObjectsReference>

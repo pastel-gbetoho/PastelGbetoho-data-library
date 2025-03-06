@@ -1,0 +1,5 @@
+<archimate:ApplicationComponent
+    xmlns:archimate="http://www.archimatetool.com/archimate"
+    name="EMP-Exposure Modelling Platform"
+    id="7e829be8-0a5a-4781-8e73-eade9f88034a"
+    documentation="An application made to standardise SOV files, so that they can be processed by RMS"/>

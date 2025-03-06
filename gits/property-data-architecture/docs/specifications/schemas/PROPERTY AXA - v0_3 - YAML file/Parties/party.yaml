@@ -1,0 +1,64 @@
+party:
+  partyIdentifier: P1234567890
+  typeCode: PERSON
+  fullName: George Herbert Walker Bush
+  taxRegistration:
+    - taxIdentifier: RSS MRA 74D22 A001Q
+      taxRegistrationKind: FISCAL_CODE
+  contactMethod:
+    postalMailContact:
+      - usageCode: PERSONAL
+        contactMethodKind: RESIDENTIAL
+        placeAddress:
+          postalAddress:
+            unitNumber: 30
+            floorNumber: -40
+            addressLines: Lorem
+          streetAddress:
+            unstructuredAddress: 61 Rue Mstislav Rostropovitch
+            name: Mstislav Rostropovitch
+            number: "61"
+            typeCode: RUE
+            preDirectionCode: Lorem
+            postDirectionCode: Lorem
+          postCode: "75017"
+          municipality:
+            name: PARIS
+            typeCode: CITY
+          country:
+            alphaIsoCode: FR
+            name: France
+    telephoneCallContact:
+      - usageCode: PERSONAL
+        contactMethodKind: MOBILE
+        fullNumber: "0033600000011"
+    emailContact:
+      - usageCode: PERSONAL
+        emailIdentifier: test@gmail.com
+  accountAgreement:
+    accountNumber: "31926819"
+    branchCode: Lorem
+    ibanAccountIdentifier: GB29 NWBK 6016 1331 9268 19
+    authorizedCard:
+      cardNumber: 4111 1111 1111 1111
+      partyFullName: George Bush
+  person:
+    prefixTitleCode: Prof
+    givenName: George
+    middleName: Herbert Walker
+    surname: Bush
+    marriedSurname: Lorem
+    birthDate: "1977-04-22"
+    birthTime: Lorem
+    genderCode: Male
+    primaryOccupation: Doctor
+    secondaryOccupation: Teacher
+    maritalStatusCode: Single
+    socioEconomicRisk: "0.5"
+    personRegistration:
+      - registrationIdentifier: "210692106990"
+        registrationKind: DRIVER_LICENCE
+        effectivePeriodStartDate: "1995-06-20"
+        effectivePeriodEndDate: "2011-06-14"
+        driverLicenseVehicleClassCode: B
+        drivingPointsCount: 12

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA INTEGRATION </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#foreword">FOREWORD</a></li>
+          <li><a href="#business-motivation">BUSINESS MOTIVATION</a></li>
+          <li><a href="#what-is-a-good-integration-interface">WHAT IS A GOOD INTEGRATION INTERFACE?</a></li>
+          <li><a href="#what-kind-of-integration-interfaces">WHAT KIND OF INTEGRATION INTERFACES?</a></li>
+          <li><a href="#key-learnings-from-previous-experiences">KEY LEARNINGS FROM PREVIOUS EXPERIENCES</a>
+          <ul>
+          <li><a href="#challenges-and-obstacles">Challenges and obstacles</a></li>
+          <li><a href="#lessons-learnt">Lessons learnt</a></li>
+          </ul></li>
+          <li><a href="#architecture-patterns">ARCHITECTURE PATTERNS</a>
+          <ul>
+          <li><a href="#business-and-technical-contracts">Business and technical contracts</a></li>
+          <li><a href="#developer-support">Developer Support</a></li>
+          <li><a href="#integration-patterns">Integration patterns</a></li>
+          <li><a href="#collaboration-patterns">Collaboration patterns</a></li>
+          <li><a href="#service-granularity">Service granularity</a>
+          <ul>
+          <li><a href="#data-integration-logical-components">Data integration logical components</a></li>
+          <li><a href="#loosely-coupling-integration-definition">Loosely coupling integration definition</a></li>
+          </ul></li>
+          <li><a href="#enterprise-integration-styles">ENTERPRISE INTEGRATION STYLES</a></li>
+          </ul></li>
+          <li><a href="#what-is-the-integration-process">WHAT IS THE INTEGRATION PROCESS?</a></li>
+          <li><a href="#integration-business-functions">INTEGRATION BUSINESS FUNCTIONS</a></li>
+          <li><a href="#integration-application-functions">INTEGRATION APPLICATION FUNCTIONS</a></li>
+          <li><a href="#why-an-integration-interface-management-platform">WHY AN INTEGRATION INTERFACE MANAGEMENT PLATFORM?</a></li>
+          <li><a href="#integration-logical-architecture">INTEGRATION LOGICAL ARCHITECTURE</a></li>
+          <li><a href="#axa-entities-best-practices">AXA ENTITIES BEST-PRACTICES</a>
+          <ul>
+          <li><a href="#axa-api-guidelines">AXA API Guidelines</a></li>
+          <li><a href="#api-protocols">API Protocols</a></li>
+          <li><a href="#rest-api-design">REST API Design</a></li>
+          <li><a href="#authorization-protocols">Authorization protocols</a></li>
+          </ul></li>
+          <li><a href="#references">REFERENCES</a>
+          <ul>
+          <li><a href="#axa-references">AXA references</a>
+          <ul>
+          <li><a href="#axa-fundamental-architecture-principles">AXA Fundamental architecture principles</a></li>
+          </ul></li>
+          <li><a href="#external-references">External references</a>
+          <ul>
+          <li><a href="#api-best-practices">API Best Practices</a></li>
+          <li><a href="#api-policy">API Policy</a></li>
+          <li><a href="#api-design">API Design</a></li>
+          <li><a href="#api-guidelines">API Guidelines</a></li>
+          </ul></li>
+          <li><a href="#api-documentation">API Documentation</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<hr />
+<p><strong><em><span style="color:red">There is a new study ongoing related to strategic Enterprise integration patterns for AXA. For the latest version of the capability description please refer to this document:</span></em></strong>: <a href="https://axa365.sharepoint.com/:x:/r/sites/EnterpriseIntegrationWorkgroup/Shared%20Documents/General/04.%20API%20Management/API%20Management%20%E2%80%93%20Requirements%20Collection-v3.xlsx?d=wf853c0e90a314ab6a9293e9161fcc2f8&amp;csf=1&amp;web=1&amp;e=j0ff4X">AXA Enterprise Integration Capabilities Reference Model v3.xlsx</a></p>
+<h1 id="foreword">FOREWORD</h1>
+<hr />
+<blockquote>
+<p>Integration is about processes related to the movement and consolidation of data and/or services within and between data stores, applications, and organizations. It considers data semantics (business understanding), representation (e.g., encoding, content display, etc.) and data structure (e.g., relational, domain-specific, XML, API). It consolidates data into consistent forms, either physical or virtual. Integration is the ability to “legally” share information and services. It focuses on achieving the ability to share information (TOGAF 9.2).</p>
+</blockquote>
+<p><strong>We live in an interconnected world</strong>. The need to adapt rapidly to business change has increased the necessity to decouple systems and to deliver more granular services that business partners can easily combined with other services to fulfill new business needs (ecosystems, partnerships, open insurance).</p>
+<p>Exemples of integrations: “as a business partner, thanks to the interfaces provided by other business actors I can optimize an existing service for a specific segment of customers”, “as a business partner, I can integrate the service with another service, develop a mobile application when doesn’t exist”, etc.</p>
+<p>The ability to support such collaborations is made possible through integration interfaces. Initially designed and implemented on-demand, interfaces are more and more included as part of the application core components. Actually, having a catalog of integration interfaces enables opportunities for partners to identify new opportunities and to test new value propositions to augment the value of the primary application.</p>
+<blockquote>
+<p>There is an increasing demand for systems to interoperate by exchanging data. For these data exchanges to be meaningful, it is essential that the business information requirements that are met by the data stored in these systems are understood so that suitable data exchange mechanisms can be developed (ISO/IEC 19763-12:2015).</p>
+</blockquote>
+<p><strong>Good interface has a positive impact on the user adoption.</strong> Instead of pushing an implementation as an interface, designing with attention an integration interface (same attention as for an “End-User Interface”) is a must have. This is what we call the « API first » approach.</p>
+<p><strong>The rise of Web APIs.</strong> In the digital space, a value proposition can be as simple as an Application Programming Interface (API).</p>
+<p><img src="media/integration/integration.png" alt="integration principle" /></p>
+<p><strong>Integration require a high business and IT maturity</strong>. When we decouple systems we increase the workload needed for integration of services, and this effort increases for each new external service to integrate. By decoupling services to a low granularity we impact also the performance and we increase significantly the risk of failure for the overall business system, having direct impact for the user and for the service producer (reputational impact, sometimes also legal/compliance impact, impact on sales and revenue, etc.).</p>
+<p>The objective of this paper is to consider what we have learn from the past in AXA and from the IT industry ; and to take the right guidelines to overcome challenges to AXA to reach the ambition with APIs.</p>
+<ul>
+<li>What should we target?</li>
+<li>What are the architecture patterns and best-practices?</li>
+<li>Where do we stand in AXA?</li>
+<li>What is the organization and governance we should setup?</li>
+<li>What are the IT capabilities that are needed?</li>
+<li>How to prioritize the investments?</li>
+</ul>
+<p>The primary audience of this paper are:</p>
+<ul>
+<li>Chief Technology Officer</li>
+<li>Chief Data Officer</li>
+<li>Enterprise Architect</li>
+<li>Data &amp; API Architect</li>
+</ul>
+<h1 id="business-motivation">BUSINESS MOTIVATION</h1>
+<hr />
+<p>Benefits of integration services are proven in terms of business agility, efficiency (reuse, accessibility), and additional market opportunities. The interface should be easy to discover and to consume by a developer, the time for a developer to discover and to consume a service (TTFAC - Time To First API Call) is a key metric to measure the value if the business change. Applying Business Intelligence &amp; Analytics to integration interfaces is also important to continuously monitor and improve value of the service (useful usage statistics to integrate in the evaluation of the propensity to buy, propensity to leave, etc.).</p>
+<p><img src="media/integration/integration-motivation.png" alt="Integration Motivation" /></p>
+<p>AXA is already able today to deliver API to patners such as ING, Uber, etc. The objective now is to go further by publishing integration interfaces and packaging new services more rapidly.</p>
+<p>Basic example: <a href="https://pages.github.axa.com/AXA-GO/ago_api_portal/">AXA GO API Portal</a>.</p>
+<h1 id="what-is-a-good-integration-interface">WHAT IS A GOOD INTEGRATION INTERFACE?</h1>
+<hr />
+<ul>
+<li><strong>ACCESSIBLE TO CONSUMERS</strong> : only interfaces that are discoverable for Developers or consuming Apps are adding value.</li>
+<li><strong>MONITORED</strong> : the consumption and billing of APIs is monitored. APIs can be monetized.</li>
+<li><strong>EVOLUTIVE</strong> : APIs should be demised quickly and easily if not used or to be replaced. API Versioning is essential for agility.</li>
+<li><strong>BUSINESS ORIENTED</strong> : the interface is valuable if it is used, and produces desired business outcome – revenue, convenience, cost reduction, reputation.</li>
+<li><strong>WELL DOCUMENTED</strong> : any Developer should be able to use the Perfect interface using only the documentation. An interface defines the product and thus requires good marketing material.</li>
+<li><strong>SECURED</strong> : APIs must be secured in a standard compliant and uniform way that meet regulatory requirements and compliance needs.</li>
+</ul>
+<p>For more information about API Maturity assessment, please refer to <a href="api-maturity-model.html">AXA API Maturity Model</a>.</p>
+<h1 id="what-kind-of-integration-interfaces">WHAT KIND OF INTEGRATION INTERFACES?</h1>
+<p>Cf. MuleSoft.</p>
+<ul>
+<li><strong>Experience APIs</strong> : Experience APIs provide a business context for the data and processes that were unlocked and established with System and Process APIs. Experience APIs expose the data to be consumed by its intended audience — such as mobile applications, internal portals for customer data, etc.<br />
+</li>
+<li><strong>Process APIs</strong> : Process APIs interact with and shape data within a single system or across systems — breaking down data silos. Process APIs provide a means of combining data and orchestrating multiple System APIs for a specific business purpose. Examples of this include creating a 360-degree view of the customer, order fulfillment, and shipment status.<br />
+</li>
+<li><strong>System APIs</strong> : System APIs unlock data from core systems of record within an organization. Examples of critical systems that APIs could unlock data from include ERP, customer and billing systems, and proprietary databases.</li>
+</ul>
+<h1 id="key-learnings-from-previous-experiences">KEY LEARNINGS FROM PREVIOUS EXPERIENCES</h1>
+<hr />
+<h2 id="challenges-and-obstacles">Challenges and obstacles</h2>
+<p>Service levels and service usage definition has to be considered from the early stage. API based system should be designed to support failures and should be monitored 24/7. Changing the grnualrity of services may requires to review the bsuiness process (for example to change from synchronous processing to asynchronous processing due to the degradation of performance and availability of distant services).</p>
+<ul>
+<li>Not doing = missed business opportunities, no improvement in operational efficiency</li>
+<li>Doing bad (usability, performance) = reputational impact, lack of reuse</li>
+<li>Lack of communication/catalog/lab = lack of reuse, missed business opportunities, increased complexity with duplicated services</li>
+<li>IT topic only = central teams dedicated to integration, costly and no business opportunities</li>
+</ul>
+<p>Large payloads: Web APIs (REST, SOAP, GraphQL, etc.) are not designed to support heavy data payloads (higher than 10 MB). For binary data transfer, other protocols must be considered such as FTP or HTTP with self-signed URL <a href="https://sookocheff.com/post/api/uploading-large-payloads-through-api-gateway/">uploading-large-payloads-through-api-gateway</a>, <a href="https://github.com/DinoChiesa/Apigee-Java-GoogleUrlSigner">Google URL signer</a>. Cf. also (Valet Key Pattern)[https://learn.microsoft.com/en-us/azure/architecture/patterns/valet-key)].</p>
+<h2 id="lessons-learnt">Lessons learnt</h2>
+<p><strong>Identify clearly the business product owner of the API service, gather his/her requirements</strong> : before being a question about technology, the integration and APIs is first about ownership, governane and architecture topology. The failure often associated with ESB technology is not only about the technology but because most of the time it cames with a central infrastructure and central governance.</p>
+<p><strong>Smart endpoints and dumb pipes</strong> : A key lesson learnt from the past decade is to not consider interface services as an IT topic to be managed by a central team, but as a service to be provided directly by the application. At the level of a single application, it means that the business and IT owners of the application should consider and manage the digital interfaces (real-time, near-real time, batch) as an asset of the application and as part of their value proposition.</p>
+<p><strong>API graunularity is more an art than a science, test your API and collect feedbacks from multiple personas</strong> : Developer eXperience is key, should be tested with personas as it is subjective and may differ from one developer to another (depending on the background, knowledge of the data domain, etc.). Many aspects have to be taken into account to define the granularity of an API, such as business complexity, data confidentiality, message payload size, network traffic, etc.</p>
+<p><strong>Manage the API as part of the application (smart endpoints)</strong></p>
+<p><strong>Deliver the API first, then develop the user interface</strong></p>
+<p><strong>Select carefully your reference information model, consider international standards when available</strong> : the choice of the reference information model is key and has to be carefully selected from the begining of the project.</p>
+<p><strong>Name explicitely the concepts (self-documented, test-ability)</strong></p>
+<p><strong>Elaborate translation maps between different contexts (global, local, backend, etc.)</strong></p>
+<p><strong>Provide a lab environment so any developer can test the API, test the API before publishing to the customer</strong></p>
+<p><strong>Security requirement is very high for partner APIs and open APIs, use a secured platform for external data and services exchange</strong></p>
+<p><strong>For complex workloads consider to decompose the integration services (mixte of real-time and batch), consider performance from the begining</strong></p>
+<p><strong>Select appropriate protocol, data format, intergation patterns (synchronous, pseudo-synchronous, asynchronous) to provide appropriate performance depending on the complexity of transactions and/or data volume</strong></p>
+<p><strong>Use international standards for data formats and list of value</strong> : when exists, prefer international standards, e.g. I18N (ISO 8601) for data format Date/Time/Timestamp representations, ISO 3166 country codes, …</p>
+<p><strong>Do not underestimate the complexity to operate, consider carefuly non-functional requirements ability to operate</strong></p>
+<p><strong>Web APIs (over HTTPS) are not designed to support big data payloads</strong> Google: “While streaming can help you work around the 10 MB request/response size limit enforced by the product, Apigee doesn’t recommend exceeding that limit when streaming.For payloads larger than 10 MB, Apigee recommends using a signed URLs pattern within an Apigee JavaCallout, illustrated here: https://github.com/DinoChiesa/ApigeeEdge-Java-GoogleUrlSigner”.</p>
+<h1 id="architecture-patterns">ARCHITECTURE PATTERNS</h1>
+<hr />
+<h2 id="business-and-technical-contracts">Business and technical contracts</h2>
+<p>The <strong>business contract</strong> is related to what the developer needs to know before using the API. The business contract can be considered also the legal contract. For a good example, see the <a href="https://developer.twitter.com/en/developer-terms/agreement-and-policy.html">Twitter API</a>. In the business contract the developer should find information related to banding guidelines, usage policies (rate limits, data copy and caching, etc.), licensing (model and cost), versioning policies (e.g. 1 major release evey 3 months, maximum 3 releases available, etc.).</p>
+<p>The <strong>technical contract</strong> describes the protocols (REST, gRPC, …), data formats (e.g. ISO 8601 for dates), …</p>
+<p>Service orientation design principles : <a href="https://en.wikipedia.org/wiki/Service-orientation_design_principles">Wikipedia Design Principles</a>.</p>
+<p>Standardized Service Contract : <a href="https://en.wikipedia.org/wiki/Standardized_service_contract">Wikipedia Standardized Service Contract</a>.</p>
+<p>Service Orientation : <a href="https://en.wikipedia.org/wiki/Service-orientation">Wikipedia Service Orientation</a>.</p>
+<p>OpenAPI - Web RESTfull API Specification: <a href="https://www.openapis.org/">www.openapis.org</a>.</p>
+<p>AsyncAPI - Event-Driven API Specification: <a href="https://www.asyncapi.com/docs/getting-started">www.asyncapi.com</a>.</p>
+<h2 id="developer-support">Developer Support</h2>
+<ul>
+<li>Documentation</li>
+<li>Communication</li>
+<li>Convenient implementation</li>
+<li>Developer administration</li>
+</ul>
+<h2 id="integration-patterns">Integration patterns</h2>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 38%" />
+<col style="width: 3%" />
+<col style="width: 21%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>Description</th>
+<th>Complexity</th>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Synchronous request/response</strong></td>
+<td>As a consumer I call the service and wait for the answer to continue the process.</td>
+<td>Low</td>
+<td>Immediate response, simple to implemet and to support a sequential process</td>
+<td>Not possible offline connection, requires very high avaialability and high performance</td>
+</tr>
+<tr class="even">
+<td><strong>Asynchronous request/acknowledge/poll</strong></td>
+<td>As a consumer I ask you to start a process, then I will poll every x seconds to check if the process is finished.</td>
+<td>Low</td>
+<td>Fault tolerance as do not need to maintain active the communication</td>
+<td>Process should work asynchronously, polling activity is not optimal in terms of traffic</td>
+</tr>
+<tr class="odd">
+<td><strong>Asynchronous request/acknowledge/callback</strong></td>
+<td>As a consumer ask you to start a process with a callback interface I provide so please call me back at the end of the process.</td>
+<td>Medium</td>
+<td>Fault tolerance, possible to continue the process</td>
+<td>Requires client interface for the call back, client high-availability</td>
+</tr>
+<tr class="even">
+<td><strong>Events streaming and sourcing</strong></td>
+<td>As a consumer I establish an active connection to your service so please send me specific topics events notifications through this connection.</td>
+<td>Medium</td>
+<td>Near-real time notification</td>
+<td>Read-only (1-way publish/susbcribe)</td>
+</tr>
+<tr class="odd">
+<td><strong>Publish/subscribe</strong></td>
+<td>As a consumer I subscribe to listen to some events, and I can also share with you some events.</td>
+<td>High</td>
+<td>Flexibility (de-coupling) and scalability</td>
+<td>Failure masking</td>
+</tr>
+<tr class="even">
+<td><strong>Data push</strong></td>
+<td>As a provider I send the data to a consumer.</td>
+<td>Low</td>
+<td>Flexibility (de-coupling) and scalability including very high data volumes</td>
+<td>Failure masking, no acknowledgement the data has been received by the consumer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collaboration-patterns">Collaboration patterns</h2>
+<p>Source: <a href="data-mgt-books.html#book-domain-driven-design-learning">Domain-Driven Design, Aligning Software Architecture and Business Strategy</a></p>
+<p><img src="media/integration/integration-context-map.png" alt="Integration Context Map" /></p>
+<p>Collaboration models, in descending order from the one that requires the most organizational coupling.</p>
+<table>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 45%" />
+<col style="width: 24%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>Nature of collaboration</th>
+<th>Description</th>
+<th>Pros (when)</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Shared Kernel</strong></td>
+<td>Cooperation</td>
+<td>The shared kernel is implemented so that any modification to its source code is immediately reflected in all the bounded contexts using it.</td>
+<td>Consistent across all of the bounded contexts</td>
+<td>Introduces a strong dependency between the participating bounded contexts, it should be applied only when the cost of duplication is higher than the cost of coordination</td>
+</tr>
+<tr class="even">
+<td><strong>Partnership</strong></td>
+<td>Cooperation</td>
+<td>Integration between bounded contexts is coordinated in an ad hoc manner. One team can notify a second team about a change in the API, and the second team will cooperate and adapt—no drama or conflicts</td>
+<td>No one team dictates the language that is used for defining the contracts</td>
+<td>Synchronization and communication challenges</td>
+</tr>
+<tr class="odd">
+<td><strong>Conformist</strong></td>
+<td>Customer–Supplier</td>
+<td>The upstream team provides the integration contract, defined according to its own model (take it or leave it).</td>
+<td>Simplicity, opportuity to rely on industry-standard, well-established model</td>
+<td>Power imbalances between the upsteam team and downsteam team</td>
+</tr>
+<tr class="even">
+<td><strong>Anticorruption Layer</strong></td>
+<td>Customer–Supplier</td>
+<td>The downstream bounded context translates the upstream bounded context’s model into a model tailored to its own needs.</td>
+<td>Scenarios in which it is not desirable or worth the effort to conform to the supplier’s model</td>
+<td>Additional complexity consumer side (multi-layers)</td>
+</tr>
+<tr class="odd">
+<td><strong>Separate Ways</strong></td>
+<td>Customer–Supplier</td>
+<td>The teams are unwilling or unable to collaborate. Possible manual ad-hoc integration.</td>
+<td>Differences in the bounded contexts’ models, different nature of the duplicated subdomain</td>
+<td>Data quality issues, performance issues, etc.</td>
+</tr>
+<tr class="even">
+<td><strong>Open-Host Service</strong></td>
+<td>Customer–Supplier</td>
+<td>To protect the consumers from changes in its implementation model, the upstream supplier decouples the implementation model from the public interface (possible multiple versions of the published language).</td>
+<td>Upstream bounded context the freedom to evolve its implementation without affecting the downstream contexts</td>
+<td>Additional complexity provider side (multi-layers)</td>
+</tr>
+<tr class="odd">
+<td><strong>Published Language</strong></td>
+<td>Authority</td>
+<td>There is an authority or consortium that defines a language as standard (e.g.; RFC). Often coupled with Open-Host Service</td>
+<td>All parties can rely on a high-quality industry or market standard.</td>
+<td>Additional complexity for all parties to conform to the standard.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="service-granularity">Service granularity</h2>
+<p>Service layers and granularity decision are not easy as they depend on multiple architectural factors, such as functional cohesion, security rules, data payload, network topology, integration protocol, etc. <strong><em>Granularity is more art than science</em></strong> (Gartner, A Guidance Framework for Designing a Great API, 2019).</p>
+<p>We must <strong><em>avoid “big monolith services”</em></strong> that are very difficult to change, with many impacts of a change for the clients, heavy data payload, etc. On the other side, to limit the number of calls and to enforce isolation (transactions), etc., we must <strong><em>avoid direct unitary access to data objects (CRUD operations)</em></strong> but consider for example the use of Data Transfer Objects (DTO).</p>
+<h3 id="data-integration-logical-components">Data integration logical components</h3>
+<ul>
+<li><p>Registry of integration services (portal)</p></li>
+<li><p>Integration touch point (gateway, service end-point, etc)</p></li>
+<li><p>Security protection (authentication, DDoS protection, etc.)</p></li>
+<li><p>Monitoring (performance, nb of calls, etc.)</p></li>
+</ul>
+<h3 id="loosely-coupling-integration-definition">Loosely coupling integration definition</h3>
+<p>Tightly coupled applications make numerous assumptions about how the other applications work; when the applications change and break those assumptions, the integration breaks.(CF. ENTERPRISE INTEGRATION PATTERNS EXTERNAL REFERENCE).</p>
+<h2 id="enterprise-integration-styles">ENTERPRISE INTEGRATION STYLES</h2>
+<p><strong><a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/FileTransferIntegration.html">File Transfer</a></strong> — Have each application produce files of shared data for others to consume, and consume files that others have produced.</p>
+<p><strong><a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/SharedDataBaseIntegration.html">Shared Database</a></strong> — Have the applications store the data they wish to share in a common database.</p>
+<p><strong><a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/EncapsulatedSynchronousIntegration.html">Remote Procedure Invocation</a></strong> — Have each application expose some of its procedures so that they can be invoked remotely, and have applications invoke those to run behavior and exchange data.</p>
+<p><strong><a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/Messaging.html">Messaging</a></strong> — Have each application connect to a common messaging system, and exchange data and invoke behavior using messages.</p>
+<ul>
+<li>Messaging patterns : <a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/">Enterprise Integration Patterns - Messaging Patterns</a>.<br />
+</li>
+<li>Functional messages<br />
+</li>
+<li>Technical messages (Change Data Capture)</li>
+</ul>
+<h1 id="what-is-the-integration-process">WHAT IS THE INTEGRATION PROCESS?</h1>
+<hr />
+<p><img src="media/integration/integration-business-process.png" alt="Business process" /></p>
+<h1 id="integration-business-functions">INTEGRATION BUSINESS FUNCTIONS</h1>
+<p><img src="media/integration/integration-business-functions.png" alt="Integration Business Functions" /></p>
+<h1 id="integration-application-functions">INTEGRATION APPLICATION FUNCTIONS</h1>
+<p><img src="media/integration/integration-application-functions.png" alt="Integration Application Functions" /></p>
+<h1 id="why-an-integration-interface-management-platform">WHY AN INTEGRATION INTERFACE MANAGEMENT PLATFORM?</h1>
+<hr />
+<p><img src="media/integration/integration-principle.png" alt="integration principle" /></p>
+<p>An interface is a <b>product</b> and a <b>contract</b> between a provider (or broker) and a consumer. Most of the time the consumer will be an application developer working for another product provider.</p>
+<p>The interface management platform deliver a set of services to manage business plans (e.g.; quota, throttling), to secure the communication (e.g.; identity validation, data masking, security alerting), to optimize performance (e.g. routing, caching), to observe and monitor communications (e.g.; usage statistics, monetization).</p>
+<h1 id="integration-logical-architecture">INTEGRATION LOGICAL ARCHITECTURE</h1>
+<p><img src="media/integration/integration-application-logical.png" alt="API Managemet Application Logical Architecture" /></p>
+<h1 id="axa-entities-best-practices">AXA ENTITIES BEST-PRACTICES</h1>
+<hr />
+<p>AXA Belgium Event-Driven Architecture (EDA): <a href="https://confluence.axa.com/confluence/display/AXABEEDA/">AXA BE EDA description</a></p>
+<p>Reference Architecture Description for the Event-Driven Architecture.</p>
+<h2 id="axa-api-guidelines">AXA API Guidelines</h2>
+<p><a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-00-introduction.html">Introduction</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-01-global-api.html">Global API</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-02-classifications.html">Classifications</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-03-general-principles.html">General Principles</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-04-granularity.html">Granularity</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-05-uri.html">URI</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-06-resources-formatting.html">Resources Formatting</a>, <a href="https://pages.github.axa.com/AXA-GO/data-ref-integration/guidelines-07-collections.html">Collections</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-08-http-verbs.html">HTTP Verbs</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-09-status-codes.html">Status Codes</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-10-list-filtering.html">List Filtering</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-11-sorting.html">Sorting</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-12-pagination.html">Pagnication</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-13-media-types.html">Media Types</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-14-versioning.html">Versioning</a>, <a href="https://pages.github.axa.com/AXA-GO/integration-reference-model/guidelines-15-lifecycle-statuses.html">Lifecycle Statuses</a></p>
+<h2 id="api-protocols">API Protocols</h2>
+<p><em>Source: Brij kishore Pandey, LinkedIn</em></p>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 37%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Protocol</th>
+<th>Approach</th>
+<th>Appropriateness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>REST</strong> (Representational State Transfer)</td>
+<td>Networked applications, stateless communication, standard HTTP methods</td>
+<td>Ideal for public APIs with broad client support<br/>Best for simple, stateless operations<br/>Great for cache-friendly applications</td>
+</tr>
+<tr class="even">
+<td><strong>GraphQL</strong></td>
+<td>Query language for APIs that allows clients to request only the data they need</td>
+<td>Perfect when clients need flexible data querying<br/>Reduces over-fetching and under-fetching of data<br/>Suitable for applications with complex, nested data structures</td>
+</tr>
+<tr class="odd">
+<td><strong>SOAP</strong> (Simple Object Access Protocol)</td>
+<td>Exchanging structure information using XML</td>
+<td>Preferred in enterprise environments with strict security requirements<br/>Offers built-in error handling and retry logic<br/>Useful for stateful operations</td>
+</tr>
+<tr class="even">
+<td><strong>gRPC</strong> (gRPC Remote Procedure Call)</td>
+<td>High-performance, open source framework for RPCs using Protocol Buffers</td>
+<td>Excellent for high-performance, low-latency microservices<br/>Ideal in polyglot environments (multiple programming languages)<br/>Supports bi-directional streaming</td>
+</tr>
+<tr class="odd">
+<td><strong>Webhook</strong></td>
+<td>Mechanism for one system to notify other systems in real-time, via HTTP callbacks when a specific event occurs</td>
+<td>Perfect for event-driven architectures<br/>Enables receiving real-time updates from external services<br/>Eliminates the need for constant polling</td>
+</tr>
+<tr class="even">
+<td><strong>WebSockets</strong></td>
+<td>Full-duplex communication channel over a single, long-live connection, real-time data exchange</td>
+<td>Ideal for real-time, bi-directional communication<br/>Great for applications like chat, live updates, or gaming<br/>Allows frequent server-to-client data pushing</td>
+</tr>
+<tr class="odd">
+<td><strong>MQTT</strong> (Message Queuing Telemetry Transport)</td>
+<td>Lightweight publish-subscribe messaging protocol designed for low-bandwidth, high latency, or unreliable networks</td>
+<td>Designed for IoT and machine-to-machine communication<br/>Works well in unreliable networks or low-bandwidth environments<br/>Provides a lightweight publish-subscribe model</td>
+</tr>
+<tr class="even">
+<td><strong>AMQP</strong> (Advanced Message Queuing Protocol)</td>
+<td>Open-standard protocol for message-oriented middleware, facilitating message routing, queuing, and delivery</td>
+<td>Suited for enterprise messaging systems<br/>Ensures guaranteed message delivery<br/>Handles complex routing and queuing scenarios</td>
+</tr>
+<tr class="odd">
+<td><strong>EDA</strong> (Event-Driven Architecture)</td>
+<td>Transmit events among loosely coupled software components and services</td>
+<td>Builds scalable, loosely coupled systems<br/>Manages unpredictable or bursty workloads effectively<br/>Integrates well with microservices architectures</td>
+</tr>
+<tr class="even">
+<td><strong>EDI</strong> (Electronic Data Interchange)</td>
+<td>Standards for exchanging structured business data between organizations electronically without humain interaction</td>
+<td>Essential for B2B transactions in retail, healthcare, etc.<br/>Facilitates standardized business document exchange<br/>Crucial in supply chain management and logistics</td>
+</tr>
+<tr class="odd">
+<td><strong>SSE</strong> (Server-Sent Events)</td>
+<td>Simple and efficient standard for server-push notifications over an HTTP connection</td>
+<td>Enables one-way real-time updates from server to client<br/>Useful when bi-directional communication isn’t necessary<br/>Serves as a simpler alternative to WebSockets for server push</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rest-api-design">REST API Design</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 63%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>HTTP Verbs</th>
+<th>Action</th>
+<th>Idempotent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GET</strong></td>
+<td>Retrieves a resource from the server</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><strong>PUT</strong></td>
+<td>Updates or Creates a resource</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td><strong>POST</strong></td>
+<td>Create new resources</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td><strong>DELETE</strong></td>
+<td>Delete a resource</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td><strong>PATCH</strong></td>
+<td>Applies partial modifications to a resource</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><strong>HEAD</strong></td>
+<td>Asks for a response identical to a GET request but without the response body</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>See also <a href="media/integration/rest-api-design-cheat-sheet.png">REST API design cheat sheet</a> and <a href="media/integration/rest-api-design-tips.png">REST API design tips</a>.</p>
+<h2 id="authorization-protocols">Authorization protocols</h2>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 71%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pattern</th>
+<th>Description</th>
+<th>Recommended</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Code flow + PKCE</strong></td>
+<td>Human via web browser to get a token, allows authentication of the Resource Owner and Client, without communicating the login/password of the Resource Owner to the Client application. Cf. <a href="https://datatracker.ietf.org/doc/html/rfc6749">IETF RFC6759</a>, <a href="https://datatracker.iet.org/doc/html/rfc7636">IETF RFC7636</a></td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td><strong>Device authorization</strong></td>
+<td>Designed for application without a web browser or are input constrained to the extent that requiring the user to input text in order to authenticate during the authorization flow is impractical (CLI, smart TV, media console, etc.). Cf. <a href="https://datatracker.ietf.org/doc/html/rfc8628">IETF RFC8628</a></td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td><strong>Resource Owner Password Credentials</strong></td>
+<td>Not secured: the application provide the credentials (username and password) of a specific resource owner (delegated permissions). For very specific use cases only (e.g.; application that needs to access to Office Sharepoint documents).</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td><strong>Client Credentials</strong></td>
+<td>Designed for application authentication: it is suitable for clients who are able to keep a secret (e.g.; web application running on a server). Application is the Resource Owner in this mode (application permissions). Cf. <a href="https://datatracker.ietf.org/doc/html/rfc6749">IETF RFC6749</a></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h1 id="references">REFERENCES</h1>
+<hr />
+<h2 id="axa-references">AXA references</h2>
+<h3 id="axa-fundamental-architecture-principles">AXA Fundamental architecture principles</h3>
+<h4 id="design-for-customer-centricity">4 - Design for customer centricity</h4>
+<h4 id="ensure-timely-updating-of-all-information">5 - Ensure timely updating of all information</h4>
+<h4 id="protect-information-by-adequate-security-measures">7 - Protect information by adequate security measures</h4>
+<h4 id="prefer-loosely-coupled-integration">20 - Prefer loosely coupled integration</h4>
+<h4 id="strive-for-modularity-and-reuse">11 - Strive for modularity and reuse</h4>
+<h4 id="avoid-complexity-or-encapsulate-it">16 - Avoid complexity or encapsulate it</h4>
+<h2 id="external-references">External references</h2>
+<h3 id="api-best-practices">API Best Practices</h3>
+<ul>
+<li>Secret of Amazon success (Jan 12, 2012) : <a href="http://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/">API Evengelist</a>.<br />
+</li>
+<li>Martin Fowler - Smart Endpoint Dumb Pipes (March 25, 2014) : <a href="https://martinfowler.com/articles/microservices.html#SmartEndpointsAndDumbPipes">Martin Fowler - Smart Endpoint Dumb Pipes</a>.<br />
+</li>
+<li>Martin Fowler - Microservices and the First Law of Distributed Objects (August 13, 2014) : <a href="https://martinfowler.com/articles/distributed-objects-microservices.html">Martin Fowler - Distributed Objects</a>.<br />
+</li>
+<li>IBM Arcticle Kim Clark - The Fate of the ESB (Feb 13, 2018) : <a href="https://developer.ibm.com/articles/cl-lightweight-integration-1">Developer IBM</a>.<br />
+</li>
+<li>Gartner - A Guidance Framework for Designing a Great API (Oct 26, 2017).</li>
+<li>Gregor Hohpe and Bobby Woolf (Oct 10, 2003) - Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions.<br />
+</li>
+<li>Slack Event API Example : <a href="https://api.slack.com/events-api">Slark Event API</a>.<br />
+</li>
+<li>DAMA-Data Management Body Of Knowedge v2 (2017) - Data Integration &amp; Interoperability.</li>
+</ul>
+<h3 id="api-policy">API Policy</h3>
+<ul>
+<li>Twitter - Developer Agreement and Policy : <a href="https://developer.twitter.com/en/developer-terms/agreement-and-policy.html">Twitter developer terms</a>.<br />
+</li>
+<li>Twitter - Usage Guidelines : <a href="https://developer.twitter.com/en/docs/ads/general/overview/guidelines.html">Twitter usage guidelines</a>.<br />
+</li>
+<li>Facebook - Platform Policy : <a href="https://developers.facebook.com/policy/">Facebook developers policy</a>.</li>
+</ul>
+<h3 id="api-design">API Design</h3>
+<ul>
+<li>Arnaud Lauret - The design of Web APIs : <a href="https://livebook.manning.com/book/the-design-of-everyday-apis/welcome/v-11/">The Design of Everyday APIs</a>.<br />
+</li>
+<li>Apigee - Web API Design - Creating Interfaces that Developers Love : <a href="https://pages.apigee.com/rs/apigee/images/api-design-ebook-2012-03.pdf">Apigee API Design Book</a>.<br />
+</li>
+<li>Microsoft - API Design : <a href="https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design">Microsoft Azure API Design Best Practices</a>.</li>
+</ul>
+<h3 id="api-guidelines">API Guidelines</h3>
+<ul>
+<li>Zalando - API Guidelines : <a href="https://opensource.zalando.com/restful-api-guidelines/">Zalando RESTfull API Guidelines</a>.<br />
+</li>
+<li>Microsoft - API Guidelines : <a href="https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md">Microsoft API Guidelines</a>.<br />
+</li>
+<li>Google - API Design Guide : <a href="https://cloud.google.com/apis/design/resource_names">Google API Design Resource Names</a>.</li>
+</ul>
+<h2 id="api-documentation">API Documentation</h2>
+<ul>
+<li>Arkea - PSD2 APIs Documentation : <a href="https://developer.arkea.com/apis">Arkea API Developer Portal</a>.<br />
+</li>
+<li>Salesforce - API Explorer : <a href="https://developer.salesforce.com/docs/api-explorer">Salesforce API Developer Portal</a>.<br />
+</li>
+<li>Google Google Drive API Reference : <a href="https://developers.google.com/drive/api/v3/reference/">Google Drive API Developer Portal</a>.</li>
+</ul>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

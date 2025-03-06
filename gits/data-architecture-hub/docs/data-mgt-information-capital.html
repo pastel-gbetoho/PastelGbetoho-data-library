@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - INFORMATION CAPITAL </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#information-capital">Information Capital</a>
+          <ul>
+          <li><a href="#chapter-1-introduction-to-data-driven-competitive-advantage">Chapter 1: Introduction to Data-Driven Competitive Advantage</a></li>
+          <li><a href="#chapter-2-key-terminologies-in-data-driven-business-value-creation">Chapter 2: Key Terminologies in Data-Driven Business Value Creation</a></li>
+          <li><a href="#chapter-3-defining-and-building-information-capital">Chapter 3: Defining and Building Information Capital</a></li>
+          <li><a href="#chapter-4-steps-to-derive-information-capital">Chapter 4: Steps to Derive Information Capital</a>
+          <ul>
+          <li><a href="#identifying-business-values">4.1 Identifying Business Values</a></li>
+          <li><a href="#identifying-recurrent-information">4.2 Identifying Recurrent Information</a></li>
+          <li><a href="#assessing-information">4.3 Assessing Information</a></li>
+          <li><a href="#developing-information-capital">4.4 Developing Information Capital</a></li>
+          </ul></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="information-capital">Information Capital</h1>
+<h2 id="chapter-1-introduction-to-data-driven-competitive-advantage">Chapter 1: Introduction to Data-Driven Competitive Advantage</h2>
+<h4 id="understanding-data-driven-competitive-advantage">1.1 Understanding Data-Driven Competitive Advantage</h4>
+<p>The competitive advantage in a data-driven business environment is largely determined by the company’s vision and governance structures around data. The vision refers to the strategic direction the company takes in using data to gain an edge over competitors. Governance, on the other hand, involves the rules, procedures, and structures that guide how data is collected, stored, managed, and used within the organization.</p>
+<h4 id="the-role-of-business-domain-experts">1.2 The Role of Business Domain Experts</h4>
+<p>As a business domain expert, you play a critical role in shaping both the vision and the governance of data. This involves knowing which data gives your business a competitive advantage and understanding how to use that data effectively.</p>
+<h2 id="chapter-2-key-terminologies-in-data-driven-business-value-creation">Chapter 2: Key Terminologies in Data-Driven Business Value Creation</h2>
+<h4 id="business-value">2.1 Business Value</h4>
+<p>Business value in a data-driven context refers to the tangible and intangible benefits that a company derives from using data. This could range from increased sales and reduced costs to improved customer satisfaction and enhanced decision-making.</p>
+<p>In <a href="data-mgt-books.html#book-data-is-everybody-business">Data Is Everybody’s Business: The Fundamentals of Data Monetization</a>, Barbara Barbara H. Wixom (MIT CISR) outlines three distinct approaches that organizations can use to monetize data:</p>
+<ul>
+<li><strong>Improving</strong>: use data to change the economics of work for the better and then remove or redirect the resulting slack.</li>
+<li><strong>Wrapping</strong>: use data-fueled features or experiences to enhance the value proposition of a product and then raise prices or sell more products.</li>
+<li><strong>Selling</strong>: commercialize data in the form of an information solution (new revenue).</li>
+</ul>
+<h4 id="predictions-and-artificial-intelligence">2.2 Predictions and Artificial Intelligence</h4>
+<p>Predictions in a data-driven context refer to the use of data to forecast future outcomes. This is often achieved through Artificial Intelligence (AI) technologies, such as machine learning algorithms, which can analyze large amounts of data and identify patterns that can inform future decisions or actions.</p>
+<h4 id="information-and-data-sources">2.3 Information and Data Sources</h4>
+<p>Information refers to processed data that provides insights or knowledge about a particular subject or context. In contrast, data sources are the raw materials or inputs from which this information is derived. Understanding the distinction between information and data sources is crucial for effective data management and utilization.</p>
+<h4 id="the-metaphor-of-the-architect">2.4 The Metaphor of the Architect</h4>
+<p>Visualizing yourself as an architect can help to understand the process of creating business value from data. In this metaphor, the buildings you want to build represent the business values you want to realize, the bricks represent the information you leverage, and the raw materials represent the data. This metaphor emphasizes the importance of starting with a vision of the business value, and then sourcing the necessary data to realize this vision.</p>
+<h2 id="chapter-3-defining-and-building-information-capital">Chapter 3: Defining and Building Information Capital</h2>
+<h4 id="understanding-information-capital">3.1 Understanding Information Capital</h4>
+<p>Information capital refers to valuable information that a company possesses, which gives it a competitive advantage. This could be proprietary data, unique insights derived from data analysis, or the ability to use data in innovative ways to create business value.</p>
+<h4 id="the-process-of-building-information-capital">3.2 The Process of Building Information Capital</h4>
+<p>Building information capital involves a cycle of innovation and transformation. Innovation involves generating a broad range of data-driven ideas that could potentially create business value. Transformation, on the other hand, involves identifying recurring barriers and pieces of information that are essential to achieving these business values, and making the necessary changes within the organization to overcome these barriers and leverage this information effectively.</p>
+<h4 id="assessing-information-capital">3.3 Assessing Information Capital</h4>
+<p>Each piece of information identified in the innovation and transformation process should be assessed based on four criteria: its value, its rarity, the ease with which it can be imitated, and the extent to which it is organized within the company. High-value, rare information that is difficult to imitate and well-organized within the company forms the core of the company’s information capital.</p>
+<h2 id="chapter-4-steps-to-derive-information-capital">Chapter 4: Steps to Derive Information Capital</h2>
+<h3 id="identifying-business-values">4.1 Identifying Business Values</h3>
+<p>The first step in deriving information capital is to identify the business values that you aim to achieve. This involves brainstorming a wide range of data-driven ideas that could potentially add value to your business.</p>
+<h3 id="identifying-recurrent-information">4.2 Identifying Recurrent Information</h3>
+<p>From the portfolio of data-driven ideas, you then need to identify the pieces of information that recur across multiple ideas. These are the pieces of information that are essential to achieving your identified business values.</p>
+<h3 id="assessing-information">4.3 Assessing Information</h3>
+<p>Each piece of recurrent information should then be assessed based on four criteria:</p>
+<ul>
+<li><strong>Value</strong>: The worth of the information to the business.<br />
+</li>
+<li><strong>Rarity</strong>: The uniqueness of the information in the market.<br />
+</li>
+<li><strong>Imitability</strong>: The ease with which competitors can replicate the information.<br />
+</li>
+<li><strong>Organization</strong>: The extent to which the information is organized within the company, including factors such as the speed at which it can be accessed, the ease of access, and the quality of the information.</li>
+</ul>
+<h3 id="developing-information-capital">4.4 Developing Information Capital</h3>
+<p>The information that is identified as being of high value, rare, difficult to imitate, and well-organized within the company forms your information capital. This information capital should guide your strategic thinking and focus your transformation efforts. The goal is to organize this information in a way that it can be leveraged to its full potential within your company, thereby giving you a competitive advantage. Key Learnings:</p>
+<ul>
+<li>A clear vision and robust governance structures are essential for leveraging data as a competitive advantage.<br />
+</li>
+<li>Predictions and AI play a crucial role in creating business value from data.<br />
+</li>
+<li>Information capital, which consists of high-value, rare, and hard-to-imitate information, is a key determinant of a company’s competitive advantage in a data-driven business environment.<br />
+</li>
+<li>Building information capital involves a cycle of innovation and transformation, and requires a thorough assessment of the value, rarity, imitability, and organization of information within the company.<br />
+</li>
+<li>High-value, rare, difficult-to-imitate, and well-organized information forms the core of a company’s information capital.<br />
+</li>
+<li>Information capital should guide strategic thinking and transformation efforts, with the aim of leveraging this information to its full potential for competitive advantage.</li>
+</ul>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

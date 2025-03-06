@@ -1,0 +1,289 @@
+$schema: http://stsci.edu/schemas/yaml-schema/draft-01
+type: object
+title: structure
+properties:
+  structure:
+    type: object
+    isActivated: true
+    properties:
+      structureIdentifier:
+        type: string
+        isActivated: true
+        sample: java-75017-fr
+      name:
+        type: string
+        isActivated: true
+        sample: Java
+      typeCode:
+        type: string
+        isActivated: true
+        sample: building
+      materialTypeCode:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: string
+          isActivated: true
+          sample: brick
+      constructionYear:
+        type: integer
+        isActivated: true
+        sample: 1970
+      renovationYear:
+        type: integer
+        isActivated: true
+        sample: 1992
+      unitCount:
+        type: integer
+        isActivated: true
+        sample: 1
+      structureComponentsDetails:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: object
+          isActivated: true
+          properties:
+            typeCode:
+              type: string
+              isActivated: true
+              sample: ROOF
+            features:
+              type: array
+              isActivated: true
+              additionalItems: true
+              items:
+                type: object
+                isActivated: true
+                properties:
+                  feature:
+                    type: string
+                    isActivated: true
+                    sample: Geomtry type
+                  featureValue:
+                    type: string
+                    isActivated: true
+                additionalProperties: false
+            dimension:
+              type: array
+              isActivated: true
+              additionalItems: true
+              items:
+                type: object
+                properties:
+                  typeCode:
+                    type: string
+                    enum:
+                      - AREA
+                      - DEPTH
+                      - HEIGHT
+                      - LENGTH
+                      - VOLUME
+                      - WEIGTH
+                      - WIDTH
+                    isActivated: true
+                    sample: AREA
+                  measure:
+                    type: object
+                    isActivated: true
+                    properties:
+                      unitCode:
+                        type: string
+                        isActivated: true
+                        sample: m2
+                      value:
+                        type: number
+                        isActivated: true
+                        sample: 208
+                    additionalProperties: false
+                additionalProperties: false
+                isActivated: true
+                required:
+                  - typeCode
+          additionalProperties: false
+          displayName: structureComponent
+      structureComponentsAggregate:
+        type: object
+        isActivated: true
+        properties:
+          floorCount:
+            type: integer
+            isActivated: true
+          bathroomCount:
+            type: integer
+            isActivated: true
+          parkingCount:
+            type: integer
+            isActivated: true
+          roomCount:
+            type: integer
+            isActivated: true
+        additionalProperties: false
+      structureDimensions:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: object
+          properties:
+            typeCode:
+              type: string
+              enum:
+                - AREA
+                - DEPTH
+                - HEIGHT
+                - LENGTH
+                - VOLUME
+                - WEIGTH
+                - WIDTH
+              isActivated: true
+              sample: AREA
+            measure:
+              type: object
+              isActivated: true
+              properties:
+                unitCode:
+                  type: string
+                  isActivated: true
+                  sample: m2
+                value:
+                  type: number
+                  isActivated: true
+                  sample: 208
+              additionalProperties: false
+          additionalProperties: false
+          isActivated: true
+          required:
+            - typeCode
+      assessmentResults:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: object
+          isActivated: true
+          displayName: assessmentResult
+          properties:
+            assessmentResultIdentifier:
+              type: string
+              isActivated: true
+            perils:
+              type: array
+              isActivated: true
+              additionalItems: true
+              items:
+                type: string
+                isActivated: true
+                displayName: peril
+                sample: EARTHQUAKE
+            financialValuation:
+              type: array
+              isActivated: true
+              additionalItems: true
+              items:
+                type: object
+                isActivated: true
+                properties:
+                  typeCode:
+                    type: string
+                    isActivated: true
+                    sample: Building net market valuation
+                  amount:
+                    type: object
+                    title: Amount
+                    isActivated: true
+                    properties:
+                      currencyCode:
+                        type: string
+                        title: Currencycode
+                        isActivated: true
+                        sample: EUR
+                      value:
+                        type: number
+                        title: Value
+                        isActivated: true
+                        sample: 4800
+                    additionalProperties: false
+                    required:
+                      - currencyCode
+                      - value
+                  valuationDate:
+                    type: string
+                    isActivated: true
+                    format: date
+                    sample: "2021-12-03"
+                additionalProperties: false
+          additionalProperties: false
+      partyRoleOnPhysicalObject:
+        type: array
+        isActivated: true
+        additionalItems: true
+        items:
+          type: object
+          isActivated: true
+          properties:
+            typeCode:
+              type: string
+              isActivated: true
+              sample: OWNER
+            partyIdentifier:
+              type: string
+              isActivated: true
+              sample: P1234567890
+          additionalProperties: false
+          displayName: partyRole
+      geometry:
+        type: object
+        isActivated: true
+        properties:
+          typeCode:
+            type: string
+            isActivated: true
+            enum:
+              - STRUCTURE
+              - PLACE
+            sample: STRUCTURE
+          coordinates:
+            type: array
+            isActivated: true
+            additionalItems: true
+            items:
+              type: object
+              isActivated: true
+              displayName: globalPositionAddress
+              properties:
+                coordinateSystemCode:
+                  type: string
+                  isActivated: true
+                latitude:
+                  type: number
+                  isActivated: true
+                  sample: 48.8763
+                longitude:
+                  type: number
+                  isActivated: true
+                  sample: 2.3183
+                elevation:
+                  type: number
+                  isActivated: true
+                geocodingResolution:
+                  type: string
+                  isActivated: true
+              additionalProperties: false
+              required:
+                - latitude
+                - longitude
+        additionalProperties: false
+    additionalProperties: false
+isActivated: true
+additionalProperties: false
+comments: >-
+  This concept is the generalizing concept representing all physical structures.
+  To create specific instances of a structure where a specialization is not
+  already included in the model, use the typeName attribute inherited from
+  InformationModelObject to represent the type of structure. This eliminates the
+  need for specific specializations to be created for every type of structure.
+  It is recommended to use specializations when additional attribution is
+  necessary.

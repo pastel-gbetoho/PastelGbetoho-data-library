@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="GETD Data Management Team">
+
+    <title>PROPERTY DATA AT AXA</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://maxcdn.bootstrapcdn.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    
+    <style type="text/css">code{white-space: pre;}</style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:large"></span>  PROPERTY DATA</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Property Data Study <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Study summary</a></li>
+                <li><a href="property-data-mapping.html">Use cases data mapping</a></li>
+                <li><a href="providers-list.html">Property data providers</a></li> 
+              </ul>
+            </li>                  
+                    
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Data models <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="conceptual_data_model.html">Conceptual view</a></li>
+                <li><a href="logical_data_model.html">Logical view</a></li>
+                <li><a href="json-schemas.html">JSON Schema</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Examples</li>
+                <li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/specifications/openapi/index.html" target="_blank">Open API Swagger example</a></li>
+                <li><a href="axaxl_sov_illustration.html">AXA XL SOV illustration</a></li>
+                <li><a href="BingGeocoder_Outputs_Illustration.html">Bing geocoder illustration</a></li>                                        
+                <li><a href="GoogleGeocoder_Outputs_Illustration.html">Google geocoder illustration</a></li>
+              </ul>
+            </li>                        
+          
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Additional Resources <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Internal Reference</li>
+                <li><a href="https://axa365.sharepoint.com/sites/Community-DataManagement/SitePages/Information-Models.aspx" target="_blank">ACORD Information model</a></li>                                  
+                <li><a href="media/internal-axa-docs/Datamodel GebäudeStandortDaten.pdf" target="_blank">AXA CH GMD</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">External Reference</li>            
+                <li><a href="https://www.iso.org/obp/ui/#iso:std:iso:19160:-4:ed-1:v1:en" target="_blank">ISO 19160-4:2017(en) Addressing</a></li>
+                <li><a href="https://www.air-worldwide.com/Data-Standards/CEDE-7-0-Database-Schema-and-Sample-Databases/" target="_blank">Catastrophe Exposure Database Exchange</a></li>
+                <li><a href="https://github.com/RMS-open-standards/RDOS" target="_blank">Risk Data Open Standard (RDOS) </a></li>
+                <li><a href="https://github.com/Simplitium/OED/" target="_blank">Open Exposure Data (OED)</a></li>       
+                <li><a href="https://github.com/OasisLMF/OpenDataStandards" target="_blank">Open Data Standards (ODS)</a></li>
+                <li><a href="https://docs.air-worldwide.com/Validation/6.0/index.htm" target="_blank">AIR-Exposure Data Validation Reference</a></li>
+                <li><a href="https://www.iso.org/ics/91.040/x/" target="_blank">ISO 91.040 BUILDINGS</a></li>
+                <li><a href="https://technical.buildingsmart.org/standards/ifc/" target="_blank">Industry Foundation Classes (IFC)</a></li>                                                                                                                                                
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> AXA DCP <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://smartservices.axaxl.com/fr/" target="_blank">Smart Services Homepage</a></li>
+              </ul>
+            </li>             
+            
+                
+          </ul>
+        </div>
+
+      </div>
+    </nav>     
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12 main">
+        
+<div class="alert alert-info" role="alert" style="font-size: 18px">
+<p style="text-align:center">
+This conceptual view leverage ACORD semantic to describe buildings.
+<a href="vp-report/index.html" target="_blank">See an extract here.</a>
+</p>
+</div>
+<div class="center-block">
+<p><img src="media/model-illustration/Property-data-domain-illustrated.svg" class="img-responsive center-block" /></p>
+</div>
+<div class="center-block">
+<p><img src="media/model-illustration/Property-data-domain.svg" class="img-responsive center-block" /></p>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>
+        //document.getElementById('sidebar').getElementsByTagName('ul')[0].className += "nav nav-sidebar";
+        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /*add Bootstrap styles to tables*/
+        var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>      
+    
+        
+  </body>
+</html>

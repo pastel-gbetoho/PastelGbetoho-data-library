@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>DATA ARCHITECTURE HUB</b> </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#some-painpoints-with-office-tools">Some painpoints with Office tools</a></li>
+          <li><a href="#exploring-different-approach">Exploring different approach</a></li>
+          <li><a href="#format-requirement">Format requirement</a></li>
+          <li><a href="#versioning-and-retention-requirements">Versioning and retention requirements</a></li>
+          <li><a href="#reuse-existing-standard-markup-language">Reuse existing standard markup language</a></li>
+          <li><a href="#our-approach">Our approach</a></li>
+          <li><a href="#what-if-we-push-further-the-approach">What if we push further the approach?</a></li>
+          <li><a href="#key-takeaways">Key takeaways</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<p>; # Collaborative writing of a paper ## Markdown return on experience</p>
+<p>Contacts</p>
+<ul>
+<li>Guillaume HERVOUIN</li>
+<li>Pastel GBETOHO</li>
+</ul>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Introduction</td>
+</tr>
+<tr class="even">
+<td>* We have been struggling using Office suite for collaborative paper elaboration and publication * We have explored a different approach to tackle this issue and found markdown to be a good fit. We will explain why and how in the next slides * What if we push further the approach * Some insights from our experience and your feedback/experiences/recommendations</td>
+</tr>
+</tbody>
+</table>
+<h2 id="some-painpoints-with-office-tools">Some painpoints with Office tools</h2>
+<ul>
+<li>Document size</li>
+<li>Time to load and edit the document</li>
+<li>Delta comparison between two versions</li>
+<li>Cannot quickly identify modifications between versions more specifically small changes.</li>
+<li>SharePoint browsing latency</li>
+<li>OneDrive synchronization*</li>
+</ul>
+<p>Modification propagation latency ; duplicate files due to synchronization issues ; lost modifications… _*Before Microsoft Fluid Framework_</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Office word or ppt are more than a simple file</td>
+</tr>
+<tr class="even">
+<td>The conceptual structure of a slide-based presentation includes: * <strong>presentation</strong> - sequence of slides intended to be viewed by an audience. * <strong>slide</strong> - frame containing one or more pieces of text and/or graphics. * <strong>slide layout</strong> - organization of elements on a slide. * <strong>note</strong> - slide annotation, reminder, or piece of text intended for the presenter or the audience. * <strong>handout</strong> - printed set of slides that can be handed out to an audience for future reference. * <strong>comment</strong> - text attached to a location on a slide, visible while editing or reviewing a presentation, but not during a slideshow.</td>
+</tr>
+<tr class="odd">
+<td>* ISO/IEC 29500-1:2016: Information technology — Document description and processing languages — Office Open XML File Formats — Part 1: Fundamentals and Markup Language Reference * [MS-PPTX]: PowerPoint (.pptx) : Extensions to the Office Open XML File Format * [MS-DOCX]: Word : Extensions to the Office Open XML (.docx) File Format</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exploring-different-approach">Exploring different approach</h2>
+<p>Step back: What do we need? What are our requirements? * Agility * Versioning &amp; Retention * Split role and access * Format</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Agility requirement</td>
+</tr>
+<tr class="even">
+<td>* Ability to collaborate on content production easily (delta difference, merge easily, no latency on modifications propagation…) * Accelerate content publication and rendering</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format-requirement">Format requirement</h2>
+<ul>
+<li>Presentation should accommodate for different populations (publish for different communities)</li>
+<li>Possible to change the look &amp; feel depending on the audience and AXA chart/templates</li>
+</ul>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Split role and access requirements</td>
+</tr>
+<tr class="even">
+<td>* Producers focus on the content * UX designer/Communication Specialist can work on the presentation * Consumers have access only to published document</td>
+</tr>
+</tbody>
+</table>
+<h2 id="versioning-and-retention-requirements">Versioning and retention requirements</h2>
+<ul>
+<li>Content and presentation may have different lifecycle</li>
+<li>Some publications may be only for communication purpose and deleted afterward</li>
+<li>Some publications are due to remain for compliance or auditability purpose</li>
+</ul>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Solution design principles</td>
+</tr>
+<tr class="even">
+<td>Separate the content from the container ie how the content is published (html, word, pdf, ppt…) * Focus on the content and not the rendering during the production * Low latency and resource consumption (allowing to work on other applications in parallel) * Delta difference comparison * Publication in multiple formats (html, pdf, word, ppt) + automation when possible * Durability - make sure that the document can be still edited with various solutions in the future * Simplicity (ease of use, no training)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reuse-existing-standard-markup-language">Reuse existing standard markup language</h2>
+<p>Based on our requirements, we have selected Markdown for its simplicity.</p>
+<p>But for a more advanced documentation editing features, ReStructuredText, Asciidoc are better alternatives.</p>
+<p>PROS: * Simple and easy to learn * No coding skills required * Human readable * Portability if no extensions</p>
+<p>CONS: * Lack of formal specification * Lack of built in extensibility &amp; lot of flavors</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## Markdown example</td>
+</tr>
+<tr class="even">
+<td>* Markdown file * GitHub documentation * HTML version generated with Pandoc + template</td>
+</tr>
+</tbody>
+</table>
+<h2 id="our-approach">Our approach</h2>
+<ul>
+<li><strong>Git Hub</strong>: Git to produce and manage the content in collaborative way</li>
+<li><strong>Pandoc</strong>: Free and open-source document converter, to automate document publication in multiple formats (Word, Html, Pdf…)</li>
+<li><strong>SharePoint</strong>: Sharing and versioning of published documents</li>
+</ul>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>## What if we push further the approach?</td>
+</tr>
+<tr class="even">
+<td>How to integrate markdown with SharePoint?</td>
+</tr>
+<tr class="odd">
+<td>* Automate document publication on SharePoint using git</td>
+</tr>
+<tr class="even">
+<td>* Microsoft does not use SharePoint for public documentation but Git for content management + in-house solution for presentation. Power BI example:</td>
+</tr>
+<tr class="odd">
+<td>https://github.com/MicrosoftDocs/powerbi-docs/blob/live/powerbi-docs/fundamentals/power-bi-overview.md https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-if-we-push-further-the-approach">What if we push further the approach?</h2>
+<p>Can we replace PowerPoint?</p>
+<p>POC with reveal.js: * Challenging to manage images (resize multiple time) * Low maturity * Nice feature : navigation options (up down left right) * Require expertise in programming * Conclusion good but very limited and does fit the requirements</p>
+<hr />
+<h2 id="key-takeaways">Key takeaways</h2>
+<ul>
+<li><p>Possbile industrial process with segregation of the view VS content</p></li>
+<li><p>There are some possibilities for document publications to explore</p></li>
+<li><p>This approach is relevant for references documents, user manuals, etc.</p></li>
+<li><p>But for publications challenging to remove PPT, may not be the goal</p></li>
+<li><p>SharePoint is multi-usage and still relevant even if it does not fit our requirements for content production</p></li>
+<li><p>By design there is a trade-off between the 2 approaches</p>
+<ul>
+<li>WYSIWYG approach is fast but difficult to maintain over time</li>
+<li>Segregation of content VS presentation require additional maturity and effort (+tooling)</li>
+</ul></li>
+</ul>
+<p><strong>What about you and your experiences in your entity?</strong></p>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

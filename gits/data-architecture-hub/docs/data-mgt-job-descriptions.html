@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA JOBS </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#chief-data-officer">Chief Data Officer</a></li>
+          <li><a href="#data-business-partner">Data Business Partner</a></li>
+          <li><a href="#data-owner">Data Owner</a></li>
+          <li><a href="#data-steward">Data Steward</a></li>
+          <li><a href="#data-custodian">Data Custodian</a></li>
+          <li><a href="#data-architect">Data Architect</a></li>
+          <li><a href="#data-scientist">Data Scientist</a></li>
+          <li><a href="#data-analyst">Data Analyst</a></li>
+          <li><a href="#data-engineer">Data Engineer</a>
+          <ul>
+          <li><a href="#data-engineer-1">Data Engineer</a></li>
+          <li><a href="#ml-engineer">ML Engineer</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="chief-data-officer">Chief Data Officer</h1>
+<p><em><a href="https://axa365.sharepoint.com/sites/Community-CDO">Chief Data Officer commmunity</a></em></p>
+<section id="the-chief-data-officer-is-responsible-for-unlocking-the-value-from-data-at-enterprise-level-while-managing-the-risks-pertaining-to-data-transforming-data-into-a-shared-company-asset." class="well well-sm">
+<h5>The Chief Data Officer is responsible for unlocking the value from data at enterprise level while managing the risks pertaining to data, transforming data into a shared company asset.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Define the Data Strategy at entity level, obtain local Executive Committee buy-in and necessary resources, with the appropriate balance between use cases (innovative or less) and data foundations. Since the CDO is Business Owner for data platforms, these activities include the definition of business requirements that guide the choice and implementation of data platforms (BI &amp; Analytics, Master Data Management, Meta Data Management, Data Exchanges).<br />
+</li>
+<li>Drive the execution of the Data Strategy, report on progress along following dimensions: business value, data quality, data culture, data maturity index.<br />
+</li>
+<li>Implement and oversee Data Governance through dedicated bodies (ex: Data Board), integration in other existing bodies (ex: Data by Design in Project Governance) and distributed networks (ex: Data Owners/Stewards/IT Custodians).<br />
+</li>
+<li>Provide data management expertise &amp; operations through a dedicated data management team, that will (i) Manage master and reference data as a minimum scope (ii) Protect personal data as GDPR 1st line of defense (iii) Manage risks pertaining to data jointly with Business/Risk/Privacy/Security teams.<br />
+</li>
+<li>Drive cultural change with regards to data at all levels, executives, managers, employees.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Practitioner: Data Management Practices (DMBOK), Business Intelligence &amp; Analytics (incl Data Visualization) , Security &amp; Data Privacy rules (GDPR) , Agile and design thinking methodologies, Enterprise architecture (Business/Application/Infrastructure) and Transformation (incl. change management).<br />
+</li>
+<li>Knowledgeable: Data Architecture, Quality management (SixSigma), Data Science, Cloud Services, DWH/ Data Lake/MDM/Metadata, Data Engineering, Insurance acumen and/or other business sectors.<br />
+</li>
+<li>Awareness: statistics / programming (R, SAS…).</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Master level: Oral and written communication, collaborative working, execution excellence, negotiation and critical thinking.<br />
+</li>
+<li>Intellectual curiosity, market watch.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>Business background with strong analytical ability.<br />
+</li>
+<li>And/or IT and Computer science background.<br />
+</li>
+<li>And/or Data Science background.</li>
+</ul>
+<h1 id="data-business-partner">Data Business Partner</h1>
+<section id="a-data-business-partner-ensure-a-specific-business-domain-create-value-from-data-at-scale.-heshe-typically-operates-as-advisor-liaison-project-manager-and-sme-between-data-scientists-and-operational-business-teams." class="well well-sm">
+<h5>A Data Business Partner ensure a specific business domain create value from data at scale. He/she typically operates as advisor, liaison, project manager and SME between data scientists and operational business teams.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Identifies and prioritizes potential analytics opportunities in the business areas, including associated benefits such as driving efficiencies and improving customer experience.<br />
+</li>
+<li>Ensures their area’s business requirements with regards to data and analytics are met.<br />
+</li>
+<li>Ensures the business area they look after adopts the Data Manifesto.<br />
+</li>
+<li>Monitors the delivery of data and analytics related initiatives, throughout all phases from ideation through production and adoption.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Master : Insurance acumen.<br />
+</li>
+<li>Practitioner : Business Intelligence &amp; Analytics (incl. Data Visualization),Agile &amp; Design thinking method, Transformation (incl. Change Management, project management).<br />
+</li>
+<li>Knowledgeable : Data Management (DMBOK), Security &amp; Data Privacy rules (GDPR) and Quality management (Lean, BPM, SixSigma),Statistics / Programming (R, SAS…), IT delivery and architecture.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Master : Communication (incl. story telling) and Project Management.<br />
+</li>
+<li>Practice: Negotiation, Leadership, Critical Thinking,, collaborative working.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>Business background with strong analytical ability.</li>
+</ul>
+<h1 id="data-owner">Data Owner</h1>
+<p><em><a href="https://axa365.sharepoint.com/sites/Community-DataManagement">Data Management commmunity</a></em></p>
+<section id="the-data-owner-is-accountable-for-transforming-with-hisher-peers-the-data-processed-in-hisher-business-area-into-valuable-company-assets.-the-data-owner-is-accountable-for-the-respect-of-data-policies-on-his-data-domain-as-regards-usage-security-and-privacy.-he-is-then-also-accountable-for-the-quality-and-the-availability-of-these-data." class="well well-sm">
+<h5>The Data Owner is accountable for transforming with his/her peers the data processed in his/her business area into valuable company assets. The Data Owner is accountable for the respect of Data policies on his data domain as regards : usage, security and privacy. He is then also accountable for the quality and the availability of these data.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>He embodies corporate accountability for his data domain and does not simply focus on “ departmental needs” :
+<ul>
+<li>Accountable for the enforcement of the data strategy.<br />
+</li>
+<li>Accountable for the respect of Data policies as regards : usage, security and privacy.<br />
+</li>
+<li>Accountable for the quality and the availability of pertaining data.<br />
+</li>
+</ul></li>
+<li>He arbitrates / propose arbitration to ensure that added value from the data of his scope is optimized considering short- and long-term constraints :
+<ul>
+<li>Maximization of the business value from the data.<br />
+</li>
+<li>Minimization of management costs and risks.<br />
+</li>
+</ul></li>
+<li>He manages Data Stewards to guarantee that data from their domain are managed as assets.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Master : Insurance business</li>
+<li>Practitioner : Quality management (Lean, BPM, SixSigma), Agile methodology, Transformation (incl. Change Management).<br />
+</li>
+<li>Knowledgeable : Data Management (DMBOK), Business Intelligence &amp; Analytics (incl. Data Visualization), Security &amp; Data Privacy rules (GDPR) , Data engineering.</li>
+<li>Aware : Data Architecture &amp; Modelling , Design thinking method, Enterprise Architecture (Business/Application/Infrastructure).</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Master Negotiation, Leadership, Critical Thinking.<br />
+</li>
+<li>Practitioner : Communication (incl. story telling) &amp; collaborative working.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>Business background with strong analytical ability.</li>
+</ul>
+<h1 id="data-steward">Data Steward</h1>
+<section id="the-data-steward-is-both-a-business-and-a-data-expert-in-the-domain-he-is-responsible-of.-the-data-steward-is-responsible-of-the-good-use-of-data-from-is-scope.-as-a-responsible-for-the-dq-process-guarantees-its-quality-fits-the-business-requirements." class="well well-sm">
+<h5>The Data Steward is both a business and a data expert in the domain he is responsible of. The Data Steward is responsible of the good use of data from is scope. As a responsible for the DQ process, guarantees its quality fits the business requirements.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Ensures data is consistent and organized according to the defined business rules, and that these rules are properly integrated into the information system. He is the owner of the business (conceptual) data model or business API.<br />
+</li>
+<li>Formalizes and Manages Data Quality Issues (measures, identify gaps and roots cause, build and follow remediation plan).<br />
+</li>
+<li>Defines, (implement) and analyze indicators to monitor data quality, provides reports on Data Quality Measures/Profiling.<br />
+</li>
+<li>Responsible at least for Data Privacy, Security, and Business criticality classifications. Defines anonymization and retention rules.<br />
+</li>
+<li>Administrates the access to data to ensure data is used according to the privacy and security standards.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Master : Insurance business (on his domain), Data Management (DMBOK on data quality).<br />
+</li>
+<li>Practitioner : Business Intelligence &amp; Analytics (incl. Data Visualization), Programming (SQL,R, SAS…), Agile method and Statistics / Security &amp; Data Privacy rules (GDPR).<br />
+</li>
+<li>Knowledgeable : Quality management (Lean, BPM, SixSigma),enterprise architecture and data engineering.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Practitioner : collaborative working, Critical Thinking.<br />
+</li>
+<li>Knowledgeable : Communication skills, Negotiation, Leadership.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>Business background with strong analytical ability.<br />
+</li>
+<li>Knowledge of IT &amp; Computer Science.</li>
+</ul>
+<h1 id="data-custodian">Data Custodian</h1>
+<section id="the-data-custodian-is-responsible-for-technical-operations-on-data-storage-transport-archive-execution-of-business-rules-and-controls.-as-the-correspondent-of-the-data-steward-the-data-custodian-is-responsible-to-provide-all-the-information-about-quality-controls-technical-interface-physical-data-storage-model." class="well well-sm">
+<h5>The Data Custodian is responsible for technical operations on data: storage, transport, archive, execution of business rules and controls. As the correspondent of the Data Steward, the Data custodian is responsible to provide all the information about quality controls, technical interface, physical data storage model.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Enforce the business rules into the information system.</li>
+<li>Responsible for the physical data model or technical interface.<br />
+</li>
+<li>Support Data Stewards in managing data quality issues (measures, identify gaps and roots cause, build and enforces remediation plan).</li>
+<li>Enforces indicators to monitor data quality, provides reports on Data Quality Measures/Profiling.</li>
+<li>Responsible for Data Privacy and Security measures such as anonymization, retention rules and encryption implementation.<br />
+</li>
+<li>Enforces the access to data to ensure data is used according to the privacy and security standards.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Master: Database querying , SQL, Data profiling, statistics.<br />
+</li>
+<li>Practitioner : Knowledge Management, Business Intelligence &amp; Analytics Good knowledge.<br />
+</li>
+<li>Knowledgeable : Security &amp; Data Privacy rules (GDPR) and Insurance business.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Practitioner : Collaborative working.<br />
+</li>
+<li>Knowledgeable : Communication skills (incl. story telling).</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>IT &amp; Computer Science.<br />
+</li>
+<li>Data compliance.</li>
+</ul>
+<h1 id="data-architect">Data Architect</h1>
+<p><em><a href="https://axa365.sharepoint.com/sites/Community-DataArchitecture">Data Architect commmunity</a></em></p>
+<section id="the-data-architect-embodies-the-data-architecture-capability-of-the-entity.-heshe-ensures-that-the-data-solution-supports-the-business-requirements.-heshe-is-responsible-for-the-design-development-and-implementation-of-target-architectures-to-execute-axas-strategy-taking-into-account-as-is-capabilities.-heshe-works-closely-with-other-architects-enterprise-business-application-technical-cdo-and-data-management-data-analysts-and-scientists-business-lines-from-leaders-to-end-users-and-it.-heshe-should-leverage-the-best-standard-practices-available-on-the-market-and-axa-group-reference-architecture." class="well well-sm">
+<h5>The Data Architect embodies the data architecture capability of the entity. He/she ensures that the data solution supports the business requirements. He/she is responsible for the design, development and implementation of “TARGET” architectures, to execute AXA’s strategy taking into account “AS IS” capabilities. He/she works closely with other architects (enterprise, business, application, technical), CDO and data management, data analysts and scientists, business lines from leaders to end users and IT. He/she should leverage the best standard practices available on the market and AXA Group reference architecture.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Architecture support of platforms playing a key role in the data driven company target: Master Data Management, BI &amp; Analytics, integration services, metadata.<br />
+</li>
+<li>Design of Data models from business glossary to physical data models.<br />
+</li>
+<li>Choice of solutions consistent with entity IT landscape, to address required capability.<br />
+</li>
+<li>Business proximity allowing continuous understanding of required and future business capabilities: strategy, offer and customer requirements, business needs, business intelligence self-service.<br />
+</li>
+<li>Continuous learning of digital innovations.<br />
+</li>
+<li>Support the CDO in the definition of the data driven company target and roadmap providing architecture description and supporting accurate budget / Total Cost of Ownership and timeline.<br />
+</li>
+<li>During implementation, provide architecture governance support to the project by checking architecture compliance and identification of solutions when blockers occur.<br />
+</li>
+<li>Ensure architectures are designed to meet relevant AXA standards such as legal, information security policies, data privacy.<br />
+</li>
+<li>Collaborate and share with stakeholders, from C-Level to end-users.</li>
+<li>Be an ambassador of data transformation through common language, deep understanding of data and businesses, easy-going communication. Share knowledge and embark others.</li>
+<li>Advise and guide project delivery teams.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Master (at least one of the following plateform) : Enterprise Architecture, Data Modeling (including third normal form, star schema, data vault modelling methods), Master Data Management, Data Integration and Interoperability, Business Intelligence &amp; Analytics.<br />
+</li>
+<li>Practitioner : Data Visualization, Data Governance, Data Documentation &amp; Quality, Security &amp; Data Privacy rules (GDPR &amp; DMBOK).<br />
+</li>
+<li>Knowledgeable : Data Storage and Operations, Data Processing - Development Engineering.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Master : problem-solving skills and Communication.<br />
+</li>
+<li>Able to adapt to changing requirements, to deal with competing priorities and pressure, Leadership, influence and conflict resolution.<br />
+</li>
+<li>Able to liaise with other Architecture Dimensions (IT, Business Architecture, Information Systems).<br />
+</li>
+<li>Able to be a team player in a multi-cultural work environment.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>IT &amp; computer science background.<br />
+</li>
+<li>Good knowledge of insurance.</li>
+</ul>
+<h1 id="data-scientist">Data Scientist</h1>
+<section id="the-main-mission-of-the-data-scientist-is-to-provide-his-deep-technical-expertise-both-to-shape-the-data-strategy-of-the-company-and-to-provide-actual-solutions-to-business-challenges." class="well well-sm">
+<h5>The main mission of the Data Scientist is to provide his deep technical expertise both to shape the data strategy of the company and to provide actual solutions to business challenges.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Work closely with business experts to understand the operational needs (actuarial, marketing, etc.) and translate business needs into engineering solutions.<br />
+</li>
+<li>Collect and analyze the internal and external data to find relationships and insights.<br />
+</li>
+<li>Apply data science tools to solve business challenges (including machine learning / visualization).<br />
+</li>
+<li>Implementing production ready solutions, with performance and robustness constraints.<br />
+</li>
+<li>Work with other departments (IT and business) to ensure operational use of results and measure impacts on key business indicators.<br />
+</li>
+<li>Share knowledge through appropriate channels: documentation, DS community, webinars, training courses, blog posts, etc.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Ability to model the reality of business into equations, and to understand the implications and limitations of a model.<br />
+</li>
+<li>Deep understanding of machine learning concepts and algorithms.<br />
+</li>
+<li>Relevant work experience in data processing (e.g. data mining, social network analysis, text mining, etc.).<br />
+</li>
+<li>Good programming skills (ideally Python and R; appreciated: Java and Scala).<br />
+</li>
+<li>Expert knowledge of machine learning tools and libraries (e.g. scikit-learn, R libs, MLlib, Tensorflow, PyTorch), data visualization.<br />
+</li>
+<li>Good knowledge of databases (relational and NoSQL), bigdata tools (Hive).<br />
+</li>
+<li>Good software engineering culture (e.g. code reviews, unit testing, micro-services architecture, REST API).<br />
+</li>
+<li>Work experience in cloud services (e.g. AWS, Azure) is a plus.<br />
+</li>
+<li>Notion of a modern distributed computing framework (like Spark) is a plus.<br />
+</li>
+<li>Awareness on Data Management practices as well as Data Privacy &amp; Security constraints.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Strong communication and storytelling skills with experts and non-experts.<br />
+</li>
+<li>Autonomy, curiosity and innovation capability.<br />
+</li>
+<li>Sufficient skills to contribute to complex projects with many stakeholders.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>Master’s degree, equivalent dual diploma or PhD in finance, actuarial, mathematics, statistics, physics or similar; fundamental or applied research is a plus.<br />
+</li>
+<li>Work experience in an international environment is a plus.</li>
+</ul>
+<h1 id="data-analyst">Data Analyst</h1>
+<section id="business-data-analyst-sits-with-a-business-team.-this-role-acts-as-an-internal-consultant-by-understanding-business-needs-scoping-data-requests-generating-insights-and-recommending-solutions-to-business-partners-in-collaboration-with-other-data-team-members.-heshe-will-perform-data-analysis-on-a-wide-range-of-business-issues-such-as-examines-large-data-sets-to-identify-trends-develop-charts-and-create-visual-presentations." class="well well-sm">
+<h5>Business Data Analyst sits with a business team. This role acts as an internal consultant by understanding business needs, scoping data requests, generating insights, and recommending solutions to business partners in collaboration with other data team members. He/she will perform data analysis on a wide range of business* issues – such as examines large data sets to identify trends, develop charts, and create visual presentations.</h5>
+</section>
+<p><strong>Activities</strong></p>
+<ul>
+<li>Applies expertise in analysis and presentation of data to help inform, influence, support, and execute on key business decisions.<br />
+</li>
+<li>Analyzes data and statistics for trends and patterns with attention to general business performance.<br />
+</li>
+<li>Prepares reports of data results, presenting and explaining findings to business team and assists leads with preparation of senior leadership presentations.<br />
+</li>
+<li>Ensures compliance with data privacy regulations and best practices.<br />
+</li>
+<li>Delivers analytical results to technical and non-technical audiences.<br />
+</li>
+<li>Demonstrates exceptional discretion when dealing with highly sensitive business data.<br />
+</li>
+<li>Acts as an internal consultant by understanding business needs, scoping data requests, generating insights, and recommending solutions to key business partners in collaboration with other members of the business* team.<br />
+</li>
+<li>Provides ad hoc reporting as required.</li>
+</ul>
+<p><strong>Technical &amp; professional skills</strong></p>
+<ul>
+<li>Master : data mining and data profiling.<br />
+</li>
+<li>Master : insurance business.<br />
+</li>
+<li>Knowledge and experience with reporting packages (Business Objects), database querying (SQL), data schemas (DDL, XSD, Open API, etc.).<br />
+</li>
+<li>Knowledge of Data Management practices, including Data Lifecycle Management across Core IT &amp; Big Data ecosystems as well as Data Privacy &amp; Security constraints.<br />
+</li>
+<li>Knowledgeable : statistics and experience using statistical packages for analyzing datasets (Excel, SPSS, SAS etc.).<br />
+</li>
+<li>Demonstrate knowledge on project management.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Practice : oral and written communication, collaborative working.<br />
+</li>
+<li>Strong analytical and problem-solving skills.</li>
+</ul>
+<p><strong>Background</strong></p>
+<ul>
+<li>Business Intelligence.</li>
+</ul>
+<h1 id="data-engineer">Data Engineer</h1>
+<p><em><a href="https://confluence.axa.com/confluence/display/GETD/Data+and+AI+Engineering">Data &amp; AI engineering commmunity</a></em></p>
+<h2 id="data-engineer-1">Data Engineer</h2>
+<section id="the-data-engineer-is-responsible-to-design-implement-test-maintain-and-optimize-data-systems-under-defined-service-levels-according-to-the-business-security-legal-and-data-architecture-requirements." class="well well-sm">
+<h5>The Data Engineer is responsible to design, implement, test, maintain and optimize data systems under defined service levels, according to the business, security, legal and data architecture requirements.</h5>
+</section>
+<p><strong>Main activities</strong></p>
+<ul>
+<li>Design data systems according to requirements, service levels and architecture specifications.<br />
+</li>
+<li>Develop and test data processes, integrate business intelligence rules and data science algorithms, reengineer when necessary to ensure testability, operability, performance, scalability and supportability of the solution by leveraging data engineering best-practices.<br />
+</li>
+<li>Apply variety of techniques and provide datasets for business and IT testing (data sampling, anonymization, pseudonymization).<br />
+</li>
+<li>Test the integration of the solution internally and with other applications ; setup solution to govern data interfaces including data quality issues handling and performance issues handling.<br />
+</li>
+<li>Take care of the complexity index of the solution and optimization of IT resources consumption.<br />
+</li>
+<li>Prevent security vulnerabilities in collaboration with security engineers, support troubleshooting and bug fixing.</li>
+</ul>
+<p><strong>Your experience</strong></p>
+<ul>
+<li>You are an experienced data pipeline builder and data wrangler who enjoys optimizing data systems and building them from the ground up.<br />
+</li>
+<li>You are comfortable supporting the data needs of multiple teams, systems and products.<br />
+</li>
+<li>You are excited by the prospect of optimizing or even re-designing our company’s data architecture to support our next generation of products and data initiatives.<br />
+</li>
+<li>You have X years of experience in a Data Engineer role, and you have skills in Computer Science, Statistics, Informatics, Information Systems or another quantitative field.<br />
+</li>
+<li>You have demonstrated experience performing root cause analysis on internal and external data and processes to answer specific business questions and identify opportunities for improvement.<br />
+</li>
+<li>You possess strong analytic skills related to working with unstructured datasets.<br />
+</li>
+<li>You have experience supporting and working with cross-functional teams in a dynamic environment.<br />
+</li>
+<li>You have demonstrated experience building processes supporting data transformation, data structures, metadata, dependency and workload management.<br />
+</li>
+<li>You have a successful history of manipulating, processing and extracting value from large disconnected datasets.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Communication skills</li>
+<li>Collaboration</li>
+<li>Presentation skills</li>
+</ul>
+<p><strong>Core skills</strong></p>
+<ul>
+<li>Database systems</li>
+<li>Data lake and data warehousing</li>
+<li>ETL tools</li>
+<li>Machine learning</li>
+<li>Distributed and event processing</li>
+<li>Data APIs and data mesh</li>
+<li>Python, Java, and Scala programming languages</li>
+<li>Understanding the basics of distributed systems</li>
+</ul>
+<p><strong>Trainings</strong></p>
+<ul>
+<li><a href="data_mgt_books.html#data-modeling">Data Modeling</a><br />
+</li>
+<li><a href="data_mgt_books.html#data-warehousing">Data Warehousing</a><br />
+</li>
+<li><a href="data_mgt_books.html#data-storage-and-processing">Data Storage and Processing</a></li>
+</ul>
+<h2 id="ml-engineer">ML Engineer</h2>
+<section id="the-ml-engineer-is-responsible-to-design-implement-test-maintain-and-optimize-machine-learning-models-under-defined-service-levels-according-to-the-business-security-legal-and-data-architecture-requirements." class="well well-sm">
+<h5>The ML Engineer is responsible to design, implement, test, maintain and optimize Machine Learning models under defined service levels, according to the business, security, legal and data architecture requirements.</h5>
+</section>
+<p><strong>Main activities</strong></p>
+<ul>
+<li>Develop, test, and deploy ML models through programming algorithms like random forest, logistic regression, linear regression.<br />
+</li>
+<li>Convert the machine learning models into application program interfaces (APIs) so that other applications can use it.<br />
+</li>
+<li>Help the different components of the organization (such as product managers and stakeholders) understand what results they gain from the model, highlighting best practices such as ML resilience, robustness, explain-ability, fairness, portability.<br />
+</li>
+<li>Build machine learning infrastructure from development to operation including retraining ML models in production.<br />
+</li>
+<li>Secure and monitor ML processing, including safeguards, A/B testing, fault-tolerance and failover.<br />
+</li>
+<li>Perform statistical analysis and tune the results so that the organization can make better-informed decisions.</li>
+</ul>
+<p><strong>Your experience</strong></p>
+<ul>
+<li>X years of experience in building and managing high performing teams responsible for developing and deploying machine learning models.<br />
+</li>
+<li>X years of hands-on data science and ML experience in solving real world business problems and applying machine learning in production environment.<br />
+</li>
+<li>Strong ability to make sound decisions and propose practical solutions.<br />
+</li>
+<li>Comfortable interacting with all management level with strong influencing skills and relationship building skills.<br />
+</li>
+<li>Strong experience with SQL.<br />
+</li>
+<li>Strong communication skills, both written and oral; comfortable presenting findings and recommendations to decision-makers.<br />
+</li>
+<li>Excited about working with structured and unstructured large data sets.<br />
+</li>
+<li>Experience with Apache SuperSet, Tableau, or similar tool is a plus.</li>
+</ul>
+<p><strong>Soft skills</strong></p>
+<ul>
+<li>Strong communication and teamwork skills</li>
+<li>Passion about techniques and solving challenging problems</li>
+</ul>
+<p><strong>Core skills</strong></p>
+<ul>
+<li>Programming Skills : Python, R, Java, and C++ to build.</li>
+<li>Linear Algebra, Probability, and Statistics : Hidden Markov models, Naive Bayes, Gaussian mixture models, and linear discriminant analysis.</li>
+<li>Data intensive processing technologies: Spark, Kafka.</li>
+<li>Algorithms and Frameworks.</li>
+</ul>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

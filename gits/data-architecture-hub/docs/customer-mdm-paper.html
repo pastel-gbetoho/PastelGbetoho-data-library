@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - MASTER DATA MANAGEMENT </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#introduction">INTRODUCTION</a>
+          <ul>
+          <li><a href="#reference-and-master-data-definition-dama-dmbok2-2017-managing-shared-data-to-meet-organizational-goals">Reference and Master Data Definition (DAMA DMBOK2 2017): Managing shared data to meet organizational goals,</a></li>
+          <li><a href="#reference-and-master-data-goals-dama-dmbok2-2017">Reference and Master Data Goals (DAMA DMBOK2 2017):</a></li>
+          <li><a href="#axa-customer-mdm-payer-to-partner-strategy-interviews-and-return-on-experience">AXA Customer MDM (Payer to Partner Strategy) interviews and return on experience</a></li>
+          </ul></li>
+          <li><a href="#customer-mdm-business-functions">CUSTOMER MDM BUSINESS FUNCTIONS</a></li>
+          <li><a href="#customer-mdm-application-functions">CUSTOMER MDM APPLICATION FUNCTIONS</a></li>
+          <li><a href="#metadata-management-tooling">METADATA MANAGEMENT TOOLING</a>
+          <ul>
+          <li><a href="#functional-requirements">Functional requirements</a></li>
+          <li><a href="#non-functional-requirements">Non-functional requirements</a></li>
+          </ul></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h2 id="introduction">INTRODUCTION</h2>
+<hr />
+<h3 id="reference-and-master-data-definition-dama-dmbok2-2017-managing-shared-data-to-meet-organizational-goals">Reference and Master Data Definition (DAMA DMBOK2 2017): Managing shared data to meet organizational goals,</h3>
+<p>reduce risks associated with data redundancy, ensure higher quality, and reduce the costs of data integration.</p>
+<h3 id="reference-and-master-data-goals-dama-dmbok2-2017">Reference and Master Data Goals (DAMA DMBOK2 2017):</h3>
+<ul>
+<li>Enable sharing of information assets across business domains and applications within an organization.</li>
+<li>Provide authoritative source of reconciled and quality-assessed master and reference data.</li>
+<li>Lower cost and complexity through use of standards, common data models, and integration patterns.</li>
+</ul>
+<h3 id="axa-customer-mdm-payer-to-partner-strategy-interviews-and-return-on-experience">AXA Customer MDM (Payer to Partner Strategy) interviews and return on experience</h3>
+<p>Cf. <a href="media/cmdm/Customer-MDM-v1.pdf">Customer-MDM-v1.pdf</a></p>
+<h2 id="customer-mdm-business-functions">CUSTOMER MDM BUSINESS FUNCTIONS</h2>
+<p><img src="media/cmdm/cmdm-business-functions.png" style="width:70.0%" alt="Customer MDM Business Functions" /></p>
+<h2 id="customer-mdm-application-functions">CUSTOMER MDM APPLICATION FUNCTIONS</h2>
+<p><img src="media/cmdm/cmdm-application-functions.png" style="width:70.0%" alt="Customer MDM Application Functions" /></p>
+<h2 id="metadata-management-tooling">METADATA MANAGEMENT TOOLING</h2>
+<hr />
+<h3 id="functional-requirements">Functional requirements</h3>
+<p>This section will provide some recommendations on <strong>WITH WHAT</strong> tool meaning provide a framework for tool selection that can be adapt to each entity context.</p>
+<table>
+<tr>
+<td>
+Application Function
+</td>
+<td>
+<strong>Requirement</strong>
+</td>
+<td>
+<strong>Example</strong>
+</td>
+</tr>
+<tr>
+<td>
+Multi-Domain Master Data Management
+</td>
+<td>
+The solution should support management of master data across multiple domains
+</td>
+<td>
+<ul>
+<li>Referential Data</li>
+<li>Supplier Data</li>
+<li>Employee Data</li>
+<li>Financial Data</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Business Process Management
+</td>
+<td>
+Workflow and business process management capability to automate data governance processes
+</td>
+<td>
+<ul>
+<li>Data approvals</li>
+<li>Change requests</li>
+<li>Data issue resolution</li>
+<li>Data Imports</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Versioning and Audit Trails
+</td>
+<td>
+Support for version control of master data records and comprehensive audit trails to track changes, ensuring data transparency and compliance
+</td>
+<td>
+<ul>
+<li>Managing different versions of data</li>
+<li>Tracking of changes made to master data, including who made the changes and when</li>
+<li>Ability to revert to previous versions of master data records if needed</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Hierarchical Data Management
+</td>
+<td>
+Ability to manage hierarchical relationships within master data, such as organizational structures, product hierarchies, or multi-level customer relationships
+</td>
+<td>
+<ul>
+<li>Support for defining and maintaining parent-child relationships within the master data records</li>
+<li>Visualization of hierarchical data structures for easy navigation</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Data Lifecycle Management
+</td>
+<td>
+Support for managing the entire lifecycle of master data, including data creation, modification, validation, and retirement, with automated lifecycle workflows and policies
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Data Retention and Archiving
+</td>
+<td>
+Ability to define data retention policies and manage historical versions of master data, including archiving capabilities for compliance and historical analysis
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+Business Rules Management
+</td>
+<td>
+Capabilities for defining and managing complex business rules and validation logic to enforce data consistency and integrity
+</td>
+<td>
+<ul>
+<li>Ability to customize and configure business rules to align with specific business requirements</li>
+<li>Validation report of compliance with the business rules defined</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Matching and Survivorship
+</td>
+<td>
+Advanced matching capabilities to identify duplicate records and survivorship rules to determine the most reliable and complete data for merged records
+</td>
+<td>
+<ul>
+<li>Advanced matching capabilities to identify duplicate records based on configurable matching rules</li>
+<li>Support for survivorship rules to determine the most reliable and complete data for merged records</li>
+<li>Customizable survivorship strategies to prioritize data from different sources or systems</li>
+<li>Audit trail and reporting features to track the matching and survivorship processes</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+Data Integration
+</td>
+<td>
+Support for real-time, batch, and near-real-time data integration with various data sources
+</td>
+<td>
+<ul>
+<li>Robust import / export capabilities of data</li>
+<li>Error-handling capabilities and monitoring tools</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+User Interface and User Experience
+</td>
+<td>
+Intuitive and user-friendly interfaces for data management, data visualization, and administrative tasks
+</td>
+<td>
+<ul>
+<li>Role-based access and personalized views to cater to different user needs and responsibilities</li>
+<li>Usage of modern UI/UX best practices</li>
+<li>Support for customizable dashboards and visualizations</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+API and Integration
+</td>
+<td>
+Should offer comprehensive APIs and integration capabilities to facilitate seamless integration with other enterprise systems and custom applications
+</td>
+<td>
+<ul>
+<li>Support for industry-standard integration protocols and formats to ensure interoperability</li>
+<li>Flexibility to accommodate various integration patterns, including point-to-point, event-driven, and batch-based integrations</li>
+<li>Extensive documentation and developer resources</li>
+<li>Robust security measures to protect data during integration processes and API usage</li>
+</ul>
+</td>
+</tr>
+</table>
+<h3 id="non-functional-requirements">Non-functional requirements</h3>
+<p>This section will provide some examples of non-functional requirements to consider also for the selection of the tool.</p>
+<table>
+<tr>
+<td>
+<strong>Application behavior</strong>
+</td>
+<td>
+<strong>Requirement</strong>
+</td>
+</tr>
+<tr>
+<td>
+Multitenancy
+</td>
+<td>
+Adapt roles and permissions and behaviors for a complex organization, e.g. to delegate administration rights for a specific scope of metadata. Support metadata portability and reversibility.
+</td>
+</tr>
+<tr>
+<td>
+Usability
+</td>
+<td>
+Optimal user experience for the intended population, for exemple integration of metadata services within user tools (widgets, plugins, etc.).
+</td>
+</tr>
+<tr>
+<td>
+Availability
+</td>
+<td>
+The solution must provide mechanisms to isolate operational (transactional) activities from analytical (data intensive) computations.
+</td>
+</tr>
+<td>
+Auditability
+</td>
+<td>
+Track modifications (creation, access, update, deletion) to provide third-party assurance about content integrity.
+</td>
+</tr>
+</tr>
+<td>
+Interoperability
+</td>
+<td>
+Ability to interoperate with other systems (REST APIs, Event APIs, …).
+</td>
+</tr>
+</table>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

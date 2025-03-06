@@ -1,0 +1,3539 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE
+HUB</b> - DATA QUALITY RULES </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#introduction"
+          id="toc-introduction">Introduction</a>
+          <ul>
+          <li><a href="#business-glossary"
+          id="toc-business-glossary">Business glossary</a></li>
+          </ul></li>
+          <li><a href="#data-quality-rules"
+          id="toc-data-quality-rules">Data Quality Rules</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="introduction">Introduction</h1>
+<p>This document contains an extract of the data quality rules documnted
+in the “Data Quality Assessment Tool” created by the data management
+community.</p>
+<h2 id="business-glossary">Business glossary</h2>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 1%" />
+<col style="width: 2%" />
+<col style="width: 7%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Line of   Business &amp; CMDM</th>
+<th>CL / PL</th>
+<th>Business Domain</th>
+<th>Data Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Health /   P&amp;C</td>
+<td>PL </td>
+<td>Claims</td>
+<td>Actuarial Reserve Amount</td>
+<td>The total actuarial reserver for   the claim (as at latest
+date)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Claims</td>
+<td>Alcohol Test</td>
+<td>Is there an alcohol test?</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Claims</td>
+<td>Ambulance Attendance</td>
+<td>Did an abulance attend the   scene?</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Anti-economic Repair Flag</td>
+<td>Indicate whether a repair   process is economically
+viable/yes/no</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Billing Amount</td>
+<td>The amount written on the claim   but not the one that will actually
+be paid.</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Body Injuries</td>
+<td>Reported bodily injuries/yes/no</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Claims</td>
+<td>Cause of Injury</td>
+<td>The cause code of the injury</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Handler</td>
+<td>Who is the claim handler for   this claim?</td>
+</tr>
+<tr class="odd">
+<td>Health   / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim ID</td>
+<td>Unique claim identifier      ACORD: The unique identifier assigned
+to claim, claim offer, claim   grouping, etc. When part of a claim, this
+is commonly known as the   “claim number” and may include prefixes which
+identify a claims   office, or suffixes that break occurrences down into
+separate claims, layers,   or sub files.</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Claims</td>
+<td>Claim in Court</td>
+<td>Has the claim gone to court?</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Movement Date</td>
+<td>Date of the movement on the   claim</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Movement Type</td>
+<td>Type of movement on the claim</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Severity</td>
+<td>Reported severity of accident /   fire / …</td>
+</tr>
+<tr class="even">
+<td>Health   / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Status Code</td>
+<td>Gives the status of a   Claim.            Proposed list in ACORD:
+Abandoned , Active , Closed , Compromised/Settled ,   Coverage Confirmed
+, Coverage Evaluation , Denied , Disallowed , Discontinued   , Granted ,
+In Dispute , Inactive , Initial , Notified , Nullified , Open ,   Other
+, Paid-in Full Status , Pending , Premium Payments on the coverage
+are   suspended , Rejected , Rejected Coverage Not Provided , Reopened ,
+Settled ,   Under Evaluation , Under Negotiation , Unknown</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Subtype</td>
+<td>Additional level of specificity   for the type of claim</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Closure Date</td>
+<td>The date of closure of the claim</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Closure Reason</td>
+<td>Reason why the claim was closed</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Damage type</td>
+<td>Reported damage type (bodily   injuries, car damage, etc.)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Damaged Zones</td>
+<td>Reported damaged zones of   vehicle</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Date of Admission</td>
+<td>Date of inpatient hospital   admission </td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Date of Discharge</td>
+<td>Date of inpatient hospital   discharge </td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Date Treatment Incurred</td>
+<td>Date at which the out-patient   treatment incurred</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Diagnosis Codes</td>
+<td>ICD 9 or ICD 10 (preferable)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Driver</td>
+<td>Driver when the accident occured</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Driver Responsibility</td>
+<td>Initial assessment of driver   responsiblity</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Escape of Water Flag</td>
+<td>Flag to indicate ‘escape of   water’ claim (Real Estate)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Expertise Date</td>
+<td>Date of the expertise made by   the Loss Adjuster</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Fatal Injury Flag</td>
+<td>A flag indicating if the party   injuries were fatal or not (Y,
+N)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Fraud Investigation</td>
+<td>Has there been a fraud   investigation on this claim</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Initial Claim Valuation</td>
+<td>Initial assessment of claim   valuation</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Injury Type</td>
+<td>Category of the injury</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>KM of the Vehicle</td>
+<td>KM the vehicle has done</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Last Change Date</td>
+<td>Date of last change occured on   claim</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Loss Adjuster ID</td>
+<td>ID of the Loss Adjuster (expert)   in case it was ordered</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Loss Ocurrence Date</td>
+<td>Date and time of accident/Loss   Ocurrence Date</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>NatCat Flag</td>
+<td>Assessment of whether vehicle   can be repaired/yes/no</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Notification Date</td>
+<td>Date of FNOL</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Number of People in the Vehicle</td>
+<td>Number of people in vehicle at   time of accident</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Number of People Involved</td>
+<td>Number of people involved in the   accident</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Number of Vehicles Involved</td>
+<td>Number of vehicles involved in   the accident</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Paid Amount</td>
+<td>The money paid to the provider   for the provided services</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Police Attendance</td>
+<td>Did the police attend the scene?</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Police Report</td>
+<td>Is there a police report   associated to the claim?</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Procedure Codes</td>
+<td>Procedure or treatment code. CPT   4 or equivalent (e.g. CCSD in
+UK)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Reason for Recovery</td>
+<td>Reason why there was a recovery</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Recovered Amount</td>
+<td>The total amount recovered (e.g.   from other insurers) for the
+claim (as at latest date)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Reinsurance Cession</td>
+<td>Amounts ceded to reinsurers</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Related Claims</td>
+<td>Are there any claims related to   this one?</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Reopening Date</td>
+<td>Date of last change occured on   claim</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Repairability</td>
+<td>Assessment of whether vehicle   can be repaired/yes/no</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Settlement Date</td>
+<td>Loss Settlement Date. Date at   which the claims was paid</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Source of the Claim</td>
+<td>What system (if multiple) is the   claim coming from?</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Third Party Insured Flag</td>
+<td>A flag indicating, when the   party is a third party, if they are
+insured (Y, N)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Towing Needed</td>
+<td>Towing needed for accidented   vehicle/yes/no</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Treatment codes</td>
+<td>DRG / HRG coding system</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Treatment consumables</td>
+<td>Consumables codes</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Treatment drugs</td>
+<td>Drug - Codes of the drugs   prescribes by doctor or administrated in
+the hospital</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Type of Claim</td>
+<td>Peril or cause for which this   claim was created
+(death/accident/fire…)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Whiplash Flag</td>
+<td>A flag indicating if the injury   was whiplash or not (Y, N)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Witness</td>
+<td>Is there a witness to the claim?</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Brand</td>
+<td>Vehicle brand (based on a list   of values)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Commercial Value</td>
+<td>Vehicle commercial value</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>CL</td>
+<td>Coverage</td>
+<td>Construction Code</td>
+<td>Fire resistive / Light fire   resistive / Mixed / Combustible</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Country Registered</td>
+<td>Country vehicle is registered to   if not host country</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Deductible</td>
+<td>Where different covers may have   different deductibles within the
+product, then as many columns as covers this   aies to are needed.
+     Franchise.</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>High Risk Category</td>
+<td>Is the vehicle in a high risk   category?</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>License Plate Number</td>
+<td>Vehicle license plate   identification</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Model</td>
+<td>Vehicle model (based on a list   of values)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Postal Code of the Risk</td>
+<td>Postal code of the location   where the risk was reported</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Purchase Method</td>
+<td>Outright, credit, leasing, etc.</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Purpose of Vehicle</td>
+<td>Usage purpose of vehicle   (private, commercial, etc.)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Registered in Host Country</td>
+<td>Is the vehicle registered in   host country?</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Registration Number/VIN</td>
+<td>Registration number for vehicle</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Risk Address</td>
+<td>Address of the risk insured</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Start of Ownership</td>
+<td>Date of acquisition of vehicle   by Customer</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Type of Coverage</td>
+<td>Glass, building, material,   content…</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Type of Vehicle</td>
+<td>For motor, the type of vehicle   that is insured</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Usage Type</td>
+<td>Individual, car sharing, fleet,   etc.</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Vehicle Written Off Flag</td>
+<td>Flag if vehicle has been written   off</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Version</td>
+<td>Vehicle version</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Year Vehicle</td>
+<td>Year a vehicle was registered   (will help calculate the vehicle’s
+age)</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Activity of Customer</td>
+<td>NACE of local code for
+example   (http://ec.europa.eu/competition/mergers/cases/index/nace_all.html)</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Address</td>
+<td>Address to interact with the   customer</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Company National ID</td>
+<td>Company unique identifier within   the country’s legislation</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Contact Preferences</td>
+<td>Customer preferred contact   channel, times</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Customer Holding</td>
+<td>In case there are companies   related to a Group or Holding
+company</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer ID</td>
+<td>AXA identifier for a Customer   Party</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer Link</td>
+<td>What is the link in between   customers. (Spouse, Parent, Child,
+Brother, Sister). For corporate   subsidiary.</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of Birth</td>
+<td>Self explanatory</td>
+</tr>
+<tr class="even">
+<td>Health / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of death</td>
+<td>Self explanatory</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Customer</td>
+<td>Driving License Identification   Number</td>
+<td>The driving licence   identification number of the customer</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Customer</td>
+<td>Driving License Type</td>
+<td>The type of driving licence</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Email Address</td>
+<td>Email address used to interact   with the client      Uniform
+Resource Locator (URL) is a single, formal string representation
+of   the address for the resource.      In the context of an email
+contact this string represent an email   address.      Wikipedia:
+https://en.wikipedia.org/wiki/Email_address</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL </td>
+<td>Customer</td>
+<td>First Name</td>
+<td>First name of the customer</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Gender</td>
+<td>Self explanatory</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Last Name</td>
+<td>Last name of the customer If   coporate client should be company
+name</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Customer</td>
+<td>License Expiry Date</td>
+<td>The date the driving licence   expires</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Marital Status</td>
+<td>Customer marital status</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Phone Number</td>
+<td>Phone number used to interact   with the client</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Socio-economic Classification</td>
+<td>Customer Socio-economic   Classification level</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Type of Customer</td>
+<td>(SME, middle market,…)</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Type of Policy Holder</td>
+<td>Beneficiary / Policy Holder /   Member / …      The role of a party
+on a policy, for instance the insured person(s) or the   policy
+holder(s)</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor address</td>
+<td>Address of the distributor </td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor ID</td>
+<td>Distributor’s unique identifier   in AXA’s database</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor Name</td>
+<td>Name of the Distributor </td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor NPN</td>
+<td>NPN : National producer   number.      Unique NAIC identifier
+assigned through the licensing process or the NAIC   reporting systems
+to individuals and business</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Type of Distributor</td>
+<td>E.g. agent /broker / salaried   employed staff.
+/direct/multi/bank/other</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL</td>
+<td>Policy</td>
+<td>Bonus Malus Level</td>
+<td>The bonus-malus level aied in   the policy<em>renewal</em>version
+(usually should not vary within the policy*renewal   term).      Ideally
+all the “raw information” that is used in the BM   algorithm (whether it
+is obtained from an external database, by customer   declaration, or
+from internal to AXA past claims info) should be available   too, in a
+separate table, allowing to simulate changes in the algoritm </td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Commercial Rate</td>
+<td>Rate that has been aied to   calculate the invoiced premium after
+commercial discount</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Commission</td>
+<td>Commission amount corresponding   to the
+policy<em>renewal</em>version. (direct brokerage rate)</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Currency</td>
+<td>Currency in which the premium is   called and paid</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Customer status</td>
+<td>status of the customer within   the policy - this aies for
+members/beneficiaries of a policy</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Customer status change date</td>
+<td>Change of status of the customer</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL</td>
+<td>Policy</td>
+<td>Driving License Obtention Date</td>
+<td>Customer driving license date</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>End of Validity</td>
+<td>End date of the policy - Ending   / Renewal date</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Endorsement Type</td>
+<td>Description of the type of   endorsement or transaction that created
+the version, e.g. new business,   mid-term adjustment, cancellation,
+renewal,….</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Exclusions conditions</td>
+<td>List of all excluded conditions</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Exclusions duration</td>
+<td>Duration of exclusion </td>
+</tr>
+<tr class="odd">
+<td>P&amp;C / L&amp;S</td>
+<td>PL /CL</td>
+<td>Policy</td>
+<td>Gross Capacity</td>
+<td>The total value on which AXA   commits (exluding co-insurance)</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Insurance Coverage</td>
+<td>List of underwritten insurance   coverage items</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Last Change Date</td>
+<td>Date since the last change to   the policy</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Limit of Indemnity</td>
+<td>If any, amount of the limit of   indemnity at policy level</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Number Insured Goods</td>
+<td>Number of insured goods - In the   case of Property equivalent to
+Total number of location</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Payment Method</td>
+<td>Bank transfer/credit card/cash/…   according to the available
+methods</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy ID</td>
+<td>ID of underwritten policy </td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Product Name</td>
+<td>Name of the product</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Product Type</td>
+<td>The type of product that is   insured by the policy (IP/OP, Home,
+Motor, …)</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Status</td>
+<td>Policy status (active, on-hold,   closed, cancelled)</td>
+</tr>
+<tr class="odd">
+<td>Health   / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Version</td>
+<td>Sequential number of the version   or endorsement of the policy.
+Each time a change is made in the policy this   should generate a new
+version.      According to the entity’s system, it’s possible that
+technically not all   changes will generate a new version. e.g. only a
+change in the customer’s   telephone number, only correcting the colour
+of the vehicle (which is not   used in UW rules or tariff)</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policyholder name</td>
+<td>Name of the insured as quoted on   the policy</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Premium</td>
+<td>Gross written premium; Gross   earned; total  and by
+beneficiary</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Register/Inception date</td>
+<td>The date starting which the   contract becomes valid</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Reinsurance Cession</td>
+<td>Information about the exposure   ceded to reinsurance (reinsurance
+name, amount of sum insured ceded and type   of reinsurance)</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Renewal Number</td>
+<td>Sequential number of the   renewal, 0 for new business i.e. the
+first year of the policy, 1 for the   first renewal i.e. 2nd year of the
+policy,….</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Sum Insured</td>
+<td>The total value of the good   insured P&amp;C / sum insured
+L&amp;S</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Tariff Version</td>
+<td>Version of the tariff that aied   to the
+policy<em>renewal</em>version.      Or, equivalently, the date of the
+tariff aied</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Technical Rate</td>
+<td>Rate that should be aied for   calculating the premium according to
+the underwriting</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Transaction Date </td>
+<td>When the transaction is   effective (relating to payment
+processing)</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Type of Assets</td>
+<td>Type of assets that the policy   covers.
+Building/Contents/Stocks/Business Interruption</td>
+</tr>
+<tr class="even">
+<td>Health /  P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Policy</td>
+<td>Unpaid Premium</td>
+<td>In case Customer did not pay   entirely</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Date license expiration</td>
+<td>Expiration date of license   number of the provider</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Email Address</td>
+<td>Email address of the provider</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Level of certification</td>
+<td>E.g.: GP; Specialist; Consultant</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>License number</td>
+<td>License number for that specific   provider</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Phone Number</td>
+<td>Provider phone number</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider First Name</td>
+<td>The first name of the party   (blank if business)</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider Full Address</td>
+<td>If bodyshop used, bodyshop   address</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider ID</td>
+<td>Provider unique identifier in   AXA’s database      If bodyshop
+used, bodyshop ID</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider Last Name</td>
+<td>The last name of the party (or   the business name)</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider National Identification   Number</td>
+<td>Unique ID number in local   regulation</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider pricecard -  Fee drugs</td>
+<td>List of drugs and associated   fees agreed with provider</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider pricecard -  Fee specialty</td>
+<td>List of specialities / doctors   and associated fees agreed with
+provider</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider pricecard -  Fee surgery theatre</td>
+<td>List of fees associated with the   surgery theatre</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider pricecard -  Fee tests</td>
+<td>List of tests and associated   fees agreed with provider</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider pricecard - Fee   diagnosis groups</td>
+<td>The diagnosis related groups and   their corresponding fees
+negotiated with provider</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider specialty</td>
+<td>Specialty code / description of   the individual provider or legal
+entity e.g. cardiology; dermathology etc.</td>
+</tr>
+<tr class="odd">
+<td>Health /   P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Type of Network</td>
+<td>Is it an agreed provider for   AXA? Example for a bodyshop that has
+been validated as an axa’s reference.</td>
+</tr>
+<tr class="even">
+<td>Health /   P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Type of Provider</td>
+<td>E.g. hospital, clinic, GP,   specialist, bodyshop, etc..</td>
+</tr>
+</tbody>
+</table>
+<h1 id="data-quality-rules">Data Quality Rules</h1>
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 1%" />
+<col style="width: 3%" />
+<col style="width: 7%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+<col style="width: 28%" />
+<col style="width: 27%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Line of   Business</th>
+<th>CL / PL</th>
+<th>Business Domain</th>
+<th>Data Element</th>
+<th>DQ Dimension</th>
+<th>BR Code</th>
+<th>BR Description</th>
+<th>BR Calculation</th>
+<th>BR Calculation Spec</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Anti-economic repair flag</td>
+<td>Validity</td>
+<td>DQBR001</td>
+<td>Ensure that the all Claims have   a Anti-economic repair flag that
+belongs to the list defined.</td>
+<td>(#Claims where Anti-economic   Repair Flag not in the defined list
+in Accident Table / #Accidents) -consider   the fields that are not
+null-</td>
+<td>% of Claims where Anti-economic   repair flag value is not in the
+expected list of Anti-economic repair flag</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Billing Amount</td>
+<td>Completeness</td>
+<td>DQBR002</td>
+<td>Ensure that all   Claims have the Billing Amount filled out</td>
+<td> (#Billing Amount empty or null in Claim   Table/#Claims)</td>
+<td>% of Claims   where Billing Amount is empty or null in the Claim
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Billing Amount</td>
+<td>Consistency</td>
+<td>DQBR003</td>
+<td>Ensure that the   all Claims have a paid amount &lt;= billing
+amount</td>
+<td>(#Claims where   billing amount &gt; paid amount in Claims Table /
+#Claims) -consider the   fields that are not null-</td>
+<td>% of Claims   where Billing amount is &gt; paid amount</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Billing Amount</td>
+<td>Validity</td>
+<td>DQBR004</td>
+<td>Ensure that all   claims have a billing amount &gt;0</td>
+<td> (#Billing Amount &gt;0 in Claims Table /   #Claims) -consider the
+fields that are not null-</td>
+<td>% of Claims   where billing amount (&gt;0 )</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim ID</td>
+<td>Completeness</td>
+<td>DQBR005</td>
+<td>Ensure that all   Claims have the Claim ID filled out</td>
+<td>(#Claim ID empty   or null in Claim Table / #Claims)</td>
+<td>% of Claims   where Claim ID field is empty or null in Claim
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim ID</td>
+<td>Uniqueness</td>
+<td>DQBR006</td>
+<td>Ensure that   every single Claim (Policy, Date Claim, Billing Amount
+) has only one Claim   ID</td>
+<td>(#Claim ID   duplicated from Claim Table / #Claims) -consider the
+fields that are not   null-</td>
+<td>% of duplicated   Claim ID from Claim table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim ID</td>
+<td>Validity</td>
+<td>DQBR007</td>
+<td>Ensure that the   all Claims have a compliant Claim ID according to
+the defined pattern.</td>
+<td>(#Claim ID not   following the defined pattern in ClaimTable /
+#Claims) -consider the fields   that are not null-</td>
+<td>% of Claim ID   from Claim table not following the defined format
+pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Status Code</td>
+<td>Completeness</td>
+<td>DQBR008</td>
+<td>Ensure that all   Claims have the Status Code filled out</td>
+<td>(#Status Code   empty or null in Claims Table / #Claims)</td>
+<td>% of Claims   where Status Code is empty or null in the table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Status Code</td>
+<td>Consistency</td>
+<td>DQBR009</td>
+<td>Ensure that the   all Claims with a status code set to closed is
+consistent with the fact that   the closing date is setted.</td>
+<td>(#Status code is   not closed and Closing date is not null in Claims
+Table / #Claims) -consider   the status code fields that are not
+null-</td>
+<td>% of Claims   where Status Code is not closed while closing date is
+set</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Status Code</td>
+<td>Validity</td>
+<td>DQBR010</td>
+<td>Ensure that all   the Claims have a Status Code that belongs to the
+list defined</td>
+<td>(#Claim Status   Code not in the defined list in Claims Table /
+#Claims) -consider the fields   that are not null-</td>
+<td>% of Claimss   where Status Code value is not in the expected list
+of Status Code</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Claim Subtype</td>
+<td>Validity</td>
+<td>DQBR011</td>
+<td>Ensure that   Claim Subtype belongs to the list defined</td>
+<td>(#Claim Subtype   not in the defined list in Claim Table / #Claims)
+-consider the fields that   are not null-</td>
+<td>% of Claims   where Claim Subtype value is not in the expected
+list</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Closure Date</td>
+<td>Consistency</td>
+<td>DQBR012</td>
+<td>Ensure that the   all Claims with a status closed have a Closure
+date set</td>
+<td>(#Closure date   null where status is closed in Claims Table /
+#Claims)</td>
+<td>% of Claims   where Closure date is set and status code is
+closed</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Closure Date</td>
+<td>Validity</td>
+<td>DQBR013</td>
+<td>Ensure that the   all Claims have a compliant  Closure   Date
+according to the defined pattern.</td>
+<td>(#Closure Date   not following the defined pattern in Claims Table /
+#Claims) -consider the   fields that are not null-</td>
+<td>% of Claims   where Closure Date from Claims table not following the
+defined format pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Closure Reason</td>
+<td>Validity</td>
+<td>DQBR014</td>
+<td>Ensure that the   Closure Reason belongs to the list defined</td>
+<td> (#Closure Reason not in the defined list in   Claim Table /
+#Claims) -consider the fields that are not null-</td>
+<td>% of Claims   where Closure Reason value is not in the expected
+list</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Date of Admission</td>
+<td>Timeliness</td>
+<td>DQBR015</td>
+<td>Ensure that the   customer Date of Admission &lt; Date of
+Discharge</td>
+<td>(#Claims where   Date of Admission &gt; Date of Discharge / #Claims
+where Date of Admission is   not null)</td>
+<td>% of Customers   were Date of Discharge &lt; Date of admission</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Date Treatment Incurred</td>
+<td>Timeliness</td>
+<td>DQBR016</td>
+<td>Ensure that the   Date Treatment Incurred &lt; Today</td>
+<td>(#Claims where   Date of Treatment Incurred &gt; Today / #Claims
+where Date of Treatment is   not null)</td>
+<td>% of Claims   where the Date Treatment Incurred &gt; Today</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Diagnosis Codes</td>
+<td>Completeness</td>
+<td>DQBR017</td>
+<td>Ensure that all   Claims have the Diagnosis code (ICD) filled
+out</td>
+<td>(#Diagnosis Code   empty or null in Claim Table / #Claims)</td>
+<td>% of Claims   where Diagnosis Code is empty or null in the Claim
+table</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Diagnosis Codes</td>
+<td>Validity</td>
+<td>DQBR018</td>
+<td>Ensure that all   Diagnosis codes (ICD) on Claims have a compliant
+ID according to the defined   pattern.</td>
+<td>(#Diagnosis Code   not in the defined list in Claims Table /
+#Claims) -consider the fields that   are not null-</td>
+<td>% of Claims   where Diagnosis Code value is not in the expected list
+of Diagnosis Code</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Last Change Date</td>
+<td>Validity</td>
+<td>DQBR019</td>
+<td>Ensure that all   the Claims have a compliant Last Change Date
+according to the defined pattern</td>
+<td>(#Last Change   Date not following the defined pattern in Claims
+Table / #Claims) -consider   the fields that are not null-</td>
+<td>% of Claims   where Last change date from Claims table not following
+the defined format   pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Last Change Date</td>
+<td>Validity</td>
+<td>DQBR020</td>
+<td>Ensure that all   claims have a last change date later than
+01/01/1901.</td>
+<td>(#Last Change   Date not valid in Customer Table / #Customers)
+-consider the fields that are   not null-</td>
+<td>% of Claims   where Last Change Date field is not valid (before
+01/01/1901 and after today)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Loss Ocurrence Date</td>
+<td>Completeness</td>
+<td>DQBR021</td>
+<td>Ensure that all   Claims have the Loss Ocurrence Date filled
+out</td>
+<td>(#Loss Ocurrence   Date empty or null in Claims Table /
+#Claims)</td>
+<td>% of Claims   where Loss Ocurrence Date is empty or null in the
+table</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Loss Ocurrence Date</td>
+<td>Validity</td>
+<td>DQBR022</td>
+<td>Ensure that the   all Claims have a compliant  Loss   Ocurrence Date
+according to the defined pattern.</td>
+<td>(#Loss Ocurrence   Date not following the defined pattern in Claims
+Table / #Claims) -consider   the fields that are not null-</td>
+<td>% of Claims   where Loss Ocurrence Date from Claims table not
+following the defined format   pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Notification Date</td>
+<td>Completeness</td>
+<td>DQBR023</td>
+<td>Ensure that all   Claims have the Notification Date filled out</td>
+<td> (#Notification Date empty or null in Claims   Table / #Claims)</td>
+<td>% of Claims   where Notification Date is empty or null in the
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Notification Date</td>
+<td>Timeliness</td>
+<td>DQBR024</td>
+<td>Ensure that   Notification Date &gt;= Loss Occurrence Date</td>
+<td>(#Claims where   Notification Date &lt; Loss Occurrence Date in
+Claims Table / #Claims)   -consider the fields that are not null-</td>
+<td>% of Claims   where Notification Date &lt; Loss Occurrence Date</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Notification Date</td>
+<td>Validity</td>
+<td>DQBR025</td>
+<td>Ensure that all   the Claims have a compliant    Notification Date
+according to the defined pattern.</td>
+<td>(#Notification   Date not following the defined pattern in Claims
+Table / #Claims) -consider   the fields that are not null-</td>
+<td>% of Claims   where Notification date from Claims table not
+following the defined format   pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Notification Date</td>
+<td>Validity</td>
+<td>DQBR026</td>
+<td>Ensure that all   the Claims have a Notification Date later than
+01/01/1901.</td>
+<td>(#Notification   Date not valid in Claim Table / #Claims) -consider
+the fields that are not   null-</td>
+<td>% of Claims   where Notification date field is not valid (before
+01/01/1901 and after today   )</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Paid Amount</td>
+<td>Consistency</td>
+<td>DQBR027</td>
+<td>Ensure that all   Claims have a Paid Amount linked when the status
+of the claim is   closed/accepted</td>
+<td>(#Paid Amount   empty or null in Claim Table when Claim Status is
+closed or accepted /   #Claims)</td>
+<td>% of Claims   where Paid Amount is empty or null in the Claim table
+when the status of the   claim is closed or accepted</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Paid Amount</td>
+<td>Validity</td>
+<td>DQBR028</td>
+<td>Ensure that all   Policies have a Paid Amount &gt; 0</td>
+<td> (#PaidAmount &gt; 0 in Claim Table /   #Claims) -consider the
+fields that are not null-</td>
+<td>% of Claims   where of Paid Amount is not valid (&lt;= 0 )</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Procedure Codes</td>
+<td>Completeness</td>
+<td>DQBR029</td>
+<td>Ensure that all   the Claims have the Procedure Code (ICD) filled
+out</td>
+<td>(#Procedure Code   empty or null in Claim Table / #Claims)</td>
+<td>% of Claims   where Procedure Code is empty or null in the Claim
+table</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Procedure Codes</td>
+<td>Validity</td>
+<td>DQBR030</td>
+<td>Ensure that all   Procedure Codes (ICD) on Claims have a compliant
+ID according to the defined   pattern.</td>
+<td>(#Procedure Code   not in the defined list in Claims Table /
+#Claims) -consider the fields that   are not null-</td>
+<td>% of Claims   where Procedure Code value is not in the expected list
+of Procedure Code</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Reopening Date</td>
+<td>Validity</td>
+<td>DQBR031</td>
+<td>Ensure that all   Policies have a compliant Reopening Date according
+the defined pattern</td>
+<td>(#Reopening Date   not following the defined pattern in Claim Table
+/ #Claims) -consider the   fields that are not null-</td>
+<td>% of Claims   where Reopening Date from Claim table not following
+the defined format   pattern</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Repairability</td>
+<td>Validity</td>
+<td>DQBR032</td>
+<td>Ensure that the   all Accidents have a Repairability that belongs to
+the list defined.</td>
+<td> (#Accidents where Repairability not in the   defined list in
+Accident Table/#Accidents -consider the fields that are
+not   null-)</td>
+<td>% of Accidents   where Repairability value is not in the expected
+list of Repairability</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Settlement Date</td>
+<td>Validity</td>
+<td>DQBR033</td>
+<td>Ensure that all   the Claims have a compliant Settlement Date
+according to the defined pattern</td>
+<td>(#Settlement   Date not following the defined pattern in Claims
+Table / #Claims) -consider   the fields that are not null-</td>
+<td>% of Claims   where Settlement Date from Claims table not following
+the defined format   pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Settlement Date</td>
+<td>Validity</td>
+<td>DQBR034</td>
+<td>Ensure that all   claims have a Settlement Date later than
+01/01/1901.</td>
+<td>(#Settlement   Date not valid in Claim Table / #Claims) -consider
+the fields that are not   null-</td>
+<td>% of Claims   where Settlement date field is not valid (before
+01/01/1901 and after today)</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Source of the Claim</td>
+<td>Completeness</td>
+<td>DQBR035</td>
+<td>Ensure that all   the Claims have the Source of the Claim filled
+out</td>
+<td>(#Source of the   Claim empty or null in Claim Table / #Claims)</td>
+<td>% of Claims   where Source of the Claim is empty or null in the
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Source of the Claim</td>
+<td>Validity</td>
+<td>DQBR036</td>
+<td>Ensure that the   Source of the Claim belongs to the list
+defined</td>
+<td>(#Source of the   Claim not in the defined list in Claim Table /
+#Claims) -consider the fields   that are not null-</td>
+<td>% of Claims   where Source of the Claim value is not in the expected
+list</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Towing Needed</td>
+<td>Validity</td>
+<td>DQBR037</td>
+<td>Ensure that all   Claims have a Towing Needed that belongs to the
+list defined.</td>
+<td>(#Claims where   Towing Needed not in the defined list in Claims
+Table / #Claims) -consider   the fields that are not null-</td>
+<td>% of Accidents   where Towing needed value is not in the expected
+list of Towing needed</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Treatment Consumables</td>
+<td>Validity</td>
+<td>DQBR038</td>
+<td>Ensure that the   Treatment Consumables of the claim belong to the
+defined list</td>
+<td>(#Claims where   Treatment Consumables is not in the defined list /
+#Claims) -consider the   fields that are not null- </td>
+<td>% of claims   where Treatment consumables does not belong to a
+defined list</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Treatment Drugs</td>
+<td>Validity</td>
+<td>DQBR039</td>
+<td>Ensure that the   Treatment Drugs of the claim belong to the defined
+list</td>
+<td>(#Claims where   Treatment Drugs is not in the dedicated list /
+#Claims) -consider the fields   that are not null-</td>
+<td>% of claims   where Treatment drugs does not belong to a defined
+list</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Type of Claim</td>
+<td>Completeness</td>
+<td>DQBR040</td>
+<td>Ensure that all   Policies have the Type of Claim filled out</td>
+<td> (#Type of Claim empty or null in Claims   Table / #Claims)</td>
+<td>% of Claims   where Type of Claim field is empty or null in Claim
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Claims</td>
+<td>Type of Claim</td>
+<td>Validity</td>
+<td>DQBR041</td>
+<td>Ensure that Type   of Claim belongs to the list defined</td>
+<td>(#Type of Claim   not in the defined list in Claim Table / #Claims)
+-consider the fields that   are not null-</td>
+<td>% of Claims   where Type of Claim value is not in the expected
+list</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>License Plate Number</td>
+<td>Uniqueness</td>
+<td>DQBR042</td>
+<td>Ensure that the   License Plate Number is unique throughout all the
+motor policies</td>
+<td>(#License Plate   Number duplicated in Policy table / #Policies)
+-consider the fields that are   not null-</td>
+<td>% of duplicated   License Plate Number on a policy</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Postal Code of the Risk</td>
+<td>Completeness</td>
+<td>DQBR043</td>
+<td>Ensure that all   Policies have the Postal Code of Risk (excl.
+motor) filled out</td>
+<td>(#Postal Code of   the Risk (excl. motor) empty or null in Policy
+Table / #Policies)</td>
+<td>% of Policies   where Postal Code of the Risk (excl. motor) is empty
+or null in the Policy   table</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Postal Code of the Risk</td>
+<td>Validity</td>
+<td>DQBR044</td>
+<td>Ensure that all   the Policies have a compliant Postal Code of the
+Risk (excl. motor) according   to the defined pattern</td>
+<td> (#Postal code of risk (excl. motor) not   following the defined
+pattern in Policy Table/#Policies -consider the fields   that are not
+null-)</td>
+<td>% of Policies   where Postal Code of the risk (excl. motor) from
+Policy table not following   the defined format pattern</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Purpose of Vehicle</td>
+<td>Validity</td>
+<td>DQBR045</td>
+<td>Ensure that   Purpose of Vehicle belongs to the list defined</td>
+<td>(#Purpose of   Vehicle is not in the expected list in Policy Table /
+#Policies)  -consider the fields that are not null-</td>
+<td>% of Purpose of   Vehicle from Policy table is not in the expected
+list</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Registration Number/VIN</td>
+<td>Completeness</td>
+<td>DQBR046</td>
+<td>For Motor,   ensure that all Policies have the Registration
+Number/VIN filled out</td>
+<td>(#Registration   Number/VIN empty or null in Policy Table /
+#Policies)</td>
+<td>% of Policies   where Registration Number/VIN is empty or null in
+the Policy table</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Registration Number/VIN</td>
+<td>Validity</td>
+<td>DQBR047</td>
+<td>Ensure that the   all Policies have a compliant Registration
+Number/VIN according to the   defined pattern.</td>
+<td>(#Registration   Number/VIN not following the defined pattern in
+Policy Table / #Policies)   -consider the fields that are not null-</td>
+<td>% of Policies   where Registration Number/VIN from Policy table not
+following the defined   format pattern</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Type of Coverage</td>
+<td>Completeness</td>
+<td>DQBR048</td>
+<td>Ensure that all   Policies have the Type of Coverage filled out</td>
+<td>(#Type of   Coverage empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Type of Coverage field is empty or null in
+Policy table</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Type of Coverage</td>
+<td>Validity</td>
+<td>DQBR049</td>
+<td>Ensure that all   the Policies have a Type of Coverage that belongs
+to the list defined</td>
+<td>(#Type of   Coverage not in the defined list in Policy Table
+/#Policies) -consider the   fields that are not null-</td>
+<td>% of Policies   where Type of Coverage value is not in the expected
+list of Type of Coverage</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Type of Vehicle</td>
+<td>Completeness</td>
+<td>DQBR050</td>
+<td>Ensure that all   Policies have the Type of Vehicle filled out</td>
+<td>(#Type of   Vehicle empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Type of Vehicle is empty or null in the Policy
+table</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Type of Vehicle</td>
+<td>Validity</td>
+<td>DQBR051</td>
+<td>Ensure that the   all Policies have a Type of Vehicle that belongs
+to the list defined</td>
+<td>(#Type of   Vehicle not in the defined list in Policy Table /
+#Policies) -consider the   fields that are not null-</td>
+<td>% of Policies   where Type of Vehicle value is not in the expected
+list of Type of Vehicle</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Year Vehicle</td>
+<td>Completeness</td>
+<td>DQBR052</td>
+<td>For Motor,   ensure that all Policies have the Year Vehicle filled
+out.</td>
+<td>(#Year Vehicle   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Year Vehicle is empty or null in the Policy
+table</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Year Vehicle</td>
+<td>Validity</td>
+<td>DQBR053</td>
+<td>For Motor,   ensure that the all Policies have a compliant Year
+Vehicle according to the   defined pattern.</td>
+<td>(#Year Vehicle   not following the defined pattern in Policy Table /
+#Policies) -consider the   fields that are not null-</td>
+<td>% of Policies   where Year Vehicle is not following the defined
+format pattern</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Coverage</td>
+<td>Year Vehicle</td>
+<td>Validity</td>
+<td>DQBR054</td>
+<td>Ensure that all   Policies have a Year Vehicle higher than 1901</td>
+<td>(#Year Vehicle   not valid in Policy Table / #Policies) -consider
+the fields that are not   null-</td>
+<td>% of Policies   where Year Vehicle field is not valid (before 1901
+and after 2020)</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Activity of Customer</td>
+<td>Completeness</td>
+<td>DQBR055</td>
+<td>Ensure that all   corporate Customers have the Activity of Customer
+filled out</td>
+<td>(#Activity of   Customer empty or null in Customer Table /
+#Customers)</td>
+<td>% of Customers   where Activity of Customer field is empty or null
+in Customer table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Activity of Customer</td>
+<td>Validity</td>
+<td>DQBR056</td>
+<td>Ensure that all   the corporate Customers have a Activity of
+Customer that belongs to the list   defined.</td>
+<td>(#Customers   where Activity of Customer not in the defined list in
+Customer Table /   #Customers) -consider the fields that are not
+null-</td>
+<td>% of Customers   where Activity of Customer value is not in the
+expected list of Activity of   Customer</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Address</td>
+<td>Completeness</td>
+<td>DQBR057</td>
+<td>Ensure that all   Customer have the Address filled out</td>
+<td>(#Address empty   or null in Customer Table / #Customer)</td>
+<td>% of Customer   where Address is empty or null in the table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Company National ID</td>
+<td>Completeness</td>
+<td>DQBR088</td>
+<td>Ensure that all   the corporate Customers have the Company National
+ID filled out</td>
+<td>(#Company   National ID empty or null in Customer Table /
+#Customers)</td>
+<td>% of Customers   where Corporate National ID field is empty or null
+in Customer table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Company National ID</td>
+<td>Uniqueness</td>
+<td>DQBR089</td>
+<td>Ensure that   every single corporate Customer has only one Company
+National ID</td>
+<td> (#Company National ID duplicated from   Customer Table /
+#Customers) -consider the fields that are not null-</td>
+<td>% of duplicated   Company National ID from Customer table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>CL</td>
+<td>Customer</td>
+<td>Company National ID</td>
+<td>Validity</td>
+<td>DQBR090</td>
+<td>Ensure that the   all the corporate Customers have a compliant
+Company National ID according to   the defined pattern</td>
+<td>(#Company   National ID not following the defined pattern in
+Customer Table / #Customers)   -consider the fields that are not
+null-</td>
+<td>% of Customers   where Company National ID from Customer table not
+following the defined   format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Contact Preferences</td>
+<td>Completeness</td>
+<td>DQBR058</td>
+<td>Ensure that all   the Customers have the Contact Preferences filled
+out</td>
+<td>(#Contact   Preferences empty or null in Customer Table /
+#Customer)</td>
+<td>% of Customer   where Contact Preferences is empty or null in the
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer ID</td>
+<td>Completeness</td>
+<td>DQBR059</td>
+<td>Ensure that all   Customers have the Customer ID filled out</td>
+<td>(#Customer ID   empty or null in Customer Table / #Customers)</td>
+<td>% of Customers   where Customer ID field is empty or null in
+Customer table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer ID</td>
+<td>Integrity</td>
+<td>DQBR060</td>
+<td>Ensure the   logical relationship between Customer and Policy.
+     All Customer ID in your Policy  table   must exist in your Customer
+table.</td>
+<td>(#Customer ID   that does not belong into Customer Table /
+#Policies) -consider the fields   that are not null-</td>
+<td>% of Customer ID   in your Policy table that doesn’t exist in the
+Customer table </td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer ID</td>
+<td>Uniqueness</td>
+<td>DQBR061</td>
+<td>Ensure that   every single Customer has only one Customer ID</td>
+<td>(#Customer ID   duplicated from Customer Table / #Customers)
+-consider the fields that are   not null-</td>
+<td>% of Duplicated   Customer ID from Customer table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer ID</td>
+<td>Validity</td>
+<td>DQBR062</td>
+<td>Ensure that all   the Customers have a compliant Customer ID
+according to the defined pattern</td>
+<td>(#Customer ID   not following the defined pattern in Customer Table
+/ #Customers) -consider   the fields that are not null-</td>
+<td>% of Customer ID   from Customer table not following the defined
+format pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer Link</td>
+<td>Completeness</td>
+<td>DQBR063</td>
+<td>Ensure that all   the Customers that have a link/relationship to
+other customers have their   link explained. Not null or empty when a
+relationship exists.</td>
+<td>(#Records in   relationship table without Customer Link informed /
+#Records in relationship   table)</td>
+<td>% of Customers   with a relationship where Customer Link is empty or
+null in the Relationship   table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Customer Link</td>
+<td>Validity</td>
+<td>DQBR064</td>
+<td>Ensure that all   the Customers that have a link to other customers
+have a link that belongs to   the defined list</td>
+<td>(#Records in   relationship table without Customer Link in the
+defined list / #Records in   relationship table) -consider the fields
+that are not null-</td>
+<td>% of Customers   with a relationship where Customer Link is not in
+the expected list</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of Birth</td>
+<td>Completeness</td>
+<td>DQBR065</td>
+<td>Ensure that all   Customers have the Date of Birth filled out</td>
+<td>(#Date of Birth   empty or null in Customer Table / #Customers)</td>
+<td>% of Customers   where Date of Birth field is empty or null in
+Customer table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of Birth</td>
+<td>Validity</td>
+<td>DQBR066</td>
+<td>Ensure that all   the Customers have a compliant Date of Birth
+according to the defined pattern</td>
+<td>(#Date of Birth   not following the defined pattern in Customer
+Table / #Customers) -consider   the fields that are not null-</td>
+<td>% of Customers   where Date of Birth from Customer table not
+following the defined format   pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of Birth</td>
+<td>Validity</td>
+<td>DQBR067</td>
+<td>Ensure that all   the Customers have a Date of Birth later than
+01/01/1901</td>
+<td> (#Date of Birth not valid in Customer Table   / #Customers)
+-consider the fields that are not null-</td>
+<td>% of Customers   where Date of Birth field is not valid (before
+01/01/1901 and after today)</td>
+</tr>
+<tr class="odd">
+<td>Health / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of Death</td>
+<td>Timeliness</td>
+<td>DQBR068</td>
+<td>Ensure that all   the Customer’s Date of Death &gt; Date of
+Birth</td>
+<td>(#Customers   where Date of Death &lt;= Date of Birth / #Customers)
+-consider the Date of   Death fields that are not null-</td>
+<td>% of Customers   with Date of Death &lt;= Date of Birth</td>
+</tr>
+<tr class="even">
+<td>Health / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Date of Death</td>
+<td>Timeliness</td>
+<td>DQBR069</td>
+<td>Ensure that all   the Customers Date of Death &lt; Current Date</td>
+<td>(#Customers   where Date of Death &gt; Today / #Customers) -consider
+the fields that are   not null-</td>
+<td>% of Customers   Date of Death &gt; Today</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Customer</td>
+<td>Driving License Identification Number</td>
+<td>Completeness</td>
+<td>DQBR070</td>
+<td>Ensure that all   the Customers have the Driving License
+Identification Number filled out</td>
+<td>(#Driving   License Identification Number empty or null in Customer
+Table / #Customers)</td>
+<td>% of Customers   where Driving License Identification Number field
+is empty or null in   Customer table</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL </td>
+<td>Customer</td>
+<td>Driving License Identification Number</td>
+<td>Validity</td>
+<td>DQBR071</td>
+<td>Ensure that the   all the Customers have a compliant Driving License
+Identification Number   according to the defined pattern</td>
+<td>(#Driving   License Identification Number not following the defined
+pattern in Customer   Table / #Customers) -consider the fields that are
+not null-</td>
+<td>% of Customers   where Driving License Identification Number field
+from Customer table not   following the defined format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Email Address</td>
+<td>Completeness</td>
+<td>DQBR072</td>
+<td>Ensure that all   the Customers have the Email Address filled
+out</td>
+<td>(#Email Address   empty or null in Customer Table / #Customers)</td>
+<td>% of Customers   where Email Address field is empty or null in
+Customer table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Email Address</td>
+<td>Validity</td>
+<td>DQBR073</td>
+<td>Ensure that all   the Customers have a compliant Email Address
+according to the defined pattern</td>
+<td>(#Email Address   not following the defined pattern in Customer
+Table / #Customers) -consider   the fields that are not null-</td>
+<td>% of Customers   where Email Address field from Customer table not
+following the defined   format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>First Name</td>
+<td>Completeness</td>
+<td>DQBR074</td>
+<td>Ensure that all   the Customers have their First Name filled out (if
+type of customer is not   corporate)</td>
+<td>(#First Name   empty or null in Customer Table / # Customer)</td>
+<td>% of Customers   where First Name is empty or null in the Customer
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Gender</td>
+<td>Completeness</td>
+<td>DQBR075</td>
+<td>Ensure that all   Customers have the Gender filled out</td>
+<td>(#Gender empty   or null in Customer Table / #Customers)</td>
+<td>% of Customers   where Gender is empty or null in the Customer
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Gender</td>
+<td>Validity</td>
+<td>DQBR076</td>
+<td>Ensure that all   the Customers have a Gender that belongs to the
+list defined</td>
+<td>(#Gender not in   the defined list in Customer Table / #Customers)
+-consider the fields that   are not null-</td>
+<td>% of Customers   where Gender is not in the expected list of
+Gender</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Last Name</td>
+<td>Completeness</td>
+<td>DQBR077</td>
+<td>Ensure that all   the Customers have their Last Name filled out</td>
+<td>(#Last Name   empty or null in Customer Table / # Customer)</td>
+<td>% of Customers   where Last Name is empty or null in the Customer
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Marital Status</td>
+<td>Completeness</td>
+<td>DQBR078</td>
+<td>Ensure that all   the Customers have their Marital Status filled
+out</td>
+<td>(#Marital Status   empty or null in Customer Table / #Customer)</td>
+<td>% of Customer   where Marital Status is empty or null in the
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Marital Status</td>
+<td>Validity</td>
+<td>DQBR079</td>
+<td>Ensure that all   the Customers have a Marital Status that belongs
+to the list defined</td>
+<td>(#Customers   where Marital Status not in the defined list in
+Customer Table / #Customers)   -consider the fields that are not
+null-</td>
+<td>% of Customers   where Marital Status value is not in the expected
+list of Marital status</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Phone Number</td>
+<td>Completeness</td>
+<td>DQBR080</td>
+<td>Ensure that all   the Customers have the Phone Number filled
+out</td>
+<td>(#Phone Number   empty or null in Customer Table / #Customer)</td>
+<td>% of Customers   where Phone Number is empty or null in the Customer
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Phone Number</td>
+<td>Validity</td>
+<td>DQBR081</td>
+<td>Ensure that all   the Customers have a compliant Phone Number
+according to the defined pattern</td>
+<td>(#Phone Number   not following the defined pattern in Customer Table
+/ #Customer) -consider   the fields that are not null-</td>
+<td>% of Customers   where Phone Number from Customer table not
+following the defined format   pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Socio-economic Classification</td>
+<td>Completeness</td>
+<td>DQBR082</td>
+<td>Ensure that all   Customer have the Socio-economic Classification
+filled out</td>
+<td>(#Socio-economic   Classification empty or null in Customer Table /
+#Customer)</td>
+<td>% of Customers   where Socio-economic Classification is empty or
+null in the Customer table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL</td>
+<td>Customer</td>
+<td>Socio-economic Classification</td>
+<td>Validity</td>
+<td>DQBR083</td>
+<td>Ensure that all   the Customers have a 
+Socio-economic   Classification that belongs to the list defined</td>
+<td>(#Customers   where Socio-economic Classification not in the defined
+list in Customer Table   / #Customers) -consider the fields that are not
+null-</td>
+<td>% of Customers   where Socio-economic Classification value is not in
+the expected list</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Type of Customer</td>
+<td>Completeness</td>
+<td>DQBR084</td>
+<td>Ensure that all   the Customers have the Type of Customer filled
+out</td>
+<td>(#Type of   Customer empty or null in Customer Table /
+#Customers)</td>
+<td>% of Customers   where Type of Customer is empty or null in the
+Customer table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Type of Customer</td>
+<td>Validity</td>
+<td>DQBR085</td>
+<td>Ensure that the   all Customers have a Type of Customer that belongs
+to the list defined.</td>
+<td> (#Type of Customer not in the defined list   in
+CustomerTable/#Customers -consider the fields that are not null-)</td>
+<td>% of Customers   where Type of Customer value is not in the expected
+list of Type of Customer</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Type of Policy Holder</td>
+<td>Completeness</td>
+<td>DQBR086</td>
+<td>Ensure that all   the Customers have the Type of Policy Holder
+filled out</td>
+<td>(#Type of Policy   Holder empty or null in Customer Table /
+#Customers)</td>
+<td>% of Customers   where Type of Policy Holder is empty or null in the
+Customer table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Customer</td>
+<td>Type of Policy Holder</td>
+<td>Validity</td>
+<td>DQBR087</td>
+<td>Ensure that all   the Customers have a Type of Policy Holder that
+belongs to the list defined</td>
+<td>(#Type of Policy   Holder not in the defined list in Customer Table
+/ #Customers) -consider the   fields that are not null-</td>
+<td>% of Customers   where Type of Policy Holder value is not in the
+expected list of Type of   Policy Holder</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor Address</td>
+<td>Completeness</td>
+<td>DQBR091</td>
+<td>Ensure that all   the Distributors have the Distributor Address
+filled out</td>
+<td>(#Distributor   Address empty or null in Distributors Table
+/#Distributors)</td>
+<td>% of   Distributors where Address is empty or null in the
+Distributors table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor ID</td>
+<td>Completeness</td>
+<td>DQBR092</td>
+<td>Ensure that all   Distributors have the Distributor ID filled
+out</td>
+<td>(#Distributor ID   empty or null in Distributor Table /
+#Distributors)</td>
+<td>% of   Distributors where Distributor ID field is empty or null in
+Distributor table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor ID</td>
+<td>Integrity</td>
+<td>DQBR093</td>
+<td>Ensure the   logical relationship between Distributor and Policy.
+     All Distributor ID in your Policy table should exists in the
+Distributor   table</td>
+<td>(#Distributor ID   that does not belong into Policy Table /
+#Distributors) -consider the fields   that are not null-</td>
+<td>% of Distributor   ID that don´t exist in the Policy table </td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor ID</td>
+<td>Uniqueness</td>
+<td>DQBR094</td>
+<td>Ensure that the   Distributor ID is unique throughout the
+Distributor table</td>
+<td>(#Distributor ID   duplicated from Distributor Table /
+#Distributors) -consider the fields that   are not null-</td>
+<td>% of duplicated   Distributor number from Distributor table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor ID</td>
+<td>Validity</td>
+<td>DQBR095</td>
+<td>Ensure that all   the Distributors have a compliant Distributor ID
+according to the defined   pattern</td>
+<td>(#Distributor ID   not following the defined pattern in Distributor
+Table / #Distributors)   -consider the fields that are not null-</td>
+<td>% of Distributor   ID from Distributor table not following the
+defined format pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor Name</td>
+<td>Completeness</td>
+<td>DQBR096</td>
+<td>Ensure that all   the Distributors have the Distributor Name filled
+out</td>
+<td>(#Distributor   Name empty or null in Distributor Table /
+#Distributor)</td>
+<td>% of   Distributors where Distributor Name is empty or null in the
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor NPN</td>
+<td>Completeness</td>
+<td>DQBR097</td>
+<td>Ensure that all   the Distributors have the Distributor NPN filled
+out</td>
+<td>(#Distributor   NPN empty or null in Distributor Table /
+#Distributors)</td>
+<td>% of   Distributors where Distributor NPN field is empty or null in
+Distributor   table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor NPN</td>
+<td>Uniqueness</td>
+<td>DQBR098</td>
+<td>Ensure that   every single Distributor has only one Distributor
+NPN</td>
+<td>(#Distributor   NPN duplicated from Distributor Table /
+#Distributors) -consider the fields   that are not null-</td>
+<td>% of duplicated   Distributor NPN from Distributor table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Distributor NPN</td>
+<td>Validity</td>
+<td>DQBR099</td>
+<td>Ensure that all   the Distributors have a compliant Distributor NPN
+according to the defined   pattern</td>
+<td>(#Distributor   NPN not following the defined pattern in Distributor
+Table / #Distributors)   -consider the fields that are not null-</td>
+<td>% of   Distributors where Distributor NPN from Distributor table not
+following the   defined format pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Type of Distributor</td>
+<td>Completeness</td>
+<td>DQBR100</td>
+<td>Ensure that all   Distributors have the Type of Distributor filled
+out</td>
+<td>(#Type of   Distributor empty or null in Distributor Table /
+#Distributors)</td>
+<td>% of   Distributors where Type of Distributor is empty or null in
+the Distributor   table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Distributor</td>
+<td>Type of Distributor</td>
+<td>Validity</td>
+<td>DQBR101</td>
+<td>Ensure that all   the Distributors have a Type of Distributor that
+belongs to the list defined</td>
+<td>(#Type of   Distributor not in the defined list in Distributor Table
+/ #Distributors)   -consider the fields that are not null-</td>
+<td>% of   Distributors where Type of Distributor value is not in the
+expected list of   Type of Distributor</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Commercial rate</td>
+<td>Completeness</td>
+<td>DQBR102</td>
+<td>Ensure that all   Policies have the Commercial Rate value filled
+out</td>
+<td>(#Commercial   Rate empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Commercial Rate field is empty or null in
+Policy table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Commission</td>
+<td>Completeness</td>
+<td>DQBR104</td>
+<td>Ensure that all   Policies have the Commision filled out</td>
+<td>(#Commision   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Commision is empty or null in the Policy
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Commission</td>
+<td>Consistency</td>
+<td>DQBR105</td>
+<td>Ensure that the   all Policies have a Premium &gt;= Commision</td>
+<td> (#Policy where Premium &lt; Commision in   Policy Table / #Policy)
+-consider the fields that are not null-</td>
+<td>% of Policy   where Premium &lt; Commision</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Commission</td>
+<td>Validity</td>
+<td>DQBR106</td>
+<td>Ensure that all   Policies have a Commision &gt; 0</td>
+<td>(#Commision   &lt;= 0 in Policy Table /#Policies) -consider the
+fields that are not null-</td>
+<td>% of Policies   where the Commision is not valid (&lt;=0 )</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Currency</td>
+<td>Completeness</td>
+<td>DQBR107</td>
+<td>Ensure that all   Policies have the Currency code value filled
+out</td>
+<td>(#Currency empty   or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Currency field is empty or null in Policy
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Currency</td>
+<td>Validity</td>
+<td>DQBR108</td>
+<td>Ensure that all   the currencies belong to the list defined (ISO
+4217)</td>
+<td>(#Currency not   in the defined list of ISO 4217 / #Policies)
+-consider the fields that are   not null-</td>
+<td>% of Policies   where currency code is not in the expected list of
+ISO4217</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Customer Status</td>
+<td>Completeness</td>
+<td>DQBR109</td>
+<td>Ensure that all   Policies have the Customer Status asociated and
+filled out</td>
+<td>(#Policies where   Customer Status is null / #Policies)</td>
+<td>% of Policies   where Customer Status empty or null</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Customer Status</td>
+<td>Validity</td>
+<td>DQBR110</td>
+<td>Ensure that the   Customer Status is defined within a list in the
+Policy table</td>
+<td>(#Customer   Status not on the defined list within the policy table
+/ #Policies) -consider   the fields that are not null-</td>
+<td>% of Customer   Status not in a defined list for the Policy
+table</td>
+</tr>
+<tr class="even">
+<td>P&amp;C</td>
+<td>PL</td>
+<td>Policy</td>
+<td>Driving license obtention date</td>
+<td>Validity</td>
+<td>DQBR111</td>
+<td>Ensure that all   the Policies have a compliant Driving License
+Obtention Date according to the   defined pattern</td>
+<td>(#Driving   License Obtention Date not following the defined pattern
+in Policy Table /   #Policies) -consider the fields that are not
+null-</td>
+<td>% of Policies   where Driving License Obtention Date from Policy
+table not following the   defined format pattern</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL</td>
+<td>Policy</td>
+<td>Driving license obtention date</td>
+<td>Validity</td>
+<td>DQBR112</td>
+<td>Ensure that all   Policies have a Driving License Obtention Date
+later than 01/01/1901</td>
+<td>(#Policies where   Driving License Obtention Date is not valid /
+#Policies) -consider the fields   that are not null-</td>
+<td>% of Policies   where Driving License Obtention Date from Policy
+table is not valid  (before than 01/01/1901 after today)</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>End of validity</td>
+<td>Completeness</td>
+<td>DQBR113</td>
+<td>Ensure that all   Policy have the End of Validity filled out</td>
+<td>(#End of   Validity empty or null in Policy Table / #Policy)</td>
+<td>% of Policy   where End of Validity is empty or null in the
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>End of validity</td>
+<td>Consistency</td>
+<td>DQBR114</td>
+<td>Ensure that all   Policies have a End of Validity &gt; Registration
+Date</td>
+<td>(#Policies where   End of validity &lt; Registration Date /
+#Policies) -consider the fields that   are not null-</td>
+<td>% of Policies   where End of Validity &lt; Registration Date from
+Policy table </td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>End of validity</td>
+<td>Validity</td>
+<td>DQBR115</td>
+<td>Ensure that all   Policies have a End of Validity following the
+defined pattern</td>
+<td>(#End of   Validity not following the defined pattern in Policy
+Table / #Policies)   -consider the fields that are not null-</td>
+<td>% of Policies   where End of validity from Policy table not
+following the defined format   pattern</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Gross Capacity</td>
+<td>Completeness</td>
+<td>DQBR116</td>
+<td>Ensure that all   Policies have the Gross Capacity (insured good
+value) filled out</td>
+<td>(#Gross Capacity   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Gross Capacity field is empty or null in
+Policy table</td>
+</tr>
+<tr class="even">
+<td>P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Gross Capacity</td>
+<td>Consistency</td>
+<td>DQBR117</td>
+<td>Ensure that all   Policies have a Sum Insured &gt;= Gross
+capacity</td>
+<td>(#Policies where   Sum Insured &lt; Gross capacity in Policy Table /
+#Policies) -consider the   fields that are not null-</td>
+<td>% of Policies   where Sum Insured &lt; Gross Capacity</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Last Change Date</td>
+<td>Validity</td>
+<td>DQBR118</td>
+<td>Ensure that all   Policies have a compliant Coverage Last Change
+Date according to the defined   pattern</td>
+<td>(#Coverage Last   Change Date not following the defined pattern in
+Policy Table / #Policies)   -consider the fields that are not null-</td>
+<td>% of Coverage   Last Change Date from Policy table not following the
+defined format pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Last Change Date</td>
+<td>Validity</td>
+<td>DQBR119</td>
+<td>Ensure that all   Policies have a Coverage Last Change Date later
+than 01/01/1901</td>
+<td>(#Coverage Last   Change Date not valid in Policy Table / #Policies)
+-consider the fields that   are not null-</td>
+<td>% of Policies   where Coverage Last Change Date field is not valid
+(before 01/01/1901 and   after today)</td>
+</tr>
+<tr class="odd">
+<td>P&amp;C</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Number Insured Goods</td>
+<td>Validity</td>
+<td>DQBR120</td>
+<td>Ensure that all   Policies have a Number of Insured Goods    &gt;=
+1</td>
+<td>(#Number of   Insured Goods &lt; 1 in Policy Table / #Policies)
+-consider the fields that   are not null-</td>
+<td>% of Policies   where the Number of Insured Goods is not valid (&lt;
+1)</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy ID</td>
+<td>Completeness</td>
+<td>DQBR121</td>
+<td>Ensure that all   Policies have the Policy ID filled out</td>
+<td>(#Policy ID   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Policy ID field is empty or null in Policy
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy ID</td>
+<td>Integrity</td>
+<td>DQBR122</td>
+<td>Ensure the   logical relationship between Policy and Claims.
+     All Policy Id in  your table Claim   must exist in your table
+Policy.</td>
+<td>(#Policy ID that   does not belong into Claim Table / #Policies)
+-consider the fields that are   not null-</td>
+<td>% of Policies ID   that don´t exist in the Claims table </td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy ID</td>
+<td>Uniqueness</td>
+<td>DQBR123</td>
+<td>Ensure that   every single Policy (Product, Registration/Inception
+Date, Customer) has only   one Policy ID</td>
+<td>(#Policy ID   duplicated from Policy Table / #Policies) -consider
+the fields that are not   null-</td>
+<td>% of duplicated   Policy ID from Policy table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy ID</td>
+<td>Validity</td>
+<td>DQBR124</td>
+<td>Ensure that the   all Policies have a compliant Policy ID according
+to the defined pattern.</td>
+<td>(#Policy ID not   following the defined pattern in Policy Table /
+#Policies) -consider the   fields that are not null-</td>
+<td>% of Policy ID   from Policy table not following the defined format
+pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Product Name</td>
+<td>Completeness</td>
+<td>DQBR125</td>
+<td>Ensure that all   Policy have the Policy Product Name filled
+out</td>
+<td>(#Policy Product   Name empty or null in Policy Table /
+#Policy)</td>
+<td>% of Policy   where Policy Product Name is empty or null in the
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Product Type</td>
+<td>Completeness</td>
+<td>DQBR126</td>
+<td>Ensure that all   Policies have the Policy Product Type filled
+out</td>
+<td>(#Policy Product   Type empty or null in Policy Table /
+#Policies)</td>
+<td>% of Policies   where Policy Product Type is empty or null in the
+Policy table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Product Type</td>
+<td>Validity</td>
+<td>DQBR127</td>
+<td>Ensure that the   all Policies have a Policy Product Type that
+belongs to the list defined.</td>
+<td>(#Policy Product   Type not in the defined list in Policy Table /
+#Policies) -consider the   fields that are not null-</td>
+<td>% of Policies   where Policy Product Type value is not in the
+expected list of Policy Product   Type</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Status</td>
+<td>Completeness</td>
+<td>DQBR128</td>
+<td>Ensure that all   Policies have the Policy Status filled out</td>
+<td>(#Policy Status   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Policy Status field is empty or null in Policy
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Status</td>
+<td>Consistency</td>
+<td>DQBR129</td>
+<td>Ensure that all   closed policies Policies have a End of Validity
+registered.</td>
+<td>(#Policy Status   is closed and End of Validity is empty /
+#Policies) -consider the fields that   are not null-</td>
+<td>% of Policies   where Policy Status is closed and End of Validity
+field is empty</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policy Status</td>
+<td>Validity</td>
+<td>DQBR130</td>
+<td>Ensure that the   all Policies have a Policy Status that belongs to
+the list defined.</td>
+<td>(#Policy Status   not in the defined list in Policy Table /
+#Policies) -consider the fields   that are not null-</td>
+<td>% of Policies   where Policy Status value is not in the expected
+list of Policy Status</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Policyholder Name</td>
+<td>Completeness</td>
+<td>DQBR131</td>
+<td>Ensure that all   Policy have the Policyholder Name filled out</td>
+<td>(#Policyholder   Name empty or null in Policy Table / #Policy)</td>
+<td>% of Policy   where Policyholder Name is empty or null in the
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Premium</td>
+<td>Completeness</td>
+<td>DQBR132</td>
+<td>Ensure that all   Policies have the Premium filled out</td>
+<td>(#Premium empty   or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Premium is empty or null in the Policy
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Premium</td>
+<td>Validity</td>
+<td>DQBR133</td>
+<td>Ensure that all   Policies have a premium above 0</td>
+<td>(#Premium &gt; 0   in Policy Table / #Policies) -consider the fields
+that are not null-</td>
+<td>% of Policies   where the premium is valid (&gt;0 )</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Register/Inception Date</td>
+<td>Completeness</td>
+<td>DQBR134</td>
+<td>Ensure that all   Policies have the Register/Inception Date filled
+out</td>
+<td>(#Date of   Registration/Inception empty or null in Policy Table /
+#Policies)</td>
+<td>% of Policies   where Date of Registration/Inception field is empty
+or null in Policy table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Register/Inception Date</td>
+<td>Validity</td>
+<td>DQBR135</td>
+<td>Ensure that the   all Policies have a
+compliant    Register/Inception Date according to the defined
+pattern.</td>
+<td>(#Date of   Registration/Inception not following the defined pattern
+in Policy Table /   #Policies) -consider the fields that are not
+null-</td>
+<td>% of Policies   where Date of Registration/Inception from Policy
+table not following the   defined format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Register/Inception Date</td>
+<td>Validity</td>
+<td>DQBR136</td>
+<td>Ensure that all   Policies have a Registration Date later than
+01/01/1901</td>
+<td>(#Date of   Registration/Inception not valid in Policy Table /
+#Policies) -consider the   fields that are not null-</td>
+<td>% of Policies   where Date of Registration/Inception field is not
+valid (before  01/01/1901 and after today)</td>
+</tr>
+<tr class="even">
+<td>P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Sum Insured</td>
+<td>Completeness</td>
+<td>DQBR137</td>
+<td>Ensure that all   Policies have the Sum Insured filled out</td>
+<td>(#Sum Insured   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Sum Insured field is empty or null in Policy
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Technical Rate</td>
+<td>Completeness</td>
+<td>DQBR138</td>
+<td>Ensure that all   Policies have the Technical Rate value filled
+out</td>
+<td>(#Technical Rate   empty or null in Policy Table / #Policies)</td>
+<td>% of Policies   where Technical Rate field is empty or null in
+Policy table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Transaction Date </td>
+<td>Validity</td>
+<td>DQBR139</td>
+<td>Ensure that all   Policies have a compliant Transaction Date
+according to the defined pattern</td>
+<td>(#Transaction   Date not following the defined pattern in Policy
+Table / #Policies) -consider   the fields that are not null-</td>
+<td>% of Transaction   Date from Policy table not following the defined
+format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Policy</td>
+<td>Transaction Date </td>
+<td>Validity</td>
+<td>DQBR140</td>
+<td>Ensure that all   Policies have a Transaction Date later than
+01/01/1901</td>
+<td>(#Transaction   Date not valid in Policy Table / #Policies)
+-consider the fields that are not   null-</td>
+<td>% of Policies   where Transaction Date field is not valid (before
+01/01/1901 and after today)</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Date License Expiration</td>
+<td>Timeliness</td>
+<td>DQBR141</td>
+<td>Ensure that all   Providers have a license that hasn’t expired</td>
+<td>(#Providers   where Date License Expiration &lt; Today /#Providers)
+-consider the fields   that are not null-</td>
+<td>% of Providers   where license is expired</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Email Address</td>
+<td>Completeness</td>
+<td>DQBR142</td>
+<td>Ensure that all   Providers have the Email Address filled out</td>
+<td>(#Email Address   empty or null in Provider Table / #Providers)</td>
+<td>% of Providers   where Email Address field is empty or null in
+Provider table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Email Address</td>
+<td>Validity</td>
+<td>DQBR143</td>
+<td>Ensure that the   all Providers have a compliant Email Address
+according to the defined   pattern.</td>
+<td>(#Email Address   not following the defined pattern in Provider
+Table / #Providers) -consider   the fields that are not null-</td>
+<td>% of Providers   where Email Address field from Provider table not
+following the defined   format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>License Number</td>
+<td>Completeness</td>
+<td>DQBR144</td>
+<td>Ensure that all   Providers have the License Number filled out</td>
+<td>(#License Number   empty or null in Providers Table /
+#Providers)</td>
+<td>% of Providers   where license number is empty or null in the
+Providers table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Phone Number</td>
+<td>Completeness</td>
+<td>DQBR145</td>
+<td>Ensure that all   Providers have the Phone Number filled out</td>
+<td>(#Phone Number   empty or null in Provider Table / #Providers)</td>
+<td>% of Providers   where Phone Number is empty or null in the
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Phone Number</td>
+<td>Validity</td>
+<td>DQBR146</td>
+<td>Ensure that all   the Providers have a compliant Phone Number
+according to the defined pattern</td>
+<td>(#Phone number   not following the defined pattern in Provider Table
+/ #Providers) -consider   the fields that are not null-</td>
+<td>% of Providers   where Phone Number from Provider table not
+following the defined format   pattern</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider First Name</td>
+<td>Completeness</td>
+<td>DQBR147</td>
+<td>Ensure that all   Providers have the First Name filled out (if type
+of provider is not   corporate)</td>
+<td>(#First Name   empty or null in Providers Table / #Providers)</td>
+<td>% of Providers   where First Name is empty or null in the Providers
+table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider ID</td>
+<td>Completeness</td>
+<td>DQBR148</td>
+<td>Ensure that all   Providers have the Provider ID filled out</td>
+<td>(#Provider ID   empty or null in Provider Table / #Providers)</td>
+<td>% of Providers   where Provider ID field is empty or null in
+Provider table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider ID</td>
+<td>Integrity</td>
+<td>DQBR149</td>
+<td>Ensure the   logical relationship between Providers and Claims.
+     Every Provider ID in your Claim table should be in the Provider
+table.</td>
+<td>(#Provider ID   that does not belong into Claim Table / #Providers)
+-consider the fields that   are not null-</td>
+<td>% of Provider ID   that don´t exist in the Claim table </td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider ID</td>
+<td>Uniqueness</td>
+<td>DQBR150</td>
+<td>Ensure that the   Provider ID is unique throughout the Provider
+table</td>
+<td>(#Provider ID   duplicated from Provider Table / #Providers)
+-consider the fields that are   not null-</td>
+<td>% of duplicated   Provider number from Provider table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider ID</td>
+<td>Validity</td>
+<td>DQBR151</td>
+<td>Ensure that all   Providers have a compliant Provider ID according
+to the defined pattern</td>
+<td>(#Provider ID   not following the defined pattern in Provider Table
+/ #Providers) -consider   the fields that are not null-</td>
+<td>% of Provider ID   from Provider table not following the defined
+format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C / L&amp;S</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider Last Name</td>
+<td>Completeness</td>
+<td>DQBR152</td>
+<td>Ensure that all   Providers have the Last Name filled out</td>
+<td>(#Last Name   empty or null in Providers Table / #Providers)</td>
+<td>% of Providers   where First Name is empty or null in the Providers
+table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider National Identification   Number</td>
+<td>Completeness</td>
+<td>DQBR153</td>
+<td>Ensure that all   Providers have the Provider National
+Identification Number filled out</td>
+<td>(#Provider   National Identification Number empty or null in
+Provider Table / #Providers)</td>
+<td>% of Providers   where Provider national identification number field
+is empty or null in   Provider table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider National Identification   Number</td>
+<td>Uniqueness</td>
+<td>DQBR154</td>
+<td>Ensure that   every single Provider has only one Provider national
+identification number</td>
+<td>(#Provider   National Identification Number duplicated from Provider
+Table / #Providers   -consider the fields that are not null-)</td>
+<td>% of duplicated   Provider national identification number from
+Provider table</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider National Identification   Number</td>
+<td>Validity</td>
+<td>DQBR155</td>
+<td>Ensure that the   all Providers have a compliant Provider national
+identification number   according to the defined pattern.</td>
+<td>(#Provider   National Identification Number not following the
+defined pattern in Provider   Table / #Providers) -consider the fields
+that are not null-</td>
+<td>% of Providers   where Provider national identification number from
+Provider table not   following the defined format pattern</td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider Specialty</td>
+<td>Completeness</td>
+<td>DQBR156</td>
+<td>Ensure that all   Providers have the Provider Specialty filled
+out</td>
+<td>(#Provider   Specialty empty or null in Providers Table /
+#Providers)</td>
+<td>% of Providers   where Specialty is empty or null in the Providers
+table</td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Provider Specialty</td>
+<td>Validity</td>
+<td>DQBR157</td>
+<td>Ensure that the   Specialty of the Provider belongs to the defined
+list</td>
+<td>(#Provider where   Specialty is not in the defined list /
+#Providers) -consider the fields that   are not null-</td>
+<td>% of Providers   where Specialty does not belong to a defined
+list</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Type of Network</td>
+<td>Validity</td>
+<td>DQBR158</td>
+<td>Ensure that all   Providers have a Type of Network that belongs to
+the list defined</td>
+<td>(#Type of   Network not in the defined list in Provider Table /
+#Providers) -consider the   fields that are not null-</td>
+<td>% of Providers   where Agreed/Non-agreed value is not in the
+expected list</td>
+</tr>
+<tr class="even">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Type of Provider</td>
+<td>Completeness</td>
+<td>DQBR159</td>
+<td>Ensure that all   Providers have the Type of Provider filled
+out</td>
+<td> (#Type of Provider empty or null
+in   ProviderTable/#Providers)</td>
+<td>% of Providers   where Type of Provider is empty or null in the
+Provider table</td>
+</tr>
+<tr class="odd">
+<td>Health / P&amp;C</td>
+<td>PL / CL</td>
+<td>Provider</td>
+<td>Type of Provider</td>
+<td>Validity</td>
+<td>DQBR160</td>
+<td>Ensure that all   Providers have a Type of Provider that belongs to
+the list defined</td>
+<td>(#Type of   Provider not in the defined list in Provider Table /
+#Providers) -consider   the fields that are not null-</td>
+<td>% of Providers   where Type of Provider value is not in the expected
+list of Type of Provider</td>
+</tr>
+</tbody>
+</table>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+			    setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        }
+
+        // Immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            } else {
+                setTheme('theme-light');
+            }
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

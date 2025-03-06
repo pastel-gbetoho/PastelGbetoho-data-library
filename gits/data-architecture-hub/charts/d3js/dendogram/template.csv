@@ -1,0 +1,28 @@
+id,value,color
+Application Function,
+Application Function.Metadata Quality Management,2,#005F0F
+Application Function.Administration,2,#005F0F
+Application Function.Governance,2,#005F0F
+Application Function.Reference metadata management,2,#005F0F
+Application Function.Acquisition,
+Application Function.Acquisition.Data classficiation ,2,#005F0F
+Application Function.Acquisition.Data dictionary ,2,#005F0F
+Application Function.Acquisition.Data glossary ,2,#005F0F
+Application Function.Acquisition.Data usage ,2,#005F0F
+Application Function.Acquisition.Issue,2,#005F0F
+Application Function.Acquisition.Metadata association,2,#005F0F
+Application Function.Acquisition.Metadata inference,2,#005F0F
+Application Function.Acquisition.Other,2,#005F0F
+Application Function.Acquisition.Rule & Policy,2,#005F0F
+Application Function.Data ingestion & distribution,
+Application Function.Data ingestion & distribution.API & Webservice,2,#005F0F
+Application Function.Data ingestion & distribution.Manual upload or download,2,#005F0F
+Application Function.Data ingestion & distribution.Query execution,2,#005F0F
+Application Function.Access management,
+Application Function.Access management.Metadata usage tracking,2,#005F0F
+Application Function.Access management.Search,2,#005F0F
+Application Function.Reporting,
+Application Function.Reporting.Data quality reporting,2,#005F0F
+Application Function.Reporting.Metadata Activities monitoring,2,#005F0F
+Application Function.Reporting.Governance reporting,2,#005F0F
+Application Function.Reporting.Other,2,#005F0F

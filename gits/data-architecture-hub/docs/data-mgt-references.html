@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - REFERENCE DATA CODIFICATIONS </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#ai-frameworks">AI Frameworks</a></li>
+          <li><a href="#metadata">Metadata</a></li>
+          <li><a href="#log-formats">Log formats</a></li>
+          <li><a href="#reference-data">Reference data</a></li>
+          <li><a href="#compliance-legal-security">Compliance (legal, security)</a></li>
+          <li><a href="#open-data">Open Data</a></li>
+          <li><a href="#data-models">Data models</a></li>
+          <li><a href="#data-models-mapping">Data models mapping</a></li>
+          <li><a href="#protocols">Protocols</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h1 id="ai-frameworks">AI Frameworks</h1>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Norm</th>
+<th>Owner</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AI Governance</td>
+<td>AI Governance Life Cycle</td>
+<td><a href="https://ai-governance.eu/about-aiga/">AIGA</a></td>
+<td><a href="https://ai-governance.eu/">The AIGA AI Governance Framework</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>AI Governance</td>
+<td>AI in Society</td>
+<td><a href="https://en.wikipedia.org/wiki/OECD">OECD</a></td>
+<td><a href="https://www.oecd-ilibrary.org/sites/8b303b6f-en/index.html?itemId=/content/component/8b303b6f-en">OECD Artificial Intelligence</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>AI Governance</td>
+<td>AI Risk Management</td>
+<td><a href="https://en.wikipedia.org/wiki/National_Institute_of_Standards_and_Technology">NIST</a></td>
+<td><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI Risk Management Framework</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="metadata">Metadata</h1>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Norm</th>
+<th>Owner</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Types</td>
+<td>Dates and times</td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Structures</td>
+<td>CSV</td>
+<td><a href="https://tools.ietf.org/html/rfc4180">RFC 4180</a></td>
+<td><a href="https://www.ietf.org/">IETF</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Metadata</td>
+<td>Geospacial metadata standards</td>
+<td><a href="https://www.fgdc.gov/metadata/iso-suite-of-geospatial-metadata-standards">ISO 191** SUITE</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Metadata</td>
+<td>Common Warehouse Metamodel</td>
+<td><a href="https://www.omg.org/spec/CWM/">Common Warehouse Metamodel (CWM)</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Object_Management_Group">Object Management Group (OMG)</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Metadata</td>
+<td>Data Catalog Vocabulary</td>
+<td><a href="https://www.w3.org/TR/vocab-dcat-2/">Data Catalog Vocabulary (DCAT)</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Object_Management_Group">Object Management Group (OMG)</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Metadata</td>
+<td>Open metadata and governance automation</td>
+<td><a href="https://egeria-project.org/types/">Egeria Type System</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Linux_Foundation">Linux Foundation</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="log-formats">Log formats</h1>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Log format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>JavaScript Object Notation (JSON)</td>
+<td>With JSON, logs can nest data into different layers while keeping the format easy to read by humans. JSON also provides a way of maintaining data types, such as string, number, boolean, null/empty, object, or array.</td>
+</tr>
+<tr class="even">
+<td>Windows Event logs</td>
+<td>Windows Event logs are often used by system administrators for troubleshooting system or application errors, investigating security incidents, or tracking user logins.</td>
+</tr>
+<tr class="odd">
+<td>Common Event Format (CEF)</td>
+<td>Open, text-based log format used by security-related devices and applications. Developed by ArcSight Enterprise Security Manager, CEF is used when collecting and aggregating data by SIEM and log management systems.</td>
+</tr>
+<tr class="even">
+<td>NCSA Common Log Format (CLF)</td>
+<td>One of the oldest log formats used by web servers. It’s a standardized, text-based log file with a fixed format, which means you can’t customize the fields.</td>
+</tr>
+<tr class="odd">
+<td>Extended Log Format (ELF)</td>
+<td>Similar to CLF but contains more information and flexibility over which fields are used. ELF logs contain data relating to a single HTTP transaction. Fields are separated by white space, and a hyphen represents a missing field.</td>
+</tr>
+<tr class="even">
+<td>W3C Extended Log File Format</td>
+<td>Highly customizable log format used by Windows IIS servers.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="reference-data">Reference data</h1>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Norm</th>
+<th>Owner</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Geography</td>
+<td>Countries</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes">ISO 3166</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Geography</td>
+<td>Risk zones</td>
+<td><a href="https://www.cresta.org/#/explore">CRESTA Zones</a></td>
+<td><a href="https://about.cresta.org/">CRESTA</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Geography</td>
+<td>Currencies</td>
+<td><a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Geography</td>
+<td>Languages</td>
+<td><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health - Diagnostic</td>
+<td>Diseases classification</td>
+<td><a href="https://en.wikipedia.org/wiki/ICD-10">ICD-10</a></td>
+<td><a href="https://en.wikipedia.org/wiki/World_Health_Organization">WHO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health - Diagnostic</td>
+<td>Patient data for clinical purposes and EHRs (Electronic Health Records)</td>
+<td><a href="https://en.wikipedia.org/wiki/SNOMED_CT">SNOMED-CT</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Health_Terminology_Standards_Development_Organisation">IHTSDO</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health - Diagnostic</td>
+<td>Diagnostic and Statistical Manual of Mental Disorders (DSM)</td>
+<td><a href="https://www.psychiatry.org/psychiatrists/practice/dsm">DSM-5-TR</a></td>
+<td><a href="https://en.wikipedia.org/wiki/American_Psychiatric_Association">APA</a></td>
+<td>DSM is the most popular diagnostic system for mental disorders in the US, ICD is used more widely in Europe and other parts of the world. ICD is more often used for clinical diagnosis while DSM is more valued for research.</td>
+</tr>
+<tr class="even">
+<td>Health - Procedural</td>
+<td>Medical, surgical, and diagnostic services</td>
+<td><a href="https://en.wikipedia.org/wiki/Current_Procedural_Terminology">CPT</a></td>
+<td><a href="https://en.wikipedia.org/wiki/American_Medical_Association">AMA</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health - Procedural</td>
+<td>Medical procedures and services</td>
+<td><a href="https://en.wikipedia.org/wiki/Healthcare_Common_Procedure_Coding_System">HCPCS</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Centers_for_Medicare_%26_Medicaid_Services">CMS</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health - Procedural</td>
+<td>Specific surgical, medical, or diagnostic interventions</td>
+<td><a href="https://en.wikipedia.org/wiki/International_Classification_of_Health_Interventions">ICHI</a></td>
+<td><a href="https://en.wikipedia.org/wiki/World_Health_Organization">WHO</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health - Pharmaceutical</td>
+<td>Drug classification</td>
+<td><a href="https://en.wikipedia.org/wiki/Anatomical_Therapeutic_Chemical_Classification_System">ATC</a></td>
+<td><a href="https://en.wikipedia.org/wiki/World_Health_Organization">WHO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health - Laboratory</td>
+<td>Medical observations</td>
+<td><a href="https://en.wikipedia.org/wiki/LOINC">LOINC</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Indiana_University_School_of_Medicine">IUSM</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="compliance-legal-security">Compliance (legal, security)</h1>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Norm</th>
+<th>Owner</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Health</td>
+<td>Health informatics</td>
+<td><a href="https://www.iso.org/committee/54960.html">ISO/TC 215</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>Medical devices</td>
+<td><a href="https://www.iso.org/standard/59752.html">ISO 13485:2016</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">ISO</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>Health data</td>
+<td><a href="https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/audit/protocol/index.html">HIPAA</a></td>
+<td><a href="https://en.wikipedia.org/wiki/104th_United_States_Congress">104th United States Congress</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>Medicine</td>
+<td></td>
+<td><a href="https://en.wikipedia.org/wiki/European_Medicines_Agency">European Medicines Agency (EMA)</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>Medicine</td>
+<td></td>
+<td><a href="https://en.wikipedia.org/wiki/Food_and_Drug_Administration">Food and Drug Administration (FDA)</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Paymment</td>
+<td>Payment Card Industry Data Security (PCI DSS)</td>
+<td><a href="https://www.pcisecuritystandards.org/document_library/">PCI DSS</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Payment_Card_Industry_Security_Standards_Council">Payment Card Industry Security Standards Council</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Person</td>
+<td>Consumer protection</td>
+<td><a href="https://www.iso.org/obp/ui/#iso:std:iso:31700:-1:ed-1:v1:en">ISO 31700</a></td>
+<td><a href="https://en.wikipedia.org/wiki/International_Organization_for_Standardization">International Organization for Standardization</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Person</td>
+<td>General Data Protection (EU)</td>
+<td><a href="https://gdpr-info.eu/">GDPR Articles</a></td>
+<td><a href="https://en.wikipedia.org/wiki/European_Union_law">European Union law</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Person</td>
+<td>California Consumer Privacy Act (CCPA)</td>
+<td><a href="https://oag.ca.gov/privacy/ccpa">CCPA Articles</a></td>
+<td><a href="https://leginfo.legislature.ca.gov/">State of California</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Person</td>
+<td>Personal Information Protection Law (PIPL China)</td>
+<td><a href="http://www.npc.gov.cn/npc/c30834/202108/a8c4e3672c74491a80b53a172bb753fe.shtml">PIPL Law</a></td>
+<td><a href="https://en.wikipedia.org/wiki/13th_National_People%27s_Congress">Replublic of China</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="open-data">Open Data</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>New York City Data</td>
+<td><a href="https://data.cityofnewyork.us">New York City Data</a></td>
+</tr>
+<tr class="even">
+<td>Data Gov India</td>
+<td><a href="https://data.gov.in">Data Gov India</a></td>
+</tr>
+<tr class="odd">
+<td>Data Gov France</td>
+<td><a href="https://www.data.gouv.fr">Data Gov France</a></td>
+</tr>
+<tr class="even">
+<td>Kaggle (Open Data for Data Science)</td>
+<td><a href="https://www.kaggle.com/">Kaggle</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="data-models">Data models</h1>
+<table>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 15%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Sub-Category</th>
+<th>Norm</th>
+<th>Owner</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>General</td>
+<td>General</td>
+<td><a href="https://learn.microsoft.com/en-us/common-data-model/">Commen Data Model(CDM)</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Microsoft">Microsoft</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sales &amp; Marketing</td>
+<td>General</td>
+<td><a href="https://architect.salesforce.com/diagrams/template-gallery/sales-cloud-overview-data-model">Salesforce Data Model</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Salesforce">Salesforce</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Party/Customer</td>
+<td>General</td>
+<td><a href="https://www.ibm.com/docs/en/imdm/10.1?topic=overview-party-domain-model">IBM Party Data Model</a></td>
+<td><a href="https://en.wikipedia.org/wiki/IBM">IBM</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Insurance</td>
+<td>General</td>
+<td><a href="https://www.acord.org/standards-architecture/reference-architecture">ACORD Reference Architecture</a></td>
+<td><a href="https://en.wikipedia.org/wiki/ACORD">ACORD</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Insurance</td>
+<td>P&amp;C</td>
+<td><a href="https://www.omg.org/spec/PC/About-PC/">Object Management Group (OMG) PC</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Object_Management_Group">Object Management Group (OMG)</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Insurance</td>
+<td>General</td>
+<td><a href="https://help.salesforce.com/s/articleView?id=ind.v_data_models_vlocity_insurance_and_financial_services_data_model_667142.htm&amp;type=5">Salesforce Insurance and Financial Services Data Model</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Salesforce">Salesforce</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>General</td>
+<td><a href="https://fhim.org/fhim-model">FHIM</a>, <a href="https://fhims.org/content/420A62FD03B6_root.html">FHIM UML</a>: superset of all the standards (primarily from HL7, NCPDP, and ASC X12)</td>
+<td>U.S. Government Federal Health Architecture (FHA) Program</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>General</td>
+<td><a href="https://www.hl7.org/fhir/overview.html">FHIR</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Health_Level_Seven_International">HL7</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Health</td>
+<td>General</td>
+<td><a href="https://www.ohdsi.org/data-standardization/">OHDSI</a>, <a href="https://github.com/OHDSI/CommonDataModel/tree/main/ddl">OHDSI DDL</a>: standard data model focusing on observations</td>
+<td><a href="https://en.wikipedia.org/wiki/Observational_Health_Data_Sciences_and_Informatics">OHDSI</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Health</td>
+<td>General</td>
+<td><a href="https://developer.salesforce.com/docs/atlas.en-us.232.0.health_cloud_object_reference.meta/health_cloud_object_reference/map_fhir_overview.htm">Salesforce Health</a></td>
+<td><a href="https://en.wikipedia.org/wiki/Salesforce">Salesforce</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>General (event, building, etc.)</td>
+<td>General</td>
+<td><a href="https://www.fiware.org/developers/data-models/">Fiware</a>, <a href="https://github.com/smart-data-models">Fiware Smart Data Models</a></td>
+<td>Fiware</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Data Governance</td>
+<td>General</td>
+<td><a href="https://cdn-university.collibra.com/wp-content/COOK/Structural-Concepts_360597.html">Collibra Data Governance Model</a></td>
+<td>Collibra</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Financial industry business ontology (FIBO)</td>
+<td>Finance</td>
+<td><a href="https://datalanguage.com/blog/visualising-fibo">Finance FIBO</a></td>
+<td><a href="https://spec.edmcouncil.org/fibo/">EDM Council</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Information Technology</td>
+<td>Service Management</td>
+<td><a href="https://docs.servicenow.com/bundle/washingtondc-servicenow-platform/page/product/csdm-implementation/concept/csdm-conceptual-model.html">ServiceNow CSDM</a></td>
+<td><a href="https://en.wikipedia.org/wiki/ServiceNow">ServiceNow</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Information Technology</td>
+<td>CMDB</td>
+<td><a href="https://docs.servicenow.com/bundle/washingtondc-servicenow-platform/page/product/configuration-management/reference/cmdb-tables-details.html">ServiceNow CMDB</a></td>
+<td><a href="https://en.wikipedia.org/wiki/ServiceNow">ServiceNow</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Information Technology</td>
+<td>IT4IT</td>
+<td><a href="https://pubs.opengroup.org/it4it/3.0/snapshot/Metamodel.html">IT4IT Meta Model</a></td>
+<td><a href="https://en.wikipedia.org/wiki/The_Open_Group">The Open Group</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Information Technology</td>
+<td>Architecture</td>
+<td><a href="https://pubs.opengroup.org/architecture/archimate3-doc/">Archimate</a></td>
+<td><a href="https://en.wikipedia.org/wiki/The_Open_Group">The Open Group</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="data-models-mapping">Data models mapping</h1>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>FHIR</th>
+<th>Salesforce</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Address</td>
+<td>Contact Point Address</td>
+</tr>
+<tr class="even">
+<td>Allergy Intolerance</td>
+<td>Allergy Intolerance, PatientHealthReaction</td>
+</tr>
+<tr class="odd">
+<td>Annotation</td>
+<td>AuthorNote</td>
+</tr>
+<tr class="even">
+<td>Attachment</td>
+<td>Attachment</td>
+</tr>
+<tr class="odd">
+<td>Codeable Concept</td>
+<td>CodeSet BundleBundle</td>
+</tr>
+<tr class="even">
+<td>Coding</td>
+<td>CodeSet</td>
+</tr>
+<tr class="odd">
+<td>Condition</td>
+<td>Health Condition</td>
+</tr>
+<tr class="even">
+<td>ContactPoint</td>
+<td>Contact Point Phone</td>
+</tr>
+<tr class="odd">
+<td>Device</td>
+<td>Asset, Care Registered Device</td>
+</tr>
+<tr class="even">
+<td>Diagnostic Report</td>
+<td>Diagnostic Summary</td>
+</tr>
+<tr class="odd">
+<td>Document Reference</td>
+<td>Diagnostic Summary, Diagnostic SummaryDetail</td>
+</tr>
+<tr class="even">
+<td>Dosage</td>
+<td>Patient Medication Dosage</td>
+</tr>
+<tr class="odd">
+<td>Encounter</td>
+<td>Clinical Encounter</td>
+</tr>
+<tr class="even">
+<td>Flag</td>
+<td>Clinical Alert</td>
+</tr>
+<tr class="odd">
+<td>Human Name</td>
+<td>Person Name</td>
+</tr>
+<tr class="even">
+<td>Identifier</td>
+<td>Identifier</td>
+</tr>
+<tr class="odd">
+<td>Immunization</td>
+<td>Patient Immunization, Patient Health Reaction</td>
+</tr>
+<tr class="even">
+<td>Location</td>
+<td>Healthcare Facility</td>
+</tr>
+<tr class="odd">
+<td>Medication</td>
+<td>Medication</td>
+</tr>
+<tr class="even">
+<td>Medication Request</td>
+<td>Medication Request</td>
+</tr>
+<tr class="odd">
+<td>Medication Statement</td>
+<td>Medication Statement</td>
+</tr>
+<tr class="even">
+<td>Observation</td>
+<td>Care Observation, Care Observation Component</td>
+</tr>
+<tr class="odd">
+<td>Organization</td>
+<td>Account</td>
+</tr>
+<tr class="even">
+<td>Patient</td>
+<td>Account, Contact</td>
+</tr>
+<tr class="odd">
+<td>Practitioner</td>
+<td>Healthcare Provider, Person Accounts</td>
+</tr>
+<tr class="even">
+<td>PractitionerRole</td>
+<td>Healthcare Practitioner Facility, Care Provider Facility Specialty</td>
+</tr>
+<tr class="odd">
+<td>Procedure</td>
+<td>Patient Medical Procedure, Patient Medical Procedure Detail</td>
+</tr>
+<tr class="even">
+<td>RelatedPerson</td>
+<td>Account, Contact, Contact Contact Relation</td>
+</tr>
+<tr class="odd">
+<td>Service Request</td>
+<td>Clinical Service Request, Clinical Service Request Detail</td>
+</tr>
+<tr class="even">
+<td>Timing</td>
+<td>ActivityTiming</td>
+</tr>
+</tbody>
+</table>
+<h1 id="protocols">Protocols</h1>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Owner</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BI &amp; Analytics</td>
+<td><a href="https://dmg.org/">Data Mining Group (DMG)</a></td>
+<td><a href="https://dmg.org/pmml/v4-1/GeneralStructure.html">Predictive Model Markup Language (PMML)</a></td>
+</tr>
+<tr class="even">
+<td>BI &amp; Analytics</td>
+<td><a href="https://dmg.org/">Data Mining Group (DMG)</a></td>
+<td><a href="https://dmg.org/pfa/">Portable Format for Analytics (PFA)</a></td>
+</tr>
+<tr class="odd">
+<td>BI &amp; Analytics</td>
+<td><a href="https://onnx.ai/about.html">Open Neural Network Exchance (ONNX) community</a></td>
+<td><a href="https://github.com/onnx/onnx">Open Neural Network Exchange (ONNX)</a></td>
+</tr>
+<tr class="even">
+<td>Metadata Management</td>
+<td><a href="https://www.omg.org/about/">Object Management Group (OMG)</a></td>
+<td><a href="https://www.omg.org/spec/CWM/1.1/About-CWM">Common Warehouse Metamodel (CWM)</a></td>
+</tr>
+<tr class="odd">
+<td>Metadata Management</td>
+<td><a href="https://egeria-project.org/">ODPi Egeria (Linux Foundation Project)</a></td>
+<td><a href="https://github.com/odpi/egeria">ODPi Egeria</a></td>
+</tr>
+<tr class="even">
+<td>Content Management</td>
+<td><a href="https://www.oasis-open.org/org/">OASIS</a></td>
+<td><a href="https://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html">Content Management Interoperability Services (CMIS)</a></td>
+</tr>
+</tbody>
+</table>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

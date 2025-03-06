@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA MODELING ACORD </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#acord-information-model-2.11-july-2023">ACORD Information Model 2.11 (July 2023)</a></li>
+          <li><a href="#what-is-acord">What is ACORD?</a></li>
+          <li><a href="#what-is-acord-reference-architecture">What is ACORD Reference Architecture?</a></li>
+          <li><a href="#is-it-relevant-for-me">Is it relevant for me?</a></li>
+          <li><a href="#what-is-new-since-the-2.5-version">What is new since the 2.5 version?</a></li>
+          <li><a href="#how-to-leverage-it-and-what-are-the-pitfalls-to-avoid">How to leverage it and what are the pitfalls to avoid?</a></li>
+          <li><a href="#where-can-i-find-it-and-use-it">Where can I find it and use it?</a></li>
+          <li><a href="#what-are-the-alternatives">What are the alternatives?</a></li>
+          <li><a href="#licence">Licence</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+          <li><a href="#acord-packages-utilization-view">ACORD Packages utilization view</a></li>
+          <li><a href="#acord-usage-example">ACORD usage example</a></li>
+          <li><a href="#acord-packages-overview">ACORD Packages overview</a></li>
+          <li><a href="#illustration-1-boat-insurable-physical-object-role-in-place">Illustration 1: Boat Insurable Physical Object Role in Place</a></li>
+          <li><a href="#illustration-2-taxonomy-physical-object-boat">Illustration 2: Taxonomy: Physical Object &gt; … &gt; Boat</a></li>
+          <li><a href="#illustration-3-information-about-the-place-territory-legal-status-etc.">Illustration 3: Information about the “Place”: Territory, Legal Status, etc.</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h2 id="acord-information-model-2.11-july-2023">ACORD Information Model 2.11 (July 2023)</h2>
+<p><img src="media/modeling/acord/acord-2_11/acord-2_11-welcome.jpg" width="600px"/></p>
+<h2 id="what-is-acord">What is ACORD?</h2>
+<p>Established in 1970 as a non-profit organization, <a href="https://www.acord.org/"><strong>ACORD</strong></a> was formed by insurance carriers and agents focused on building efficiencies in the United States property casualty insurance market. Originally named Agent Company Operations Research and Development (ACORD), the organization’s initial goal was to standardize the many proprietary forms being used by carriers for new business and claims submission. In the late 1970s, ACORD began developing electronic standards to complement its form standards. ACORD subsequently expanded both its forms and electronic data standards beyond property and casualty insurance to encompass life and annuity, surety, and reinsurance markets.</p>
+<h2 id="what-is-acord-reference-architecture">What is ACORD Reference Architecture?</h2>
+<p>The <a href="https://www.acord.org/standards-architecture/reference-architecture"><strong>ACORD reference architecture</strong></a> is the insurance industry standard for exchanging data between insurance companies (Further details are available here). It was developed by the Association for Cooperative Operations Research and Development (ACORD) in the 1970s. The <strong>ACORD information model</strong> covers a wide range of data subject areas such as Agreement, Claim, Party, Physical Object, Contact and Place etc.</p>
+<p><strong>At AXA we have a license for ACORD Information Model</strong>. It contains data objects and data elements definitions.</p>
+<p>The ACORD Information Model is a logical data model designed to provide the insurance industry standard reference upon which physical implementations may be built.</p>
+<h2 id="is-it-relevant-for-me">Is it relevant for me?</h2>
+<p>The are several use cases where a data standard is a relevant tool such as:</p>
+<ul>
+<li>As an employee who has the skill to read a data model, I would like to know the data elements (attributes) of an insurance agreement (policy) and their definitions.</li>
+<li>As a data modeler or API designer I would to check my design against the industry standard.</li>
+<li>In a context of business partnership or platform economy, I need to define a standard for data exchange between several parties (internal or external).</li>
+<li>As a data owner I would like to list the main data objects and data elements for my domain of ownership to define data policies and rules</li>
+<li>As a data analyst or data steward, I would like to leverage a concise data objects/data elements naming and definitions to define data requirements (e.g., functional specifications)</li>
+</ul>
+<h2 id="what-is-new-since-the-2.5-version">What is new since the 2.5 version?</h2>
+<p>Compared to the latest version available at AXA (v2.5), below are some examples of changes:</p>
+<ul>
+<li><strong>2.9 Peril</strong>: The concept of Perils has existed in the Common subject areas in the ACORD Model. In this release, Perils is moved to the Product Specification subject area because of its primacy when designing insurance products.</li>
+<li><strong>2.10 A Driving Event (offense)</strong>: can be anything from a parking ticket to a DWI (Driving While Intoxicated). While felonies are considered criminal events which are more serious and punishable, evaluated by how much harm is caused, they are not the majority of driving offenses. Typically, driving events are not criminal in nature. In 2.10 release, “Driving Event” is now a subtype of “Event” rather than “Criminal Event”.</li>
+<li><strong>2.10 Non-Physical Objects</strong>: While the vast majority of insurance lines of business cover tangible objects like cars, homes, office buildings, ships ; there are a number of lines that cover intangible, or Non-Physical Objects (e.g., Trade Credit, Cyber, Political Risk).</li>
+<li><strong>2.11 Non-Physical Objects</strong>: New classes are added: Alien Abduction, Business Practice, Reputation, Trade Balance, Insurable Event, Sporting Event, Concert, Wedding</li>
+<li><strong>2.11 Virtual Party</strong>: Virtual Party is extended by adding Virtual Party Details Subtypes: AI or Robotics, Computer System, Installed Software, Remote Health Monitoring System, Remote Monitoring System, Vehicle Telematics</li>
+<li><strong>2.11 Contact Preference</strong>: Contact Preference is how a party wants to interact with your company. This is an important concept between two Parties (sender and receiver), and, for this reason, Contact concepts are moved from the subject area of Place to the subject area of Party.</li>
+</ul>
+<p>For more details, release notes are available here :</p>
+<ul>
+<li><a href="media/modeling/acord/ACORD-information-model-2.8%20-%20ReleaseNotes.pdf">ACORD-information-model-2.8 - ReleaseNotes.pdf (April 2021)</a></li>
+<li><a href="media/modeling/acord/ACORD-information-model-2.9%20-%20ReleaseNotes.pdf">ACORD-information-model-2.9 - ReleaseNotes.pdf (November 2021)</a></li>
+<li><a href="media/modeling/acord/ACORD-information-model-2.10%20-%20ReleaseNotes.pdf">ACORD-information-model-2.10 - ReleaseNotes.pdf (December 2022)</a></li>
+<li><a href="media/modeling/acord/ACORD-information-model-2.11%20-%20ReleaseNotes.pdf">ACORD-information-model-2.11 - ReleaseNotes.pdf (July 2023)</a></li>
+</ul>
+<h2 id="how-to-leverage-it-and-what-are-the-pitfalls-to-avoid">How to leverage it and what are the pitfalls to avoid?</h2>
+<p>ACORD information model is highly normalized, it is a specific taxonomy and as such must <strong>NOT</strong> be implemented directly in physical models:</p>
+<ul>
+<li>A design exercise is required to extract from the model only the relevant data elements and relations for the use case.</li>
+<li>The taxonomy must be well understood and accepted by the various stakeholders (e.g., Agreement &gt; Financial Service Agreement &gt; Insurance Agreement).</li>
+<li>The existing languages already used by the business teams, IT professionals, and other data practitioners must be considered, and the standardization ambition should be clearly defined.</li>
+<li>Technology constraint should also drive the physical model design (API swagger, JSON/Parquet schemas, relational databases…).</li>
+</ul>
+<h2 id="where-can-i-find-it-and-use-it">Where can I find it and use it?</h2>
+<ul>
+<li>The archive file is available here: <a href="https://axa365.sharepoint.com/:u:/r/sites/Community-DataArchitecture/Reference%20documents/External%20Standards/ACORD/ACORD%20information-model-2.11.zip">ACORD-information-model-2.11.zip</a></li>
+<li>No specific tooling is required, you can unzip locally and browse the html page here:</li>
+</ul>
+<pre><code>ACORD-information-model-2.11\ACORD-Information-Model-2-11\Information Model 2.11\HTML\Index.html</code></pre>
+<p><strong><em><span style="color:red">The web browser must open the html file with the options “allow-file-access-from-files”.</span></em></strong> Exemple for Microsoft Edge (same for Google Chrome):</p>
+<pre><code>msedge.exe --allow-file-access-from-files</code></pre>
+<p>Note: if any issue, you must kill web brower processes before launching the web browser with the new configuration.</p>
+<h2 id="what-are-the-alternatives">What are the alternatives?</h2>
+<p>ACORD is the more robust information model for insurance industry. Other regional models can be used also for inspiration, for example Othe bject Management Group (OMG) has publihsed a model for Property &amp; Casualty.</p>
+<p>For other exemples of data models, please consult: <a href="reference-codifications.html#data-models">Reference Codifications - Data Models</a>.</p>
+<h2 id="licence">Licence</h2>
+<p><a href="media/modeling/acord/ACORD-AXA%20Group%20-%20IP%20License%20Agreement%20-%20ACD100204.pdf">ACORD-AXA Group - IP License Agreement - ACD100204.pdf</a></p>
+<h2 id="contacts">Contacts</h2>
+<p>For more information, please contact: <a href="mailto:pastel.gbetoho.imagine@axa.com">Pastel GBETOHO</a> or <a href="mailto:guillaume.hervouin@axa.com">Guillaume HERVOUIN</a>.</p>
+<h2 id="acord-packages-utilization-view">ACORD Packages utilization view</h2>
+<p><img src="media/modeling/acord/acord-2_11/acord-2.11_utilization-view.jpg" width="700px"/></p>
+<h2 id="acord-usage-example">ACORD usage example</h2>
+<p><img src="media/modeling/data-modeling-acord-simplified.png" width="900px"/></p>
+<h2 id="acord-packages-overview">ACORD Packages overview</h2>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 50%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>High level description</th>
+<th>Overview</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Activity</strong></td>
+<td>The Activity package defines the various activities that are associated with the insurance business, especially those in the underwriting and claims management areas.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-activity.jpg">Activity Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Claim</strong></td>
+<td>This package defines all concepts associated with claims, including relationships to loss event(s) and agreement(s).</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-claim.jpg">Claim Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Event</strong></td>
+<td>The Event package contains information about events that is of interest to the insurance organization.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-event.jpg">Event Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Party</strong></td>
+<td>Package containing all information regarding Parties, or external or internal business entities a carrier deals with. The main forms being a Person or an Organization.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-party.jpg">Party Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Agreement</strong></td>
+<td>The agreement package defines the various agreements, including related components, that are associated with the insurance business. The term “agreement” is inclusive of the terms “contract” and/or “policy”.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-agreement.jpg">Agreement Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Common Elements</strong></td>
+<td>Common Elements contains classes and enumerations that are used throughout the model. That is, elements that are orthogonal to the model.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-common_elements.jpg">Common Elements Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Finance</strong></td>
+<td>The Finance package orients primarily around the finances of an insurance company as seen from an accountant’s perspective.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-finance.jpg">Finance Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Physical Object</strong></td>
+<td>The objective of the Physical Object package is to define physical objects such as vehicles, houses, animals, or any grouping of these from a policy risk and claims management perspective.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-physical_object.jpg">Physical Object Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Assessment and Condition</strong></td>
+<td>The AssessmentResult type is used to represent the results of an evaluation (assessment activity) based on a subjective opinion or a scientific approach. Condition is the state of a party, place, or a physical object at a given point in time.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-assessment_and_condition.jpg">Assessment and Condition Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Contact and Place</strong></td>
+<td>This package defines all concepts associated with contact and place. Contact includes the party acting as the “contact point” as well as the related contact options (e.g. telephone, email, etc.) and preferences. Place includes the physical location at which the contact can be found.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-contact_and_place.jpg">Contact and Place Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Investment</strong></td>
+<td>The investment package makes it possible to model various types of investments that are of interest to the modeled organization from an operational point of view. It is used to model the management of an organization’s assets.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-investment.jpg">Investment Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Product Specification</strong></td>
+<td>The Product Specification package makes it possible to model insurance products in a generic fashion. This package includes all the building blocks necessary for defining products for all lines of business including P&amp;C, Life and Reinsurance and investment products.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-product_specification.jpg">Product Specification Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Category</strong></td>
+<td>The Category package makes it possible to model a dynamic categorization of the objects in the business model (InformationModelObjects) by defining sets of objects and by allowing an object to belong to multiple sets at a time.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-category.jpg">Category Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Document and Communication</strong></td>
+<td>This package defines concepts associated with documents and communication. The document concept applies to all types of documents (e.g. an expert report, a letter with free text, passport, etc.). The communication concept applies to the receiving or sending (or the intention to send) of a communication between two parties and includes the communication content (e.g. text, sound, image, etc.).</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-document_and_communication.jpg">Document and Communication Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Marketing</strong></td>
+<td>This package defines concepts associated with marketing, including associations with related concepts such as product and agreement. Marketing includes objectives, campaigns, relevant party roles, and target markets/audiences.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-marketing.jpg">Marketing Diagram</a></td>
+</tr>
+<tr class="even">
+<td><strong>Registration</strong></td>
+<td>This package defines concepts associated with various types of registration. A registration is considered a formal recording, by an authorized body, of the granting of rights, privileges, favors, statuses, or qualifications. Registrations are important from the perspective of being a qualified source of information. They are similar to assessments in the respect that the associated information can be considered more reliable than the same information not associated with a registration.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-registration.jpg">Registration Diagram</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Role and Relationship</strong></td>
+<td>This package defines concepts involving roles and relationships. A party can play different types of party roles through the Role and Relationship. OR The Role and Relationships enables you to associate multiple roles to an Party.</td>
+<td><a href="media/modeling/acord/acord-2_11/acord-2_11-role_and_relationship.jpg">Role and Relationship Diagram</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="illustration-1-boat-insurable-physical-object-role-in-place">Illustration 1: Boat Insurable Physical Object Role in Place</h2>
+<p><img src="media/modeling/data-modeling-acord-illustration1.png" width="1200px"/></p>
+<h2 id="illustration-2-taxonomy-physical-object-boat">Illustration 2: Taxonomy: Physical Object &gt; … &gt; Boat</h2>
+<p><img src="media/modeling/data-modeling-acord-illustration2.png" width="1200px"/></p>
+<h2 id="illustration-3-information-about-the-place-territory-legal-status-etc.">Illustration 3: Information about the “Place”: Territory, Legal Status, etc.</h2>
+<p><img src="media/modeling/data-modeling-acord-illustration3.png" width="1200px"/></p>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

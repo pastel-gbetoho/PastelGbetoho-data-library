@@ -1,0 +1,3175 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Property Data API",
+    "description": "This API provides access to Entity data.",
+    "termsOfService": "https://github.axa.com/AXA-GO/property-data-architecture",
+    "contact": {
+      "name": "Pastel Gbetoho",
+      "url": "https://github.axa.com/AXA-GO/property-data-architecture"
+    },
+    "license": {
+      "name": "License Terms",
+      "url": "https://github.axa.com/AXA-GO/property-data-architecture"
+    },
+    "version": "0.1"
+  },
+  "servers": [
+    {
+      "url": "http://www.prod.com/data/0.1",
+      "description": "Production server"
+    },
+    {
+      "url": "http://www.beta.com/data/0.1",
+      "description": "Beta server"
+    },
+    {
+      "url": "http://www.other.com/data/0.1",
+      "description": "Some other server"
+    }
+  ],
+  "paths": {
+    "/claims": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/claim"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/claim_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/claims/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/claim_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/claim"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/claim_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/claim_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/Parties": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Party"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/Party_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/Parties/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Party_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Party"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/Party_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/Party_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/policies": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/policy"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/policy_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/policies/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/policy_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/policy"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/policy_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/policy_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/physicalObjects": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/physicalObject"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/physicalObject_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/physicalObjects/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/physicalObject_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/physicalObject"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/physicalObject_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/physicalObject_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/addresses": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/address"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/address_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/addresses/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/address_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/address"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/address_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/address_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/places": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/place"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/place_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/places/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/place_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/place"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/place_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/place_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/AssessmentAndConditions": {
+      "post": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create entity.",
+        "description": "Create a new entity resource.",
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssessmentAndCondition"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/AssessmentAndCondition_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "500": {
+            "$ref": "#/components/responses/Not_found"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    },
+    "/AssessmentAndConditions/{id}": {
+      "get": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Retrieve entity.",
+        "description": "Retrieve all the data for the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to retrieve",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AssessmentAndCondition_-_OK"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Create or Update entity.",
+        "description": "Create a new or update an existing template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to create/update",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Required input.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssessmentAndCondition"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/AssessmentAndCondition_-_OK"
+          },
+          "201": {
+            "$ref": "#/components/responses/AssessmentAndCondition_-_Created"
+          },
+          "400": {
+            "$ref": "#/components/responses/Bad_request"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Entity resource"
+        ],
+        "summary": "Delete entity.",
+        "description": "Delete the template resource.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The id of the template to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "$ref": "#/components/responses/No_content"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Not_found"
+          },
+          "500": {
+            "$ref": "#/components/responses/Internal_server_error"
+          }
+        },
+        "security": [
+          {
+            "basic_auth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code",
+            "example": "500"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the error",
+            "example": "A downstream system is not responding correctly."
+          }
+        }
+      },
+      "claim": {
+        "type": "object",
+        "required": [
+          "claimNumber",
+          "policyNumber"
+        ],
+        "properties": {
+          "claimNumber": {
+            "type": "string"
+          },
+          "policyNumber": {
+            "type": "string"
+          },
+          "settlementDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "claimStatusCode": {
+            "type": "string"
+          },
+          "defaultCurrencyCode": {
+            "type": "string"
+          },
+          "totalPaidAmount": {
+            "type": "number",
+            "format": "float"
+          },
+          "totalOutstandingReserveAmount": {
+            "type": "number",
+            "format": "float"
+          },
+          "totalRecoveredAmount": {
+            "type": "number",
+            "format": "float"
+          },
+          "totalOutstandingRecoveryAmount": {
+            "type": "number",
+            "format": "float"
+          },
+          "relatedClaim": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": false
+          }
+        },
+        "nullable": false
+      },
+      "Party": {
+        "type": "object",
+        "properties": {
+          "party": {
+            "type": "object",
+            "required": [
+              "partyIdentifier",
+              "typeCode",
+              "fullName"
+            ],
+            "properties": {
+              "partyIdentifier": {
+                "type": "string"
+              },
+              "typeCode": {
+                "type": "string",
+                "enum": [
+                  "PERSON",
+                  "ORGANIZATION"
+                ]
+              },
+              "fullName": {
+                "type": "string"
+              },
+              "taxRegistration": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "taxIdentifier",
+                    "taxRegistrationKind"
+                  ],
+                  "properties": {
+                    "taxIdentifier": {
+                      "type": "string"
+                    },
+                    "taxRegistrationKind": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "contactMethod": {
+                "type": "object",
+                "properties": {
+                  "postalMailContact": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "usageCode",
+                        "contactMethodKind",
+                        "placeAddress"
+                      ],
+                      "properties": {
+                        "usageCode": {
+                          "type": "string",
+                          "enum": [
+                            "BUSINESS",
+                            "PERSONAL",
+                            "OTHER"
+                          ]
+                        },
+                        "contactMethodKind": {
+                          "type": "string",
+                          "enum": [
+                            "CORRESPONDANCE",
+                            "RESIDENTIAL",
+                            "OTHER"
+                          ]
+                        },
+                        "placeAddress": {
+                          "type": "object",
+                          "required": [
+                            "streetAddress",
+                            "postCode",
+                            "municipality",
+                            "country"
+                          ],
+                          "properties": {
+                            "postalAddress": {
+                              "type": "object",
+                              "properties": {
+                                "unitNumber": {
+                                  "type": "integer"
+                                },
+                                "floorNumber": {
+                                  "type": "integer"
+                                },
+                                "addressLines": {
+                                  "type": "string"
+                                }
+                              },
+                              "nullable": false
+                            },
+                            "streetAddress": {
+                              "type": "object",
+                              "properties": {
+                                "unstructuredAddress": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "number": {
+                                  "type": "string"
+                                },
+                                "typeCode": {
+                                  "type": "string"
+                                },
+                                "preDirectionCode": {
+                                  "type": "string"
+                                },
+                                "postDirectionCode": {
+                                  "type": "string"
+                                }
+                              },
+                              "nullable": false
+                            },
+                            "postCode": {
+                              "type": "string"
+                            },
+                            "municipality": {
+                              "type": "object",
+                              "required": [
+                                "name"
+                              ],
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "typeCode": {
+                                  "type": "string",
+                                  "enum": [
+                                    "BOROUGH",
+                                    "CITY",
+                                    "COUNTY",
+                                    "PARISH",
+                                    "PREFECTURE",
+                                    "TOWN",
+                                    "TOWNSHIP",
+                                    "VILLA",
+                                    "VILLAGE",
+                                    "WARD",
+                                    "ZONE"
+                                  ]
+                                }
+                              },
+                              "nullable": false
+                            },
+                            "country": {
+                              "type": "object",
+                              "required": [
+                                "alphaIsoCode",
+                                "name"
+                              ],
+                              "properties": {
+                                "alphaIsoCode": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "nullable": false
+                            }
+                          },
+                          "nullable": false
+                        }
+                      },
+                      "nullable": false
+                    },
+                    "nullable": false
+                  },
+                  "telephoneCallContact": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "usageCode",
+                        "contactMethodKind",
+                        "fullNumber"
+                      ],
+                      "properties": {
+                        "usageCode": {
+                          "type": "string",
+                          "enum": [
+                            "BUSINESS",
+                            "PERSONAL",
+                            "OTHER"
+                          ]
+                        },
+                        "contactMethodKind": {
+                          "type": "string",
+                          "enum": [
+                            "FIXE",
+                            "MOBILE",
+                            "OTHER",
+                            "FAX"
+                          ]
+                        },
+                        "fullNumber": {
+                          "type": "string"
+                        }
+                      },
+                      "nullable": false
+                    },
+                    "nullable": false
+                  },
+                  "emailContact": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "usageCode",
+                        "emailIdentifier"
+                      ],
+                      "properties": {
+                        "usageCode": {
+                          "type": "string",
+                          "enum": [
+                            "BUSINESS",
+                            "PERSONAL",
+                            "OTHER"
+                          ]
+                        },
+                        "emailIdentifier": {
+                          "type": "string"
+                        }
+                      },
+                      "nullable": false
+                    },
+                    "nullable": false
+                  }
+                },
+                "nullable": false
+              },
+              "accountAgreement": {
+                "type": "object",
+                "properties": {
+                  "accountNumber": {
+                    "type": "string"
+                  },
+                  "branchCode": {
+                    "type": "string"
+                  },
+                  "ibanAccountIdentifier": {
+                    "type": "string"
+                  },
+                  "authorizedCard": {
+                    "type": "object",
+                    "properties": {
+                      "cardNumber": {
+                        "type": "string"
+                      },
+                      "partyFullName": {
+                        "type": "string"
+                      }
+                    },
+                    "nullable": false
+                  }
+                },
+                "nullable": false
+              }
+            },
+            "additionalProperties": true,
+            "nullable": false,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "person": {
+                    "type": "object",
+                    "required": [
+                      "givenName",
+                      "surname"
+                    ],
+                    "properties": {
+                      "prefixTitleCode": {
+                        "type": "string"
+                      },
+                      "givenName": {
+                        "type": "string"
+                      },
+                      "middleName": {
+                        "type": "string"
+                      },
+                      "surname": {
+                        "type": "string"
+                      },
+                      "marriedSurname": {
+                        "type": "string"
+                      },
+                      "birthDate": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "birthTime": {
+                        "type": "string"
+                      },
+                      "genderCode": {
+                        "type": "string"
+                      },
+                      "primaryOccupation": {
+                        "type": "string"
+                      },
+                      "secondaryOccupation": {
+                        "type": "string"
+                      },
+                      "maritalStatusCode": {
+                        "type": "string"
+                      },
+                      "socioEconomicRisk": {
+                        "type": "string"
+                      },
+                      "personRegistration": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "registrationIdentifier",
+                            "registrationKind"
+                          ],
+                          "properties": {
+                            "registrationIdentifier": {
+                              "type": "string"
+                            },
+                            "registrationKind": {
+                              "type": "string"
+                            },
+                            "effectivePeriodStartDate": {
+                              "type": "string",
+                              "format": "date"
+                            },
+                            "effectivePeriodEndDate": {
+                              "type": "string",
+                              "format": "date"
+                            },
+                            "driverLicenseVehicleClassCode": {
+                              "type": "string"
+                            },
+                            "drivingPointsCount": {
+                              "type": "number",
+                              "format": "float"
+                            }
+                          },
+                          "nullable": false
+                        },
+                        "nullable": false
+                      }
+                    },
+                    "nullable": false
+                  }
+                },
+                "additionalProperties": true,
+                "nullable": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "organization": {
+                    "type": "object",
+                    "required": [
+                      "organizationKind"
+                    ],
+                    "properties": {
+                      "organizationKind": {
+                        "type": "string",
+                        "enum": [
+                          "COMPANY",
+                          "GOVERNMENTBODY",
+                          "GROUP",
+                          "ORGANIZATIONUNIT",
+                          "OTHER"
+                        ]
+                      },
+                      "organizationUnitKind": {
+                        "type": "string",
+                        "enum": [
+                          "BRANCH",
+                          "DEPARTMENTALUNIT",
+                          "REGIONALUNIT",
+                          "TEAM"
+                        ]
+                      },
+                      "agreedProviderIndicator": {
+                        "type": "string"
+                      },
+                      "operations": {
+                        "type": "object",
+                        "properties": {
+                          "operationCode": {
+                            "type": "string"
+                          },
+                          "natureOfBusiness": {
+                            "type": "string"
+                          }
+                        },
+                        "nullable": false
+                      }
+                    },
+                    "nullable": false
+                  }
+                },
+                "additionalProperties": true,
+                "nullable": false
+              }
+            ]
+          }
+        },
+        "nullable": false
+      },
+      "policy": {
+        "type": "object",
+        "required": [
+          "policyNumber",
+          "effectiveStartDate"
+        ],
+        "properties": {
+          "policyNumber": {
+            "type": "string"
+          },
+          "initialEffectiveDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "effectiveStartDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "policyStatusCode": {
+            "type": "string"
+          },
+          "defaultCurrencyCode": {
+            "type": "string"
+          },
+          "annualPremiumAmount": {
+            "type": "number",
+            "format": "float"
+          },
+          "partyRoleInAgreement": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "typeCode": {
+                  "type": "string"
+                },
+                "partyIdentifier": {
+                  "type": "string"
+                }
+              },
+              "nullable": false
+            },
+            "nullable": false
+          },
+          "insuredObjects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "insuredObjectIdentifier": {
+                  "type": "string"
+                },
+                "insuredPercentage": {
+                  "type": "number",
+                  "format": "float"
+                }
+              },
+              "nullable": false
+            },
+            "nullable": false
+          }
+        },
+        "nullable": false
+      },
+      "physicalObject": {
+        "type": "object",
+        "properties": {
+          "structure": {
+            "type": "object",
+            "properties": {
+              "structureIdentifier": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "typeCode": {
+                "type": "string"
+              },
+              "materialTypeCode": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              "constructionYear": {
+                "type": "integer"
+              },
+              "renovationYear": {
+                "type": "integer"
+              },
+              "unitCount": {
+                "type": "integer"
+              },
+              "structureComponentsDetails": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "typeCode": {
+                      "type": "string"
+                    },
+                    "features": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "feature": {
+                            "type": "string"
+                          },
+                          "featureValue": {
+                            "type": "string"
+                          }
+                        },
+                        "nullable": false
+                      },
+                      "nullable": false
+                    },
+                    "dimension": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "typeCode"
+                        ],
+                        "properties": {
+                          "typeCode": {
+                            "type": "string",
+                            "enum": [
+                              "AREA",
+                              "DEPTH",
+                              "HEIGHT",
+                              "LENGTH",
+                              "VOLUME",
+                              "WEIGTH",
+                              "WIDTH"
+                            ]
+                          },
+                          "measure": {
+                            "type": "object",
+                            "properties": {
+                              "unitCode": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number",
+                                "format": "float"
+                              }
+                            },
+                            "nullable": false
+                          }
+                        },
+                        "nullable": false
+                      },
+                      "nullable": false
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "structureComponentsAggregate": {
+                "type": "object",
+                "properties": {
+                  "floorCount": {
+                    "type": "integer"
+                  },
+                  "bathroomCount": {
+                    "type": "integer"
+                  },
+                  "parkingCount": {
+                    "type": "integer"
+                  },
+                  "roomCount": {
+                    "type": "integer"
+                  }
+                },
+                "nullable": false
+              },
+              "structureDimensions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "typeCode"
+                  ],
+                  "properties": {
+                    "typeCode": {
+                      "type": "string",
+                      "enum": [
+                        "AREA",
+                        "DEPTH",
+                        "HEIGHT",
+                        "LENGTH",
+                        "VOLUME",
+                        "WEIGTH",
+                        "WIDTH"
+                      ]
+                    },
+                    "measure": {
+                      "type": "object",
+                      "properties": {
+                        "unitCode": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number",
+                          "format": "float"
+                        }
+                      },
+                      "nullable": false
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "assessmentResults": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "assessmentResultIdentifier": {
+                      "type": "string"
+                    },
+                    "perils": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "nullable": false
+                    },
+                    "financialValuation": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "typeCode": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "type": "object",
+                            "required": [
+                              "currencyCode",
+                              "value"
+                            ],
+                            "properties": {
+                              "currencyCode": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number",
+                                "format": "float"
+                              }
+                            },
+                            "nullable": false
+                          },
+                          "valuationDate": {
+                            "type": "string",
+                            "format": "date"
+                          }
+                        },
+                        "nullable": false
+                      },
+                      "nullable": false
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "partyRoleOnPhysicalObject": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "typeCode": {
+                      "type": "string"
+                    },
+                    "partyIdentifier": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "geometry": {
+                "type": "object",
+                "properties": {
+                  "typeCode": {
+                    "type": "string",
+                    "enum": [
+                      "STRUCTURE",
+                      "PLACE"
+                    ]
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "latitude",
+                        "longitude"
+                      ],
+                      "properties": {
+                        "coordinateSystemCode": {
+                          "type": "string"
+                        },
+                        "latitude": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "longitude": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "elevation": {
+                          "type": "number",
+                          "format": "float"
+                        },
+                        "geocodingResolution": {
+                          "type": "string"
+                        }
+                      },
+                      "nullable": false
+                    },
+                    "nullable": false
+                  }
+                },
+                "nullable": false
+              }
+            },
+            "nullable": false
+          }
+        },
+        "nullable": false
+      },
+      "address": {
+        "type": "object",
+        "title": "address",
+        "properties": {
+          "placeAddress": {
+            "type": "object",
+            "required": [
+              "streetAddress",
+              "postCode",
+              "municipality",
+              "country"
+            ],
+            "properties": {
+              "placeAddressIdentifier": {
+                "type": "string"
+              },
+              "unstructuredAddress": {
+                "type": "string"
+              },
+              "streetAddress": {
+                "type": "object",
+                "properties": {
+                  "unstructuredAddress": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "number": {
+                    "type": "string"
+                  },
+                  "typeCode": {
+                    "type": "string"
+                  },
+                  "preDirectionCode": {
+                    "type": "string"
+                  },
+                  "postDirectionCode": {
+                    "type": "string"
+                  }
+                },
+                "nullable": false
+              },
+              "postCode": {
+                "type": "string"
+              },
+              "municipality": {
+                "type": "object",
+                "required": [
+                  "name"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "typeCode": {
+                    "type": "string",
+                    "enum": [
+                      "BOROUGH",
+                      "CITY",
+                      "COUNTY",
+                      "PARISH",
+                      "PREFECTURE",
+                      "TOWN",
+                      "TOWNSHIP",
+                      "VILLA",
+                      "VILLAGE",
+                      "WARD",
+                      "ZONE"
+                    ]
+                  }
+                },
+                "nullable": false
+              },
+              "country": {
+                "type": "object",
+                "required": [
+                  "alphaIsoCode",
+                  "name"
+                ],
+                "properties": {
+                  "alphaIsoCode": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "nullable": false
+              },
+              "countrySubdivisions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "typeCode"
+                  ],
+                  "properties": {
+                    "alphaIsoCode": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "typeCode": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "geographicRegionName": {
+                "type": "string"
+              },
+              "globalPositionAddresses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "latitude",
+                    "longitude"
+                  ],
+                  "properties": {
+                    "coordinateSystemCode": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "longitude": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "elevation": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "geocodingResolution": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              },
+              "postalAddress": {
+                "type": "object",
+                "properties": {
+                  "unitNumber": {
+                    "type": "integer"
+                  },
+                  "floorNumber": {
+                    "type": "integer"
+                  },
+                  "addressLines": {
+                    "type": "string"
+                  }
+                },
+                "nullable": false
+              }
+            },
+            "nullable": false
+          }
+        },
+        "nullable": false
+      },
+      "place": {
+        "type": "object",
+        "title": "place",
+        "required": [
+          "placeIdentifier"
+        ],
+        "properties": {
+          "placeIdentifier": {
+            "type": "string"
+          },
+          "Name": {
+            "type": "string"
+          },
+          "structureCount": {
+            "type": "integer"
+          },
+          "surfaceAreaMeasurement": {
+            "type": "object",
+            "nullable": false
+          },
+          "placeAddresses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "streetAddress",
+                "postCode",
+                "municipality",
+                "country"
+              ],
+              "properties": {
+                "placeAddressIdentifier": {
+                  "type": "string"
+                },
+                "unstructuredAddress": {
+                  "type": "string"
+                },
+                "streetAddress": {
+                  "type": "object",
+                  "properties": {
+                    "unstructuredAddress": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "number": {
+                      "type": "string"
+                    },
+                    "typeCode": {
+                      "type": "string"
+                    },
+                    "preDirectionCode": {
+                      "type": "string"
+                    },
+                    "postDirectionCode": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                },
+                "postCode": {
+                  "type": "string"
+                },
+                "municipality": {
+                  "type": "object",
+                  "required": [
+                    "name"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "typeCode": {
+                      "type": "string",
+                      "enum": [
+                        "BOROUGH",
+                        "CITY",
+                        "COUNTY",
+                        "PARISH",
+                        "PREFECTURE",
+                        "TOWN",
+                        "TOWNSHIP",
+                        "VILLA",
+                        "VILLAGE",
+                        "WARD",
+                        "ZONE"
+                      ]
+                    }
+                  },
+                  "nullable": false
+                },
+                "country": {
+                  "type": "object",
+                  "required": [
+                    "alphaIsoCode",
+                    "name"
+                  ],
+                  "properties": {
+                    "alphaIsoCode": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                },
+                "countrySubdivisions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "name",
+                      "typeCode"
+                    ],
+                    "properties": {
+                      "alphaIsoCode": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "typeCode": {
+                        "type": "string"
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                },
+                "geographicRegionName": {
+                  "type": "string"
+                },
+                "globalPositionAddresses": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude"
+                    ],
+                    "properties": {
+                      "coordinateSystemCode": {
+                        "type": "string"
+                      },
+                      "latitude": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "longitude": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "elevation": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "geocodingResolution": {
+                        "type": "string"
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                },
+                "postalAddress": {
+                  "type": "object",
+                  "properties": {
+                    "unitNumber": {
+                      "type": "integer"
+                    },
+                    "floorNumber": {
+                      "type": "integer"
+                    },
+                    "addressLines": {
+                      "type": "string"
+                    }
+                  },
+                  "nullable": false
+                }
+              },
+              "nullable": false
+            },
+            "nullable": false
+          },
+          "structures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "structureIdentifier": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "typeCode": {
+                  "type": "string"
+                },
+                "materialTypeCode": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "nullable": false
+                },
+                "constructionYear": {
+                  "type": "integer"
+                },
+                "renovationYear": {
+                  "type": "integer"
+                },
+                "unitCount": {
+                  "type": "integer"
+                },
+                "structureComponentsDetails": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "typeCode": {
+                        "type": "string"
+                      },
+                      "features": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "feature": {
+                              "type": "string"
+                            },
+                            "featureValue": {
+                              "type": "string"
+                            }
+                          },
+                          "nullable": false
+                        },
+                        "nullable": false
+                      },
+                      "dimension": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "typeCode"
+                          ],
+                          "properties": {
+                            "typeCode": {
+                              "type": "string",
+                              "enum": [
+                                "AREA",
+                                "DEPTH",
+                                "HEIGHT",
+                                "LENGTH",
+                                "VOLUME",
+                                "WEIGTH",
+                                "WIDTH"
+                              ]
+                            },
+                            "measure": {
+                              "type": "object",
+                              "properties": {
+                                "unitCode": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "number",
+                                  "format": "float"
+                                }
+                              },
+                              "nullable": false
+                            }
+                          },
+                          "nullable": false
+                        },
+                        "nullable": false
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                },
+                "structureComponentsAggregate": {
+                  "type": "object",
+                  "properties": {
+                    "floorCount": {
+                      "type": "integer"
+                    },
+                    "bathroomCount": {
+                      "type": "integer"
+                    },
+                    "parkingCount": {
+                      "type": "integer"
+                    },
+                    "roomCount": {
+                      "type": "integer"
+                    }
+                  },
+                  "nullable": false
+                },
+                "structureDimensions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "typeCode"
+                    ],
+                    "properties": {
+                      "typeCode": {
+                        "type": "string",
+                        "enum": [
+                          "AREA",
+                          "DEPTH",
+                          "HEIGHT",
+                          "LENGTH",
+                          "VOLUME",
+                          "WEIGTH",
+                          "WIDTH"
+                        ]
+                      },
+                      "measure": {
+                        "type": "object",
+                        "properties": {
+                          "unitCode": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "number",
+                            "format": "float"
+                          }
+                        },
+                        "nullable": false
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                },
+                "assessmentResults": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "assessmentResultIdentifier": {
+                        "type": "string"
+                      },
+                      "perils": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "nullable": false
+                      },
+                      "financialValuation": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "typeCode": {
+                              "type": "string"
+                            },
+                            "amount": {
+                              "type": "object",
+                              "required": [
+                                "currencyCode",
+                                "value"
+                              ],
+                              "properties": {
+                                "currencyCode": {
+                                  "type": "string"
+                                },
+                                "value": {
+                                  "type": "number",
+                                  "format": "float"
+                                }
+                              },
+                              "nullable": false
+                            },
+                            "valuationDate": {
+                              "type": "string",
+                              "format": "date"
+                            }
+                          },
+                          "nullable": false
+                        },
+                        "nullable": false
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                },
+                "partyRoleOnPhysicalObject": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "typeCode": {
+                        "type": "string"
+                      },
+                      "partyIdentifier": {
+                        "type": "string"
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                },
+                "geometry": {
+                  "type": "object",
+                  "properties": {
+                    "typeCode": {
+                      "type": "string",
+                      "enum": [
+                        "STRUCTURE",
+                        "PLACE"
+                      ]
+                    },
+                    "coordinates": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "latitude",
+                          "longitude"
+                        ],
+                        "properties": {
+                          "coordinateSystemCode": {
+                            "type": "string"
+                          },
+                          "latitude": {
+                            "type": "number",
+                            "format": "float"
+                          },
+                          "longitude": {
+                            "type": "number",
+                            "format": "float"
+                          },
+                          "elevation": {
+                            "type": "number",
+                            "format": "float"
+                          },
+                          "geocodingResolution": {
+                            "type": "string"
+                          }
+                        },
+                        "nullable": false
+                      },
+                      "nullable": false
+                    }
+                  },
+                  "nullable": false
+                }
+              },
+              "nullable": false
+            },
+            "nullable": false
+          },
+          "assessmentResults": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "assessmentResultIdentifier": {
+                  "type": "string"
+                },
+                "perils": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "nullable": false
+                },
+                "financialValuation": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "typeCode": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "object",
+                        "required": [
+                          "currencyCode",
+                          "value"
+                        ],
+                        "properties": {
+                          "currencyCode": {
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "number",
+                            "format": "float"
+                          }
+                        },
+                        "nullable": false
+                      },
+                      "valuationDate": {
+                        "type": "string",
+                        "format": "date"
+                      }
+                    },
+                    "nullable": false
+                  },
+                  "nullable": false
+                }
+              },
+              "nullable": false
+            },
+            "nullable": false
+          },
+          "composingPlaces": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": false
+          }
+        },
+        "nullable": false
+      },
+      "AssessmentAndCondition": {
+        "type": "object",
+        "properties": {
+          "assessmentResult": {
+            "type": "object",
+            "properties": {
+              "assessmentResultIdentifier": {
+                "type": "string"
+              },
+              "perils": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": false
+              },
+              "financialValuation": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "typeCode": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "object",
+                      "required": [
+                        "currencyCode",
+                        "value"
+                      ],
+                      "properties": {
+                        "currencyCode": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "number",
+                          "format": "float"
+                        }
+                      },
+                      "nullable": false
+                    },
+                    "valuationDate": {
+                      "type": "string",
+                      "format": "date"
+                    }
+                  },
+                  "nullable": false
+                },
+                "nullable": false
+              }
+            },
+            "nullable": false
+          }
+        },
+        "nullable": false
+      }
+    },
+    "responses": {
+      "No_content": {
+        "description": ""
+      },
+      "Bad_request": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Not_found": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Internal_server_error": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Error": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "claim_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "claim": {
+                  "$ref": "#/components/schemas/claim"
+                }
+              }
+            }
+          }
+        }
+      },
+      "claim_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "claim": {
+                  "$ref": "#/components/schemas/claim"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Party_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Party": {
+                  "$ref": "#/components/schemas/Party"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Party_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Party": {
+                  "$ref": "#/components/schemas/Party"
+                }
+              }
+            }
+          }
+        }
+      },
+      "policy_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "policy": {
+                  "$ref": "#/components/schemas/policy"
+                }
+              }
+            }
+          }
+        }
+      },
+      "policy_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "policy": {
+                  "$ref": "#/components/schemas/policy"
+                }
+              }
+            }
+          }
+        }
+      },
+      "physicalObject_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "physicalObject": {
+                  "$ref": "#/components/schemas/physicalObject"
+                }
+              }
+            }
+          }
+        }
+      },
+      "physicalObject_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "physicalObject": {
+                  "$ref": "#/components/schemas/physicalObject"
+                }
+              }
+            }
+          }
+        }
+      },
+      "address_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "$ref": "#/components/schemas/address"
+                }
+              }
+            }
+          }
+        }
+      },
+      "address_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "$ref": "#/components/schemas/address"
+                }
+              }
+            }
+          }
+        }
+      },
+      "place_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "place": {
+                  "$ref": "#/components/schemas/place"
+                }
+              }
+            }
+          }
+        }
+      },
+      "place_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "place": {
+                  "$ref": "#/components/schemas/place"
+                }
+              }
+            }
+          }
+        }
+      },
+      "AssessmentAndCondition_-_OK": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "AssessmentAndCondition": {
+                  "$ref": "#/components/schemas/AssessmentAndCondition"
+                }
+              }
+            }
+          }
+        }
+      },
+      "AssessmentAndCondition_-_Created": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "AssessmentAndCondition": {
+                  "$ref": "#/components/schemas/AssessmentAndCondition"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "basic_auth": {
+        "scheme": "basic",
+        "type": "http"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Entity resource template",
+      "description": "CRUD to manage the Entity resources."
+    }
+  ]
+}

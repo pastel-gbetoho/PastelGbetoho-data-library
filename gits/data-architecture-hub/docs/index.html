@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div class="col-sm-12 main">
+<br/>
+<div class="row">
+<p>
+<i>This site is maintained by the AXA Group Data Architecture team. <br/>If you have any questions or you want to contribute, please contact <a href="mailto:pastel.gbetoho.imagine@axa.com">Pastel GBETOHO</a> or <a href="mailto:guillaume.hervouin@axa.com">Guillaume HERVOUIN</a> or <a href="mailto:clement.chupeau@axa.com">Clement CHUPEAU</a></i>.
+</p>
+</div>
+<div class="row">
+<div class="col-md-3">
+<p><img src="https://pages.github.axa.com/AXA-GO/data-architecture-hub/media/data-architecture-logo.png" width="100%"/></p>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Glossary and maturity</strong></p>
+<ul>
+<li><a href="data-mgt-information-capital.html">Information Capital</a></li>
+<li><a href="data-mgt-glossary.html">Data Management Glossary</a></li>
+<li><a href="data-mgt-job-descriptions.html">Data Job Descriptions</a></li>
+<li><a href="data-mgt-books.html">Reference Books</a></li>
+<li><a href="data-mgt-articles.html">Articles &amp; Training</a></li>
+<li><a href="data-mgt-maturity-model.html">AXA Data Maturity Model</a></li>
+<li><a href="api-maturity-model.html">AXA API Maturity Model</a></li>
+<li><a href="data-mgt-activity-map.html">AXA Data Mgt Activity Map</a></li>
+<li><a href="data-mgt-architecture.html">Data Architecture Work</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Architecture Reference Models</strong></p>
+<ul>
+<li><a href="bi-analytics-paper.html">Business Intelligence &amp; Analytics</a></li>
+<li><a href="customer-mdm-paper.html">Master Data Management</a></li>
+<li><a href="metadata-paper.html">Metadata Management</a></li>
+<li><a href="integration-paper.html">Data Integration</a></li>
+<li><a href="data-modeling-paper.html">Data Modeling</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/zdoctools/axa-data-map-viz.html?title=DATA%20ARCHITECTIRE%20HUB&amp;dataobjects=data-ref-modeling%2Fdata-model-axa-reference.xml">AXA High Level Data Model</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Practices and guidelines</strong></p>
+<ul>
+<li><a href="data-mgt-dq-handbook.html">Data Quality Handbook</a></li>
+<li><a href="data-mgt-dq-check-list.html">Data Quality Check list</a></li>
+<li><a href="data-mgt-dq-rules.html">Data Quality Rules</a></li>
+<li><a href="data-privacy-preserving.html">Data Privacy Preserving</a></li>
+<li><a href="documentation-awareness.html">Documentation Awareness</a></li>
+<li><a href="data-modeling-acord.html">Data Model - Insurance - ACORD</a></li>
+<li><a href="data-modeling-it4it.html">Data Model - IT4IT - The Open Group</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/training-materials-data-modeling">Data Modeling Training</a></li>
+<li><a href="data-mgt-references.html">External References</a></li>
+<li><a href="data-mgt-technologies.html">Data Technologies</a></li>
+<li><a href="data-mesh.html">Data Mesh</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-ptf-bi-analytics">Platform - Data</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-ptf-document-management">Platform - Document</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/it4it-architecture-hub">AXA IT4IT Architecture Hub –&gt;</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+<p>
+<i>Data architecture applied to concrete AXA business use cases:</i>
+</p>
+<div class="row">
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Claim Analytics (Sherlock, 2021)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-claims-analytics/presentation/smartcircle_13JAN2021.html">Presentation - Context</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-claims-analytics/">Documentation page</a></li>
+<li><a href="https://github.axa.com/AXA-GO/data-study-claims-analytics/">GitHub repository</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-claims-analytics/model_html_report/index.html">Information models</a></li>
+<li><a href="https://github.axa.com/AXA-GO/data-study-claims-analytics/tree/master/sherlock-datavault-poc">Insurance data generator (Faker)</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Bank Insurance Partnership (Dare, 2021)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-dare/">Archimate Models</a></li>
+<li><a href="https://github.axa.com/AXA-GO/data-study-dare/">Information model repository</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-dare/html_views_donotdelete/Worked_Example_Quote.html">Worked Example</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Health (Digital Healthcare Platform, 2022)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-dhp/model_html_report/">Consent Management</a></li>
+<li><a href="dhp-data-architecture.html">DHP Data Packages</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Property data (Acceleration Team, 2022)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/index.html">Homepage</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/conceptual_data_model.html">Conceptual Model</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/axaxl_sov_illustration.html">Illustration with undewriting data sample</a> <!--- + [Use case - Data elements mapping](https://pages.github.axa.com/AXA-GO/data-study-property-data/property-data-mapping.html) ---></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/zdoctools/axa-data-map-viz.html?title=AXA%20DATA%20ARCHITECTURE%20HUB&amp;dataobjects=data-study-property-data%2Fdata%2Fmap-property-data-objects.xml&amp;usecases=data-study-property-data%2Fdata%2Fmap-property-data-usecases.xml">Use case - Data elements mapping</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/logical_data_model.html">Proposed logical model for interoperability</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/specifications/openapi/index.html">Open API implemantion based on the logical model</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/property-data-product-blueprint">Property Data Product Blueprint</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Metadata and Data Quality Assurance (MyDataAtlas, 2014)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-my-data-atlas/">My Data Atlas - User Guide</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-my-data-atlas/mydata_atlas_solution_architecture.html">My Data Atlas - Solution Architecture</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>IT Assets Management (ITAM, 2022)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/it4it-ref-itam/data-analysis/SilvaRG_ProductCatalog.html">AXA GO Product Catalog example</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/it4it-ref-itam/data-analysis/SilvaRG_BusinessServices&amp;INFRA.html">Business services &amp; Technical environments example</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/it4it-ref-itam/data-analysis/SilvaDataImport.html">Data import : HowTo</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/it4it-ref-itam/slides/bideliveryscenarios.html#1">BI Delivery Scenarios (Awareness)</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/it4it-ref-itam/specifications/openapi/index.html?apischema=app-centralization-open-api-schema-v0.1.yaml">Application ID Card Open API Specification</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>AXA GO Entity (Principles and EDM, 2023)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-go-entity">AXA GO Enterprise Data Model</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-go-entity/#axa-go-data-lake-architecture-principles">AXA GO Data Lake Architecture Principles</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/data-study-go-entity/#collaboration-contract-guidelines">AXA GO Data Collaboration Contract</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="thumbnail">
+<div class="caption">
+<p><strong>Claim Recovery (TDO, 2024)</strong></p>
+<ul>
+<li><a href="https://pages.github.axa.com/AXA-GO/tdo-claims-squad">Homepage</a></li>
+<li><a href="https://pages.github.axa.com/AXA-GO/tdo-claims-squad/recovery-data-catalog">Conceptual Model</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

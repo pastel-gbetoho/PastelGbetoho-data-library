@@ -1,0 +1,4 @@
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+   &nbsp;&nbsp;<a class="navbar-brand" href="index.html">$description-meta$</a>
+</nav>

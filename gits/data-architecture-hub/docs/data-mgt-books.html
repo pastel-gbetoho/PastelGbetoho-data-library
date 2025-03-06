@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA BOOKS </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#data-systems">Data Systems</a></li>
+          <li><a href="#architecture-and-software">Architecture and Software</a></li>
+          <li><a href="#data-integration-and-api-design">Data Integration and API Design</a></li>
+          <li><a href="#data-governance-and-master-data-management">Data Governance and Master Data Management</a></li>
+          <li><a href="#data-modeling">Data Modeling</a></li>
+          <li><a href="#data-warehousing">Data Warehousing</a></li>
+          <li><a href="#business-intelligence">Business Intelligence</a></li>
+          <li><a href="#fact-based-data">Fact-based data</a></li>
+          <li><a href="#temporal-data">Temporal data</a></li>
+          <li><a href="#data-modeling-patterns">Data Modeling Patterns</a></li>
+          <li><a href="#data-storage-and-processing">Data Storage and Processing</a></li>
+          <li><a href="#data-science">Data Science</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<h2 id="data-systems">Data Systems</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Carl Anderson - Creating a Data-Driven Organization.png"/></td>
+<td>Creating a Data-Driven Organization</td>
+<td>Carl Anderson</td>
+<td>2015</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/creating-a-data-driven/9781491916902/">available here</a></td>
+</tr>
+<tr class="even">
+<td><a id="book-data-is-everybody-business"><img width="100px" src="media/data-mgt-books/Barbara H. Wixom - Data Is Everybody's Business.png"/></a></td>
+<td>Data Is Everybody’s Business: The Fundamentals of Data Monetization</td>
+<td>Barbara H. Wixom (MIT CISR)</td>
+<td>2022</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/51c889c9-7a15-4563-8074-c5d9844f648d">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Bas van Gils - Data Management a gentle introduction.jpg"/></td>
+<td>Data Management a gentle introduction</td>
+<td>Bas van Gils</td>
+<td>2020</td>
+<td>Reference for data management</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/DAMA - DMBOK2.jpg"/></td>
+<td>Data Management Body of Knowledge 2nd Edition</td>
+<td>Data Management Association</td>
+<td>2017</td>
+<td>Reference <a href="DAMA-DMBOK_2%20(2017).pdf">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Piethein Strengholt - Data Management at Scale.jpg"/></td>
+<td>Data Management at Scale</td>
+<td>Piethein Strengholt</td>
+<td>2020</td>
+<td>Reference for IT data management <a href="https://learning.oreilly.com/library/view/data-management-at/9781492054771/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Piethein Strengholt - Data Management at Scale 2nd Edition.jpg"/></td>
+<td>Data Management at Scale 2nd Edition</td>
+<td>Piethein Strengholt</td>
+<td>2023</td>
+<td>Reference for IT data management <a href="https://learning.oreilly.com/library/view/data-management-at/9781098138851/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/James Serra - Deciphering Data Architectures.jpg"/></td>
+<td>Data Architecture</td>
+<td>James Serra</td>
+<td>2024</td>
+<td>Reference for IT data architectures <a href="https://learning.oreilly.com/library/view/deciphering-data-architectures/9781098150754/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Charles D. Tupper - Data Architecture_From Zen to Reality.jpg"/></td>
+<td>Data Architecture: From Zen to Reality</td>
+<td>Charles D. Tupper</td>
+<td>2011</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/946d74b0-f050-11e6-8ce3-0242c0a80c07">available here</a></td>
+</tr>
+<tr class="odd">
+<td><a id="book-domain-driven-design"><img width="100px" src="media/data-mgt-books/Eric Evans - Domain Driven Design.jpg"/></a></td>
+<td>Domain-Driven Design</td>
+<td>Eric Evans</td>
+<td>2003</td>
+<td>Reference for data domain design <a href="https://learning.oreilly.com/library/view/domain-driven-design-tackling/0321125215/">available here</a></td>
+</tr>
+<tr class="even">
+<td><a id="book-domain-driven-design-learning"><img width="100px" src="media/data-mgt-books/Vlad Khononov - Learning Domain-Driven Design.png"/></a></td>
+<td>Learning Domain-Driven Design, Aligning Software Architecture and Business Strategy</td>
+<td>Vlad Khononov</td>
+<td>2022</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/learning-domain-driven-design/9781098100124/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Zhamak Dehghani - Data Mesh.jpg"/></td>
+<td>Data Mesh</td>
+<td>Zhamak Dehghani</td>
+<td>2022</td>
+<td>Reference for data mesh <a href="https://learning.oreilly.com/library/view/data-mesh/9781492092384/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Jacek Majchrzak - Data Mesh in Action.jpg"/></td>
+<td>Data Mesh in Action</td>
+<td>Jacek Majchrzak</td>
+<td>2022</td>
+<td>Reference for data mesh <a href="https://www.manning.com/books/data-mesh-in-action">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Jean-Georges Perrin - Implementing Data Mesh.jpg"/></td>
+<td>Implementing Data Mesh</td>
+<td>Jean-Georges Perrin</td>
+<td>2024</td>
+<td>Reference for data mesh <a href="https://learning.oreilly.com/library/view/implementing-data-mesh/9781098156213/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Chris Richardson - Microservices Patterns.jpg"/></td>
+<td>Microservices</td>
+<td>Chris Richardson</td>
+<td>2018</td>
+<td>Reference for microservices design patterns <a href="https://axa-group-operations.percipio.com/books/8a74ccea-f809-4f79-a901-4a1c1f69a9c5">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Andrew Jones - Driving Data Quality with Data Contracts.jpg"/></td>
+<td>Driving Data Quality with Data Contracts</td>
+<td>Andrew Jones</td>
+<td>2023</td>
+<td>Reference for microservices design patterns <a href="https://learning.oreilly.com/library/view/driving-data-quality/9781837635009/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Marty Cagan - Inspired.jpg"/></td>
+<td>Inspired - How to create tech products customers love</td>
+<td>Marty Cagan</td>
+<td>2008</td>
+<td>Reference for product design and management <a href="https://learning.oreilly.com/library/view/inspired-2nd-edition/9781119387503/">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="architecture-and-software">Architecture and Software</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/architecture-books/Donella Meadows - Thinking in Systems.jpg"/></td>
+<td>Thinking in Systems</td>
+<td>Donella Meadows</td>
+<td>2008</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/architecture-books/Neal Ford - Building Evolutionary Architectures.jpg"/></td>
+<td>Building Evolutionary Architectures</td>
+<td>Neal Ford</td>
+<td>2017</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/building-evolutionary-architectures/9781491986356/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/architecture-books/Neal Ford - Building Evolutionary Architectures 2nd Edition.jpg"/></td>
+<td>Building Evolutionary Architectures 2nd Edition</td>
+<td>Neal Ford</td>
+<td>2022</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/building-evolutionary-architectures/9781492097532/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/architecture-books/Mark Richards - Fundamentals of Software Architecture.jpg"/></td>
+<td>Fundamentals of Software Architecture</td>
+<td>Mark Richards</td>
+<td>2020</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/architecture-books/Gregor Hohpe - The Software Architect Elevator.jpg"/></td>
+<td>The Software Architect Elevator: Redefining the Architect’s Role in the Digital Enterprise</td>
+<td>Gregor Hohpe</td>
+<td>2020</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/the-software-architect/9781492077534/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/architecture-books/Nick Rozanski - Software System Architecture 2nd Edition.jpg"/></td>
+<td>Software Systems Architecture: Working with Stakeholders Using Viewpoints and Perspectives</td>
+<td>Nick Rozanski</td>
+<td>2011</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/software-systems-architecture/9780132906135/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><a id="book-team-accelerate"><img width="100px" src="media/architecture-books/Nicole Forsgren - Accelerate.jpg"/></a></td>
+<td>Accelerate: Building and Scaling High Performing Technology Organization</td>
+<td>Nicole Forsgren, Jez Humble, Gene Kim</td>
+<td>2018</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/accelerate/9781457191435/">available here</a></td>
+</tr>
+<tr class="even">
+<td><a id="book-team-topologies"><img width="100px" src="media/architecture-books/Mattew Skelton - Team Topologies.jpg"/></a></td>
+<td>Team Topologies: Organizing Business and Technology Teams for Fast Flow</td>
+<td>Mattew Skelton, Manuel Pais</td>
+<td>2019</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/team-topologies/9781098157234/">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-integration-and-api-design">Data Integration and API Design</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Gregor Hohpe - Enterprise Integration Patterns.jpg"/></td>
+<td>Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions</td>
+<td>Gregor Hohpe</td>
+<td>2003</td>
+<td><a href="https://learning.oreilly.com/library/view/enterprise-integration-patterns/0321200683/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Arnaud Lauret - The Design of Web APIs.jpg"/></td>
+<td>The Design of Web APIs</td>
+<td>Arnaud Lauret</td>
+<td>2019</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/71a36e91-20ef-490e-bc6a-b2e2c716a394">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Donald Norman - The Design of Everyday Things.jpg"/></td>
+<td>The Design of Everyday Things</td>
+<td>Donald Norman</td>
+<td>1988</td>
+<td>Reference for designers</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Steve Krug - Don't Make Me Think (revisited).jpg"/></td>
+<td>Don’t Make Me Think (revisited): A Common Sense Approach to Web and Mobile Usability</td>
+<td>Steve Krug</td>
+<td>2013</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/dont-make-me/9780133597271/">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-governance-and-master-data-management">Data Governance and Master Data Management</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Uma Gupta - A Practitioner's Guide to Data Governance.jpg"/></td>
+<td>A Practitioner’s Guide to Data Governance</td>
+<td>Uma Gupta</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Robert S. Seiner - Non-Invasive Data Governance.jpg"/></td>
+<td>Non-Invasive Data Governance</td>
+<td>Robert S. Seiner</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Sunil Soares - The Chief Data Officer Handbook for Data Governance.jpg"/></td>
+<td>The Chief Data Officer Handbook for Data Governance</td>
+<td>Sunil Soares</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/John Ladley - Data Governance How To.jpg"/></td>
+<td>Data Governance: How to Design, Deploy, and Sustain an Effective Data Governance Program</td>
+<td>John Ladley</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Alex Berson - Master Data Management And Data Governance.jpg"/></td>
+<td>Master Data Management And Data Governance</td>
+<td>Alex Berson</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Holly Starling - Data Governance Simplified.jpg"/></td>
+<td>Data Governance Simplified - Creating and Measuring Trusted Data for Businesses</td>
+<td>Holly Starling</td>
+<td>2015</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Lowell Fyman - The Data and Analytics Playbook.jpg"/></td>
+<td>The Data and Analytics Playbook: Proven Methods for Governed Data and Analytic Quality</td>
+<td>Lowell Fyman</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Morgan Templar - Get Governed.jpg"/></td>
+<td>Get Governed: Building World Class Data Governance Programs</td>
+<td>Morgan Templar</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/David Plotkin - Data Stewardship.jpg"/></td>
+<td>Data Stewardship: An Actionable Guide to Effective Data Management and Data Governance</td>
+<td>David Plotkin</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Rupa Mahanti - Data Quality.jpg"/></td>
+<td>Data Quality: Dimensions, Measurement, Strategy, Management, and Governance</td>
+<td>Rupa Mahanti</td>
+<td>2019</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Thomas C. Redman - Getting in Front on Data.jpg"/></td>
+<td>Getting in Front on Data: Who Does What</td>
+<td>Thomas C. Redman</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Mark Allen - Multi-Domain Master Data Management.jpg"/></td>
+<td>Multi-Domain Master Data Management: Advanced MDM and Data Governance in Practice</td>
+<td>Mark Allen, Dalton Cervo</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Harkish Sen - Data Governance Perspectives and Practices.jpg"/></td>
+<td>Data Governance: Perspectives and Practices</td>
+<td>Harkish Sen</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Laura B. Madsen - Disrupting Data Governance.jpg"/></td>
+<td>Disrupting Data Governance: A Call to Action</td>
+<td>Laura B. Madsen</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Christian J. Ward - Data Leverage.jpg"/></td>
+<td>Data Leverage: Unlocking the Surprising Growth Potential of Data Partnerships</td>
+<td>Christian J. Ward, James J. Ward</td>
+<td>2018</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Laura Sebastian Coleman - Navigating the Labyrinth.jpg"/></td>
+<td>Navigating the Labyrinth: An Executive Guide to Data Management</td>
+<td>Laura Sebastian Coleman</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Helmut Schindlwick - IT Governance.jpg"/></td>
+<td>IT Governance: How to Reduce Costs and Improve Data Quality through the Implementation of IT Governance</td>
+<td>Helmut Schindlwick</td>
+<td>XXX</td>
+<td>XXX</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Ole Olesen-Bagneux  - The Enterprise Data Catalog.jpg"/></td>
+<td>Enterprise Data Catalog</td>
+<td>Ole Olesen-Bagneux</td>
+<td>2023</td>
+<td>Reference for data catalogs <a href="https://learning.oreilly.com/library/view/the-enterprise-data/9781492098706/">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-modeling">Data Modeling</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/William Kent - Data and Reality.jpg"/></td>
+<td>Data and reality</td>
+<td>William Kent</td>
+<td>1978</td>
+<td>Timeless perspective on perceiving and managing information in our imprecise world</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Ronald G.Ross - Business Knowledge Blueprints.jpg"/></td>
+<td>Business Knowledge Blueprints</td>
+<td>Ronald G.Ross</td>
+<td>2020</td>
+<td>Enabling Data to Speak the Language of the Business</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Martin Fowler - Analysis Patterns Reusable Object Models.jpg"/></td>
+<td>Analysis Patterns: Reusable Object Models</td>
+<td>Martin Fowler</td>
+<td>1996</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/analysis-patterns-reusable/9780134271453/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/David C. Hay - Data Model Patterns - A Metadata Map.jpg"/></td>
+<td>Data Model Patterns: A Metadata Map</td>
+<td>David C. Hay</td>
+<td>2010</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/data-model-patterns/9780120887989/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/David C. Hay - Data Model Patterns - Conventions of Though.jpg"/></td>
+<td>Data Model Patterns: Conventions of Though</td>
+<td>David C. Hay</td>
+<td>2013</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/data-model-patterns/9780133488654/">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Michael Brackett - Data Resource Design.jpg"/></td>
+<td>Data Resource Design</td>
+<td>Michael Brackett</td>
+<td>2012</td>
+<td>Data Resource Design: Reality Beyond Illusion</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Graeme Simsion - Data Modeling Theory and Practice.jpg"/></td>
+<td>Data Modeling Theory and Practice</td>
+<td>Graeme Simsion</td>
+<td>2007</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/4209fe60-f360-11e6-b0e2-0242c0a80804">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Steve Hoberman - Data Modeling Made Simple.jpg"/></td>
+<td>Data Modeling Made Simple: A Practical Guide for Business and IT Professionals</td>
+<td>Steve Hoberman</td>
+<td>2005</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/386bfcf0-f360-11e6-ad5d-0242c0a80607">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Steve Hoberman - Data Modeling for the Business.jpg"/></td>
+<td>Data Modeling for the Business: A Handbook for Aligning the Business with IT using High-Level Data Models</td>
+<td>Steve Hoberman</td>
+<td>2009</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/362408c0-f360-11e6-adc4-0242c0a80902">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Terry Halpin - Information Modeling and Relational Databases.jpg"/></td>
+<td>Information Modeling and Relational Databases</td>
+<td>Terry Halpin</td>
+<td>2008</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/14944ad0-f00e-11e6-b576-0242c0a80803">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-warehousing">Data Warehousing</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Bill Inmon - DW2.0 Architecture.jpg"/></td>
+<td>DW2.0 Architecture</td>
+<td>William Inmon</td>
+<td>2008</td>
+<td>Reference for Enterprise Data Warehousing <a href="https://axa-group-operations.percipio.com/books/25089570-effe-11e6-93a6-0242c0a80a09">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Inmon+Lindstedt - A Primer for Data Scientist.jpg"/></td>
+<td>Data Architecture - A Primer for Data Scientists 2nd edition</td>
+<td>William Inmon, Dan Lindstedt</td>
+<td>2019</td>
+<td>Reference for Enterprise Data Warehousing <a href="https://axa-group-operations.percipio.com/books/f733a1c0-f378-11e6-bb2f-0242c0a80b05">1st edition is available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Hans Hultgren - Modeling The Agile Data Warehouse With Data Vault.jpg"/></td>
+<td>Modeling The Agile Data Warehouse With Data Vault</td>
+<td>Hans Hultgren</td>
+<td>2012</td>
+<td>Reference for Data Vault introduction</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Dan Linstedt - Building a Scalable Data Warehouse with Data Vault 2.0.jpg"/></td>
+<td>Building a Scalable Data Warehouse with Data Vault 2.0</td>
+<td>Dan Linstedt</td>
+<td>2016</td>
+<td>Reference for Data Vault <a href="https://axa-group-operations.percipio.com/books/67b80ce0-f3ee-11e6-adc4-0242c0a80902">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Piethein Strengholt - Building Medallion Architectures.jpg"/></td>
+<td>Building Medallion Architectures: Designing with Delta Lake and Spark</td>
+<td>Piethein Strengholt</td>
+<td>2025</td>
+<td>Reference for Medaillon Architecture <a href="https://learning.oreilly.com/library/view/building-medallion-architectures/9781098178826/">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-intelligence">Business Intelligence</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Lawrence Corr - Agile Data Warehouse Design.jpg"/></td>
+<td>Agile Data Warehouse Design</td>
+<td>Lawrence Corr</td>
+<td>2011</td>
+<td>Reference for BI Business Requirements Gathering and Dimensional Modeling</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Christopher Adamson - Star Schema_The Complete Reference.jpg"/></td>
+<td>Star Schema: The Complete Reference</td>
+<td>Christopher Adamson</td>
+<td>2010</td>
+<td>Reference for BI Business Requirements Gathering and Dimensional Modeling</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Ralph Kimball - The Data Warehouse Toolkit.jpg"/></td>
+<td>The Data Warehouse Toolkit 3rd edition</td>
+<td>Ralph Kimball</td>
+<td>1996</td>
+<td>Reference for Dimensional Data Warehousing <a href="https://axa-group-operations.percipio.com/books/3e3fdd40-f27f-11e6-bb2f-0242c0a80b05">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fact-based-data">Fact-based data</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Terry Halpin - Object-Role Modeling Fundamentals.jpg"/></td>
+<td>Object-Role Modeling Fundamentals</td>
+<td>Terry Halpin</td>
+<td>2015</td>
+<td>Object-Role Modeling Fundamentals: A Practical Guide to Data Modeling with ORM</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Jan Pieter Zwart - Fact Oriented Modeling with FCO-IM.jpg"/></td>
+<td>Fact Oriented Modeling with FCO-IM</td>
+<td>Jan Pieter Zwart</td>
+<td>2015</td>
+<td>Fact Oriented Modeling with FCO-IM: Capturing Business Semantics in Data Models with Fully Communication Oriented Information Modeling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="temporal-data">Temporal data</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Tom Johnston - Bitemporal Data.jpg"/></td>
+<td>Bitemporal Data</td>
+<td>Tom Johnston</td>
+<td>2014</td>
+<td>Bitemporal Data: Theory and Practice</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Richard T. Snodgrass - Developing Time-Oriented Database Applications In SQL.jpg"/></td>
+<td>Developing Time-Oriented Database Applications In SQL</td>
+<td>Richard T. Snodgrass</td>
+<td>1999</td>
+<td>Developing Time-Oriented Database Applications In SQL</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/C. J. Date - Time and Relational Theory.jpg"/></td>
+<td>Time and Relational Theory</td>
+<td>C. J. Date</td>
+<td>2014</td>
+<td>Time and Relational Theory: Temporal Databases in the Relational Model and SQL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-modeling-patterns">Data Modeling Patterns</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Michael Blaha - Patterns of Data Modeling.jpg"/></td>
+<td>Patterns of Data Modeling</td>
+<td>Michael Blaha</td>
+<td>1999</td>
+<td>Useful patterns at different levels of abstraction</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/David C. Hay - Enterprise Model Patterns Describing the World.jpg"/></td>
+<td>Enterprise Model Patterns: Describing the World</td>
+<td>David C. Hay</td>
+<td>2011</td>
+<td>Simple structures hidden in formidably complex situations</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Len Silverston - The Data Model Resource Book.jpg"/></td>
+<td>The Data Model Resource Book</td>
+<td>Len Silverston</td>
+<td>2001</td>
+<td>Library of universale data models for Enterprises</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-storage-and-processing">Data Storage and Processing</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Jan L. Harrington -Relational Database Design.jpg"/></td>
+<td>Relational Database Design and Implementation</td>
+<td>Jan L. Harrington</td>
+<td>2016</td>
+<td>Relational database design <a href="https://axa-group-operations.percipio.com/books/22dc7110-f3f8-11e6-adc4-0242c0a80902">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/John J. Geewax - API Design Patterns.jpg"/></td>
+<td>API Design Patterns</td>
+<td>John J. Geewax</td>
+<td>2021</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/api-design-patterns/9781617295850/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Martin Fowler - NoSQL Distilled.jpg"/></td>
+<td>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</td>
+<td>Martin Fowler</td>
+<td>2012</td>
+<td>Reference for NoSQL introduction</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Nathan Marz - Big Data.jpg"/></td>
+<td>Principles and best practices of scalable real-time data systems</td>
+<td>Nathan Marz</td>
+<td>2015</td>
+<td>Reference for ‘Big Data’ systems <a href="https://axa-group-operations.percipio.com/books/34984ce8-4330-4993-b804-806fa9a68f6e">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Martin Kleppmann - Design Data-Intensive Applications.jpg"/></td>
+<td>Design Data-Intensive Applications</td>
+<td>Martin Kleppmann</td>
+<td>2017</td>
+<td>Advanced data processing</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Bill Chambers - Spark The Definitive Guide.jpg"/></td>
+<td>Spark The Definitive Guide</td>
+<td>Bill Chambers</td>
+<td>2018</td>
+<td>Spark Guide</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Alexander Dean - Event Streams in Action.jpg"/></td>
+<td>Event Streams in Action</td>
+<td>Alexander Dean</td>
+<td>2019</td>
+<td>Event Streams Processing Reference <a href="https://axa-group-operations.percipio.com/books/c8494698-5976-463e-a04b-656dbedd5b74">available here</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Adam Bellemare - Building Event-Driven Microservices.jpg"/></td>
+<td>Building Event-Driven Microservices</td>
+<td>Adam Bellemare</td>
+<td>2020</td>
+<td>Event Driven Microservices</td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Andreas Kretz - Data Engineering Cookbook.jpg"/></td>
+<td>Data Engineering Cookbook</td>
+<td>Andreas Kretz</td>
+<td>2018</td>
+<td><a href="https://github.com/andkret/Cookbook">Open Source</a></td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Jeff Smith - Machine Learning Systems Designs That Scale.jpg"/></td>
+<td>Machine Learning Systems: Designs That Scale</td>
+<td>Jeff Smith</td>
+<td>2018</td>
+<td>Reference <a href="https://axa-group-operations.percipio.com/books/f0c6be81-93c0-4e9e-8074-0585fc144a52">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Valliappa Lakshmanan - Machine Learning Design Patterns.jpg"/></td>
+<td>Machine Learning Design Patterns</td>
+<td>Valliappa Lakshmanan</td>
+<td>2020</td>
+<td>Machine Learning Design Patterns</td>
+</tr>
+<tr class="even">
+<td><img width="100px" src="media/data-mgt-books/Alex Petrov - Database Internals.jpg"/></td>
+<td>Database Internals</td>
+<td>Alex Petrov</td>
+<td>2020</td>
+<td>Deep-Dive ino How Distributed Data Systems Work <a href="https://learning.oreilly.com/library/view/database-internals/9781492040330/">available here</a></td>
+</tr>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Noah Gift - Practical MLOps.jpg"/></td>
+<td>Practical MLOps</td>
+<td>Noah Gift &amp; Alfredo Deza</td>
+<td>2021</td>
+<td>Operationalizing Machine Learning Models <a href="https://learning.oreilly.com/library/view/practical-mlops/9781098103002/">available here</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-science">Data Science</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 20%" />
+<col style="width: 16%" />
+<col style="width: 8%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Book cover</th>
+<th>Title</th>
+<th>Authors</th>
+<th>Date</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img width="100px" src="media/data-mgt-books/Peter Bruce - Practical Statistics for Data Scientists.jpg"/></td>
+<td>Practical Statistics for Data Scientists</td>
+<td>Peter Bruce, Andrew Bruce &amp; Peter Gedeck</td>
+<td>2020</td>
+<td>Reference <a href="https://learning.oreilly.com/library/view/practical-statistics-for/9781492072935/">available here</a></td>
+</tr>
+</tbody>
+</table>
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

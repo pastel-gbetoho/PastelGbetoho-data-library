@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="pandoc">
+    <meta name="description" content="">
+    <meta name="author" content="Data Management Team">
+    <meta name="dcterms.date" content="2018-03-26">
+
+    <title>AXA DATA ARCHITECTURE HUB</title>
+
+    <!-- Bootstrap core CSS -->	
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="https://mushiyo.github.io/pandoc-toc-sidebar/css/dashboard.css" rel="stylesheet">
+	
+	<!-- Font Awesome icons, cf. https://fontawesome.com/v4/icons/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- light/dark mode -->
+    <style type="text/css">	
+		:root {--background-color: white; --caption-color: 'white'; --text-color: black; --content-color: #1C242B; --border-color: #ECECEC;}
+		
+		body {background: var(--background-color); var(--text-color);}
+		i {background: var(--background-color); var(--text-color);}
+		.caption {background: var(--caption-color); color: var(--text-color); padding: 10px 20px 20px 10px;}
+		.sidebar {background: var(--background-color); color: var(--text-color);}
+		.head {color: var(--text-color);}
+		table {border: 1px solid var(--border-color);}
+		th {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		tr {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		td {border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); border-left: none; border-right: none; color: var(--text-color);}
+		code {white-space: pre;}
+		h1 {color: var(--content-color);}
+		h2 {color: var(--content-color);}
+		h3 {color: var(--content-color);}
+		h4 {color: var(--content-color);}
+		p {color: var(--content-color);}
+		li {color: var(--content-color);}
+		summary {color: var(--content-color);}
+		.navbar {width: 100%; margin-left: auto; margin-right: auto; border: solid 2px;}
+	</style>
+	
+	<style type="text/css">.mainleft{padding-left: 18%;}</style>
+  </head>
+
+  <body>
+  <!--
+  -->
+
+<!-- CUSTOMIZATION BEGIN [we integrate nav banner directly here otherwise variables are not resolved -->
+<!-- cf. https://github.com/ashki23/pandoc-bootstrap -->
+<!--<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">&nbsp;&nbsp;-->
+<nav class="navbar fixed-top navbar-dark bg-dark">
+<div style=" display: flex; float: left;">&nbsp;&nbsp;
+<a class="navbar-brand" href="index.html"><b>AXA DATA ARCHITECTURE HUB</b> - DATA PRIVACY PRESERVING GUIDELINE </a>
+</div>
+
+<div style=" display: flex; float: right;">
+        <!--<button id="switch" onclick="toggleTheme()">Switch</button>-->
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-light');" role="button" title="Light Mode">
+<span class="fa fa-sun-o"/>
+</a>&nbsp;
+<a class="btn btn-secondary d-block" data-toggle="collapse" onclick="setTheme('theme-dark');" role="button" title="Dark Mode">
+<span class="fa fa-moon-o"/>
+</a>&nbsp;
+      </div>
+
+</nav>
+<!-- CUSTOMIZATION END -->
+
+    <div class="container-fluid">
+	     <div class="row">
+        <div id="sidebar" class="col-sm-3 col-md-2 sidebar">
+          <ul>
+          <li><a href="#INTRODUCTION">INTRODUCTION</a></li>
+          <li><a href="#SURVEY-OF-AXA-ENTITIES-PRACTICE">SURVEY OF AXA ENTITIES PRACTICE</a></li>
+          <li><a href="#KEY-LEARNINGS">KEY LEARNINGS</a>
+          <ul>
+          <li><a href="#consider-thoroughly-the-use-case">Consider thoroughly the use case</a></li>
+          <li><a href="#large-solution-space-mixing-several-dimensions">Large solution space mixing several dimensions</a></li>
+          <li><a href="#apportunity-to-improve-data-science-and-engineering-performance">Apportunity to improve data science and engineering performance</a></li>
+          <li><a href="#consider-both-solution-level-and-enterprise-level">Consider both solution level and enterprise level</a></li>
+          </ul></li>
+          <li><a href="#CONCLUSION">CONCLUSION</a></li>
+          <li><a href="#REFERENCES">REFERENCES</a></li>
+          <li><a href="#ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</a></li>
+          <li><a href="#SIGNIFICANT-REVISIONS">SIGNIFICANT REVISIONS</a></li>
+          <li><a href="#APPENDICES">APPENDICES</a></li>
+          <li><a href="#list-of-personal-data-and-sensitive-data-and-preferred-anonymization-techniques-to-apply">List of personal data and sensitive data and preferred anonymization techniques to apply</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 mainleft">
+<br/>
+<hr />
+<blockquote>
+<p>:warning: <strong>THIS DOCUMENT IS UNDER MAINTENANCE, NEW VERSION WILL BE PUBLISHED IN Q1 2023</strong> ****</p>
+</blockquote>
+<h1 id="INTRODUCTION">INTRODUCTION</h1>
+<hr />
+<p>Business demand for data (and AI) is increasing, balanced by regulation, risk and ethics which restrict availability of data to protect the individual customer.</p>
+<p>Over the past decade, data privacy regulations have been tightened in several geographies (GDPR in Europe, CCPA in the US, etc.). For the storage and processing of data comes several requirements, such as (not exhaustive):</p>
+<ul>
+<li>the data geographic location,</li>
+<li>the explicit purpose of the data processing,</li>
+<li>the right to be forgotten and the fact that personal data is deleted from our systems after a defined period of time,</li>
+<li>the need to limit the exposure of personal data to processes (minimization).</li>
+</ul>
+<p>In the GDPR - AXA policies booklet, it is said that: "To ensure a basic maturity level, each entity should have a methodology to assess the level of appropriate safeguards with regard to a risk based approach of a project with scientific or historical research purposes or statistical purposes or for archiving purposes in the public interest. This methodology should describe the various appropriate technical and organizational measures considering:</p>
+<ul>
+<li>the risks of re-identification such as Singling out, Linkability, Inference;<br />
+</li>
+<li>the sensitivity of the data processed;<br />
+</li>
+<li>the criticity of the project taking into account the scope (such as number of data subjects) and context (external providers, cloud solutions, etc)."</li>
+</ul>
+<p>In that context, techniques and algorithms have been categorized or developed to support the new data privacy requirements, for example <a href="https://pages.github.axa.com/AXA-GO/data-management/data-mgt-glossary.html#data-anonymization:gdpr">anonymization</a> (non-reversible masking of <a href="https://pages.github.axa.com/AXA-GO/data-management/data-mgt-glossary.html#personal-data:gdpr">personal data</a>), <a href="https://pages.github.axa.com/AXA-GO/data-management/data-mgt-glossary.html#data-pseudonomization:gdpr">pseudonomization</a> (reversible masking of personal data), <a href="https://pages.github.axa.com/AXA-GO/data-management/data-mgt-glossary.html#federated-learning:wikipedia">federated learning</a>).</p>
+<p>Example usages of advanced privacy preserving: <a href="https://cdeiuk.github.io/pets-adoption-guide/repository/">Privacy Preserving Technologies Use Cases</a>.</p>
+<p><strong>Privacy Preserving Techniques</strong> are not widely used within AXA today. The purpose of this document is to list use cases and to cross them with internal and external best practices (techniques, proceses, and tools).</p>
+<h1 id="SURVEY-OF-AXA-ENTITIES-PRACTICE">SURVEY OF AXA ENTITIES PRACTICE</h1>
+<hr />
+<p>Examples from AXA Entities:</p>
+<ul>
+<li>AXA France started GDPR program one year ago in 2016,</li>
+<li>DIL GDPR project on the Data Lake providing deletion services and actually working on anonymization services,</li>
+<li>Switzerland who will implement anonymization on their BI environments,</li>
+<li>Belgium who selected a Tool for anonymization and pseudonymization to cover BI environments.</li>
+</ul>
+<p>As a method of providing “appropriate safeguards”, the GDPR specifically mentions pseudonymization: “each entity shall identify other equivalent technical measures such as noise addiction, substitution, differential privacy, hashing, tokenization etc. Data subjects shall have a right to object to the data processing for specific reasons relating to their particular situations (article 19 of the GDPR).”</p>
+<h1 id="KEY-LEARNINGS">KEY LEARNINGS</h1>
+<hr />
+<h2 id="consider-thoroughly-the-use-case">Consider thoroughly the use case</h2>
+<p>Protecting personal data is an additional effort, so it’s important to concentrate the effort on appropriate mechanisms depending on the business use case and value. We observe a large range of use cases from engeering testing to validate technical integration, business rule implementation user acceptence testing, data hackathon with an external partner, new data algorithms testing, training a machine learning model for inference or prediction, etc.</p>
+<table>
+<colgroup>
+<col style="width: 63%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Use case</th>
+<th>Technologies</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Collective analysis: individual test results to be randomised while still allowing for aggregate level estimates of risk to be calculated</td>
+<td>Differential Privacy</td>
+</tr>
+<tr class="even">
+<td>Train the voice recognition without collecting individual data</td>
+<td>Federated Analytics, Differential Privacy</td>
+</tr>
+<tr class="odd">
+<td>Fraud or AML detection algorithm, connecting several databases held by different organisations whiule protecting the privacy of customers who are innocent</td>
+<td>Homomorphic Encryption, Multi-party Computation</td>
+</tr>
+<tr class="even">
+<td>Collaboration between multiple organizations, data hackathon</td>
+<td>Multi-party Computation, Differential Privacy</td>
+</tr>
+<tr class="odd">
+<td>Product development (UX design, mock-up, demo)</td>
+<td>Differential Privacy, fake data with data integrity preserving</td>
+</tr>
+<tr class="even">
+<td>Software engineering integration testing</td>
+<td>Data masking, fake data with data integrity preserving</td>
+</tr>
+</tbody>
+</table>
+<h2 id="large-solution-space-mixing-several-dimensions">Large solution space mixing several dimensions</h2>
+<p>A large range of mechanisms can be leveraged to protect personal data, they fall into several categories:</p>
+<ul>
+<li>Mask, delete data elements to the point it is not possible to identify the data subject,</li>
+<li>Isolate (segregate) data elements that must be protected,</li>
+<li>Reduce the number of people having access to the personal data, review access more frequently,</li>
+<li>Introduce noise in the data, degrade accuracy data quality dimension but can still be used for high level insights (collective trends, behaviors, etc.),</li>
+<li>Aggregate data to the level it’s not possible to identify a single person as part of a group,</li>
+<li>Decompose data (e.g. Salay 100k -&gt; 50k + 70k - 20k) then distribute pieces of data among the participants so the total is accurate but each participant doesn’t know the real initial value (cf. Multi-party Computation),</li>
+<li>Train a data model without having access to data but only algorithms outcomes (federated learning),</li>
+<li>Pseudonomize data so it’s not possible for the target audience to know who is the original person whitout having access to the information to reverse to the original data, but still possible to reconcice with the real data to serve other use cases.</li>
+</ul>
+<p>Some solutions are able to preserve data integrity, or not. It’s important to connect the solution to the use case and data model.</p>
+<h2 id="apportunity-to-improve-data-science-and-engineering-performance">Apportunity to improve data science and engineering performance</h2>
+<p>Being able to manage complex data privacy protection use cases require skills and the need to activate advanced techniques, that can be leverage also to increase the data science and engineering capacity to do more testing automation and deliver at a higher pace new data solutions.</p>
+<h2 id="consider-both-solution-level-and-enterprise-level">Consider both solution level and enterprise level</h2>
+<p>Consistency between solution level mechanisms and enterprise level capability.</p>
+<h1 id="CONCLUSION">CONCLUSION</h1>
+<hr />
+<p>When you talk about Anonymization, make sure your DPO is ok with the level of anonymity you want to achieve.</p>
+<p>As a rough definition, Identifier must be hidden (basic data masking) whilst Quasi-Identifiers should be transformed to be less accurate (generalization technique).</p>
+<p>You can either keep a set of anonymized data and a set of non-anonymized data, or mix anonymized data with non-anonymized data.</p>
+<p>You should envisage doing regular checks on your anonymized data to verify your level of anonymity (same thing as a business quality rule)</p>
+<p>Anonymization can be hard to apply and have a high cost, so make sure you have a business case pertaining to it. Moreover, it is not easy for the business to understand why anonymization is needed. Usually they would rather extend the retention period than apply anonymization on their data.</p>
+<h1 id="REFERENCES">REFERENCES</h1>
+<hr />
+<p><a href="https://www.iso.org/obp/ui/#iso:std:iso:31700:-1:ed-1:v1:en">ISO 31700</a></p>
+<p><a href="https://www.databricks.com/blog/2023/04/12/synthetic-data-better-machine-learning.html">Synthetic Data - Databricks</a></p>
+<h1 id="ACKNOWLEDGEMENTS">ACKNOWLEDGEMENTS</h1>
+<hr />
+<p>Fanny Vuillemin, former Head of AXA Data Management Community and initial author of the document</p>
+<h1 id="SIGNIFICANT-REVISIONS">SIGNIFICANT REVISIONS</h1>
+<hr />
+<p>26 March 2018: Initial published version</p>
+<p>24 Feb 2023: Major revision</p>
+<h1 id="APPENDICES">APPENDICES</h1>
+<hr />
+<h1 id="list-of-personal-data-and-sensitive-data-and-preferred-anonymization-techniques-to-apply">List of personal data and sensitive data and preferred anonymization techniques to apply</h1>
+<p>In this section, we will give you some samples of applying anonymization techniques to data, Identifiers, Quasi-Identifier and even sensitive data. This list is far from complete but it may help you find ways facing a data to understand which is the best. We will also talk about another technique (not stated earlier): How about creating features? Indeed, specific dates can be quite “identifiable” data. Instead of keeping a start date and an end date, how about creating the feature nbofdays, which will tell you how long it took between opening and closing an action/contract/claim….</p>
+<p>We will also consider that you have no data which relates to origins, ethnics, religion, criminal record, health data. Remember that there are usually strict rules for that kind of data and you have to see with your DPO before considering storing them.</p>
+<p>Remember also that some data which seems non-direct or even quasi-direct can store a lot of sensitive and personal data. This is the case with comments, unstructured data like text files, emails…. Be sure to assess those also before leaving them aside.</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 20%" />
+<col style="width: 12%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>personal data definition</th>
+<th>type of personal data (identifier/quasi-identifier)</th>
+<th>preferred anonymization/pseudonymization technique</th>
+<th>other potential technique</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AXA unique identifier</td>
+<td>Identifier</td>
+<td>Hashing</td>
+<td>basic data masking</td>
+<td>Hashing is preferred to basic data masking to ensure the linkage with other databases</td>
+</tr>
+<tr class="even">
+<td>full name, maiden name, surname, first name….</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td>randomization</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Customer National ID number</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Customer Social Security number</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>gender, sex, title</td>
+<td>Quasi-Identifier</td>
+<td>None</td>
+<td>generalization</td>
+<td>Usually this field is a defined list of value.</td>
+</tr>
+<tr class="even">
+<td>Occupation Name</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>If this field is not a defined list of value, create one rather based on type of Occupation. Moreover, if you have a field comments to specify an occupation which does not belong to the list, you should apply basic data masking to this field</td>
+</tr>
+<tr class="odd">
+<td>Highest attained level of education</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>Usually already based on a list of defined values</td>
+</tr>
+<tr class="even">
+<td>marital status</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>Usually already based on a list of defined values</td>
+</tr>
+<tr class="odd">
+<td>Customer full residential address</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td>generalization</td>
+<td>A main address could be transformed into a square based on National Statistical Data, or other non-discriminant squares (IRIS)</td>
+</tr>
+<tr class="even">
+<td>zip code</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>have the zip code transformed into a department number. e.g: 92960 -&gt; 92XXX</td>
+</tr>
+<tr class="odd">
+<td>City</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td>basic data masking</td>
+<td>have the city code transformed into a department number. Colombes -&gt; Haut de Seine or 92</td>
+</tr>
+<tr class="even">
+<td>country of residence</td>
+<td>Quasi-identifier</td>
+<td>generalization</td>
+<td></td>
+<td>usually based on a list of defined values. If your diversity of customer is 99% in one country and 1% around the world, you could envisage to turn your list into 2 variables, one for the “country”, the other corresponding to “rest of the world”</td>
+</tr>
+<tr class="odd">
+<td>department</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>should be disperse enough</td>
+</tr>
+<tr class="even">
+<td>Customer full date of birth</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td>basic data masking</td>
+<td>A date of birth is quite touchy. Generalization should be applied. You could keep the year of the date of birth, in many cases it should be ok but be careful on the diversity you have. For every type of date, you could envisage discretization. E.g. date of birth: 26/01/1980 with generalization you could have: 1980, with discretization, you could have : [1980-1990]</td>
+</tr>
+<tr class="odd">
+<td>Age</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>you should have range of ages in which you would assign according to the real age.</td>
+</tr>
+<tr class="even">
+<td>Customer email address</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td>randomization</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>mobile, work, home phone number</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td>randomization</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Customer driving license details (obtention date, type, etc.)</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Customer IBAN details</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td>generalization</td>
+<td>If some fields are important like the type of bank, maybe you could keep this information but be very careful and check with DPO because not only this is an identifier data but also a sensitive one</td>
+</tr>
+<tr class="even">
+<td>Customer wealth</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Details on Customer personal loans</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>Balance held in deposit accounts / cash like assets</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Value of home</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>Outstanding mortgage balance</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Employment status / occupation</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>Usually already based on a list of defined values. Consider if there is a comment added to this field, if yes please apply basic data masking on the comment</td>
+</tr>
+<tr class="even">
+<td>Current health status</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td>discretization (generalization)</td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>income can be from labor, property ownership, …..</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>Balance in tax qualified savings plans</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Details on Customer personal revolving credit</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>Details on Customer savings</td>
+<td>May be unstructured</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Details on Customer credit card</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>highly sensitive data</td>
+</tr>
+<tr class="even">
+<td>Customer location</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td>generalization</td>
+<td>If you are working with GPS coordinates, please consider generalizing with square</td>
+</tr>
+<tr class="odd">
+<td>Standardized VIN (identifier + interpretable for features)</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Vehicle license plate identification</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Policy first registered Date/ Duration</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>try keeping only the year, or consider ranges</td>
+</tr>
+<tr class="even">
+<td>Policy Terminated Date</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>try keeping only the year or consider ranges</td>
+</tr>
+<tr class="odd">
+<td>Balance of Loan Accounts</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>Date of fist contract underwritten with AXA</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>try keeping only the year and consider ranges</td>
+</tr>
+<tr class="odd">
+<td>Web browsing activity</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td>generalization</td>
+<td>sensitive data, with short retention dates usually</td>
+</tr>
+<tr class="even">
+<td>National Produced Number of distributor</td>
+<td>Identifier?</td>
+<td>basic data masking</td>
+<td>None (depending on DPO)</td>
+<td>when you talk about companies the National Identification Number is not consider as a personal data since it concerns a moral person. However, be very careful because for some small companies the manager’s info is very touchy. So go back to your DPO to define with him the rules to apply</td>
+</tr>
+<tr class="odd">
+<td>Distributor Name</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Address of distributor in contact w/ Customer</td>
+<td>Identifier?</td>
+<td>generalization</td>
+<td></td>
+<td>Same thing, if the address is a company address then no problem but it could be a personal address as well.</td>
+</tr>
+<tr class="odd">
+<td>Customer Socio-economic Classification level</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>Usually based on a list of values.</td>
+</tr>
+<tr class="even">
+<td>Full list of email communications w/ AXA</td>
+<td>Identifier/Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Be careful with the content of the documents. If it is only a reference then hash it, if it is more see what technique could be applied on unstructured data</td>
+</tr>
+<tr class="odd">
+<td>Full list of documents exchanged w/ AXA</td>
+<td>Identifier/Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Be careful with the content of the documents. If it is only a reference then hash it, if it is more see what technique could be applied on unstructured data</td>
+</tr>
+<tr class="even">
+<td>Full list of email web chats and IM w/ AXA</td>
+<td>Identifier/Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Be careful with the content of the documents. If it is only a reference then hash it, if it is more see what technique could be applied on unstructured data</td>
+</tr>
+<tr class="odd">
+<td>Web browsing activity</td>
+<td>Identifier/Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Be careful with the content of the documents. If it is only a reference then hash it, if it is more see what technique could be applied on unstructured data, there are many comments within web browsing.</td>
+</tr>
+<tr class="even">
+<td>Social network activity</td>
+<td>Identifier/Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Be careful with the content of the documents. If it is only a reference then hash it, if it is more see what technique could be applied on unstructured data, there are many comments within social activity.</td>
+</tr>
+<tr class="odd">
+<td>ID of underwritten policy</td>
+<td>Identifier</td>
+<td>Hashing</td>
+<td>basic data masking</td>
+<td>Hashing is preferred to basic data masking to ensure the linkage with other databases</td>
+</tr>
+<tr class="even">
+<td>effect date of policy</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>consider keeping the dates into a year or even create another field which will enclosed the number of days the policy has been opened.</td>
+</tr>
+<tr class="odd">
+<td>end date for policy</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>In case Customer added or removed coverage features</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td>generalization</td>
+<td>keep track of the nb of times the coverage has been changed rather than the date of last change. Otherwise you can also keep the year.</td>
+</tr>
+<tr class="odd">
+<td>Gross underwritten premium</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>In case Customer did not pay entirely</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>ID of recorded claim</td>
+<td>Identifier</td>
+<td>Hashing</td>
+<td>basic data masking</td>
+<td>Hashing is preferred to basic data masking to ensure the linkage with other databases</td>
+</tr>
+<tr class="even">
+<td>Date of FNOL</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Claim label</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>Usually a short description. Try considering types of claims rather than hand-written description</td>
+</tr>
+<tr class="even">
+<td>Date of last change occured on claim</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>consider adding nb of changes in the claim rather than a date</td>
+</tr>
+<tr class="odd">
+<td>Date of closure (if closed)</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>consider adding nb of days till closure rather than a date</td>
+</tr>
+<tr class="even">
+<td>Current estimation of final cost</td>
+<td></td>
+<td>generic</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Claim being investigated</td>
+<td></td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Make sure the individual is not recognizable at all within your data because the rules of fraud are sometimes quite strong</td>
+</tr>
+<tr class="even">
+<td>Suspected fraud on claim</td>
+<td></td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. Make sure the individual is not recognizable at all within your data because the rules of fraud are sometimes quite strong</td>
+</tr>
+<tr class="odd">
+<td>Date and time of accident</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Location of accident</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>try generalizing with a square</td>
+</tr>
+<tr class="odd">
+<td>(Textual) description of accident</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>if you can ensure that the text is not sensitive then keep it but if you can do without please apply basic data masking</td>
+</tr>
+<tr class="even">
+<td>Reported cause of accident</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>should be based on a list of causes. If comment is added to the cause, remove it. This list could help you mask the claim label field</td>
+</tr>
+<tr class="odd">
+<td>Contact details people involved in the accident</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>If police reported on the accident, copy of the report</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>If accident report did not involve the police</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td>discretization (generalization)</td>
+<td>consider keeping only discretized data referring to your accident report nothing else.</td>
+</tr>
+<tr class="even">
+<td>Driver when the accident occured</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Breathalyzer value if measured</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive</td>
+</tr>
+<tr class="even">
+<td>Breathalyzer delay after accident if measured</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive</td>
+</tr>
+<tr class="odd">
+<td>Reported damage type (bodily injuries, car damage, etc.)</td>
+<td></td>
+<td>generalization</td>
+<td></td>
+<td>Usually based on a defined list of values</td>
+</tr>
+<tr class="even">
+<td>Reported bodily injuries</td>
+<td></td>
+<td>basic data masking</td>
+<td></td>
+<td>try anonymizing this field, sensitive date</td>
+</tr>
+<tr class="odd">
+<td>Initial assessment of claim valuation</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive</td>
+</tr>
+<tr class="even">
+<td>In case an expert is ordered, expert ID</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>In case an expert is ordered, fees paid</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>In case an expert is ordered, date of expertise</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Total cost of repair</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive</td>
+</tr>
+<tr class="even">
+<td>if claim with bodily injuries</td>
+<td></td>
+<td>Hashing</td>
+<td></td>
+<td>not a sensitive data nor a quasi-identifier (except if the hospital was used once)</td>
+</tr>
+<tr class="odd">
+<td>if claim with bodily injuries</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Part of injury costs covering hospital fees</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>Part of injury costs covering medical equipment</td>
+<td></td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="even">
+<td>bodyshop ID</td>
+<td></td>
+<td>Hashing</td>
+<td></td>
+<td>not a sensitive data nor a quasi-identifier (except if the hospital was used once)</td>
+</tr>
+<tr class="odd">
+<td>bodyshop address</td>
+<td>Quasi-Identifier</td>
+<td></td>
+<td>new feature: square location of the address</td>
+<td>However, this is an address for a company so it could be kept.</td>
+</tr>
+<tr class="even">
+<td>bodyshop IBAN</td>
+<td>Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data</td>
+</tr>
+<tr class="odd">
+<td>bodyshop legal status</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>usually a list of known data</td>
+</tr>
+<tr class="even">
+<td>bodyshop financial health</td>
+<td>Quasi-Identifier</td>
+<td>basic data masking</td>
+<td></td>
+<td>sensitive data. This information has a retention date in itself. It is not because you had a rough year 5 years ago that it has to have effects on you all the time. Basic definition of right to be forgotten.</td>
+</tr>
+<tr class="odd">
+<td>number of bodyshop employees</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td>try considering discretization.</td>
+</tr>
+<tr class="even">
+<td>Repair order ID if given</td>
+<td>Identifier</td>
+<td>Hashing</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Repair payment amounts</td>
+<td>Quasi-Identifier</td>
+<td>discretization (generalization)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Repair date</td>
+<td>Quasi-Identifier</td>
+<td>generalization</td>
+<td></td>
+<td>try considering new feature: nb of days to repair</td>
+</tr>
+</tbody>
+</table>
+<!---
+# BACKLOG {#BACKLOG}
+****
+
+What are the differences between Anonymization, Pseudonymization, Encryption and Deletion? What is the global life Cycle of a data? how to apply “right to be forgotten” on each environment?
+========
+
+1. Basic definitions
+-------------------------
+
+<div class="panel panel-info">
+<div class="panel-heading"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:large"></span> **Definitions**</div>
+<div class="panel-body">
++ Data subject: Any individual who has his or her data collected or processed  
++ Personal data / PII: Any information relating to an identifiable individual (‘data subject’) that can be used, either by itself or together with other personal data, to identify the natural person. Examples are name, an ID number, location data, birth data, IP address…  
++ DATASET / TABLE: A data set (or dataset) is a collection of data. Most commonly a data set corresponds to the contents of a single database table, or a single statistical data matrix, where every column of the table represents a particular variable, and each row corresponds to a given member of the data set in question.  
++ Record : a record (sometimes called a row) is a group of fields within a table that are relevant to a specific entry  
++ Field or Attribute: a field is a data structure for a single piece of data  
++ Identifiers (also known as direct personal data): These are attributes in the original data set that unambiguously identify the data subject to whom a record corresponds. Examples are passport number, social security number, full name, etc.  
++ Quasi-identifiers (also known as key attributes or indirect personal data) : These are attributes in the original data set that, in combination, can be linked with external information to re-identify (some of) the subjects to whom (some of) the records in the original data set refer. Examples are job, age, city of residence, etc.  
++ Confidential attributes : These are attributes that contain sensitive information on the data subject. Examples are salary, religion, health condition, etc.  
++ Anonymization : destruction of the identifiable data in a dataset. Anonymization irreversibly destroys any way of identifying the data subject  
++ Pseudonymization : a method to substitute identifiable data with a reversible, consistent value. Pseudonymization substitutes the identity of the data subject in such a way that additional information is required to re-identify the data subject  
++ Deletion : destruction of the data whether they are identifiable or not  
++ Encryption : conversion of data to totally unintelligible “text” to those who may try to access it, even in the case of data breaches.  
++ Tokenization : process of substituting a sensitive data element with a non-sensitive equivalent, referred to as a token, that has no extrinsic or exploitable meaning or value. The token is a reference (i.e. identifier) that maps back to the sensitive data through a tokenization system. The mapping from original data to a token uses methods which render tokens infeasible to reverse in the absence of the tokenization system  
+
+![Figure 1: a dataset, its records and fields](media/anonymization/anonymization-dataset.png)
+
+</div>
+</div>
+
+These definitions are important because when you do anonymization, you have to start with a specific dataset. According to the type personal data (Identifier, Quasi-identifier), you will have to treat them in a different way, apply a different anonymization technique.
+
+2. What is the difference between Anonymization and Pseudonymization? Why should I use deletion? Is encryption a good way of anonymizing?
+-------------------------
+
+If you look at simple definition, Anonymization is the destruction of the identifiable data in a dataset while Pseudonymization is a method to substitute identifiable data with a retrievable, consistent value. 
+By identifiable data, we mean personal data, data which defines a data subject either directly (name, surname…) or indirectly (color of hair, moustache, height, weight …). 
+
+Another way of saying it, Anonymization irreversibly destroys any way of identifying the data subject while Pseudonymization substitutes the identity of the data subject in such a way that additional information is required to re-identify the data subject.
+
+If you look at the last definition, you could compare pseudonymization and anonymization to a witness protection program. The objective of the “witsec ” is to hide a witness and make sure nobody will find him. Anonymization is the perfect way to hide a person, while Pseudonymization is hiding a person but somebody (including you) have ways to reach and find him. Your aim with anonymizing the dataset is to make sure that nobody will be able to find your witness, even you.
+
+So why do we talk about deletion and encryption. Well, you can have a look at the raw definitions:
+
++   Deletion is the destruction of the data whether they are identifiable or not.  
++   Encryption is the conversion of data to totally unintelligible “text” to those who may try to access it, even in the case of data breaches.  
+
+If you look back at the metaphor, then deletion is getting rid of any traces of your witness. One of the solution would be to fake the death of your witness and recreate a whole new persona. By simulating the death, you get rid of all the data concerning the old persona and have to create all new data for the new persona. If your witness is supposedly not alive anymore why bother looking for him!
+Encryption is like getting all your data concerning your witness inside a secret file for which you need a password to access. For pseudonymization, usually the witsec (United States Federal Witness Protection Program) officer will have kept a phone to reach the witness or keep in mind the password (private key). So, if anyone can access the phone number or the password, no more witness protection.
+Deletion and encryption are just techniques to undertake respectively anonymization and pseudonymization. 
+Imagine now: 20 years after the witness entered the protection program, someone recognize the face of the witness on a local newspaper then retrieves his new name. Your encryption has no more effect! Your anonymization became pseudonymization!
+
+<div class="panel panel-info">
+<div class="panel-body">
+There is a great difference between applying Anonymization/Pseudonymization to a dataset and Anonymizing/Pseudonymizing a set of fields.
+Indeed, Anonymization/Pseudonymization applies to all identifiable data in order to make the data subject unidentifiable whilst anonymizing/pseudonymizing a set of fields is only applying the techniques to some of the identifiable data. In other words, applying techniques at field level is a mandatory step, however you have to consider the full dataset to guaranty that identification of a subject is no more possible.
+</div>
+</div>
+
+3. How should I implement the right to be forgotten on my environments and what kind of solution should I aim at implementing to answer this compliance requirement? 
+-------------------------
+
+The right to be forgotten should spread along all your data lifecycle and in each environment where the personal data are copied. This means either operational environments or BI/Analytics environments, but also ante-production environments.
+
+Let’s imagine we have the following data lineage: a customer is created in the CRM database. There is an output flow which sends the data to an Analytics environment. Of course, the operational database has ante-production databases in order to validate any new changes to the CRM software. There is the same need for the Analytics environment. Moreover, the Analytics environment has a Sandbox environment on which data scientist can develop their Analytics models.
+
+![Figure 2 - sample data lineage](media/anonymization/anonymization-data-lineage.png)
+
+As you can see, for all the environments the data is copied in order to have real data to test upon in the dev env, the same amount of data to do load testing… 
+
+Once the basics are settled, how will “the right to be forgotten” be distributed on the other environments.
+
+A. Operational Environments
+
+Operational environments are made for dealing with up to date data. You sometimes have archived data but as it has been seen in the GDPR, archiving is not a legal solution to apply the right to be forgotten, or at least, even if it increases the retention period, it has to have an end date. Is it worth anonymizing or pseudonymizing? The answer is usually no. According to the cost of anonymization/pseudonymization, the usage you will have of the data in these environments, the performance needs and sometimes storage capabilities, the only viable solution is DELETION.
+
+So, you delete on the production environment, how about the ante-production environments. Well, you have also to delete the information on these environments. 
+Usually, in a normal lifecycle, the ante-production environments contain a certain amount of “real data”. For “risk reasons”, you can have pseudonymized/anonymized some of the personal data but not all the identifiable data (especially if you work with partners for maintenance). It is better to make sure the data in your ante-production reflects the production. So once the data has been deleted in your operational environment, you have to spread it to your ante-production environments (whatever the technic: replace data, destroy existing data and recreate data out of real ones or out of test data….).
+
+B. Analytical Environments
+
+Some use cases need personal data to be relevant in your analytical journey but some of them can work very well on anonymized data sets. For BI/Analytics environments, Anonymization/Pseudonymization is worth studying. 
+For non-anonymized dataset, the right to be forgotten can be spread by anonymizing the record (see section on Anonymizing data within the same dataset) or deleting the record. On anonymized dataset you do not have to consider the right to be forgotten, it is already applied. Anonymization is one way of applying Privacy By Design.
+
+However, you also have ante production environments in BI. In the sandbox environment, you have sometimes many copies of data, for research needs, on which the right to be forgotten also needs to be applied. If Data Scientists only deal with anonymized data, there is no problem. In order to propagate on ante-production deletion (phase 4), one of the many solution could be simply to erase the old dataset on the ante-production (and sandbox) and copy it again from the production environment. Do not forget that ante-production environments should always be considered as temporary storage of data and cleaning them regularly should be in your operational process.
+
+The following figure will show you the overall data lifecycle.
+
+![Figure 3 - Overall data lifecycle for GDPR](media/anonymization/anonymization-gdpr.png)
+
+The BI/Analytics environments can be considered as the Memory of AXA whereas the ante-production should only contain temporary storage of data, time depending on the need to create and train your model. Usually you need a certain range of data to train your model and not all the data. 
+
+In the next section, we will see the overall process that has to be applied in order to assess the need for anonymization and then undertake anonymization.
+
+Global Process for undertaking Anonymization
+========
+
+As a reminder, “Anonymization makes it definitively impossible to identify a particular individual”. It works by applying irreversible “techniques” on columns’ field identified as “quasi-identifier” or “unique identifiers”
+We will see the various techniques in the next section. Now, we aim at understanding how we can apply anonymization by following specific steps in order to obtain an anonymized recordset/dataset. As you can see on Figure 4, it should be an iterative approach.
+All along this process, you must keep in mind that there is a balance to find between the benefits in terms of risk, the cost of anonymization and the potential loss of value for the Business Case.
+
+![Figure 4 : Global process](media/anonymization/anonymization-global-process.png)
+
+1. Step 1: Study the business use cases
+-------------------------
+
+One of the major issue facing deletion of data is the fear of losing information. However, when you ask the simple question: "Why do you want to keep that information?", the most common answer is: "In case" or "You never know". In the case of GDPR, this answer cannot be and the regulator will not accept it.
+
+Therefore, it is critical to clearly identify the business use case together with the related data to justify the need to keep personal data. 
+
+One of the common business use case encountered concerns operational reporting. 
+The situation is this one: 
+an operational reporting on whatever subject is done on BI with a data-wizard (e.g. Business Object, Spotfire). Let us imagine we have a reporting done on a business object. This business object has a retention period of 12 months. For the reporting, a sliding window of 13 months is necessary to follow the evolution of your indicators/KPI. The most common need will be: “I need at least 13 months of data”. The real need is: “I need to keep the results of my calculus for at least 13 months”. Whereas the first expression of need will indeed make you change the retention date, the second need only stores anonymized data since not pointing out a particular person. Of course, that will have an effect on the information system, another dataset to store, on the reporting itself, so that means an additional cost. However, if the reporting is of business key importance, it might be worth the cost of anonymization.
+
+So, understanding the real need and therefore the potential data to be anonymized data is the entry point into the whole process. 
+
+2. Step 2: Identify personal data and baseline risk
+-------------------------
+
+Once the use case(s) is(are) identified you can then identify the dataset(s) you need to anonymize or the anonymized dataset that you need to construct in order to run your use case(s).
+In this(ese) dataset, you will have to identify the personal data, either identifiers (direct personal data) or quasi-identifiers (undirect personal data). 
+Be careful some data may not appear personal data at first but may contain some. For instance, comments field usually contains more personal data than expected. It is even considered as a sensitive data. GPS tracking coordinates are definitely personal data.
+If you have datasets which should keep a link between them even after anonymizing the data, identify the primary key. If this primary key contains personal data, you will have to anonymize it. Our recommendation would be to use the Hash technique applied on both datasets to link together.
+Start your risk estimation based on the type of personal data you need to use and the sensitivity of the data, in the same kind of way you did it for the PIA (Privacy Impact Assessment) or the Information Security Classification Process.
+
+3. Step 3: Select anonymization techniques with related risk reduction
+-------------------------
+
+For each selected personal data, then you will have to select the anonymization technique (cf Anonymization techniques section) you want to apply according to several factors:
+
++   The needs of the use case: according to the data the need for the use case may be different. For example: in order to evaluate some samples in the test data, it is easier to talk about a person by saying his name and first name, even if they are bogus names rather than referring to that same person with his customer number. In that case randomization  on the name and the first name is the right anonymization technique. Moreover, for some use cases, the salary may be an important feature to take into account, in that case you could use discretization  (generalization technique applied to numbers by transforming defined numbers into ranges of numbers). In that case, you should see which ranges are needed for the use case to be efficient. 
+
++   The tools you have chosen to perform your anonymization: some techniques may not be available in all the anonymization tools. For some personal data, only techniques of adding noise to the data is really effective, but this technique is not spread in usual tools. Moreover, you usually have to deal with both new data and legacy data. In that context, different tools might be available/used to achieve anonymization. Different tools mean different techniques and sometimes different results. 
+
++   The type of personal data you are dealing with. Indeed, identifiers should be removed or at least masked definitely. This means using either basic data masking or randomization. At one exception, the primary key of the dataset which should have been hashed . For the quasi-identifiers, you have much maneuvering space because the technique should be applied according to the use case. Except in defined use cases, avoid keeping sensitive data directly readable or non-anonymized in your dataset. One of the method that could be applied would be to create a different dataset containing all the sensitive data and restrict access to this dataset.
+
+In the section "List of personal data and sensitive data and preferred anonymization techniques to apply", we will give you a list of personal data and sensitive data and will give you advices on which anonymization technique can be applied. However, this section gives only advices and cannot be a general rule. The business case must lead the anonymization technique to apply taking into account the limitations due to the used tool and the regulation.
+
+4. Step 4: Assess the anonymization effectiveness
+-------------------------
+
+In order to assess the anonymization effectiveness, here are the points you need to focus on. 
+
+1. You have to keep in mind that the anonymization has to be effective within your environment and the data sources you deal with in your BI considering also the security measures that have been taken to reduce data leakage risks (what about if you are working with external providers, on cloud solutions….).
+
+2. Your anonymization should reduce of the risks of re-identification such as Singling out, Linkability, Inference.
+
+3. The data processed should lose sensitivity in case of data leakage
+
+Let us assume that you have taken some safeguards against data leakage (risk 0 does not exists, anonymization is one way of reducing the risk).
+You then have to assess points 2 and 3.
+
+That is where you should ask you DPO to validate your anonymization strategy or see with a security expert whether they think your anonymization can guaranty a certain level of anonymity. He might also advise you to launch certain tests. You can not be the prosecutor and the judge, you have to get a second opinion.
+However, there are certain tests based on the k-anonymity  (and its sisters) that can be performed quite easily with basic sql techniques (group by, order by). 
+As seen before, only definite masking technique should be applied to the identifiers, however the question of singling out still stands on quasi-identifier.
+In the Ensuring anonymity: K-anonymity, L-diversity paragraph, we will go through an example of de-anonymization which shows that which quasi-identifiers a researcher, Sweeney, have re-identified the governor of the state by using his birthdate, zip code and sex. That is why one of the main basic assessment would be to take all the quasi-identifiers within the list and see whether you can obtain a group of one person. 
+Take a sample of your dataset and try to apply the anonymization techniques you have defined. With simple sql, you can test the level of your k-anonymity with the count and group by function. The minimum group count gives you level of anonymity you can hope to reach. If the minimum group count is 3, you are 3-anonymous…
+The more quasi-identifiers you take to count your group, the less anonymous the groups are. If your level for anonymity is below a certain threshold (depending on the size of your dataset), then you should review your anonymization techniques. e.g. if your level is 3, while your dataset contains only 10 records, you have reached a very good level. However, for 1 000 000 records 3 is very low. This level should be validated with your DPO in link with Risk Management.
+
+5. Step 5: Assess the use-case effective value
+-------------------------
+
+This step is useful in order to assess two things:
+First, is the cost of anonymization worthwhile taking into account the original use case. This is only a validation step because the ROI of the use case should have been calculated in step 1.
+But most important matter, is you anonymized data worthwhile concerning your use case. Indeed, the data can be too anonymized and therefore the anonymous data is useless to get value out of your use case. So, check it before implementing the defined strategy.
+Do not forget to confront that to the risk assessment, you should have started on step 2.
+
+6. Step 6: Apply anonymization strategy
+-------------------------
+
+That’s it! You have validated your approach! You can now implement it in your system. You will see in section Ways of Anonymizing data within the same dataset, different ways of implementing your anonymization strategy. It is really a matter of implementing anonymization at a resordset level or at a dataset level.
+
+<div class="panel panel-info">
+<div class="panel-heading"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:large"></span> **AXA France Best Practice Ideas**</div>
+<div class="panel-body">
+Every anonymization depends on the context (internal, open data, shared data, BI, data lake). In some contexts, you could apply a “light” anonymization (level of risk high) but this should be linked to a strong code of conduct regarding data for the professionals using these data (French actuaries).
+Moreover, your process for anonymization can be iterative. The aim is to avoid having such a strong anonymization that the data is value-less for the market (e.g. reinsurance). The idea behind it would also to be able to justify the approach towards regulators.
+</div>
+</div>
+
+<div class="panel panel-info">
+<div class="panel-heading"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:large"></span> **AXA Belgium Approach**</div>
+<div class="panel-body">
+In BI and DL, usage of the data is generic. The approach towards anonymization of data should be very cautious and strongly linked to governance. Usually, Use Cases are not known so applying this process can be risky and lose the value of data if too much anonymization is applied. 
+In order to answer the purpose limitation and data minimization need, Axa Belgium plans to use a tokenization tool. Through this tool, profiles can be set in advance depending on the use case purpose. To manage accesses through these profiles, a strong governance process has to be set-up.
+As for anonymizing the data, Belgium has chosen an iterative approach in order to grow in maturity along with the various use cases coming. 
+</div>
+</div>
+
+What are the various techniques you can use to get anonymized data?
+========
+
+Extract from Wikipedia : 
+> “Data anonymization has been defined as "technology that converts clear text data into a nonhuman readable and irreversible form, including preimage resistant hashes (e.g., one-way hashes) and encryption techniques in which the decryption key has been discarded. … Anonymized data refers to data from which the person cannot be identified by the recipient of the information. The name, address, and full post code must be removed, together with any other information which, in conjunction with other data held by or disclosed to the recipient, could identify the patient.[2]
+De-anonymization is the reverse process in which anonymous data is cross-referenced with other data sources to re-identify the anonymous data source.”
+
+If you consider this definition, there is a paradox. Indeed, if anonymization is successful, then de-anonymization cannot be foretaken since anonymization is irreversible.
+However, it has become a challenge for some hacker or mathematician wiz kid to take a set of anonymized data and try to de-anonymize it. There are a lot of samples of this kind of de-anonymization:
+
++   It takes now 3 points in time and space to identify a person  
++   By only taking the search’s subjects on an engine (google, yahoo…), you have 80% chance of being identified.  
++   The MD5 algorithm has been cracked and is now considered as not secure enough.  
+
+If you want to anonymize a set of data, there is a great chance that if you want to make it irreversible forever you will end up with no data at all. Depending on your context, the anonymization you will apply will be more or less string. If a data has a low sensibility, you could stick to a low-level anonymization (e.g name, surname, address). Your business context could lead you to propose only low-level anonymization (e.g. anti-money laundering, fraud). The anonymization level should be validated through a risk assessment -at least oral- with your DPO.
+
+We will then start from the postulate, that the anonymization done on data is irreversible within AXA’s entities data sources. 
+Moreover, even if anonymization is not perfect, it is important to first focus on PII (Personally Identifiable Information) , then, according to the context or the risk, focus on indirect data. 
+The following paragraph will give you a definition of all the anonymization/pseudonymization techniques that we will advise you to use during the whole process.
+Indeed, some techniques although very efficient may have some drawbacks (no tools will provide such a technique, difficulty to implement it…).
+
+1. Anonymization techniques
+-------------------------
+
+The aim of this paragraph is to describe various types of models of anonymization, seeking to hide or break the connection between a person in the real world, and its personal or sensitive data. We will not address all the different models that can exist.
+
+Two main families stand out from anonymization algorithms depending on their capacity to refer to unique and single records or not:
+Anonymization deterministic algorithms are those which for a given data/data set to anonymize provide an identifiable/unique anonymized data/data set. As a consequence, data related to an individual are no longer readable but it still possible to associate it to an anonymized data subject.
+NB: the algorithm is not persistent, otherwise it would be pseudonymization 
+
+Anonymization undeterministic algorithms are those which for a given data/data set to anonymize provide an aggregated/generalized anonymized data/data set. As a consequence, it isn’t possible be able to isolate a given data subject within a data set. 
+
+<div class="panel panel-info">
+<div class="panel-heading"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="font-size:large"></span> **Information**</div>
+<div class="panel-body">
+Samples of Anonymization deterministic algorithms:  K-anonymity and its extensions L-diversity, T-closeness, Perturbative masking such as noise addition, microaggregation, data swapping or post randomization
+Samples of Anonymization undeterministic algorithms: Differential privacy, Non-perturbative masking like Sampling, Generalization, Top/bottom coding, Local suppression.
+</div>
+</div>
+
+A. Data Masking
+
+Data masking means replacing a data by another. There are 3 types of data masking :
+
++ Definitive masking: the data in a field is definitely changed inside the record by changing the value or masking part of the data (anonymization technique)  
++ Reversible masking: the data in a field is changed inside the record by changing the value or masking part of the data but you have a way of retrieving the original value (pseudonymization technique)  
++ Dynamic masking: the dynamic masking is a way of restricting access to certain fields in a table by adding a table of rights. This masking technique is relative to the user (UI level) and does not imply any change to the original data (storage level). It is not an anonymization technique, but rather a way of restricting accesses to sensitive data.  
+![Figure 5 : Typology of data masking](media/anonymization/anonymization-typology.png)
+
+B. Basic Data Masking
+
+Among the deterministic algorithm you can find the basic data masking technique, which is simply to avoid seeing the data value by masking its value by either nothing or always the same value for each record inside the table.
+
+![Figure 6 : Basic data masking](media/anonymization/anonymization-basic-data-masking.png)
+
+In Figure 3, the name has been masked by the value “Unknown”, the salary by the value “12 K” for each record of the dataset, while the address has been erased/replaced by an empty string.
+
+C. Randomization
+Randomization is the process of exchanging the values of attributes by other values contained inside another list of records. You can also talk about data swapping if your list of definite records is based on your original table.
+
+![Figure 7 : Sample of Randomization](media/anonymization/anonymization-sample-randomization.png)
+
+In figure 6, all the last names have been changed at random by another list of names. This replacing list of names can be created out of any source of names, as long as the picking algorithm (algorithm which chooses the replacing name) is not reproducible and does not depend on the source data.
+Randomization can be applied at record or at table level.
+
+![Figure 8 : Sample of Data-swapping](media/anonymization/anonymization-sample-swapping.png)
+
+The data-swapping is rather applied at table level.
+
+D. Generalization
+
+Generalizing means removing a “degree of precision" to certain fields. This technique has the effect of grouping the data according to a more general value than the original value.
+
+![Figure 9 : Samples of generalization](media/anonymization/anonymization-sample-generalization.png)
+
+In this sample, the age field is replaced by an interval of age (discretization).
+With this technique, some data types may not be the same. Usually, you would create another data field with the right type and apply your generalization to this new column.
+For instance, a department column could be added and take as a value only the first two digits of the zip code.
+
+Generalization is one of the key technique of the K-anonymity and its sister l-diversity.
+
+E. Hashing
+
+The hashing technique is based on specific deterministic algorithms, it is a pseudonymization technique.
+A hash function is a function that allows to transform a data value into a specific character set that keeps the relationships between the source objects (equality, order…) but without accessing the value directly.
+One of the most common hash algorithm is called MD5. This algorithm is no longer considered as safe, so we would advise you to use at a minimum SHA2.
+
+2. Ensuring anonymity: K-anonymity, L-diversity 
+-------------------------
+
+A. K-anonymity
+
+In 2002, an American researcher, Sweeney, could prove that the combination of other fields than direct identifiers can help retrieve the individual concerned.
+The strategy was simple. Sweeney took 2 different sets of data (one of which was an anonymized health data, the other one came from the list of voters in the state) and linked them together by a triplet of value (zip code, the date of birth and sex) which is unique for almost 80% of the population in the US. She could then link health data to individuals (one of them being the governor of the state).
+
+![Figure 10 : Sample of singling out in an anonymous dataset (source Sweeney 2002)](media/anonymization/anonymization-singling-out.png)
+
+To protect against this type of attack, called record linkage, Sweeney has proposed the technique of k-anonymity. This will blur the ability to link a n-anonymous tuple to a n-tuple not anonymous in the following way: 
+1)  determine the sets of attributes (referred to as quasi-identifiers) that can be used to cross the anonymous data with identifying data; then
+
+  Almost all of this section is based on the paper “Techniques d’anonymisation, by Benjamin NGUYEN” available on the web, examples included
+  
+2)  reduce the level of detail of the data so that there are at least k n-different tuples that have the same value of quasi-identifier (apply generalization techniques on the quasi-identifier)
+
+The advantage of the k-anonymity is that analysis of the data will continue to provide accurate results, this close that one cannot separate individuals in a group.
+
+![Figure 11 : Anonymization on data from a university](media/anonymization/anonymization-university.png)
+
+An important technical problem remains achieving k-anonymity: be able to determine generalizations to apply on quasi-identifiers, what can be done either by a human expert who knows the area, or by a computing, often very costly in a real database.
+
+B. L-diversity
+In example showed in figure 8, you can easily deduce that Sam who is a PhD aged 24 has a Cancer because all the professorial team has a cancer. It is thus possible to infer information in some cases, without making the slightest crossing, for example if all the individuals in a class have the same value. The L-diversity model addresses this problem, by adding an additional constraint on the equivalence classes: not only at least k n-tuples must appear in an equivalence class, but also the sensitive field associated with the equivalence class must take at least L distinct values.
+
+![Figure 12 : L-diversity](media/anonymization/anonymization-l-diversity.png)
+
+However, by leading an attack by crossing of the same type as that of Sweeney, there is still a possibility to deduce information. In the L-diversity sample, we can then deduce that a 20-year-old student will have a 33% chance to have the flu, 33% chance to have the cancer and 33% chance to have a cold, and especially no chance of having another pathology. If we know that Bill is the only person from the base in this case, then you can deduce sensitive information about him.
+
+Even though these techniques are not fail-proof , they insure the minimum anonymity and are practical to set up. We did not talk about differential confidentiality because it involves a lot of computing and cannot fit our context, as of today.
+
+Now that we are aware of the techniques, we will see in the next section the overall process to undertake anonymization.
+
+Various ways to create an anonymized dataset
+========
+
+Anonymizing a record is one of the solution to avoid deleting it. There are two possibilities to store the anonymized data: either within the same dataset, or within a dedicated dataset. This section will give an overview of these two possibilities and the impacts it can have towards the data structure in place and the use cases who are using these data.
+
+CAVEAT: the following approaches will be challenged in the next coming months to industrial market best practices.
+
+1. Anonymizing data within the same dataset: anonymization at a record level
+-------------------------
+
+This approach is currently investigated by AXA Switzerland.
+Let’s imagine an existing customer dataset. This dataset is in place for many years now. One or more entries are to be deleted because these customers have not had any contact and no open contracts for many years (past retention date). 
+Instead of deleting this entry, you will replace the existing entry by an anonymized dataset.
+
+![Figure 13 ; Anonymization within the same dataset](media/anonymization/anonymization-same-dataset.png)
+
+Many anonymization techniques have been applied, the customer cannot be re-identified. The anonymization is quite perfect (within AXA’s data sources). However, there are some impacts on the table structure. The first impact is that you have to add a flag to the existing table to indicate that the data is anonymized (in our example, the flag is called Anonymous). If you do not do so, and you have a use case assessing the quality of the address then you will have a problem of accuracy on record number 5. Indeed, the address of the customer does not exist anymore, precisely because of anonymization.
+
+A. Impacts
+
+The previous example is one of the many impacts you may encounter when applying this technique.
+
+| **Impacts on :**| **How** | **Sample** |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Data structure**| Add a field to identify anonymous data||
+| **Use Cases** | The added anonymous field must be taken into account by the existing Use Cases| Quality of the address use case|
+| **Field type**| According to the anonymization technique the resulting field may be of a different type and thus can not fit in the existing table| If customer\_nb has been set to a numeric type, the hash result may not fit: 1B113K18 is definitely not numeric|
+| **Business/technical constraint** | When you deal with a table, there can be constraint on field applied to it. Those constraints may have to be removed to accept anonymized data| If zip code only accepts number the generalization may not be acceptable “56XXX”. You could only keep “56”. However, if you add a constraint saying that the zip code should have 5 digits, this constraint does not apply anymore |
+| **Data meaning**| If you apply generalization, then the meaning of the data contained inside a field may change | The field city of the anonymized data is not a city anymore but a department. If you looked at it on a map of France’s cities, you could not see it anymore. |
+| **Data Structure**| According to the generalization you want to proceed with, you may add a new field to contain the real meaning of the data | To be more consistent, a data field called department-should be added to |
+| **Use cases** | Each change in data structure may have an impact on Use Cases.| A department field has been added, however the Use Case X runs without naming the various useful fields. Use Case X may crash because it awaits 7 (or 8 fields with anonymous) but finds 9 |
+| **Assessing the anonymization effectiveness** | One of the key aspect of the anonymization effectiveness is to prove there is no singling out. If you have only few anonymized data in your dataset then the effectiveness can not be assessed right away ||
+
+B. Pros and Cons of this technique
+
+| **PROS**| **CONS**|
+| ------------------- | ------------------ |
+| **No duplication of Data**| Impacts on the table structure|
+| **No need to deal with legacy data/ No changes in entry flows** | No dissociation between statistical use cases and operational use cases. Not the same access rights |
+| **No other actions needed when records are updated**| Potential impact on use cases |
+| | Difficulty to assess the effectiveness of an anonymization|
+
+2. Anonymizing data within a dedicated dataset: anonymization at a dataset level
+-------------------------
+
+Now, the view is different from before. Out of the first step of the anonymization process, you understood that there is a need for an anonymized view because you have some use cases dedicated.
+The paradigm now is different because you know that there is a need for a specific anonymized view that can be specified with your requesters.
+Let us assume that the table/dataset seen before is the dataset that needs anonymizing. You will then create a dedicated anonymized view containing all the data of the original view and you will apply your anonymizing method to insert the anonymized record into this new anonymized dataset. What is important to notice is that since it is a new dataset, the structure can differ according to your needs.
+
+![Figure 14 : A dedicated Anonymized Dataset](media/anonymization/anonymization-dedicated-dataset.png)
+
+As you can see, the address can be suppressed from the anonymized dataset since the data masking with blank has occurred. Moreover, the zip code and city have been replaced by department number and department name. You can then apply rules, field types dedicated to this dataset.
+In one data processing, you can deal with the legacy.
+Now let us imagine that you have a customer entry that needs to be deleted because of the GDPR right to be forgotten rule (retention period is over). The resulting operation will be to delete the entry in the original table but nothing happens on the dedicated anonymized dataset.
+
+![Figure 15 : Applying the GDPR deletion on both current/anonymized datasets](media/anonymization/anonymization-gdpr-deletion.png)
+
+The deletion process can be applied only on the first table “operational view” the anonymized dataset will not be touched.
+
+A. Impacts
+
+The main impacts of such a technique is on entry data flows. Indeed, once created the dedicated dataset should be kept up to date as well as the first table. 
++   Any new entry in the operational view has to be reported into the anonymized view
++   Any new update on operational records has to be reported into the anonymized view.
+
+For those reasons, it is imperative that you can create a link between operational view and anonymized view. This link can be done by using the hash technique on the primary key of the operational table. 
+In our example, we assumed that our primary key was the customer number. Now let us imagine that Paul MARTIN, Customer_nb=123456 has moved from Courbevoie to Paris. How can I report this update towards my anonymized table/dataset.
+Since the hashing technique is deterministic, it means that if I apply the hash technique to the customer_nb the result will always be 4458FTRX if the source is 123456.
+I then have a direct link in order to update my anonymized line by applying the previous anonymization methods.
+
+![Figure 16 : Replicating an update to the anonymized view](media/anonymization/anonymization-update.png)
+
+In the previous sample, for explaining purpose, we showed a flow of update in the anonymized view that was asynchronous to the update in the operational table or rather triggered by an update in the operational table.
+The updating flows for both tables can be parallel since the primary is the same in both table. The second flow should just apply anonymization techniques before updating/inserting in the anonymized table.
+
+Then you might tell me, if I can link both tables by the primary key, I can do it also in my use cases. The answer is yes. However, you will not be able to retrieve the original data concerning the deleted entry. Johnny BEGOOD will always stay in the Morbihan because if the customer was forgotten from our operational database he will never update his address. By the way do you remember the original name of Johnny BEGOOD.
+
+|Impacts on :   |How|
+| ------------------------------- | ---------------------- |
+Data flows  | New update/insert data flow needing to take into account data anonymization techniques|
+
+B. Pros and Cons of this technique
+
+| **PROS**| **CONS**|
+| ------------------------------- | ---------------------- |
+| **Dissociation between statistical use cases and operational use cases. Differentiation possible on access rights** | Duplication of data, however duplicated data are anonymous so no need to perform deletes|
+| **No impacts on aggregates if done on anonymized views**| **Need to deal with legacy data/ Entry flows should be added [**\[1\]**](https://axa365-my.sharepoint.com/personal/a167hr_login_axa/Documents/Documents/AXA%20Group%20Innovation/GDTF/Anonymisation-Guidelines.V0.5.docx#_ftn1)** |
+| **NO IMPACT on existing Use Cases** | Maintenance in case of new fields or updated fields is much higher because of data duplication|
+| **Assessing the effectiveness of the anonymization can be performed on your legacy (meaning a lot of data)**| |
+
+-->
+        </div>
+		</div>
+    </div>
+            
+
+<script>
+/*
+window.addEventListener('DOMContentLoaded', function() {
+	document.documentElement.style.setProperty('--text-color', 'red');
+});
+*/
+</script>
+
+	<script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+			if (themeName === 'theme-light') {
+				document.documentElement.style.setProperty('--background-color', 'white');
+				document.documentElement.style.setProperty('--caption-color', 'white');
+				document.documentElement.style.setProperty('--text-color', 'black');
+				document.documentElement.style.setProperty('--content-color', '#1C242B');
+			}
+			else {
+				document.documentElement.style.setProperty('--background-color', 'black');
+				document.documentElement.style.setProperty('--caption-color', '#091F2C');
+				document.documentElement.style.setProperty('--text-color', '#C7D1DB');
+				document.documentElement.style.setProperty('--content-color', '#C7D1DB');
+			}
+        }
+
+        // immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            }
+			else if (localStorage.getItem('theme') === 'theme-light') {
+                setTheme('theme-light');
+            }
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				setTheme('theme-dark');
+			}
+			else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: ligth)').matches) {
+				setTheme('theme-ligth');
+			}
+			else {
+				// default theme is dark
+				setTheme('theme-dark');
+			}
+        })();
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script>        
+        /* ajust the height when click the toc
+           the code is from https://github.com/twbs/bootstrap/issues/1768
+        */
+        var shiftWindow = function() { scrollBy(0, -50) };
+        window.addEventListener("hashchange", shiftWindow);
+        function load() { if (window.location.hash) shiftWindow(); }
+        
+        /* add Bootstrap styles to tables */
+		var tables = document.getElementsByTagName("table");
+        for(var i = 0; i < tables.length; ++i){
+            tables[i].className += "table table-bordered table-hover";
+        }
+    </script>
+
+  </body>
+</html>

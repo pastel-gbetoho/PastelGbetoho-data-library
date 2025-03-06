@@ -1,0 +1,86 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "title": "assessmentAndCondition",
+    "properties": {
+        "assessmentResult": {
+            "type": "object",
+            "isActivated": true,
+            "properties": {
+                "assessmentResultIdentifier": {
+                    "type": "string",
+                    "isActivated": true
+                },
+                "perils": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "string",
+                        "isActivated": true,
+                        "displayName": "peril",
+                        "examples": [
+                            "EARTHQUAKE"
+                        ]
+                    }
+                },
+                "financialValuation": {
+                    "type": "array",
+                    "isActivated": true,
+                    "items": {
+                        "type": "object",
+                        "isActivated": true,
+                        "properties": {
+                            "typeCode": {
+                                "type": "string",
+                                "isActivated": true,
+                                "examples": [
+                                    "Building net market valuation"
+                                ]
+                            },
+                            "amount": {
+                                "type": "object",
+                                "title": "Amount",
+                                "isActivated": true,
+                                "properties": {
+                                    "currencyCode": {
+                                        "type": "string",
+                                        "title": "Currencycode",
+                                        "isActivated": true,
+                                        "examples": [
+                                            "EUR"
+                                        ]
+                                    },
+                                    "value": {
+                                        "type": "number",
+                                        "title": "Value",
+                                        "isActivated": true,
+                                        "examples": [
+                                            4800
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": false,
+                                "required": [
+                                    "currencyCode",
+                                    "value"
+                                ]
+                            },
+                            "valuationDate": {
+                                "type": "string",
+                                "isActivated": true,
+                                "format": "date",
+                                "examples": [
+                                    "2021-12-03"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "isActivated": true,
+    "additionalProperties": false
+}

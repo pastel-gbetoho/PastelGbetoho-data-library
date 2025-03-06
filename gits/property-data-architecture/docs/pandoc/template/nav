@@ -1,0 +1,72 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true" style="font-size:large"></span>  PROPERTY DATA</a>
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Property Data Study <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Study summary</a></li>
+            <li><a href="property-data-mapping.html">Use cases data mapping</a></li>
+            <li><a href="providers-list.html">Property data providers</a></li> 
+          </ul>
+        </li>                  
+                
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Data models <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="conceptual_data_model.html">Conceptual view</a></li>
+            <li><a href="logical_data_model.html">Logical view</a></li>
+            <li><a href="json-schemas.html">JSON Schema</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">Examples</li>
+            <li><a href="https://pages.github.axa.com/AXA-GO/data-study-property-data/specifications/openapi/index.html" target="_blank">Open API Swagger example</a></li>
+            <li><a href="axaxl_sov_illustration.html">AXA XL SOV illustration</a></li>
+            <li><a href="BingGeocoder_Outputs_Illustration.html">Bing geocoder illustration</a></li>                                        
+            <li><a href="GoogleGeocoder_Outputs_Illustration.html">Google geocoder illustration</a></li>
+          </ul>
+        </li>                        
+      
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> Additional Resources <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header">Internal Reference</li>
+            <li><a href="https://axa365.sharepoint.com/sites/Community-DataManagement/SitePages/Information-Models.aspx" target="_blank">ACORD Information model</a></li>                                  
+            <li><a href="media/internal-axa-docs/Datamodel GebäudeStandortDaten.pdf" target="_blank">AXA CH GMD</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="dropdown-header">External Reference</li>            
+            <li><a href="https://www.iso.org/obp/ui/#iso:std:iso:19160:-4:ed-1:v1:en" target="_blank">ISO 19160-4:2017(en) Addressing</a></li>
+            <li><a href="https://www.air-worldwide.com/Data-Standards/CEDE-7-0-Database-Schema-and-Sample-Databases/" target="_blank">Catastrophe Exposure Database Exchange</a></li>
+            <li><a href="https://github.com/RMS-open-standards/RDOS" target="_blank">Risk Data Open Standard (RDOS) </a></li>
+            <li><a href="https://github.com/Simplitium/OED/" target="_blank">Open Exposure Data (OED)</a></li>       
+            <li><a href="https://github.com/OasisLMF/OpenDataStandards" target="_blank">Open Data Standards (ODS)</a></li>
+            <li><a href="https://docs.air-worldwide.com/Validation/6.0/index.htm" target="_blank">AIR-Exposure Data Validation Reference</a></li>
+            <li><a href="https://www.iso.org/ics/91.040/x/" target="_blank">ISO 91.040 BUILDINGS</a></li>
+            <li><a href="https://technical.buildingsmart.org/standards/ifc/" target="_blank">Industry Foundation Classes (IFC)</a></li>                                                                                                                                                
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-link" aria-hidden="true"></span> AXA DCP <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://smartservices.axaxl.com/fr/" target="_blank">Smart Services Homepage</a></li>
+          </ul>
+        </li>             
+        
+            
+      </ul>
+    </div>
+
+  </div>
+</nav>     
+
